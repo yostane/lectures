@@ -1,0 +1,51 @@
+//@base_url=http://localhost:8080
+@base_url=https://yoscours.alwaysdata.net
+###
+{{base_url}}/rest/books
+###
+{{base_url}}/rest/hello
+###
+POST {{base_url}}/rest/books
+Content-Type: application/json
+
+{
+    "title": "a great book"
+}
+###
+{{base_url}}/helloServlet
+###
+{{base_url}}/demo.html
+###
+{{base_url}}/rvalue
+###
+{{base_url}}/rvalue?userValue=50
+###
+{{base_url}}/rest/sample/titans
+###
+POST {{base_url}}/rest/sample/test
+Content-Type: application/json
+
+{
+    "name": "bart",
+    "age": 10
+}
+###
+GET {{{base_url}}/rest/amangousse
+###
+POST {{{base_url}}/rest/amangousse
+Content-Type: application/json
+
+{
+    "name": "bart",
+    "job": "imposteur"
+}
+###
+POST {{{base_url}}/rest/amangousse
+Content-Type: application/json
+
+{
+    "name": "sonic",
+    "job": "janitor"
+}
+###
+DELETE {{{base_url}}/rest/amangousse/sonic

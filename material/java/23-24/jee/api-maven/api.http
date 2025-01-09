@@ -1,0 +1,15 @@
+@base_url=http://localhost:8080/api
+###
+{{base_url}}/ping
+###
+{{base_url}}/calculator
+###
+{{base_url}}/crew
+###
+POST {{base_url}}/crew
+Content-Type: application/json
+
+{
+  "name": "Paul",
+  "job": "Pilote"
+}

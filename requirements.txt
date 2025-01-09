@@ -1,0 +1,4 @@
+mdx-truly-sane-lists
+mkdocs-glightbox
+mkdocs-material==9.4.6
+regex==2023.10.3

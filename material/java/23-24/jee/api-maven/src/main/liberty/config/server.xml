@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+  <featureManager>
+    <!-- pour faire des API REST -->
+    <feature>restfulWS-3.1</feature>
+    <!-- pour parser le JSON -->
+    <feature>jsonb-3.0</feature>
+    <feature>jsonp-2.1</feature>
+    <!-- Injection de dépendances -->
+    <feature>cdi-4.0</feature>
+    <!-- JSP -->
+    <feature>pages-3.1</feature>
+    <!-- servlets -->
+    <feature>servlet-6.0</feature>
+    <!-- JPA -->
+    <feature>persistence-3.1</feature>
+  </featureManager>
+
+  <!-- <logging traceFileName="stdout" /> -->
+
+  <variable name="env.PORT" defaultValue="8080" />
+  <variable name="env.HOST" defaultValue="localhost" />
+
+  <httpEndpoint id="defaultHttpEndpoint"
+    host="${env.HOST}"
+    httpPort="${env.PORT}" />
+
+  <applicationManager autoExpand="true" />
+
+  <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+  <!-- location="[atrifactid dans le pom].war" -->
+  <webApplication contextRoot="/" location="api-maven.war" />
+
+  <!-- Derby Library Configuration -->
+  <library id="derbyJDBCLib">
+    <!-- Le jar a été téléchargé et copié dans ce dossier via le plugin maven (voir le pom) -->
+    <fileset dir="${shared.resource.dir}/" includes="derby*.jar" />
+  </library>
+
+  <!-- Définition du datasource -->
+  <dataSource id="eventjpadatasource" jndiName="jdbc/eventjpadatasource">
+    <jdbcDriver libraryRef="derbyJDBCLib" />
+    <properties.derby.embedded databaseName="EventDB" createDatabase="create" />
+  </dataSource>
+
+  <!-- postgressql -->
+  <dataSource id="pgsqlDataSrouce"
+    jndiName="jdbc/pgsqlDataSrouce">
+    <jdbcDriver libraryRef="postgresql-library" />
+    <properties.postgresql serverName="localhost"
+      portNumber="5432"
+      databaseName="CoursDB"
+      user="postgres"
+      password="" />
+  </dataSource>
+
+  <library id="postgresql-library">
+    <fileset id="PostgreSQLFileset" dir="${shared.resource.dir}/"
+      includes="postgresql*.jar" />
+  </library>
+
+
+</server>

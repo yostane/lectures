@@ -1,0 +1,84 @@
+site_name: Cours de Yassine Benabbas
+site_url: https://yostane.github.io/lectures/
+repo_url: https://github.com/yostane/lectures
+repo_name: yostane/lectures
+edit_uri: ""
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/yostane
+
+nav:
+  - index.md
+  - Java:
+    - java/index.md
+    - java/java-tour.md
+    - Exercices:
+      - java/java-exercices-1.md
+      - java/java-exercices-2.md
+      - java/java-exercices-3.md
+      - java/java-exercices-4.md
+    - java/jee.md
+    - java/javafx.md
+  - Programmation distribuée:
+    - distrib/index.md
+
+plugins:
+  - search
+  - glightbox
+
+theme:
+  logo: img/logo.jpg
+  favicon: img/logo.jpg
+  name: material
+  features:
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - navigation.tabs
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: yellow
+      accent: green
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: yellow
+      accent: green
+
+markdown_extensions:
+  - pymdownx.snippets
+  - abbr
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - def_list
+  - pymdownx.inlinehilite
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets:
+      base_path: ["includes", "material/java/common"]
+      auto_append:
+        - "includes/abbreviations.md"
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower

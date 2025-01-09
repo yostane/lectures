@@ -1,0 +1,57 @@
+http://localhost:8080/jakartaee-hello-world/helloServlet
+###
+http://localhost:8080/jakartaee-hello-world/demo.html
+###
+http://localhost:8080/jakartaee-hello-world/rvalue
+###
+http://localhost:8080/jakartaee-hello-world/rvalue?userValue=50
+###
+http://localhost:8080/jakartaee-hello-world/rest/sample/titans
+###
+POST http://localhost:8080/jakartaee-hello-world/rest/sample/test
+Content-Type: application/json
+
+{
+    "name": "bart",
+    "age": 10
+}
+###
+GET http://localhost:8080/jakartaee-hello-world/rest/amangousse
+###
+POST http://localhost:8080/jakartaee-hello-world/rest/amangousse
+Content-Type: application/json
+
+{
+    "name": "bart",
+    "job": "imposteur"
+}
+###
+POST http://localhost:8080/jakartaee-hello-world/rest/amangousse
+Content-Type: application/json
+
+{
+    "name": "sonic",
+    "job": "janitor"
+}
+###
+DELETE http://localhost:8080/jakartaee-hello-world/rest/amangousse/sonic
+###
+GET http://localhost:8080/jakartaee-hello-world/rest/amangousse-ejb
+###
+POST http://localhost:8080/jakartaee-hello-world/rest/amangousse-ejb
+Content-Type: application/json
+
+{
+    "name": "bart",
+    "job": "imposteur"
+}
+###
+POST http://localhost:8080/jakartaee-hello-world/rest/amangousse-ejb
+Content-Type: application/json
+
+{
+    "name": "sonic",
+    "job": "janitor"
+}
+###
+DELETE http://localhost:8080/jakartaee-hello-world/rest/amangousse-ejb/sonic

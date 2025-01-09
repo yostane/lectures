@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<!-- xmlns permet de définir quelles balises le xml peut comporter -->
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
+  xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="AppController">
+  <children>
+    <HBox prefHeight="36.0" prefWidth="580.0" AnchorPane.bottomAnchor="354.0"
+      AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#addPerson" styleClass="btn" text="Add person">
+          <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+          </HBox.margin>
+        </Button>
+        <TextField fx:id="nameTextField" promptText="Name">
+          <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+          </HBox.margin>
+        </TextField>
+        <TextField fx:id="missionsTextField" promptText="Initial missions">
+          <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+          </HBox.margin>
+        </TextField>
+      </children>
+    </HBox>
+    <TableView fx:id="tableView" layoutX="15.0" layoutY="54.0" prefHeight="345.0" prefWidth="580.0"
+      AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+      AnchorPane.topAnchor="50.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="Name">
+          <cellValueFactory>
+            <PropertyValueFactory property="name" />
+          </cellValueFactory>
+        </TableColumn>
+        <TableColumn prefWidth="75.0" text="Job">
+          <cellValueFactory>
+            <PropertyValueFactory property="job" />
+          </cellValueFactory>
+        </TableColumn>
+        <TableColumn prefWidth="75.0" text="Health">
+          <cellValueFactory>
+            <!-- Le nom du champ privé -->
+            <PropertyValueFactory property="healthStatus" />
+          </cellValueFactory>
+        </TableColumn>
+        <TableColumn prefWidth="75.0" text="Missions">
+          <cellValueFactory>
+            <PropertyValueFactory property="missions" />
+          </cellValueFactory>
+        </TableColumn>
+      </columns>
+    </TableView>
+  </children>
+</AnchorPane>

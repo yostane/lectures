@@ -1,0 +1,29 @@
+plugins {
+    id 'war'
+    id 'io.openliberty.tools.gradle.Liberty' version '3.7'
+}
+
+version '1.0-SNAPSHOT'
+group 'com.cours.jee'
+
+sourceCompatibility = 17
+targetCompatibility = 17
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // provided dependencies
+    providedCompile 'jakarta.platform:jakarta.jakartaee-api:10.0.0' 
+    
+    // test dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.microshed:microshed-testing-liberty:0.9.1'
+    testImplementation 'org.testcontainers:testcontainers:1.19.1'
+}
+
+clean.dependsOn 'libertyStop'
