@@ -1,0 +1,24 @@
+meta {
+  name: Update a file with id in body
+  type: http
+  seq: 6
+}
+
+put {
+  url: http://localhost:3000
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "id": 2,
+    "name": "serrure.png",
+    "size": 300,
+    "url": "https://fr.wikipedia.org/wiki/Serrure#/media/Fichier:Serrure-Dogon.jpg"
+  }
+}

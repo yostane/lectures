@@ -1,0 +1,20 @@
+{
+  "entryFile": "src/main.ts",
+  "controllerPathGlobs": ["src/**/*Controller.ts"],
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "spec": {
+    "outputDirectory": "public",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "jwt": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "routes": {
+    "routesDir": "build",
+    "middleware": "express"
+  }
+}

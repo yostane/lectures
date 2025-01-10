@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "module": "NodeNext"
+  }
+}

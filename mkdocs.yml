@@ -31,6 +31,12 @@ nav:
     - dotnet/asp-dot-net-exercices.md
     - dotnet/monogame.md
     - dotnet/maui.md
+  - JavaScript:
+    - js/index.md
+    - js/js.md
+    - js/reactjs.md
+    - js/webia.md
+    - js/projets.md
   - Programmation distribuée:
     - distrib/index.md
 
@@ -85,7 +91,16 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.snippets:
-      base_path: ["includes", "material/java/common", "material/dotnet/csharp", "material/dotnet/dotnet", "material/dotnet"]
+      base_path: 
+        - includes
+        - material/java/common
+        - material/dotnet/csharp
+        - material/dotnet/dotnet
+        - material/dotnet
+        - material/js/poo
+        - material/js/functional
+        - material/js/generalities
+        - material/js/classes
       auto_append:
         - "includes/abbreviations.md"
   - pymdownx.tabbed:

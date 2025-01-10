@@ -1,0 +1,33 @@
+@base_url=http://localhost:3000/api
+//@base_url=https://yoscours.alwaysdata.net/api
+###
+{{base_url}}/cards
+###
+POST {{base_url}}/cards
+Content-Type: application/json
+
+{
+    "name": "Raigeki",
+    "attack": 0,
+    "type": "magie"
+}
+###
+POST {{base_url}}/cards
+Content-Type: application/json
+
+{
+    "name": "Monster reborn",
+    "attack": 0,
+    "type": "magie"
+}
+###
+POST {{base_url}}/auth/login
+Content-Type: application/json
+
+{
+    "mail": "test@test.com",
+    "password": "test"
+}
+###
+{{base_url}}/cards/favorites
+Authorization: Bearer test@test.com-lqdp0low

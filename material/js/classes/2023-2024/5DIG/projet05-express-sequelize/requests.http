@@ -1,0 +1,91 @@
+//@base_url=http://localhost:3000
+@base_url=yoscours.alwaysdata.net
+###
+POST {{base_url}}/users/register
+Content-Type: application/json
+
+{
+  "email":"drvet@vet.com",
+  "password": "pwd",
+  "isVet": true
+}
+###
+# @name vetLogin
+POST {{base_url}}/users/login
+Content-Type: application/json
+
+{
+  "email":"drvet@vet.com",
+  "password": "pwd"
+}
+###
+POST {{base_url}}/users/register
+Content-Type: application/json
+
+{
+  "email":"mail@mail.com",
+  "password": "pwd",
+  "isVet": false
+}
+###
+# @name nonVetLogin
+POST {{base_url}}/users/login
+Content-Type: application/json
+
+{
+  "email":"mail@mail.com",
+  "password": "pwd"
+}
+###
+@vetAuthToken={{vetLogin.response.body.token}}
+@nonVetAuthToken={{nonVetLogin.response.body.token}}
+###
+GET {{base_url}}/animals
+Authorization: Bearer {{nonVetAuthToken}}
+###
+POST {{base_url}}/animals
+Authorization: Bearer {{nonVetAuthToken}}
+Content-Type: application/json
+
+{
+    "name": "Milou {{$randomInt 1 200}}"
+}
+###
+PUT {{base_url}}/animals/1
+Authorization: Bearer {{nonVetAuthToken}}
+Content-Type: application/json
+
+{
+    "name": "Idéfix {{$randomInt 1 200}}"
+}
+###
+DELETE {{base_url}}/animals/1
+Authorization: Bearer {{nonVetAuthToken}}
+###
+DELETE {{base_url}}/animals/2
+Authorization: Bearer {{nonVetAuthToken}}
+###
+POST {{base_url}}/appointments
+Authorization: Bearer {{nonVetAuthToken}}
+Content-Type: application/json
+
+{
+  "idVet" : 1,
+  "idAnimal": 1,
+  "date": "2024-07-01T09:30:00.0Z",
+  "comment": "nez qui coule"
+}
+###
+POST {{base_url}}/appointments
+Authorization: Bearer {{nonVetAuthToken}}
+Content-Type: application/json
+
+{
+  "idVet" : 1,
+  "idAnimal": 2,
+  "date": "2024-07-02T10:00:00.0Z",
+  "comment": "dent malade"
+}
+###
+GET {{base_url}}/appointments
+Authorization: Bearer {{vetAuthToken}}
