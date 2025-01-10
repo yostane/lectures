@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create question</title>
+</head>
+
+<body>
+  <form action="submit_question" method="post">
+    {% csrf_token %}
+    <div><label for="question">Question:</label>
+      <input name="question" type="text" minlength="1" />
+    </div>
+    <ul>
+      <li><label for="choice1">Choice 1:</label>
+        <input name="choice1" type="text" minlength="1" />.
+        <label for="votes1">votes 1:</label>
+        <input name="votes1" type="number" min="0" />
+      </li>
+      <li><label for="choice2">Choice 2:</label>
+        <input name="choice2" type="text" minlength="1" />.
+        <label for="votes2">Votes 2:</label>
+        <input name="votes2" type="number" min="0" />
+      </li>
+    </ul>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+</html>

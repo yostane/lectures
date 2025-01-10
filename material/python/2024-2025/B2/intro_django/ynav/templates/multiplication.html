@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current time</title>
+</head>
+
+<body>
+  <h1>Multiplication table of {{ n }}</h1>
+  <ul>
+    {% for i in r %}
+    <li>{{ i }} x {{ n }} = {% widthratio i 1 n %}</li>
+    {% endfor %}
+  </ul>
+  <p>
+    Djando template can't permform arithmetic operations +, *, - .... easily. Instead, we can use <a
+      href="https://stackoverflow.com/a/31344351">widthratio</a> to multiply
+  </p>
+</body>
+
+</html>

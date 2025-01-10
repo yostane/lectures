@@ -8,6 +8,13 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/yostane
+  alternate:
+    - name: Français
+      link: ""
+      lang: fr
+    - name: English
+      link: ""
+      lang: en
 
 nav:
   - index.md
@@ -37,12 +44,34 @@ nav:
     - js/reactjs.md
     - js/webia.md
     - js/projets.md
+  - Python:
+    - python/index.md
+    - python/index.en.md
+    - python/python-tour.md
+    - python/python-tour.en.md
+    - python/python-exercices.md
+    - python/python-exercices.en.md
+    - python/python-poo.md
+    - python/python-poo.en.md
+    - python/python-poo-exercices.md
+    - python/python-func.md
+    - python/python-func-exercices.md
+    - python/tkinter.md
+    - python/tkinter-exercices.md
+    - python/django-tour.md
+    - python/django-tour.en.md
+    - python/projects-type.md
   - Programmation distribuée:
     - distrib/index.md
 
 plugins:
   - search
   - glightbox
+  - i18n:
+      languages:
+        fr: "Français"
+        en: "English"
+      default_language: "fr"
 
 theme:
   logo: img/logo.jpg
@@ -101,6 +130,10 @@ markdown_extensions:
         - material/js/functional
         - material/js/generalities
         - material/js/classes
+        - material/python/tour
+        - material/python/poo
+        - material/python/demos
+        - material/python
       auto_append:
         - "includes/abbreviations.md"
   - pymdownx.tabbed:

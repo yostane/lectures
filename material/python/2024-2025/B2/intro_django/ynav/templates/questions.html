@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions</title>
+</head>
+
+<body>
+  {{ q }}
+
+  Un seul foreach
+  <ol>
+    {% for question in q %}
+    <li>
+      {{ question.question_text }}. Date: {{ question.pub_date }}. Choices {{ question.choice_set }}
+
+    </li>
+    {% endfor %}
+  </ol>
+
+  un foreach imbriqué dans un autre pour afficher les choix de chaque question
+  <ol>
+    {% for question in q %}
+    <li>
+      {{ question.question_text }}. Date: {{ question.pub_date }}
+      <ul>
+        {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} - {{ choice.votes }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ol>
+</body>
+
+</html>

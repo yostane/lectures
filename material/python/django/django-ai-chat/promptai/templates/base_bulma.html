@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <title>
+            {% block title %}
+            {% endblock title %}
+        </title>
+    </head>
+    <body>
+        <section class="section">
+            <nav class="level">
+                <p class="level-item has-text-centered">
+                    <a class="link is-info" href="{% url 'index' %}">Home</a>
+                </p>
+                <p class="level-item has-text-centered">
+                    <a class="link is-info" href="{% url 'prompt-input' %}">Prompt Input</a>
+                </p>
+                <p class="level-item has-text-centered">
+                    <a class="link is-info" href="{% url 'material-demo' %}">Material demo</a>
+                </p>
+                <p class="level-item has-text-centered">
+                    <img src="https://bulma.io/images/bulma-type.png"
+                         alt=""
+                         style="height: 30px">
+                </p>
+                <p class="level-item has-text-centered">
+                    <a class="link is-info" href="{% url 'bulma-demo' %}">bulma demo</a>
+                </p>
+                {% if user.is_authenticated %}
+                    <p class="level-item has-text-centered">
+                        Hello {{ user.username }} -
+                        <a class="link is-info" href="{% url 'logout' %}">logout</a>
+                    </p>
+                {% else %}
+                    <p class="level-item has-text-centered">
+                        <a class="link is-info" href="{% url 'register' %}">Register</a>
+                    </p>
+                    <p class="level-item has-text-centered">
+                        <a class="link is-info" href="{% url 'login' %}">Login</a>
+                    </p>
+                {% endif %}
+            </nav>
+        </section>
+        <section class="section">
+            <div class="container">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>Cours de Django 2023</p>
+            </div>
+        </footer>
+    </body>
+</html>

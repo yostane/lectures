@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat AI</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="{% url 'index' %}">Index</a>
+      </li>
+      <li>
+        <a href="{% url 'prompt-input' %}">Prompt Input</a>
+      </li>
+      <li>
+        <a href="{% url 'ai-chat' %}">AI Chat</a>
+      </li>
+      <li>
+        <a href="{% url 'material-demo' %}">Material demo</a>
+      </li>
+      <li>
+        <a href="{% url 'bulma-demo' %}">bulma demo</a>
+      </li>
+    </ul>
+    <a href="{% url 'prompt-input' %}">Enter your prompt</a>
+    <h1>Prompt list</h1>
+    <ul>
+      {% for prompt in prompts %}<li>{{ prompt.query }}: {{ prompt.reply }} from {{ prompt.user.username }}</li>{% endfor %}
+    </ul>
+  </body>
+</html>

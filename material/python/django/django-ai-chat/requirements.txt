@@ -1,0 +1,10 @@
+# pip install -r requirements.txt
+Django==4.2.11
+## Material kit (à inclure si vous choisissez de l'utiliser)
+django-theme-material-kit==1.0.19 
+# Css de bulma dans les formulaires (si vous utilisez bulma)
+django-bulma
+torch
+torchvision
+torchaudio
+transformers

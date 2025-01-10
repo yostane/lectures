@@ -1,0 +1,9 @@
+html {
+  background-color:  aliceblue;
+    min-height: 100%;/* fill the screen height to allow vertical alignement */
+    display: grid; /* display:flex works too since body is the only grid cell */
+  }
+  
+  body {
+    margin: auto;
+  }

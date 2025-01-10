@@ -1,0 +1,32 @@
+{% extends "layouts/base_background.html" %}
+{% load static %}
+{% block title %}
+    Hello Material
+{% endblock title %}
+{% block body %}
+    class="index-page bg-gray-200"
+{% endblock body %}
+{% block content %}
+    <div class="card" data-animation="true">
+        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">Query</div>
+        <div class="card-body text-center">
+            <div class="d-flex mt-n6 mx-auto">
+                <a class="btn btn-link text-primary ms-auto border-0"
+                   data-bs-toggle="tooltip"
+                   data-bs-placement="bottom"
+                   title="Refresh">
+                    <i class="material-icons text-lg">refresh</i>
+                </a>
+                <button class="btn btn-link text-info me-auto border-0"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Edit">
+                    <i class="material-icons text-lg">edit</i>
+                </button>
+            </div>
+            <p class="mb-0">Response</p>
+        </div>
+    </div>
+{% endblock content %}
+{% block javascripts %}
+{% endblock javascripts %}

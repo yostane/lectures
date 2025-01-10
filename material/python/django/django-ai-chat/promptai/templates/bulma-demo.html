@@ -1,0 +1,43 @@
+{% extends "base_bulma.html" %}
+{% load static %}
+{% load bulma_tags %}
+{% block title %}
+    Démo Bulma
+{% endblock title %}
+{% block content %}
+    <form action="{% url 'bulma-demo' %}" method="post" class="box">
+        {% csrf_token %}
+        {{ prompt_form|bulma }}
+        <div class="field">
+            <div class="control">
+                <input type="submit" class="button is-link" value="OK" />
+            </div>
+        </div>
+    </form>
+    <div class="section">
+        <h1 class="title">Historique</h1>
+        <div class="columns is-multiline">
+            {% for prompt in prompts %}
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">{{ prompt.query }}</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p>{{ prompt.reply }}</p>
+                                <time datetime="2016-1-1">{{ prompt.date }}</time>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="{% url 'bulma-demo' %}?load_id={{ prompt.id }}"
+                               class="card-footer-item">Load</a>
+                            <a href="{% url 'bulma-demo' %}?del_id={{ prompt.id }}"
+                               class="card-footer-item button is-danger">Delete</a>
+                        </footer>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

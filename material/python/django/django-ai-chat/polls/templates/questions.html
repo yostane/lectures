@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questions</title>
+  </head>
+  <body>
+    <a href="prompt-input">Enter your prompt</a>
+    <h1>Prompt list</h1>
+    <ul>
+      {% for question in questions %}
+      <li>
+        {{ question.question_text }}. Date: {{ question.pub_date }}
+        <ul>
+          {% for choice in question.choice_set() %}
+          <li></li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

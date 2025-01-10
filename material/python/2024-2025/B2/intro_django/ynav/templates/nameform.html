@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello form</title>
+</head>
+
+<body>
+  <form action="nameform" method="post">
+    {% csrf_token %}
+    <div><label for="name">Name:</label>
+      <input name="name" type="text" minlength="1" />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+</html>

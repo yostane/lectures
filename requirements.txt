@@ -2,3 +2,4 @@ mdx-truly-sane-lists
 mkdocs-glightbox
 mkdocs-material==9.4.6
 regex==2023.10.3
+mkdocs-i18n==0.4.6
