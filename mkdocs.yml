@@ -80,6 +80,10 @@ nav:
         - archi/2425/kafka.md
         - archi/2425/kube.md
         - archi/2425/structurizr.md
+  - Développement desktop:
+    - desktopdev/index.md
+    - desktopdev/features.md
+    - desktopdev/project.md
   - Programmation distribuée:
     - distrib/index.md
 

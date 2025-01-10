@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+</head>
+
+<body>
+  <h1>💖 Hello World!</h1>
+  <p>Welcome to your Electron application.</p>
+  <div id="files"></div>
+  <p id="count_element"></p>
+  <button onclick="increment()">Click</button>
+  <script type="module" src="/src/renderer.ts"></script>
+  <script>
+    let count = 0;
+    async function increment() {
+      count++;
+      document.getElementById("count_element").innerText = count + "";
+      console.log(window.versions);
+      console.log(window.versions.getFolderContent());
+    }
+  </script>
+</body>
+
+</html>
