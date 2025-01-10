@@ -7,14 +7,11 @@ contextBridge.exposeInMainWorld("versions", {
   node: () => process.versions.node,
   chrome: () => process.versions.chrome,
   electron: () => process.versions.electron,
-  getFolderContent: async () => {
-    const file = await fs.readFile("tconfig.json");
-    return file;
-  },
 });
 
-window.window.addEventListener("DOMContentLoaded", async () => {
+window.addEventListener("DOMContentLoaded", async () => {
   const files = await fs.readdir(".");
-  document.getElementById("files").innerHTML = files.join(" - ");
+  const html = files.map((file) => `<li>${file}</li>`).join("\n");
+  document.getElementById("files").innerHTML = `<ul>${html}</ul>`;
   console.log(files);
 });

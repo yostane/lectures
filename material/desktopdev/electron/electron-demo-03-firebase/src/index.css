@@ -1,0 +1,35 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+}
+
+li:hover::before {
+  content: "👉"
+}
+
+.form-group {
+  border: 2px solid blue;
+  padding: 0.5em;
+}
+
+.form-group > * {
+  padding: 0.5em;
+}
+
+.form-group > div {
+  display: inline-block; 
+}
+
+.form-group > div > label {
+  width: 9em;
+  display: inline-block;
+}
+
+.form-group > div > button {
+  border-radius: 5px;
+  margin: 0.5em;
+  padding: 0.5em;
+}

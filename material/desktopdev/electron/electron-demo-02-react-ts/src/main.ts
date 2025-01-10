@@ -1,10 +1,9 @@
 import { app, BrowserWindow } from "electron";
-import path from "path";
-import fs from "node:fs";
+import installExtension, {
+  REACT_DEVELOPER_TOOLS,
+} from "electron-devtools-installer";
 
-fs.readdir("/", {}, (err, files) => {
-  console.log(files);
-});
+import path from "path";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -18,7 +17,6 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-      //sandbox: false,
       preload: path.join(__dirname, "preload.js"),
     },
   });
@@ -41,6 +39,15 @@ const createWindow = () => {
 // Some APIs can only be used after this event occurs.
 app.on("ready", createWindow);
 
+app.on("ready", async () => {
+  try {
+    const name = await installExtension("REACT_DEVELOPER_TOOLS");
+    console.log(`Added Extension: ${REACT_DEVELOPER_TOOLS}`);
+  } catch (err) {
+    console.error("An error occurred: ", err);
+  }
+});
+
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
@@ -57,6 +64,5 @@ app.on("activate", () => {
     createWindow();
   }
 });
-
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
