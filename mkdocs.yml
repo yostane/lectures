@@ -57,6 +57,7 @@ nav:
     - python/python-func.md
     - python/python-func-exercices.md
     - python/tkinter.md
+    - python/tkinter.en.md
     - python/tkinter-exercices.md
     - python/django-tour.md
     - python/django-tour.en.md
@@ -92,14 +93,14 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-      primary: yellow
-      accent: green
+      primary: indigo
+      accent: light green
     - scheme: slate
       media: "(prefers-color-scheme: dark)"
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-      primary: yellow
+      primary: indigo
       accent: green
 
 markdown_extensions:
