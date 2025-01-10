@@ -1,0 +1,8 @@
+@base_url=http://localhost:5043
+{{base_url}}/
+###
+{{base_url}}/heroes
+###
+{{base_url}}/heroes/1
+###
+{{base_url}}/heroes/0

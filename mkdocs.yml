@@ -21,6 +21,16 @@ nav:
       - java/java-exercices-4.md
     - java/jee.md
     - java/javafx.md
+  - .Net:
+    - dotnet/index.md
+    - dotnet/csharp-tour.md
+    - dotnet/csharp-exercices.md
+    - dotnet/dotnet.md
+    - dotnet/dotnet-exercices.md
+    - dotnet/asp-dot-net.md
+    - dotnet/asp-dot-net-exercices.md
+    - dotnet/monogame.md
+    - dotnet/maui.md
   - Programmation distribuée:
     - distrib/index.md
 
@@ -37,6 +47,8 @@ theme:
     - navigation.indexes
     - content.code.copy
     - navigation.tabs
+    - navigation.path
+    - content.code.select
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -73,7 +85,7 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.snippets:
-      base_path: ["includes", "material/java/common"]
+      base_path: ["includes", "material/java/common", "material/dotnet/csharp", "material/dotnet/dotnet", "material/dotnet"]
       auto_append:
         - "includes/abbreviations.md"
   - pymdownx.tabbed:
