@@ -62,6 +62,24 @@ nav:
     - python/django-tour.md
     - python/django-tour.en.md
     - python/projects-type.md
+  - Architecture logicielle:
+    - archi/index.md
+    - archi/katas.md
+    - archi/kata-examples.md
+    - archi/archi-doc.md
+    - Sujets de veille:
+      - archi/sujets-vrac.md
+      - archi/sujets-2324.md
+      - Sujets 24-25:
+        - archi/2425/index.md
+        - archi/2425/adr.md
+        - archi/2425/unclebob.md
+        - archi/2425/cloud_vs_onpremise.md
+        - archi/2425/saas.md
+        - archi/2425/oidc.md
+        - archi/2425/kafka.md
+        - archi/2425/kube.md
+        - archi/2425/structurizr.md
   - Programmation distribuée:
     - distrib/index.md
 
