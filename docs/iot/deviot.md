@@ -19,6 +19,12 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
 - Explorer quelques exemples de projets pour comprendre comment ça marche.
 - [](https://docs.wokwi.com/guides/esp32#micropython)
 
+## Brokers MQTT
+
+Quelques brokers MQTT gratuits : [shiftr.io/cloud](https://www.shiftr.io/cloud/), [cloudamqp](https://www.cloudamqp.com/plans.html#rmq), [hivemq](https://www.hivemq.com/pricing/), [flespi](https://flespi.com/pricing).
+
+- Créer un compte gratuit sur un des brokers MQTT ci-dessus. On prendra shiftr.io pour cet exemple.
+
 ## Sources et références
 
 - Simulateur de carte de développement alternatif mais qui ne propose pas de ESP32 [tinkercad.com/circuits](https://www.tinkercad.com/circuits)
