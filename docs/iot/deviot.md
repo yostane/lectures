@@ -7,6 +7,25 @@ Voici les éléments que l'on va utiliser :
 - **Passerelle** : on va utiliser un serveur MQTT pour échanger des messages entre les capteurs et l'application.
 - **Application** : on va développer une application web pour visualiser les données et envoyer des commandes.
 
+## Brokers MQTT
+
+MQTT suit le modèle de publication/abonnement (pub/sub) où les clients s'abonnent à des topics pour recevoir des messages et publient des messages sur des topics. Les clients peuvent êtres des capteurs, des actionneurs ou des applications.
+
+```mermaid
+graph LR
+    A[Client 1] -->|pub topic1| E((Broker))
+    B[Client 2] <-->|sub topic1| E
+    C[Client 3] -->|pub topic2| E
+    D[Client 4] -->|pub topic2| E
+    D[Client 4] <-->|sub topic1| E
+```
+
+Quelques brokers MQTT gratuits : [shiftr.io/cloud](https://www.shiftr.io/cloud/), [cloudamqp](https://www.cloudamqp.com/plans.html#rmq), [hivemq](https://www.hivemq.com/pricing/), [flespi](https://flespi.com/pricing).
+
+- Créer un compte gratuit sur un des brokers MQTT ci-dessus. On prendra shiftr.io pour cet exemple.
+- Déployer une nouvelles instance de broker MQTT.
+- Ouvrir le dashboard de l'instance et noter les informations de connexion (URL, port, login, mot de passe).
+
 ## Capteurs et actionneurs
 
 On va utiliser une carte de développement ESP32 pour ce tutoriel.
@@ -15,15 +34,8 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
 
 ![ESP32-DevKitC V4](./img/esp32-devkitc-functional-overview.jpg)
 
-- Ouvrir la page [wokwi.com/micropython](https://wokwi.com/micropython)
-- Explorer quelques exemples de projets pour comprendre comment ça marche.
-- [](https://docs.wokwi.com/guides/esp32#micropython)
-
-## Brokers MQTT
-
-Quelques brokers MQTT gratuits : [shiftr.io/cloud](https://www.shiftr.io/cloud/), [cloudamqp](https://www.cloudamqp.com/plans.html#rmq), [hivemq](https://www.hivemq.com/pricing/), [flespi](https://flespi.com/pricing).
-
-- Créer un compte gratuit sur un des brokers MQTT ci-dessus. On prendra shiftr.io pour cet exemple.
+- Ouvrir la page [wokwi.com/micropython](https://wokwi.com/micropython) et explorer quelques exemples de projets pour comprendre comment ça marche.
+- Si on souhaite démarrer un nouveau projet, [des modèles sont disponibles ici](https://docs.wokwi.com/guides/esp32#micropython)
 
 ## Sources et références
 
