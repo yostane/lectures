@@ -27,7 +27,11 @@ Quelques brokers MQTT gratuits : [shiftr.io/cloud](https://www.shiftr.io/cloud/)
 - Configurer un nouvel utilisateur et un mot de passe pour se connecter au broker.
 - Tester le broker depuis le client web intégré ou depuis [mqttx](https://mqttx.app/).
 
-### Développement d'un client MQTT Web
+## Développement d'un client MQTT Web
+
+### Utilisation de la librairie MQTT
+
+Nous allons créer une webapp qui se connecte au broker MQTT et qui peut envoyer un message et en recevoir sur le topic `"test"`.
 
 - Créer une application vanilla avec Vite : `npm create vite`
 - Installer la librairie du client MQTT : `npm install mqtt`
@@ -51,7 +55,23 @@ Quelques brokers MQTT gratuits : [shiftr.io/cloud](https://www.shiftr.io/cloud/)
     ```
 
 - Lancer le serveur de développement : `npm run dev`
-- Ouvrir la console du navigateur pour voir les messages reçus. Envoyer des messages depuis le client web intégré du broker vers le topic `"test"` pour les recevoir dans l'application.
+- Ouvrir la console du navigateur pour voir les messages reçus. Envoyer des messages depuis le client web intégré du broker vers le topic `"test"` pour les recevoir dans l'application (vérifier la console du navigateur).
+
+### Utilisation de la librairie chart.js
+
+Cette librairie permet d'afficher des graphiques en temps réel.
+C'est très utile pour visualiser les données des capteurs.
+
+- Installer la librairie : `npm install chart.js`
+- Ajouter un canvas dans le fichier `index.html` :
+
+    ```html
+    <canvas id="myChart" width="400" height="400"></canvas>
+    ```
+
+- Dans `main.js`, initialiser un graph de type [line chart](https://www.chartjs.org/docs/latest/charts/line.html)
+- S'abonner au topic `"temperature"`. On suppose que les messages reçus sont des nombres représentant la température. Les messages sont reçus au format texte brut (pas de JSON) comme `"25.5"`.
+- A chaque réception d'un message dans le topic `"temperature"`, ajouter une nouvelle donnée au graphique comme indiqué dans [la documentation officielle](https://www.chartjs.org/docs/latest/developers/updates.html).
 
 ## Capteurs et actionneurs
 
