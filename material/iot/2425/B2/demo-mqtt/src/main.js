@@ -2,7 +2,22 @@ import "./style.css";
 import javascriptLogo from "./javascript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.js";
+// de là
 import mqtt from "mqtt"
+// Connection au broker
+const client = mqtt.connect(import.meta.env.VITE_MQTT_URL, {
+  clientId: "Navigateur"
+});
+// Quand la connexion réussit, on effectue une action de souscription et une publication
+client.on("connect", async () => {
+  await client.subscribeAsync("test");
+  await client.publishAsync("presence", "Client web connecté")
+});
+// quand on reçoit un message, on log son topic et son contenu
+client.on("message", (topic, message) => {
+  console.log(topic, message.toString());
+});
+// jusque là
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -23,16 +38,3 @@ document.querySelector("#app").innerHTML = `
 `;
 
 setupCounter(document.querySelector("#counter"));
-
-const client = mqtt.connect(import.meta.env.VITE_MQTT_URL, {
-  clientId: "Navigateur"
-});
-
-client.on("connect", async () => {
-  await client.subscribeAsync("test");
-  await client.publishAsync("presence", "Client web connecté")
-});
-
-client.on("message", (topic, message) => {
-  console.log(topic, message.toString());
-});
