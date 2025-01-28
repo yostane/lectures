@@ -17,10 +17,13 @@ b = "Hello" # b est une chaîne de caractères (en Anglais string)
 c = -2 # c est un entier
 d = True
 e = False # d et e sont des boolées (ne peut valoir que True ou False)
-# opérateurs qui retournent un booléen = et == sont différents
-# Opérateur binaires (qui prennenent deux opérandes)
-print(10 > 1, a < c, d == e, c >= 5, a <= 0)
+# opérateurs qui retournent un booléen
+print(10 > 1, a < c, d == e, d!= e, c >= 5, a <= 0)
+# = et == sont différents => = fait l'affectation. == teste l'égalité des opérandes
+# != signifie "différente de"
 
+
+# Les Opérateur binaires: opérateurs qui prennenent deux opérandes
 # input récupère la saisie de l'utilisateur et le = l'affecte à user_input
 user_input = input("Veuillez saisir quelque chose : ")
 print("L'utilisateur a saisi", user_input)
