@@ -89,6 +89,7 @@ nav:
   - IoT:
     - iot/index.md
     - iot/deviot.md
+    - iot/exo_mqtt.md
 
 plugins:
   - search
