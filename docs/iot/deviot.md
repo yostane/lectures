@@ -34,21 +34,24 @@ Quelques brokers MQTT gratuits : [shiftr.io/cloud](https://www.shiftr.io/cloud/)
 - Ajouter un fichier `.env` qui contient l'URL de connexion. `VITE_MQTT_URL="wss://[identifiant]:[mdp]@[url_du_broker]:8884/mqtt"`
 - Ajouter le contenu suivant dans le fichier `main.js` :
 
-```js
-import mqtt from 'mqtt'
+    ```js
+    import mqtt from 'mqtt'
 
-const client = mqtt.connect(import.meta.env.VITE_MQTT_URL);
+    const client = mqtt.connect(import.meta.env.VITE_MQTT_URL);
 
-client.on('connect', asyync () => {
-  console.log('connected')
-  await client.subscribeAsync("test");
-  await client.publishAsync("presence", "Client web connecté")
-});
+    client.on('connect', asyync () => {
+    console.log('connected')
+    await client.subscribeAsync("test");
+    await client.publishAsync("presence", "Client web connecté")
+    });
 
-client.on('message', (topic, message) => {
-  console.log('received', topic, message)
-});
-```
+    client.on('message', (topic, message) => {
+    console.log('received', topic, message)
+    });
+    ```
+
+- Lancer le serveur de développement : `npm run dev`
+- Ouvrir la console du navigateur pour voir les messages reçus. Envoyer des messages depuis le client web intégré du broker vers le topic `"test"` pour les recevoir dans l'application.
 
 ## Capteurs et actionneurs
 
