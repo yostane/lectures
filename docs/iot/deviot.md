@@ -22,9 +22,33 @@ graph LR
 
 Quelques brokers MQTT gratuits : [shiftr.io/cloud](https://www.shiftr.io/cloud/), [cloudamqp](https://www.cloudamqp.com/plans.html#rmq), [hivemq](https://www.hivemq.com/pricing/), [flespi](https://flespi.com/pricing).
 
-- Créer un compte gratuit sur un des brokers MQTT ci-dessus. On prendra shiftr.io pour cet exemple.
+- Créer un compte gratuit sur un des brokers MQTT ci-dessus. On prendra [hivemq](https://www.hivemq.com) pour cet exemple.
 - Déployer une nouvelles instance de broker MQTT.
-- Ouvrir le dashboard de l'instance et noter les informations de connexion (URL, port, login, mot de passe).
+- Configurer un nouvel utilisateur et un mot de passe pour se connecter au broker.
+- Tester le broker depuis le client web intégré ou depuis [mqttx](https://mqttx.app/).
+
+### Développement d'un client MQTT Web
+
+- Créer une application vanilla avec Vite : `npm create vite`
+- Installer la librairie du client MQTT : `npm install mqtt`
+- Ajouter un fichier `.env` qui contient l'URL de connexion. `VITE_MQTT_URL="wss://[identifiant]:[mdp]@[url_du_broker]:8884/mqtt"`
+- Ajouter le contenu suivant dans le fichier `main.js` :
+
+```js
+import mqtt from 'mqtt'
+
+const client = mqtt.connect(import.meta.env.VITE_MQTT_URL);
+
+client.on('connect', asyync () => {
+  console.log('connected')
+  await client.subscribeAsync("test");
+  await client.publishAsync("presence", "Client web connecté")
+});
+
+client.on('message', (topic, message) => {
+  console.log('received', topic, message)
+});
+```
 
 ## Capteurs et actionneurs
 
