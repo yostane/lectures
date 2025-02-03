@@ -83,6 +83,12 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
 
 - Ouvrir la page [wokwi.com/micropython](https://wokwi.com/micropython) et explorer quelques exemples de projets pour comprendre comment ça marche.
 - Si on souhaite démarrer un nouveau projet, [des modèles sont disponibles ici](https://docs.wokwi.com/guides/esp32#micropython)
+- [umqtt.simple](https://mpython.readthedocs.io/en/v2.2.1/library/mPython/umqtt.simple.html) est la librairie MQTT pour MicroPython.
+
+Quelques projets:
+
+- ESP32 + LED
+- [ESP32 + DHT22](https://wokwi.com/projects/421878757422340097)
 
 ## Sources et références
 
