@@ -19,31 +19,31 @@ extra:
 nav:
   - index.md
   - Java:
-    - java/index.md
-    - java/java-tour.md
-    - Exercices:
-      - java/java-exercices-1.md
-      - java/java-exercices-2.md
-      - java/java-exercices-3.md
-      - java/java-exercices-4.md
-    - java/jee.md
-    - java/javafx.md
+      - java/index.md
+      - java/java-tour.md
+      - Exercices:
+          - java/java-exercices-1.md
+          - java/java-exercices-2.md
+          - java/java-exercices-3.md
+          - java/java-exercices-4.md
+      - java/jee.md
+      - java/javafx.md
   - .Net:
-    - dotnet/index.md
-    - dotnet/csharp-tour.md
-    - dotnet/csharp-exercices.md
-    - dotnet/dotnet.md
-    - dotnet/dotnet-exercices.md
-    - dotnet/asp-dot-net.md
-    - dotnet/asp-dot-net-exercices.md
-    - dotnet/monogame.md
-    - dotnet/maui.md
+      - dotnet/index.md
+      - dotnet/csharp-tour.md
+      - dotnet/csharp-exercices.md
+      - dotnet/dotnet.md
+      - dotnet/dotnet-exercices.md
+      - dotnet/asp-dot-net.md
+      - dotnet/asp-dot-net-exercices.md
+      - dotnet/monogame.md
+      - dotnet/maui.md
   - JavaScript:
-    - js/index.md
-    - js/js.md
-    - js/reactjs.md
-    - js/webia.md
-    - js/projets.md
+      - js/index.md
+      - js/js.md
+      - js/reactjs.md
+      - js/webia.md
+      - js/projets.md
   - Python:
     - python/index.md
     - python/index.en.md
@@ -61,40 +61,41 @@ nav:
     - python/tkinter-exercices.md
     - python/django-tour.md
     - python/django-tour.en.md
-    - python/projects-type.md
+    - python/projects-type.md             
   - Test:
     - test/index.md
     - test/generalites.md
     - test/librairies.md
     - test/projet.md
   - Archi. logicielle:
-    - archi/index.md
-    - archi/katas.md
-    - archi/kata-examples.md
-    - archi/archi-doc.md
-    - Sujets de veille:
-      - archi/sujets-vrac.md
-      - archi/sujets-2324.md
-      - Sujets 24-25:
-        - archi/2425/index.md
-        - archi/2425/adr.md
-        - archi/2425/unclebob.md
-        - archi/2425/cloud_vs_onpremise.md
-        - archi/2425/saas.md
-        - archi/2425/oidc.md
-        - archi/2425/kafka.md
-        - archi/2425/kube.md
-        - archi/2425/structurizr.md
+      - archi/index.md
+      - archi/katas.md
+      - archi/kata-examples.md
+      - archi/archi-doc.md
+      - Sujets de veille:
+          - archi/sujets-vrac.md
+          - archi/sujets-2324.md
+          - Sujets 24-25:
+              - archi/2425/index.md
+              - archi/2425/adr.md
+              - archi/2425/unclebob.md
+              - archi/2425/cloud_vs_onpremise.md
+              - archi/2425/saas.md
+              - archi/2425/oidc.md
+              - archi/2425/kafka.md
+              - archi/2425/kube.md
+              - archi/2425/structurizr.md
   - Dév. desktop:
-    - desktopdev/index.md
-    - desktopdev/features.md
-    - desktopdev/project.md
+      - desktopdev/index.md
+      - desktopdev/features.md
+      - desktopdev/project.md
   - Prog. distribuée:
-    - distrib/index.md
+      - distrib/index.md
   - IoT:
-    - iot/index.md
-    - iot/deviot.md
-    - iot/exo_mqtt.md
+      - iot/index.md
+      - iot/deviot.md
+      - iot/exo_mqtt.md
+      - iot/exo_embedded.md
 
 plugins:
   - search
@@ -156,7 +157,7 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.snippets:
-      base_path: 
+      base_path:
         - includes
         - material/java/common
         - material/dotnet/csharp
