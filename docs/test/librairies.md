@@ -34,12 +34,76 @@ Explorons le projet de démarrage fourni par le [guide officiel](https://junit.o
 - Ouvrir le projet sur VSCode
 - Créer un `@RestController` avec deux routes en @GET et en @POST, un modèle et un service qui gère une liste statique en mémoire.
     - Je vous propose d'utiliser comme modèle une classe `Manga` avec trois champs `ISBN`, `name` et `nbPages`
+
+    ```java
+    --8<--
+    test/exercices/spring-test-starter-01/src/main/java/com/cours/testlog/model/Manga.java
+    --8<--
+    ```
+
+    ```java
+    --8<--
+    test/exercices/spring-test-starter-01/src/main/java/com/cours/testlog/controller/MangaController.java
+    --8<--
+    ```
+
+    ```java
+    --8<--
+    test/exercices/spring-test-starter-01/src/main/java/com/cours/testlog/service/MangaService.java
+    --8<--
+    ```
+
 - Lancer votre serveur et vérifier qu'il fonctionne avec la bonne commande (avec gradle `./gradlew bootRun`, avec maven `./mvnw springboot:run`) ou depuis votre IDE
-- Ecrire des tests unitaires pour le service
+- Écrire des tests unitaires pour le service
 - Spring propose deux façons de tester le contrôleur (en d'autres termes l'API REST).
     - En lançant un serveur web (avec la stack HTTP complète) via la classe `TestRestTemplate`
-    - En lançant un serveur bouchonné (on n'a pas la stack HTTP complète) via la classe `MockMVC`
-- Ecrire des tests pour le contrôleur
+
+    ```java
+    @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+    public class MangaControllerTests {
+        @Autowired
+        private TestRestTemplate restTemplate;
+
+        @Autowired
+        private MangaService mangaService;
+
+        @BeforeEach
+        void setup() {
+            mangaService.removeAll();
+        }
+
+        @Test
+        public void testGetAll() {
+            // https://www.baeldung.com/spring-rest-template-list
+            var response = restTemplate.getForEntity("/manga", Manga[].class);
+            assertEquals(HttpStatus.OK, response.getStatusCode());
+            assertEquals(0, response.getBody().length);
+
+            Manga manga = new Manga();
+            manga.setIsbn("sdsfds");
+            manga.setName("my hero academia");
+            manga.setNbPages(40);
+            restTemplate.postForEntity("/manga", manga, Void.class);
+
+            response = restTemplate.getForEntity("/manga", Manga[].class);
+            assertNotNull(response.getBody());
+            assertEquals(1, response.getBody().length);
+            Manga responseManga = (Manga) response.getBody()[0];
+            org.assertj.core.api.Assertions.assertThat(responseManga.getIsbn()).isEqualTo(manga.getIsbn());
+            assertEquals(manga.getIsbn(), responseManga.getIsbn());
+        }
+
+        @Test
+        public void testCannotAddSameIsbnTwice() {
+            //TODO
+        }
+    }
+    ```
+
+    - En lançant un serveur bouchonné (on n'a pas la stack HTTP complète) via la classe `MockMVC`.
+- Écrire le test de `testCannotAddSameIsbnTwice` qui vérifie que l'on ne peut pas ajouter deux mangas avec le même ISBN. Implémenter ce test avec `TestRestTemplate` et `MockMVC`.
+- Ajouter une méthode PUT qui permet de modifier un manga existant (erreur 404 si le manga n'existe pas). Ajouter un test pour cette méthode.
+- Ajouter une méthode DELETE qui permet de supprimer un manga existant (erreur 404 si le manga n'existe pas). Ajouter un test pour cette méthode.
 
 ### API REST avec une base de données
 
@@ -50,6 +114,7 @@ Nous allons utiliser la BDD H2 pour sa simplicité car c'est une BDD relationnel
 - Créer une classe "Model" avec l'annotation `@Entity` et les annotations `@Id` et `@GeneratedValue` sur sa clé primaire.
 - Créer une interface `xxxxRepository: JpaRepository<Product, Long>` où xxx est le nom de votre modèle
 - Créer un contrôleur avec les routes en @GET, @POST, PUT et DELETE, un modèle et un service qui gère communique avec votre repository
+- Relancer les tests et s'assurer qu'ils fonctionnent toujours.
 
 ## Liens et références
 

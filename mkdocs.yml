@@ -159,6 +159,7 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path:
         - includes
+        - material
         - material/java/common
         - material/dotnet/csharp
         - material/dotnet/dotnet
