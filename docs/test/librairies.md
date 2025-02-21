@@ -101,6 +101,11 @@ Explorons le projet de démarrage fourni par le [guide officiel](https://junit.o
     ```
 
     - En lançant un serveur bouchonné (on n'a pas la stack HTTP complète) via la classe `MockMVC`.
+
+    ```java
+    --8<--test/22-23/spring-test-demo/src/test/java/com/cours/testlog/controller/MangaControllerMockTests.java
+    ```
+
 - Écrire le test de `testCannotAddSameIsbnTwice` qui vérifie que l'on ne peut pas ajouter deux mangas avec le même ISBN. Implémenter ce test avec `TestRestTemplate` et `MockMVC`.
 - Ajouter une méthode PUT qui permet de modifier un manga existant (erreur 404 si le manga n'existe pas). Ajouter un test pour cette méthode.
 - Ajouter une méthode DELETE qui permet de supprimer un manga existant (erreur 404 si le manga n'existe pas). Ajouter un test pour cette méthode.
