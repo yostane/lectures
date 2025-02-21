@@ -1,0 +1,19 @@
+meta {
+  name: add a manga
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/manga
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "isbn": "62sdf461sdf",
+    "name": "Duo Leveling",
+    "nbPages": 203
+  }
+}

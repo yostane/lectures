@@ -1,9 +1,5 @@
 package com.al.vqvc.spring_tesinng_3al2425.exceptions;
 
-enum TechnicalExceptionType {
-  IsbnAlreadyExists,
-}
-
 public class TechnicalException extends Exception {
   private TechnicalExceptionType type;
 

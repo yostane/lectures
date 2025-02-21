@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.al.vqvc.spring_tesinng_3al2425.exceptions.TechnicalException;
 import com.al.vqvc.spring_tesinng_3al2425.model.Manga;
 import com.al.vqvc.spring_tesinng_3al2425.service.MangaService;
 
@@ -28,9 +29,11 @@ public class MangaController {
 
   @PostMapping
   public ResponseEntity<Void> addOne(@RequestBody Manga manga) {
-    if (mangaService.addOne(manga)) {
+    try {
+      mangaService.addOne(manga);
       return ResponseEntity.ok().build();
+    } catch (TechnicalException te) {
+      return ResponseEntity.badRequest().build();
     }
-    return ResponseEntity.badRequest().build();
   }
 }
