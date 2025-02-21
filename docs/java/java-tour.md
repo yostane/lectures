@@ -145,3 +145,7 @@ tour/OptionalDemo.java
 tour/nonnull-annotations/app/src/main/java/org/example/App.java
 --8<--
 ```
+
+## Les exceptions
+
+Les exceptions sont des retours alternatifs d'une méthode qui permettent de signaler une erreur. L'équivalent du `return` pour les exceptions est `throw` en java. Il permet de sortir de la fonction tout en retournant une valeur. Cette valeur doit hériter de la classe `Throwable` et peut être récupérée via un block `try-catch`.
