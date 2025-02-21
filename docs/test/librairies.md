@@ -21,10 +21,10 @@ Explorons le projet de démarrage fourni par le [guide officiel](https://junit.o
 1. Cet [exercice de librecours.net](https://librecours.net/module/js/js18/test-fonctionnel_app.xhtml). Le code est à traduire du JS vers du Java.
 1. Ce [TD qui provient de labri](https://www.labri.fr/perso/renault/working/teaching/testlog/files/td2.pdf). Le `makefile` est l'équivalent de `maven` pour nous. Faire la question 3 avec cette commande à la place de l'outil proposé `mvn surefire-report:report`.
 
-??? Quelques astuces
+??? "Quelques astuces"
 
-    1. RàS
-    1. Fonctions corriger / modifier: `checkDay`, `checkYear`, `checkDayLimits`, renommer ou enlever `maxDayOfMonth(month)`, `testFebruaryValidLimitDates`, `testValidLimitDates`
+    - Exo2 : Fonctions corriger / modifier: `checkDay`, `checkYear`, `checkDayLimits`, renommer ou enlever `maxDayOfMonth(month)`, `testFebruaryValidLimitDates`, `testValidLimitDates`
+    - [Quelques solutions](https://github.com/yostane/lectures/tree/main/material/test/exercices/junit-corrections)
 
 ## Tests dans un projet Spring MVC
 
