@@ -116,6 +116,10 @@ Nous allons utiliser la BDD H2 pour sa simplicité car c'est une BDD relationnel
 - Créer un contrôleur avec les routes en @GET, @POST, PUT et DELETE, un modèle et un service qui gère communique avec votre repository
 - Relancer les tests et s'assurer qu'ils fonctionnent toujours.
 
+### Codes sources
+
+- [Année 2425](https://github.com/yostane/lectures/tree/main/material/test/24-25/spring-tesinng-3al2425)
+
 ## Liens et références
 
 - Anecdote: [SQLite](https://www.sqlite.org/testing.html) est réputé pour avoir une proportion importante de tests.
