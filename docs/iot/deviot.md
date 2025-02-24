@@ -73,7 +73,7 @@ C'est très utile pour visualiser les données des capteurs.
 - S'abonner au topic `"temperature"`. On suppose que les messages reçus sont des nombres représentant la température. Les messages sont reçus au format texte brut (pas de JSON) comme `"25.5"`.
 - A chaque réception d'un message dans le topic `"temperature"`, ajouter une nouvelle donnée au graphique comme indiqué dans [la documentation officielle](https://www.chartjs.org/docs/latest/developers/updates.html).
 
-## Capteurs et actionneurs
+## Programmation embarquée
 
 On va utiliser une carte de développement ESP32 pour ce tutoriel.
 Celle-ci est équipée de WiFi, de Bluetooth et de nombreux GPIO pour connecter des capteurs et des actionneurs.
@@ -85,21 +85,24 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
 - Si on souhaite démarrer un nouveau projet, [des modèles sont disponibles ici](https://docs.wokwi.com/guides/esp32#micropython)
 - [umqtt.simple](https://mpython.readthedocs.io/en/v2.2.1/library/mPython/umqtt.simple.html) est la librairie MQTT pour MicroPython.
 
-Quelques projets:
+### Quelques projets
 
-- ESP32 + LED
+- [ESP32 + LED](https://wokwi.com/projects/421877878949366785)
 - [ESP32 + DHT22](https://wokwi.com/projects/421878757422340097)
 - [LED + Bouton](https://wokwi.com/projects/423777988322853889)
--
+- [Ecran SSD 1306](https://wokwi.com/projects/423777577384768513)
+- [Contrôle d'une LED avec MQTT](https://wokwi.com/projects/421884645656923137)
 
-## Autres compétences à avoir pour faire de l'IoT
+### Autres compétences à avoir pour faire de l'IoT
 
 - [La soudure](https://www.framboise314.fr/comment-bien-souder-un-tutoriel-sur-la-soudure/)
 - Les bases de l'électricité et l'électronique
-- Lexqiue:
-  - GND: (Ground) la terre ou le 0V
-  - VCC: (Voltage Common Collector) le +5V ou +3.3V. La tension d'alimentation.
-  - GP: (General Purpose) broche à usage général (broche I/O)
+
+### Lexique
+
+- GND: (Ground) la terre ou le 0V
+- VCC: (Voltage Common Collector) le +5V ou +3.3V. La tension d'alimentation.
+- GP: (General Purpose) broche à usage général (broche I/O)
 
 ## Sources et références
 
