@@ -93,6 +93,14 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
 - [Ecran SSD 1306](https://wokwi.com/projects/423777577384768513)
 - [Contrôle d'une LED avec MQTT](https://wokwi.com/projects/421884645656923137)
 
+??? "Connexion à un serveur MQTT en SSL/TLS"
+
+    ```python
+    --8<--
+    iot/micropython/02-wokwi-esp32-samples/03-MQTT/main.py
+    --8<--
+    ```
+
 ### Autres compétences à avoir pour faire de l'IoT
 
 - [La soudure](https://www.framboise314.fr/comment-bien-souder-un-tutoriel-sur-la-soudure/)
