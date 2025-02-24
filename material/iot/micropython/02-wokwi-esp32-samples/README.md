@@ -20,7 +20,8 @@
     pip install -r requirements.txt
     ```
 
-- Lancer le simulateur Wokwi depuis la console VSCode
+- Lancer le simulateur Wokwi depuis la console VSCode sur le projet que vous souhaitez lancer
+- Lancer le fichier main.py sur le simulateur Wokwi
 
     ```python
     python -m mpremote connect port:rfc2217://localhost:4000 run [fichier_python.py]
