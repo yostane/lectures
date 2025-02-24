@@ -89,6 +89,17 @@ Quelques projets:
 
 - ESP32 + LED
 - [ESP32 + DHT22](https://wokwi.com/projects/421878757422340097)
+- [LED + Bouton](https://wokwi.com/projects/423777988322853889)
+-
+
+## Autres compétences à avoir pour faire de l'IoT
+
+- [La soudure](https://www.framboise314.fr/comment-bien-souder-un-tutoriel-sur-la-soudure/)
+- Les bases de l'électricité et l'électronique
+- Lexqiue:
+  - GND: (Ground) la terre ou le 0V
+  - VCC: (Voltage Common Collector) le +5V ou +3.3V. La tension d'alimentation.
+  - GP: (General Purpose) broche à usage général (broche I/O)
 
 ## Sources et références
 
