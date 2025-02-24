@@ -4,7 +4,7 @@ Utiliser de préférence un ESP32 comme carte de développement.
 
 ## Série 1
 
-1. Créer un système embarqué qui permet de commander l'allumage et l'extinction d'une LED à partir d'un bouton poussoir. C'est-à-dire, quand j'appuie sur le bouton, la LED s'allume et quand j'appuie une deuxième fois, elle s'éteint.
+1. Créer un système embarqué qui permet de commander l'allumage et l'extinction d'une LED à partir d'un bouton poussoir. C'est-à-dire, quand j'appuie sur le bouton, la LED s'allume et quand j'appuie une deuxième fois, elle s'éteint. ([solution](https://wokwi.com/projects/423779761299536897))
 1. Créer un système embarqué qui affiche la température d'un capteur de température sur un écran SSD 1306.
 1. Créer un système embarqué qui affiche la température d'un capteur de température sur un écran SSD 1306. Quand on appuie sur un bouton poussoir, le système permute entre l'affichage de la température et de la pression atmosphérique.
 
