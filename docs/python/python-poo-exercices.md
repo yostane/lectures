@@ -81,6 +81,14 @@ title: Exerices en POO
     --8<--
     ```
 
+??? "Solution Retro games and consoles"
+
+    ```python
+    --8<--
+    python/poo/ex_retro_game_lib.py
+    --8<--
+    ```
+
 ## Série 2
 
 1. Créer une classe `StringUtils` qui contient les méthodes statiques suivantes:
