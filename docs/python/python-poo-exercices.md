@@ -61,7 +61,7 @@ title: Exerices en POO
         - Afficher les prévisions triées par température croissante avec et sans utiliser les méthodes de tri prédéfinies.
         - Afficher les prévisions triées par température décroissante avec et sans utiliser les méthodes de tri prédéfinies.
         - Le nombre de jours où la température est supérieure à 20°C et le nombre de jours où la température est inférieure à 0°C.
-        - Un dictionnaire qui compter le nombre prévisions qui ont les mêmes températures. Par exemple si 5 jours ont une température de 20°C, et les reste des jours ont -5°C le dictionnaire sera `{"20°C": 5, "-5°C": 25}`.
+        - Un dictionnaire qui compter le nombre prévisions qui ont les mêmes températures. Par exemple si 5 jours ont une température de `20°C`, et les reste des jours ont `-5°C` le dictionnaire sera `{"20°C": 5, "-5°C": 25}`.
 
 ## Série 2
 
