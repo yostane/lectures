@@ -6,11 +6,11 @@ title: Exerices en POO
 
 !!! warning "Consignes"
 
-    - Ne pas de faire aider par des IA ou genAI
+    - Ne pas se faire aider par des IA ou genAI
 
 ## Série 1
 
-1. Créer une classe `Personne` avec les attributs `nom`, `prenom` et `age`. Ajouter une méthode `afficher` qui affiche les informations de la personne. Implémenter les méthodes `__eq__` et `__str__`.
+1. Définir une classe `Personne` avec les attributs `nom`, `prenom` et `age`. Ajouter une méthode `afficher` qui affiche les informations de la personne. Implémenter les méthodes `__eq__` et `__str__`.
     - Créer deux personnes et les afficher.
 1. On souhaite gérer un collection de consoles et jeux rétro avec la POO. Définir les classes `VideoGame` et `VideoGameConsole`. Chaque classe propose les propriétés: `name`, `releaseYear`. La classe `VideoGame` a en plus la propriété `developer` qui est la compagnie ou le développeur qui a développé le jeu. La classe `VideoGameConsole` a en plus la propriété `manufacturer` qui est la compagnie qui a fabriqué la console. Implémenter la méthode `__str__`.
     - Créer une liste `consoles` qui contient les consoles suivantes avec les `name`, `manufacturer` et `releaseYear` suivants:
@@ -33,7 +33,7 @@ title: Exerices en POO
     - A partir de la liste `games`, afficher:
         - La liste des jeux développés par Morvel.
         - La liste des jeux sortis à partir du premier janvier 1985.
-1. Créez une classe `Point` qui possède deux propriétés x et y de type correspondant aux coordonnées du point.
+1. Définir une classe `Point` qui possède deux propriétés x et y de type correspondant aux coordonnées du point.
     - Implémenter le constructeur `__init__(self, x, y)` qui permet d'initialiser les coordonnées.
     - Implémenter la méthode `__str__` qui représente le point de cette façon (ici, x = 2 et y = 3): `Point | x : 2 | y : 3`
     - Implémenter la méthode `translate(self, tx, ty)` qui ajoute `tx` à `x` et `ty` à `y`.
@@ -43,12 +43,25 @@ title: Exerices en POO
         - Translater le premier point de 2 en x et 3 en y.
         - Afficher les deux points.
         - Afficher la nouvelle distance entre les deux points.
-1. Créez une classe `BankAccount` modélisant un compte en banque. La classe possède deux propriétés initialisées dans le constructeur. `balance` correspond au solde du compte. `managementCost` qui correspond au frais de gestion du compte.
+1. Définir une classe `BankAccount` modélisant un compte en banque. La classe possède deux propriétés initialisées dans le constructeur. `balance` correspond au solde du compte. `managementCost` qui correspond au frais de gestion du compte.
     - Implémenter le constructeur `__init__(...)`.
     - Implémenter la méthode `__str__(self)` qui affiche les informations du compte de cette façon: `Compte ( solde: 1000€ | frais de gestion: 13€ )`
     - Implémenter la méthode `debit(self, amount)` qui enlève `amount` au solde du compte uniquement si le solde est suffisant. Elle retourne un booléen qui renvoie `true` si le débit a réussi, sinon `false`.
     - Implémenter la méthode `send(self, bankAccount, amount)` qui transfère de l'argent vers un autre compte uniquement si le solde est suffisant. La méthode retourne un booléen calculé de la même façon que la méthode `debit`.
     - Instancier deux comptes et effectuer des opérations de débit et de transfert. Afficher l'état de réussite de chaque opération et l'état des comptes après chaque opération.
+1. On souhaite générer des prédictions météorologiques sur une durée de 30 jours et faire des traitements dessus. Définir la classe `WeatherForecast` avec la propriété `day` (entier entre 1 et 30) et `temperature` (entier qui représente la température en Celsius).
+    - Implémenter le constructeur
+    - Implémenter la méthode `to_farhenheit(self)` qui retourne la température en Fahrenheit avec la formule suivante: `F = C * 9/5 + 32`
+    - Implémenter la méthode `__str__` qui affiche la prévision de cette façon: `Jour 1: 20°C | 68°F`
+    - Instancier une liste de de 30 prévisions pour chacun des jours avec des températures aléatoires sous forme d'entier entre -10 et 40 degrés.
+    - Calculer les résultats suivants sans utiliser `avg`, `min`, `max`.
+        - La température moyenne sur les 30 jours.
+        - La température la plus faible ainsi que les jours où cette température a été enregistrée. Par exemple si la température la plus faible est -10, on doit afficher les jours où -10 a été enregistré.
+        - La température la plus élevée ainsi que les jours où cette température a été enregistrée.
+        - Afficher les prévisions triées par température croissante avec et sans utiliser les méthodes de tri prédéfinies.
+        - Afficher les prévisions triées par température décroissante avec et sans utiliser les méthodes de tri prédéfinies.
+        - Le nombre de jours où la température est supérieure à 20°C et le nombre de jours où la température est inférieure à 0°C.
+        - Un dictionnaire qui compter le nombre prévisions qui ont les mêmes températures. Par exemple si 5 jours ont une température de 20°C, et les reste des jours ont -5°C le dictionnaire sera `{"20°C": 5, "-5°C": 25}`.
 
 ## Série 2
 
