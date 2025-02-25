@@ -22,10 +22,17 @@ title: Exerices en POO
     - Créer une liste `games` qui contient les jeux suivants avec les `name`, `developer` et `releaseYear` suivants:
         - Sanic, Dega, 1991.
         - Spodermin, Morvel, 1992.
+        - Y-Men, Morvel, 1993.
         - Nario, Nontendo, 1985.
         - Zebda, Nontendo, 1986.
         - First Fantasy, Rectangle, 1987.
         - Paper Gear, Bonami, 1987.
+    - A partir de la liste `consoles`, afficher:
+        - La liste des consoles fabriquées par Nontendo.
+        - La liste des consoles sorties à partir du 1er janvier 1990.
+    - A partir de la liste `games`, afficher:
+        - La liste des jeux développés par Morvel.
+        - La liste des jeux sortis à partir du premier janvier 1985.
 
 ## Série 2
 
