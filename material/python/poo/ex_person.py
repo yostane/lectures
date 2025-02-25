@@ -8,7 +8,7 @@ class Person:
     return f"Person(name: {self.first_name} {self.last_name}, age: {self.age})"
   
   def __eq__(self, other: object) -> bool:
-    return isinstance(other, Person) and self.first_name == other.first_name\
+    return isinstance(other, Person) and self.first_name == other.first_name \
       and self.last_name == other.last_name and self.age == other.age
   
 
