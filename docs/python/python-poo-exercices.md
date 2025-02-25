@@ -62,6 +62,15 @@ title: Exerices en POO
         - Afficher les prévisions triées par température décroissante avec et sans utiliser les méthodes de tri prédéfinies.
         - Le nombre de jours où la température est supérieure à 20°C et le nombre de jours où la température est inférieure à 0°C.
         - Un dictionnaire qui compter le nombre prévisions qui ont les mêmes températures. Par exemple si 5 jours ont une température de `20°C`, et les reste des jours ont `-5°C` le dictionnaire sera `{"20°C": 5, "-5°C": 25}`.
+1. Générateur de personnage RPG et un simulateur de combat.
+    - Définir la classe `Character` avec les attributs `name`, `level`, `attack` et `health`. Implémenter une méthode `attack(self, target)` (où target est un `Character`) qui diminue la santé de la cible. Ajouter une méthode `is_alive(self)` qui retourne `True` si le personnage est vivant, `False` sinon. Implémenter le constructeur qui initialise les attributs `name`, `level`, `attack` (entier aléatoire entre 1 et 5) et `health` (entier aléatoire entre 10 et 20). Implémenter une méthode `heal(self)` qui rétablit `health` de `5 + level // 10` (// est la division entière).
+    - Définir la fonction `fight(character1, character2)` qui simule un combat entre deux personnages. Le combat se déroule de la façon suivante:
+        - Tant que les deux personnages sont vivants, ils s'attaquent à tour de rôle.
+        - Le personnage 1 attaque le personnage 2, puis le personnage 2 attaque le personnage 1.
+        - L'attaque de p1 envers p2 diminue le `health` de p2 avec la formule suivante `p2.health - p1.attack * (réel aléatoire entre 0.75 et 1.25)`.
+        - Le déroulement du combat est affiché au fur et à mesure.
+        - `health` doit toujours être >= 0
+    - Définir la fonction `fight_alternative(character1, character2)` qui reprend le même algo que `fight`, mais permet au joueur actuel d'appeler sa méthode `heal` en plus d'attaquer. La méthode `heal` est appelée si un nombre aléatoire en 50 et 100 généré au moment où son tour débute est strictement inférieur à son `(numéro du tour * level) / health`. Par exemple, si le joueur 1 a un niveau de 5 et 2 points de vie et qu'au tour 30, le nombre aléatoire est 60, alors le joueur 1 peut se soigner car `(30 * 5) / 2  = 75 est supérieur à 60`. Par contre, si le nombre aléatoire généré était de 75 ou plus, alors le joueur ne peut pas se soigner.
 
 ## Série 2
 
