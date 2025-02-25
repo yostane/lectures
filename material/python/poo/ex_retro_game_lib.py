@@ -49,6 +49,7 @@ for console in consoles:
     ninety_consoles.append(console)
 
 print("La liste des consoles fabriquées par Nontendo", nontendo_consoles)
+# Syntaxe de la Compréhension
 print("La liste des consoles fabriquées par Nontendo méthode 2", [c for c in consoles if c.manufacturer == "Nontendo"])
 
 print("La liste des consoles >= 1990", ninety_consoles)
