@@ -21,6 +21,7 @@ title: Exerices en POO
         - Ponystation, Pony, 1996.
     - Créer une liste `games` qui contient les jeux suivants avec les `name`, `developer` et `releaseYear` suivants:
         - Sanic, Dega, 1991.
+        - Spodermin, Morvel, 1992.
         - Nario, Nontendo, 1985.
         - Zebda, Nontendo, 1986.
         - First Fantasy, Rectangle, 1987.
