@@ -56,3 +56,17 @@ button.addEventListener("click", () => {
   }
   lineChart.update();
 });
+
+const button2 = document.querySelector("#addRandomDataBtn2");
+button2.addEventListener("click", () => {
+  lineChart.data.labels.shift();
+  for (const dataset of lineChart.data.datasets) {
+    dataset.data.shift();
+  }
+
+  lineChart.data.labels.push("01 / 02 / 2025");
+  for (const dataset of lineChart.data.datasets) {
+    dataset.data.push(Math.random() * (40 + 10) - 10);
+  }
+  lineChart.update();
+});
