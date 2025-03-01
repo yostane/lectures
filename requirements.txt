@@ -1,5 +1,5 @@
 mdx-truly-sane-lists
 mkdocs-glightbox
-mkdocs-material==9.6.1
+mkdocs-material==9.6.6
 regex==2024.11.6
 mkdocs-i18n==0.4.6
