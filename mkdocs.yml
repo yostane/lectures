@@ -68,6 +68,7 @@ nav:
       - test/index.md
       - test/generalites.md
       - test/librairies.md
+      - test/bdd.md
       - test/projet.md
   - Archi. logicielle:
       - archi/index.md
