@@ -1,0 +1,16 @@
+{
+  "name": "bdd-cucumber-10min",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": ["test", "cucumber", "BDD"],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0"
+  }
+}
