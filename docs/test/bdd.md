@@ -1,7 +1,15 @@
 # Behavior Drivent Development
 
-- Méthode BDD
-    - [Comment utiliser la méthode BDD ?](https://www.all4test.fr/blog-du-testeur/projets-agiles-methode-bdd/)
+Méthode BDD: [Comment utiliser la méthode BDD ?](https://www.all4test.fr/blog-du-testeur/projets-agiles-methode-bdd/)
+
+- Feature: Définit le comportement attendu
+- Scenario: Définit un cas d'utilisation
+- Given: Définit les préconditions
+- When: Définit l'action
+- Then: Définit le résultat attendu
+
+## Cucumber
+
 - Tutoriels
     - [Cucumber 10-minute tutorial](https://cucumber.io/docs/guides/10-minute-tutorial/)
     - Commande maven pour générer un projet Cucumber
@@ -13,6 +21,7 @@
     - [iblasquez/tuto_bdd_cucumber](https://github.com/iblasquez/tuto_bdd_cucumber)
     - [Exemple d'intégration avec Selenium](https://proleed.academy/exercises/cucumber/cucumber-practice-exercises.php)
     - [cucumber-bdd-tutorial](https://www.softwaretestinghelp.com/cucumber-bdd-tutorial/)
+- [Langages supportant Cucumber et alternatives pour d'autres langages](https://cucumber.io/docs/installation/)
 
 ## Exercices
 
