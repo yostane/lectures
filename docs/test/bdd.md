@@ -17,4 +17,5 @@
 ## Exercices
 
 1. Développer le jeu du pendu avec la méthode BDD ([Doc si vous êtes bloqué](https://gayerie.dev/docs/testing/test_acceptation/cucumber.html)).
-1.
+1. [Faire le TP d'intégration avec Selenium](https://proleed.academy/exercises/cucumber/cucumber-practice-exercises.php)
+1. Développer un jeu de morpion avec la méthode BDD.
