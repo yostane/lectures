@@ -64,6 +64,7 @@ nav:
       - python/projects-type.md
   - go:
       - go/index.md
+      - go/exercices.md
   - Test:
       - test/index.md
       - test/generalites.md
