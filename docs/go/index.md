@@ -88,6 +88,14 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     --8<--
     ```
 
+??? "fibclosure"
+
+    ```go
+    --8<--
+    go/sqrt/fibclosure.go
+    --8<--
+    ```
+
 ## Exercices
 
 1. Créer un package `math` contenant une fonction qui prend deux entiers en paramètres et retourne leur somme.
