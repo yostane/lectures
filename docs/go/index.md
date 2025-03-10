@@ -107,3 +107,19 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     go/sqrt/stringerdemo.go
     --8<--
     ```
+
+??? "errordemo"
+
+    ```go
+    --8<--
+    go/sqrt/errordemo.go
+    --8<--
+    ```
+
+??? "readerdemo"
+
+    ```go
+    --8<--
+    go/sqrt/readerdemo.go
+    --8<--
+    ```
