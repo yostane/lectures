@@ -22,6 +22,10 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 1. En Go, le type vient avant ou après le nom de la variable ?
 1. Que singifie une naked return (ou return nu) en Go ?
 1. Dans quel unique endroit peut-on utiliser := ?
+1. Est-ce que Go autorise la conversion implicite de types ?
+1. Combien de types de boules de Go connaissez-vous ? Quels sont-ils ?
+1. Est-ce Go autorise les switch sans condition (ou sans expression après le switch) ?
+1. Quelle est la différence entre `[n]T` et `[]T` en Go ?
 
 ??? "Réponses"
 
@@ -35,7 +39,20 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     1. En Go, le type vient après le nom de la variable.
     1. Une naked return est une instruction de retour sans argument, qui retourne les valeurs des variables de retour nommées.
     1. On ne peut utiliser `:=` que dans une fonction.
+    1. Go n'autorise pas la conversion implicite de types.
+    1. Il existe deux types de boucles en Go : `for` et `range`.
+    1. Go autorise les switch sans condition, qui permettent de simplifier les conditions multiples.
+    1. `[n]T` est un tableau de taille fixe, tandis que `[]T` est une tranche de taille variable.
     
+## Quelques programmes
+
+??? "Sqrt"
+
+    ```go
+    --8<--
+    go/sqrt/sqrt.go
+    --8<--
+    ``` 
 
 ## Exercices
 
