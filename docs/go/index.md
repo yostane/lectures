@@ -29,6 +29,11 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 1. Est-ce qu'un slice est un nouveau tableau ?
 1. Que font `make` et `append` en Go ?
 1. Est-ce que `append` retourne un nouveau slice ou modifie le slice existant ?
+1. Qu'est-ce qu'une closure en Go ?
+1. Est-ce que Go a des classes ? Si oui, expliquez comment elles fonctionnent. Sinon, expliquer les alternatives.
+1. Quelle est la différence entre une un méthode et une fonction en Go ?
+1. QUelles la différence entre un méthode avec un receveur de type pointeur et un receveur de type valeur ?
+1. Est-ce que Go renvoir une NPE quand on appelle une méthode d'une interface nulle ?
 
 ??? "Réponses"
 
@@ -49,6 +54,11 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     1. Un slice est une vue sur un tableau ou un pointeur vers celui-ci.
     1. `make` est utilisé pour créer des slices, des maps et des channels, tandis que `append` est utilisé pour ajouter des éléments à un slice.
     1. `append` retourne un nouveau slice si la capacité du slice est dépassée, sinon il modifie le slice existant.
+    1. Une closure est une fonction qui capture les variables de son environnement.
+    1. Go n'a pas de classes, mais utilise des structures pour définir des types de données et des méthodes associées, en plus des interfaces pour définir des comportements communs.
+    1. Une méthode est une fonction associée à un type, qui peut être appelée sur une instance de ce type.
+    1. Une méthode avec un receveur de type pointeur modifie la valeur de l'instance, tandis qu'un receveur de type valeur crée une copie de l'instance.
+    1. Go ne renvoie pas de NPE et appelle la méthode avec un receveur nul.
     
 ## Quelques programmes
 
