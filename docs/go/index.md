@@ -80,7 +80,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 
     ```go
     --8<--
-    go/sqrt/pic.go
+    go/pic/pic.go
     --8<--
     ```
 
@@ -88,7 +88,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 
     ```go
     --8<--
-    go/sqrt/wordcount.go
+    go/wordcount/wordcount.go
     --8<--
     ```
 
@@ -96,7 +96,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 
     ```go
     --8<--
-    go/sqrt/fibclosure.go
+    go/fibclosure/fibclosure.go
     --8<--
     ```
 
@@ -104,7 +104,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 
     ```go
     --8<--
-    go/sqrt/stringerdemo.go
+    go/stringerdemo/stringerdemo.go
     --8<--
     ```
 
@@ -112,7 +112,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 
     ```go
     --8<--
-    go/sqrt/errordemo.go
+    go/errordemo/errordemo.go
     --8<--
     ```
 
@@ -120,6 +120,6 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 
     ```go
     --8<--
-    go/sqrt/readerdemo.go
+    go/readerdemo/readerdemo.go
     --8<--
     ```
