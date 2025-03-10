@@ -35,6 +35,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 1. QUelles la différence entre un méthode avec un receveur de type pointeur et un receveur de type valeur ?
 1. Est-ce que Go renvoir une NPE quand on appelle une méthode d'une interface nulle ?
 1. A quoi servent les formateurs %v, %T, %s et %d ?
+1. Expliquer comment gèrer les erreurs en Go. Est-ce que Go a des exceptions ?
 
 ??? "Réponses"
 
@@ -61,6 +62,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     1. Une méthode avec un receveur de type pointeur modifie la valeur de l'instance, tandis qu'un receveur de type valeur crée une copie de l'instance.
     1. Go ne renvoie pas de NPE et appelle la méthode avec un receveur nul si elle a un type concret. Néanmoins, si l'interface n'a pas type concret, l'appel de la méthode entraînera une panique.
     1. `%v` affiche la valeur de la variable, `%T` affiche le type de la variable, `%s` affiche la chaîne de caractères et `%d` affiche un entier.
+    1. Les erreurs en Go sont gérées en retournant une valeur d'erreur en plus de la valeur de retour, qui peut être vérifiée et traitée par l'appelant. Go n'a pas d'exceptions, mais utilise des valeurs d'erreur pour signaler les erreurs.
     
 ## Quelques programmes
 
