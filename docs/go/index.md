@@ -120,7 +120,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 
     ```go
     --8<--
-    go/readerdemo/readerdemo.go
+    go/readerdemo/sqrt.go
     --8<--
     ```
 
