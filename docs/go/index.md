@@ -26,6 +26,9 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 1. Combien de types de boules de Go connaissez-vous ? Quels sont-ils ?
 1. Est-ce Go autorise les switch sans condition (ou sans expression après le switch) ?
 1. Quelle est la différence entre `[n]T` et `[]T` en Go ?
+1. Est-ce qu'un slice est un nouveau tableau ?
+1. Que font `make` et `append` en Go ?
+1. Est-ce que `append` retourne un nouveau slice ou modifie le slice existant ?
 
 ??? "Réponses"
 
@@ -40,9 +43,12 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     1. Une naked return est une instruction de retour sans argument, qui retourne les valeurs des variables de retour nommées.
     1. On ne peut utiliser `:=` que dans une fonction.
     1. Go n'autorise pas la conversion implicite de types.
-    1. Il existe deux types de boucles en Go : `for` et `range`.
+    1. Il existe un seul type de boucles en Go qui est la boucle `for`.
     1. Go autorise les switch sans condition, qui permettent de simplifier les conditions multiples.
     1. `[n]T` est un tableau de taille fixe, tandis que `[]T` est une tranche de taille variable.
+    1. Un slice est une vue sur un tableau ou un pointeur vers celui-ci.
+    1. `make` est utilisé pour créer des slices, des maps et des channels, tandis que `append` est utilisé pour ajouter des éléments à un slice.
+    1. `append` retourne un nouveau slice si la capacité du slice est dépassée, sinon il modifie le slice existant.
     
 ## Quelques programmes
 
@@ -52,7 +58,25 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     --8<--
     go/sqrt/sqrt.go
     --8<--
-    ``` 
+    ```
+
+??? "pic"
+
+    A lancer depuis l'éditeur en ligne pour avoir un rendu graphique.
+
+    ```go
+    --8<--
+    go/sqrt/pic.go
+    --8<--
+    ```
+
+??? "wordcount"
+
+    ```go
+    --8<--
+    go/sqrt/wordcount.go
+    --8<--
+    ```
 
 ## Exercices
 
