@@ -95,8 +95,3 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     go/sqrt/fibclosure.go
     --8<--
     ```
-
-## Exercices
-
-1. Créer un package `math` contenant une fonction qui prend deux entiers en paramètres et retourne leur somme.
-1. Ecrire un programme qui crée deux variables avec des valeurs alétoires et ensuite permute leurs valeurs.
