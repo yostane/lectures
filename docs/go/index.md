@@ -34,6 +34,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 1. Quelle est la différence entre une un méthode et une fonction en Go ?
 1. QUelles la différence entre un méthode avec un receveur de type pointeur et un receveur de type valeur ?
 1. Est-ce que Go renvoir une NPE quand on appelle une méthode d'une interface nulle ?
+1. A quoi servent les formateurs %v, %T, %s et %d ?
 
 ??? "Réponses"
 
@@ -58,7 +59,8 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     1. Go n'a pas de classes, mais utilise des structures pour définir des types de données et des méthodes associées, en plus des interfaces pour définir des comportements communs.
     1. Une méthode est une fonction associée à un type, qui peut être appelée sur une instance de ce type.
     1. Une méthode avec un receveur de type pointeur modifie la valeur de l'instance, tandis qu'un receveur de type valeur crée une copie de l'instance.
-    1. Go ne renvoie pas de NPE et appelle la méthode avec un receveur nul.
+    1. Go ne renvoie pas de NPE et appelle la méthode avec un receveur nul si elle a un type concret. Néanmoins, si l'interface n'a pas type concret, l'appel de la méthode entraînera une panique.
+    1. `%v` affiche la valeur de la variable, `%T` affiche le type de la variable, `%s` affiche la chaîne de caractères et `%d` affiche un entier.
     
 ## Quelques programmes
 
@@ -93,5 +95,13 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     ```go
     --8<--
     go/sqrt/fibclosure.go
+    --8<--
+    ```
+
+??? "stringerdemo"
+
+    ```go
+    --8<--
+    go/sqrt/stringerdemo.go
     --8<--
     ```
