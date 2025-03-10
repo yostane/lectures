@@ -123,3 +123,11 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
     go/readerdemo/readerdemo.go
     --8<--
     ```
+
+??? "rot13reader"
+
+    ```go
+    --8<--
+    go/rot13reader/rot13reader.go
+    --8<--
+    ```
