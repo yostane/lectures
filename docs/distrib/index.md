@@ -20,6 +20,7 @@ Plusieurs technologies permettent de mettre en place des systèmes distribués. 
 - Scala
     - [Apache Spark Tutorial](https://lintool.github.io/SparkTutorial/)
     - [Tutorial on tutorialspoint](https://www.tutorialspoint.com/apache_spark/index.htm)
+- [Tuto sparkUI](https://medium.com/@suffyan.asad1/beginners-guide-to-spark-ui-how-to-monitor-and-analyze-spark-jobs-b2ada58a85f7)
 - [Plateforme Databricks](https://docs.databricks.com/aws/en/spark)
 
 ```pwsh
