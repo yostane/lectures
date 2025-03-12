@@ -22,6 +22,15 @@ Plusieurs technologies permettent de mettre en place des systèmes distribués. 
     - [Tutorial on tutorialspoint](https://www.tutorialspoint.com/apache_spark/index.htm)
 - [Plateforme Databricks](https://docs.databricks.com/aws/en/spark)
 
+```pwsh
+# Lancement de spark-master
+spark-class org.apache.spark.deploy.master.Master
+# Lancement de spark-worker
+spark-class org.apache.spark.deploy.worker.Worker [url du master]
+# Soumettre un job écrit en Python
+spark-submit --master [url du master] SimpleApp.py
+```
+
 ## Exercices
 
 - Python
