@@ -2,9 +2,9 @@
 
 ## Quelques définitions
 
-- Le page d'accueil du site [react.dev](https://react.dev/) ainsi que [react.dev/learn](https://react.dev/learn) proposent une bonne introduction aux composants react.
+- Le page d'accueil du site [react.dev](https://react.dev/) ainsi que [react.dev/learn](https://react.dev/learn) proposent une bonne introduction aux composants React.
 - Composition : combiner des composants avec d'autres composants.
-- Un composant react est une fonction qui retourne du JSX (du HTML dans du JS).
+- Un composant React est une fonction qui retourne du JSX (du HTML dans du JS).
 
 ## Projet reactjs avec vite
 
@@ -20,8 +20,32 @@ npm run build
 
 Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `Hello.jsx`.
 
-- Ajouter un composant `Hello` qui prend un prop `name` et affiche `Hello, {name}`.
-- Ajouter un composant `StateDemo` qui illustre l'état local avec `useState`.
+- Ajouter un composant `Hello` (dans le fichier `Hello.jsx`)qui prend un prop `name` et affiche `Hello, {name}`.
+    - Si le linteur signale un problème de typage du compsant, installer la librairie `prop-types` (`npm install --save-dev prop-types`) et renseigner les types comme indique dans les exemples de code.
+- Ajouter un composant `StateDemo` (dans le fichier `StateDemo.jsx`) qui illustre l'état local avec `useState`.
+
+```jsx
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+
+export default function Hello({ name }) {
+    return <h1>Hello, {name}</h1>;
+}
+
+Hello.propTypes = {
+    name: PropTypes.string.isRequired,
+};
+
+export function StateDemo() {
+    const [count, setCount] = useState(0);
+    return (
+        <>
+            <p>Vous avez cliqué {count} fois</p>
+            <button onClick={() => setCount(count + 1)}>Cliquez ici</button>
+        </>
+    );
+}
+```
 
 ## Exercices
 
@@ -72,40 +96,50 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
 
 1. Créer un composant `ShowLengths` qui prend un prop `items` (un tableau de chaînes de caractères) et affiche chaque élément suivi de sa longueur. (💡 astuce: utiliser `string.length` pour obtenir la longueur d'une chaîne de caractères).
     - Par exemple, si `items = ['un', 'deux', 'trois']`, le composant affiche:
+
         ```
         un (2)
         deux (4)
         trois (5)
         ```
+
 1. Créer un composant `ShowAlternating` qui prend un prop `items` (un tableau de chaînes de caractères) et affiche les éléments de la liste en alternant les couleurs de fond (par exemple, une ligne sur deux en gris). (💡 astuce: utiliser `index % 2 === 0` pour tester si l'index est pair).
     - Par exemple: si `items = ['un', 'deux', 'trois']`, le composant affiche:
+
         ```
         un (avec fond gris)
         deux (sans fond)
         trois (avec fond gris)
         ```
+
 1. Créer un composant `LoggerComponent` qui affiche un champ de texte éditable et un bouton **Ajouter**. Chaque fois que l'utilisateur clique sur le bouton **Ajouter**, le texte saisi est ajouté à une liste. Afficher la liste des textes saisis.
     - Par exemple, si l'utilisateur saisit "un", "deux" et "trois", le composant affiche:
+
         ```
         un
         deux
         trois
         ```
+
 1. Créer un composant `LoggerComponentExtended` qui affiche un champ de texte éditable et un bouton **Ajouter**. Chaque fois que l'utilisateur clique sur le bouton **Ajouter**, le texte saisi est ajouté à une liste contenant également l'horodatage de l'ajout. Afficher la liste.
     - Par exemple, si l'utilisateur saisit "un", "deux" et "trois", le composant affiche:
+
         ```
         2022-01-01 12:00:00 un
         2022-01-01 12:00:01 deux
         2022-01-01 12:00:02 trois
         ```
-1. Créer un composant `EditableLogger` qui affiche un champ de texte éditable et un bouton **Ajouter**. Chaque fois que l'utilisateur clique sur le bouton **Ajouter**, le texte saisi est ajouté à une liste contenant également l'horodatage de l'ajout. 
+
+1. Créer un composant `EditableLogger` qui affiche un champ de texte éditable et un bouton **Ajouter**. Chaque fois que l'utilisateur clique sur le bouton **Ajouter**, le texte saisi est ajouté à une liste contenant également l'horodatage de l'ajout.
     - Afficher la liste en permettant d'éditer le corps (pas la date) de chaque ligne élément et de supprimer un élément.
     - Par exemple, si l'utilisateur saisit "un", "deux" et "trois", le composant affiche:
+
         ```
         2022-01-01 12:00:00 un [Input pour modifier le texte] [Bouton pour supprimer]
         2022-01-01 12:00:01 deux [Input pour modifier le texte] [Bouton pour supprimer]
         2022-01-01 12:00:02 trois [Input pour modifier le texte] [Bouton pour supprimer]
         ```
+
     - Ajouter les boutons **sauvegarder** et **charger** pour sauvegarder la liste dans le local storage et la charger au démarrage de l'application ou au clique sur le bouton **charger**.
 
 ??? "Solutions"
@@ -126,15 +160,16 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
 
 1. Créer un composant `SocialPost` qui prend en props les propriétés `author`, `date`, `content` et `avatar`. Afficher ces propriétés de façon jolie.
     - Par exemple, si `author = 'Alice'`, `date = '2022-01-01'`, `content = 'Hello world!'` et `avatar = 'alice.jpg'`, le composant affiche (de façon pas jolie):
+
         ```
         <img src="alice.jpg" alt="Avatar de Alice" />
         <h2>Alice</h2>
         <p>2022-01-01</p>
         <p>Hello world!</p>
         ```
+
 1. Créer un composant `SocialPostList` qui prend en prop `posts` (un tableau d'objets avec les propriétés `author`, `date`, `content` et `avatar`) et affiche une liste de `SocialPost`.
 1. Créer un composant `HomePage` qui affiche un logo, un titre et une liste de `SocialPost`. Créer un composant `AboutPage` qui affiche un logo, un titre et un texte de présentation. Dans le composant `App`, afficher les deux liens. Avec un booléen `isHomePage`, afficher soit la page d'accueil, soit la page "à propos" selon le lien sur lequel on clique.
-
 
 ## Router
 
@@ -144,13 +179,16 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
     1. Créer un composant `About` qui affiche "À propos de nous".
     1. Créer un composant `Contact` qui affiche "Contactez-nous".
 1. Nettoyer le composant `App`.
+
     ```jsx
     export default function App() {
         return <></>;
     }
     ```
+
 1. Installer `react-router-dom` avec `npm install react-router-dom`.
 1. Dans `src/main.jsx` Créer une table de routage en ajoutant le contenu suivant:
+
     ```jsx
     import { RouterProvider, createBrowserRouter } from "react-router-dom";
     import Home from "./components/Home.jsx";
@@ -178,7 +216,9 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
     },
     ]);
     ```
+
     - modifier la partie `createRoot` pour utiliser `<React.StrictMode>` et `<RouterProvider>` (c'est lui va gérer les routes de l'application).
+
     ```jsx
     ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
@@ -186,9 +226,11 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
     </React.StrictMode>
     );
     ```
+
     - Il faut aussi importer `import ReactDOM from "react-dom/client";`.
     - Fichier complet:
     ??? "src/main.jsx"
+
         ```jsx
         import React from "react";
         import ReactDOM from "react-dom/client";
@@ -228,7 +270,9 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
         </React.StrictMode>
         );
         ```
+
 1. Dans le composant `App`, ajouter un lien vers la page d'accueil, la page "à propos" et la page de contact (`{" - "}` permet de forcer un espace avant et après le -).
+
     ```jsx
     import { Link } from "react-router-dom";
     export default function App() {
@@ -244,8 +288,10 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
         );
     }
     ```
+
 1. Tester l'application en lançant `npm run dev`. Que constatez vous au niveau du rendu de votre app et de la barre d'adresse ?
 1. Ajouter le outlet dans le composant `App` pour afficher les pages enfants.
+
     ```jsx
     import { Outlet } from "react-router-dom";
     export default function App() {
@@ -262,6 +308,7 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
         );
     }
     ```
+
 1. Comme les composants sont des pages, il est recommandé de les déplacer dans le dossier `src/pages`. Appliquer cette convention à l'avenir.
 1. On peut spécifier des paramètres dans des routes (par exemple pour afficher un item à partir d'une liste).
 
