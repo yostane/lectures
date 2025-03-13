@@ -81,12 +81,12 @@
 
     ```python title="log-filtering.py"
     --8<--
-    distrib/exos/log-filtering.py
+    distrib/exercices/log-filtering.py
     --8<--
     ```
 
     ```python title="log-analysis.py"
     --8<--
-    distrib/exos/log-analysis.py
+    distrib/exercices/log-analysis.py
     --8<--
     ```
