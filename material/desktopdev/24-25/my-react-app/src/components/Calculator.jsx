@@ -1,8 +1,9 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-export default function Calculator() {
-  const [op1, setOp1] = useState(0);
-  const [op2, setOp2] = useState(0);
+export default function Calculator({ op1InitialValue, op2InitialValue }) {
+  const [op1, setOp1] = useState(op1InitialValue);
+  const [op2, setOp2] = useState(op2InitialValue);
   const [operand, setOperand] = useState("+");
 
   function computeResult() {
@@ -21,8 +22,6 @@ export default function Calculator() {
         return NaN;
     }
   }
-
-  const r = "B" + "a" + +"b" + "a";
 
   const result = computeResult();
 
@@ -64,3 +63,8 @@ export default function Calculator() {
     </div>
   );
 }
+
+Calculator.propTypes = {
+  op1InitialValue: PropTypes.number.isRequired,
+  op2InitialValue: PropTypes.number.isRequired,
+};

@@ -8,9 +8,9 @@ export default function App() {
     <>
       Hello react
       <About />
-      <Counter />
-      <Counter />
-      <Calculator />
+      <Counter initialValue={2} />
+      <Counter initialValue={5} />
+      <Calculator op1InitialValue={5} op2InitialValue={-8} />
     </>
   );
 }
