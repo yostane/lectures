@@ -46,6 +46,26 @@
         ```logs
         #Input data
         
+        sensorId,date,PM10  value (μg/m3)
+        s1,2016-01-01,20.5
+        s2,2016-01-01,30.1
+        s1,2016-01-02,60.2
+        s2,2016-01-02,20.4
+        s1,2016-01-03,55.5
+        s2,2016-01-03,52.5
+
+        # Output data
+        60.2
+        ```
+
+1. Top-k maximum values
+    - Input data: a collection of (structured) textual csv files containing the daily value of PM10 for a set of sensors. Each line of the files has the following format:<br> `sensorId,date,PM10 value (μg/m3)\n`
+    - Output: report the top-3 maximum values of PM10. Print the result  on the standard  output.
+
+        ```logs
+        #Input data
+        
+        sensorId,date,PM10  value (μg/m3)
         s1,2016-01-01,20.5
         s2,2016-01-01,30.1
         s1,2016-01-02,60.2

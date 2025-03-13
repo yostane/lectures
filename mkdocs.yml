@@ -95,6 +95,7 @@ nav:
       - desktopdev/project.md
   - Prog. distribuée:
       - distrib/index.md
+      - distrib/exos.md
   - IoT:
       - iot/index.md
       - iot/deviot.md
