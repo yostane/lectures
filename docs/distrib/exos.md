@@ -84,3 +84,9 @@
     distrib/exos/log-filtering.py
     --8<--
     ```
+
+    ```python title="log-analysis.py"
+    --8<--
+    distrib/exos/log-analysis.py
+    --8<--
+    ```
