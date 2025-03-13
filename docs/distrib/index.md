@@ -40,7 +40,7 @@ spark-submit --master [url du master] SimpleApp.py
 - Python
     - [Travaux pratiques - Introduction à Spark](https://cedric.cnam.fr/vertigo/Cours/RCP216/tpSparkPython.html#spark-concepts-de-base-avec-exemples)
     - [areibman/pyspark_exercises](https://github.com/areibman/pyspark_exercises)
-    - [Databricks Spark DF, SQL, ML Exercise](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/6244269837918943/3546103630347710/4066658260255490/latest.html)
+    - [Databricks Spark DF, SQL, ML Exercise](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/6244269837918943/3546103630347710/4066658260255490/latest.html) - [Solutions](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/1219081465903405/3466270665734845/5074805361045397/latest.html)
 - Scala
     - [jaceklaskowski spark-workshop](https://jaceklaskowski.github.io/spark-workshop/exercises/)
     - [Travaux pratiques - Introduction à Spark et Scala](https://cedric.cnam.fr/vertigo/Cours/RCP216/tpSparkScala.html)
