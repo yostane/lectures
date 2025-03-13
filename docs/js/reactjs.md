@@ -176,7 +176,7 @@ export function StateDemo() {
 
 ## Router
 
-1. Créer un projet react avec vite et le template react. `npm create vite@latest my-react-app-2 -- --template react`.
+1. Créer un projet React avec vite (`npm create vite@latest react-app-with-router`).
 1. Préparation
     1. Créer un composant `Home` qui affiche "Bienvenue sur la page d'accueil".
     1. Créer un composant `About` qui affiche "À propos de nous".
@@ -232,6 +232,7 @@ export function StateDemo() {
 
     - Il faut aussi importer `import ReactDOM from "react-dom/client";`.
     - Fichier complet:
+
     ??? "src/main.jsx"
 
         ```jsx
