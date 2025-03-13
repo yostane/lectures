@@ -6,8 +6,23 @@ export default function Calculator() {
   const [operand, setOperand] = useState("+");
 
   function computeResult() {
-    return op1 + op2;
+    switch (operand) {
+      case "+":
+        return op1 + op2;
+      case "*":
+        return op1 * op2;
+      case "-":
+        return op1 - op2;
+      case "/":
+        return op1 / op2;
+      case "%":
+        return op1 % op2;
+      default:
+        return NaN;
+    }
   }
+
+  const r = "B" + "a" + +"b" + "a";
 
   const result = computeResult();
 
