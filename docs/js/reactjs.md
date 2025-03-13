@@ -24,8 +24,8 @@ Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `H
     - Si le linteur signale un problème de typage du compsant, installer la librairie `prop-types` (`npm install --save-dev prop-types`) et renseigner les types comme indique dans les exemples de code.
 - Ajouter un composant `StateDemo` (dans le fichier `StateDemo.jsx`) qui illustre l'état local avec `useState`.
 
-```jsx
-import React, { useState } from "react";
+```jsx title="Hello.jsx"
+import { useState } from "react";
 import PropTypes from "prop-types";
 
 export default function Hello({ name }) {
@@ -35,7 +35,10 @@ export default function Hello({ name }) {
 Hello.propTypes = {
     name: PropTypes.string.isRequired,
 };
+```
 
+```jsx title="StateDemo.jsx"
+import { useState } from "react";
 export function StateDemo() {
     const [count, setCount] = useState(0);
     return (
