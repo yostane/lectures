@@ -39,11 +39,23 @@ poo_2.py
 - UML (Unified Modeling Language) est un langage de modélisation graphique pour la conception de logiciels.
 - Il permet de représenter les classes, les objets, les relations entre les objets, les cas d'utilisation, les séquences, etc.
 
+Voici un exemple de diagramme de classe UML qui illustre l'héritage entre deux classes :
+
 ![Exemple UML](./img/01-poo.drawio.svg)
 
 ```py title="Deux classes qui héritent d'une classe"
 --8<--
 poo_3.py
+--8<--
+```
+
+Voici un exemple de diagramme qui illustre l'association et la la composition :
+
+![Diagramme UML](./img/02-poo.drawio.svg)
+
+```py title="Deux classes qui héritent d'une classe"
+--8<--
+poo_4_uml_livingbeing.py
 --8<--
 ```
 

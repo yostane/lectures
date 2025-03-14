@@ -120,6 +120,16 @@ title: Exerices en POO
     - Un monstre peut être soit un minion, soit un buldozer. Les monstres ont 0 MP et ont des hp aléatoires compris entre 30 et 70.
     - Représenter les différentes classes en UML et les coder en Python.
 
+??? "Solution moba"
+
+    ![solution uml moba](./img/ex_moba.drawio.svg)
+
+    ```py
+    --8<--
+    ex_moba.py
+    --8<--
+    ```
+
 ## Série 3
 
 1. Créer une classe `StringUtils` qui contient les méthodes statiques suivantes:
