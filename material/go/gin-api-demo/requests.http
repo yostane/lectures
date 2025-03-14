@@ -1,0 +1,16 @@
+@base_url=http://localhost:8080
+{{base_url}}/albums
+###
+{{base_url}}/albums/1
+###
+{{base_url}}/albums/6
+###
+POST {{base_url}}/albums
+Content-Type: application/json
+
+{
+  "id": "4",
+  "title": "The Modern Sound of Betty Carter",
+  "artist": "Betty Carter",
+  "price": 49.99
+}
