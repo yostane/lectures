@@ -143,6 +143,12 @@ title: Exerices en POO
             - Factorisation du code.
         - `t` est une instance de la classe `Shell` ou un objet de type `Shell`.
         - `super()` permet d'appeler une méthode de la classe parente.
+    
+    ```py
+    --8<--
+    ex_farmer.py
+    --8<--
+    ```
 
 ## Série 3
 
