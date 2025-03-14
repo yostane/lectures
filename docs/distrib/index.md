@@ -46,6 +46,10 @@ spark-submit --master [url du master] SimpleApp.py
     - [jaceklaskowski spark-workshop](https://jaceklaskowski.github.io/spark-workshop/exercises/)
     - [Travaux pratiques - Introduction à Spark et Scala](https://cedric.cnam.fr/vertigo/Cours/RCP216/tpSparkScala.html)
 
+## Dask
+
+[Dask](https://www.dask.org/) s'appuie sur pandaes pour traiter de façon distribuée de gros volumes de données et propose en plus la possibilité de lancer des tâches parallèles.
+
 ## Sources
 
 - [What Are Distributed Systems?](https://www.splunk.com/en_us/blog/learn/distributed-systems.html)
