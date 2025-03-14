@@ -67,9 +67,21 @@ poo_4_uml_livingbeing.py
 - Méthode statique : méthode qui a comme contexte que les propriétés et méthodes statiques de sa classe
 - Classe statique : une classe qui ne peut pas être instanciée et ne contiendra donc que des propriétés et méthodes statiques
 
+```py
+--8<--
+poo_05_static.py
+--8<--
+```
+
 ## Propriétés, classes et méthodes abstraites
 
 - Méthode abstraite: méthode qui n'a pas d'implémentation
 - Propriété abstraite: propriété dont les accesseurs ne sont pas définis
 - Classe abstraite: une classe qui a au moins une propriété ou méthode abstraite
 - Les membres abstraits sont destinés à être définis par une sous-classe non abstraite.
+
+```py
+--8<--
+poo_06_abstract.py
+--8<--
+```

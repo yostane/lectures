@@ -114,6 +114,26 @@ title: Exerices en POO
     - Voiture, Camion, Vélo, Trottinette
 1. Un *fermier* élève des *animaux* et cultive des *fruits*. Il a des vaches, des poules, des pommes, des poires, des bananes et des fraises. Définir les classes en UML et les coder en Python.
 1. Un *garage* répare des *véhicules* et vend des *pièces*. Il répare des voitures, des camions, des vélos et des trottinettes. Il vend des pneus, des moteurs, des batteries et des phares. Définir les classes en UML et les coder en Python.
+
+## Série 3
+
+1. Définir la classe `StringUtils` qui contient les méthodes statiques suivantes:
+    - `is_palindrome(word: str) -> bool` qui retourne `True` si le mot est un palindrome, `False` sinon
+    - `count_vowels(word: str) -> int` qui retourne le nombre de voyelles dans le mot
+    - `count_uppercase(word: str) -> int` qui retourne le nombre de majuscules dans le mot
+    - `count_lowercase(word: str) -> int` qui retourne le nombre de minuscules dans le mot
+    - Appeler les différentes méthodes de cette classe
+1. Définir la classe `TaxUtils` qui contient les méthodes statiques suivantes:
+    - `compute_ttc(price_ht: float, vat_rate: float) -> float` qui retourne le montant TTC
+    - `compute_tva(price: float, vat_rate: float) -> float` qui retourne le montant de la TVA
+    - Appeler les différentes méthodes de cette classe
+1. Définir la classe abstraite `Shape` qui contient les méthodes abstraites suivantes:
+    - `area() -> float` qui retourne l'aire de la forme
+    - `perimeter() -> float` qui retourne le périmètre de la forme
+    - Définir les classes `Rectangle`, `Circle` et `Triangle` qui héritent de `Shape` et implémentent les méthodes abstraites.
+
+## Série 4
+
 1. Nous souhaitons définir les classes d'un futur jeu MOBA qui va cartonner sévère. Le jeu sera en 2D en vue du dessus. Dans ce jeu nous aurons des héros qui affrontent des monstres.
     - Les héros et les monstres ont tous des HP (points de vie), des MP (points de magie), un nom, une position dans la carte et une *hitbox* (rectangle de détection des dégâts).
     - Un héro peut être soit un tank, soit un mage, soit un soigneur ou soit un guerrier. Chaque héro a un niveau et une compétence propre (le héros fait 10 dégâts, le mage fait 20 dégâts et perd 5 mp, le tank donne 2 de ses hp et le soigneur fait gagner 30 hp et perd 8 mp). Tous les héros commencent au niveau 1 avec des valeurs de HP et MP aléatoires compris entre 100 et 200 et entre 50 et 100 respectivement. Les guerriers commencent avec 0 MP.
@@ -129,11 +149,3 @@ title: Exerices en POO
     ex_moba.py
     --8<--
     ```
-
-## Série 3
-
-1. Créer une classe `StringUtils` qui contient les méthodes statiques suivantes:
-    - `is_palindrome(word: str) -> bool` qui retourne `True` si le mot est un palindrome, `False` sinon
-    - `count_vowels(word: str) -> int` qui retourne le nombre de voyelles dans le mot
-    - `count_uppercase(word: str) -> int` qui retourne le nombre de majuscules dans le mot
-    - `count_lowercase(word: str) -> int` qui retourne le nombre de minuscules dans le mot
