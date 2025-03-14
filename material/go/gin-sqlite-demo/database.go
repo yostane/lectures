@@ -33,3 +33,9 @@ func resetTables() {
 	db.Exec(`Drop table if exists ALBUM`)
 	createTables()
 }
+
+func insertAlbum(album *Album) error {
+	_, err := db.Exec("INSERT INTO Album Values (?, ?, ?, ?)",
+		album.ID, album.Title, album.Artist, album.Price)
+	return err
+}
