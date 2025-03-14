@@ -114,6 +114,21 @@ title: Exerices en POO
     - Voiture, Camion, Vélo, Trottinette
 1. Un *fermier* élève des *animaux* et cultive des *fruits*. Il a des vaches, des poules, des pommes, des poires, des bananes et des fraises. Définir les classes en UML et les coder en Python.
 1. Un *garage* répare des *véhicules* et vend des *pièces*. Il répare des voitures, des camions, des vélos et des trottinettes. Il vend des pneus, des moteurs, des batteries et des phares. Définir les classes en UML et les coder en Python.
+1. Répondre aux questions suivantes :
+    - L'héritage correspondant à une relation **être** ou **avoir** ?
+    - Donner deux avantages de l'héritage.
+    - Est-ce que `t` est un objet, classe ou une instance `t = Shell()` ?
+    - Que représente `super()` en Python ?
+
+??? Solutions
+
+    - Questions
+        - L'héritage correspondant à une relation **être**
+        - Deux avantages de l'héritage:
+            - Réutilisation du code.
+            - Factorisation du code.
+        - `t` est une instance de la classe `Shell` ou un objet de type `Shell`.
+        - `super()` permet d'appeler une méthode de la classe parente.
 
 ## Série 3
 
