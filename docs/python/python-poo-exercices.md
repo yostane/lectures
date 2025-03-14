@@ -105,7 +105,7 @@ title: Exerices en POO
     - Par exemple : un téléphone est un appareil électronique, un appareil électronique est un appareil.
 1. Trouver les relations d'héritage possibles pour chacun de ses groupes de classes (traiter chaque ligne indépendamment):
     - `Être vivant`, `Homme`, `Animal`
-    - `Meuble`, `Fauteuil`, `Armoire`, `Table`, `Jardin`
+    - `Meuble`, `Fauteuil`, `Armoire`, `Table`.
     - `Aliment`, `Pâtisserie`, `Mille-Feuilles`, `Croissant`, `Pain`, `Fruit`, `Pomme`, `Banane`
     - Aucun code python n'est demandé.
 1. Donner une classe parente pour chaque groupe de classes (traiter chaque ligne indépendamment):
@@ -122,8 +122,22 @@ title: Exerices en POO
 
 ??? Solutions
 
+    - Exemples de relation d'héritage à un niveau :
+        - `Personne` hérite de `Être vivant`.
+        - `Homme` hérite de `Personne`.
+    - Exemples de relation d'héritage à deux niveaux :
+        - `Téléphone` hérite de `Appareil électronique` qui hérite de `Appareil`.
+        - `Véhicule` hérite de `Moyen de transport` qui hérite de `Objet mouvant`.
+    - Relations d'héritage possibles :
+        - `Être vivant` est une classe parente de `Homme` et `Animal`.
+        - `Meuble` est une classe parente de `Fauteuil`, `Armoire` et `Table`.
+        - `Aliment` est une classe parente de `Pâtisserie`, `Fruit` et `Pain`.
+    - Classe parente pour chaque groupe de classes :
+        - `Ordinateur` est une classe parente de `Ordinateur portable` et `Ordinateur fixe`.
+        - `Appareil électronique` est une classe parente de `Ordinateur portable`, `Ordinateur fixe`, `Switch`, `Xbox` et `Playstation`.
+        - `Objet mouvant` est une classe parente de `Voiture`, `Camion`, `Vélo` et `Trottinette`.
     - Questions
-        - L'héritage correspondant à une relation **être**
+        - L'héritage correspondant à une relation **être**.
         - Deux avantages de l'héritage:
             - Réutilisation du code.
             - Factorisation du code.
