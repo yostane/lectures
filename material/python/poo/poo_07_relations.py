@@ -31,6 +31,7 @@ class Employee:
         return self.salary.get_total() + self.bonus
 
     def work(self, computer):
+        """Association entre Employee et Computer"""
         computer.turn_on()
 
 
