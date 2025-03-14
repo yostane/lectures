@@ -61,6 +61,7 @@ nav:
       - python/tkinter-exercices.md
       - python/django-tour.md
       - python/django-tour.en.md
+      - python/python-data-analysis.ipynb
       - python/projects-type.md
   - go:
       - go/index.md
@@ -105,6 +106,7 @@ nav:
       - blog/index.md
 
 plugins:
+  - mkdocs-jupyter
   - search
   - blog
   - glightbox
