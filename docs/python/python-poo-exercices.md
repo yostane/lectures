@@ -72,6 +72,14 @@ title: Exerices en POO
         - Le déroulement du combat est affiché au fur et à mesure.
         - `health` doit toujours être >= 0
     - Définir la fonction `fight_alternative(character1, character2)` qui reprend le même algo que `fight`, mais permet au joueur actuel d'appeler sa méthode `heal` en plus d'attaquer. La méthode `heal` est appelée si un nombre aléatoire en 50 et 100 généré au moment où son tour débute est strictement inférieur à son `(numéro du tour * level) / health`. Par exemple, si le joueur 1 a un niveau de 5 et 2 points de vie et qu'au tour 30, le nombre aléatoire est 60, alors le joueur 1 peut se soigner car `(30 * 5) / 2  = 75 est supérieur à 60`. Par contre, si le nombre aléatoire généré était de 75 ou plus, alors le joueur ne peut pas se soigner.
+1. Définir une classe `Book` avec les propriétés suivantes Python: `nb_pages: number,`title`: string,`author`: string,`isbn`: string` ([ISBN (The International Standard Book Number)](https://en.wikipedia.org/wiki/ISBN)) et `marked_page: number`.
+    - Dans la classe `Book`, définir une méthode `mark_page(self, page)` qui permet de mettre à jour la valeur de `marked_page` avec la valeur de l'argument `page`. ⚠ bien vérifier que `page` soit < à `nb_pages`.
+    - Créer une classe `Library` (Bibliothèque) qui contient un tableau de livres qui est passé au constructeur. ⚠ Il y'a une relation entre `Library` et `Book` mais ce n'est pas une relation d'héritage. Pour ce cas, on dit que c'est une **agrégation**.
+    - Dans la classe `Library`, définir une méthode `list_authors()` qui retourne un tableau contenant uniquement les noms des auteurs.
+    - Dans la classe `Library`, définir une méthode `sum_of_marked_pages()` qui retourne la somme des `marked_page` de tous les livres.
+    - Instancier une `Library` avec trois livres
+    - Afficher les résultats des appels des méthodes `list_authors()` et `sum_of_marked_pages()`.
+    - Est-ce que la classe `Book` peuvent exister et être utilisée indépendamment de `Library` ?
 
 ??? "Solution Person"
 
@@ -90,6 +98,29 @@ title: Exerices en POO
     ```
 
 ## Série 2
+
+1. Donner deux exemple de relation d'héritage à un niveau.
+    - Par exemple l'étudiant est une personne.
+1. Donner deux exemple de relation d'héritage à deux niveaux.
+    - Par exemple : un téléphone est un appareil électronique, un appareil électronique est un appareil.
+1. Trouver les relations d'héritage possibles pour chacun de ses groupes de classes (traiter chaque ligne indépendamment):
+    - `Être vivant`, `Homme`, `Animal`
+    - `Meuble`, `Fauteuil`, `Armoire`, `Table`, `Jardin`
+    - `Aliment`, `Pâtisserie`, `Mille-Feuilles`, `Croissant`, `Pain`, `Fruit`, `Pomme`, `Banane`
+    - Aucun code python n'est demandé.
+1. Donner une classe parente pour chaque groupe de classes (traiter chaque ligne indépendamment):
+    - Ordinateur portable, ordinateur fixe
+    - Ordinateur portable, ordinateur fixe, Switch, Xbox, Playstation
+    - Voiture, Camion, Vélo, Trottinette
+1. Un *fermier* élève des *animaux* et cultive des *fruits*. Il a des vaches, des poules, des pommes, des poires, des bananes et des fraises. Définir les classes en UML et les coder en Python.
+1. Un *garage* répare des *véhicules* et vend des *pièces*. Il répare des voitures, des camions, des vélos et des trottinettes. Il vend des pneus, des moteurs, des batteries et des phares. Définir les classes en UML et les coder en Python.
+1. Nous souhaitons définir les classes d'un futur jeu MOBA qui va cartonner sévère. Le jeu sera en 2D en vue du dessus. Dans ce jeu nous aurons des héros qui affrontent des monstres.
+    - Les héros et les monstres ont tous des HP (points de vie), des MP (points de magie), un nom, une position dans la carte et une *hitbox* (rectangle de détection des dégâts).
+    - Un héro peut être soit un tank, soit un mage, soit un soigneur ou soit un guerrier. Chaque héro a un niveau et une compétence propre (le héros fait 10 dégâts, le mage fait 20 dégâts et perd 5 mp, le tank donne 2 de ses hp et le soigneur fait gagner 30 hp et perd 8 mp). Tous les héros commencent au niveau 1 avec des valeurs de HP et MP aléatoires compris entre 100 et 200 et entre 50 et 100 respectivement. Les guerriers commencent avec 0 MP.
+    - Un monstre peut être soit un minion, soit un buldozer. Les monstres ont 0 MP et ont des hp aléatoires compris entre 30 et 70.
+    - Représenter les différentes classes en UML et les coder en Python.
+
+## Série 3
 
 1. Créer une classe `StringUtils` qui contient les méthodes statiques suivantes:
     - `is_palindrome(word: str) -> bool` qui retourne `True` si le mot est un palindrome, `False` sinon
