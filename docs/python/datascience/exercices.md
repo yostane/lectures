@@ -18,7 +18,7 @@ Réaliser cet exercice sur le dataset **titanic.csv**.
 
     ```ipynb
     --8<--
-    datascience/ex-01.ipynb
+    B2-datascience/ex-01.ipynb
     --8<--
     ```
 
