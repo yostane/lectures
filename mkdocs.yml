@@ -61,7 +61,9 @@ nav:
       - python/tkinter-exercices.md
       - python/django-tour.md
       - python/django-tour.en.md
-      - python/python-data-analysis.ipynb
+      - Data science:
+        - python/datascience/index.ipynb
+        - python/datascience/exercices.md
       - python/projects-type.md
   - go:
       - go/index.md
