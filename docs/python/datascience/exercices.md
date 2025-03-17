@@ -14,6 +14,14 @@ Réaliser cet exercice sur le dataset **titanic.csv**.
 1. Donner le nom du passager le plus jeune.
 1. La personne qui le nom complet le plus long.
 
+??? "Solutions"
+
+    ```ipynb
+    --8<--
+    datascience/ex-01.ipynb
+    --8<--
+    ```
+
 ## Série 2
 
 Réaliser cet exercice sur le dataset **titanic.csv**.
