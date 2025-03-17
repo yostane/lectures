@@ -64,6 +64,7 @@ nav:
       - Data science:
         - python/datascience/index.ipynb
         - python/datascience/exercices.md
+        - python/datascience/ex-01.ipynb
       - python/projects-type.md
   - go:
       - go/index.md
