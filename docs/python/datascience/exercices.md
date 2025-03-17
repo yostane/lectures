@@ -21,7 +21,7 @@ Réaliser cet exercice sur le dataset **titanic.csv**.
 
 1. Afficher l'histogramme du nombre d'hommes et de femmes.
 1. Analyser la répartition des ages des passagers en utilisant les graphiques suivants:
-    - Histogramme des ages des passagers par tranche d'age de 10 ans (0-9, 10-19, etc).
+    - Histogramme des ages des passagers par tranche (utiliser les tranches par défaut de pandas).
     - Boxplot de la répartition des ages des passagers.
 1. Analyser le lien entre la survie et le sexe en utilisant les graphiques suivants:
     - Histogramme du pourcentage de survivants par sexe.
