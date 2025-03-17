@@ -13,6 +13,7 @@ Réaliser cet exercice sur le dataset **titanic.csv**.
 1. Donner le nom du passager le plus âgé.
 1. Donner le nom du passager le plus jeune.
 1. La personne qui le nom complet le plus long.
+1. Le nom de la personne la plus âgée qui a survécu.
 
 ## Série 2
 
