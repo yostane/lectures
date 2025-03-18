@@ -31,3 +31,13 @@ Réaliser cet exercice sur le dataset **titanic.csv**.
     - Histogramme du pourcentage de survivants par classe.
     - Boxplot de la répartition des ages des survivants par classe.
     - Interpréter les résultats.
+
+## Série 3 (streamlit)
+
+Réaliser cet exercice sur le dataset **titanic.csv**.
+
+1. Proposer une application streamlit qui permet de visualiser les données du dataset **titanic.csv** en affichant les informations et contrôles suivants:
+    - Un `multiselect` qui permet de choisir le sexe (un des deux ou les deux)
+    - Un `toggle` qui permet de changer l'unité de la monnaie (dollar ou euro)
+    - Somme totale des billets (total de la colonne Fare).
+    - Graphique en barre de la somme totale par classe.
