@@ -36,9 +36,10 @@ poo_2.py
 
 ## Agrégation, composition et association
 
-- L'agrégation est une relation entre deux classes où une classe contient une référence vers une autre classe.
-- La composition est une relation plus forte que l'agrégation. Dans ce cas, la classe enfant ne peut pas exister sans la classe parente.
-- L'association est une relation entre deux classes où une classe utilise une autre classe sans la contenir.
+- L'agrégation et la composition représentent la relation **avoir** (l'héritage représente la relation **être** pour rappel)/
+    - L'agrégation est une relation entre deux classes où une classe contient une référence vers une autre classe.
+    - La composition est une relation plus forte que l'agrégation. Dans ce cas, la classe enfant ne peut pas exister sans la classe parente.
+- L'association est une relation entre deux classes où une classe utilise l'autre sans en contenir une référence.
 
 ```py
 --8<--

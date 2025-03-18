@@ -99,9 +99,9 @@ title: Exerices en POO
 
 ## Série 2
 
-1. Donner deux exemple de relation d'héritage à un niveau.
+1. Donner deux exemples de relation d'héritage à un niveau.
     - Par exemple l'étudiant est une personne.
-1. Donner deux exemple de relation d'héritage à deux niveaux.
+1. Donner deux exemples de relation d'héritage à deux niveaux.
     - Par exemple : un téléphone est un appareil électronique, un appareil électronique est un appareil.
 1. Trouver les relations d'héritage possibles pour chacun de ses groupes de classes (traiter chaque ligne indépendamment):
     - `Être vivant`, `Homme`, `Animal`

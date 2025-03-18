@@ -4,3 +4,4 @@ ipykernel # Installe le kernel python (pour éviter d'avoir le bouton "install d
 openpyxl # Support d'Excel dans pandas
 Jinja2
 seaborn
+streamlit
