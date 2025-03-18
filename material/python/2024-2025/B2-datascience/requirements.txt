@@ -5,3 +5,4 @@ openpyxl # Support d'Excel dans pandas
 Jinja2
 seaborn
 streamlit
+langchain-google-genai
