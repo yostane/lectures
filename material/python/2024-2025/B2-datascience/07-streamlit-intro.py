@@ -11,7 +11,6 @@ fare_to_filter = st.slider(
     "Max Fare", titanic.Fare.min(), titanic["Fare"].max())
 titanic = titanic[titanic["Fare"] < fare_to_filter]
 
-
 tabs = st.tabs(["Dataframe", "Histogram"])
 tabs[0].subheader('Raw data')
 tabs[0].write(titanic)

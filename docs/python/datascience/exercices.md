@@ -34,10 +34,12 @@ Réaliser cet exercice sur le dataset **titanic.csv**.
 
 ## Série 3 (Streamlit)
 
-Réaliser cet exercice sur le dataset **titanic.csv**.
-
 1. Proposer une application Streamlit qui permet de visualiser les données du dataset **titanic.csv** en affichant les informations et contrôles suivants:
     - Un `multiselect` qui permet de choisir le sexe (un des deux ou les deux).
     - Un `toggle` qui permet de changer l'unité de la monnaie (dollar ou euro).
     - Somme totale des billets (total de la colonne Fare).
     - Graphique en barre de la somme totale par classe.
+1. Proposer une application Streamlit qui permet de visualiser les données du dataset **air_quality_no20.csv**. Cette application doit afficher les informations et contrôles suivants:
+    - Un `selectbox` qui permet de choisir la station de mesure.
+    - Sélection de la période de mesure (par exemple avec deux `selectbox` pour choisir la date de début et de fin).
+    - Un graphique en courbe qui affiche la mesure de la station sélectionnée pour la période donnée.
