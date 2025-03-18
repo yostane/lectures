@@ -10,8 +10,14 @@ Streamlit est un framework open-source pour créer des applications web interact
 
 ## Quelques exemples
 
-```python
+```python label="Tour rapide"
 --8<--
 2024-2025/B2-datascience/07-streamlit-intro.py
+--8<--
+```
+
+```python label="lanchain avec google AI"
+--8<--
+2024-2025/B2-datascience/08-aichat.py
 --8<--
 ```
