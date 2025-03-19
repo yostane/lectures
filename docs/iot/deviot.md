@@ -119,7 +119,7 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
     - Ouvrir un terminal classique (pas le REPL).
     - Vérifier que le port série est bien connecté : `mpremote connect list`
     - Installer une librairie avec [`mpremote mip`](https://docs.micropython.org/en/latest/reference/mpremote.html#mpremote-command-mip) : `mpremote mip install ssd1306`
-    - Copier un fichier : `mpremote cp fichierlocal :destination`. Exemple: `mpremote cp main.py :main.py`
+    - Copier un fichier : `mpremote fs cp fichierlocal :destination`. Exemple: `mpremote fs cp main.py :main.py`
 
 ### Autres compétences à avoir pour faire de l'IoT
 
