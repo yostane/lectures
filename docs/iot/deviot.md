@@ -101,6 +101,23 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
     --8<--
     ```
 
+### Travailler avec une vraie carte ESP32
+
+- Flasher le firmware MicroPython sur la carte ESP32. Ce firmware fait deux choses : il installe un interprêteur Python intégrant la librairie MicroPython et il lance les fichiers `boot.py` et `main.py`, dans cet ordre, s'ils existent.
+    - Sous Windows, installer les drivers USB pour la carte ESP32. Généralement, il s'agit du [**CP210x Universal Windows Driver** disponible ici](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers) ou [via ce lien direct](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip).
+    - Télécharger le firmware correspondant [à votre carte](https://micropython.org/download/?port=esp32). Pour la carte ESP32-VROOM, [la page de firmware is ici](https://micropython.org/download/ESP32_GENERIC/)
+    - Installer esptool : `pip install esptool`
+    - Tester la connexion avec la carte : `esptool.py flash_id` ou sous windows `esptool flash_id`
+    - Réinitialiser la carte : `esptool.py erase_flash` ou sous windows `esptool erase_flash`
+    - Flasher le firmware : `esptool.py write_flash 0x1000 fichier_firmware.bin` ou sous windows `esptool write_flash 0x1000 fichier_firmware.bin`
+- Utiliser un IDE comme [mu Editor](https://codewith.mu/) ou Thonny pour écrire et exécuter le code MicroPython. Nous allons utiliser Mu pour cet exemple.
+    - Connecter la carte à l'ordinateur via un câble USB.
+    - Ouvrir le panneau fichier
+- Installer des librairies sur l'ESP32 avec `mpremote`
+    - Installer `mpremote` : `pip install mpremote`
+    - Brancher l'ESP32 à l'ordinateur et fermet toute application l'utilisant (comme Mu)
+    - Installer une librairie : `mpremote mip install ssd1306`
+
 ### Autres compétences à avoir pour faire de l'IoT
 
 - [La soudure](https://www.framboise314.fr/comment-bien-souder-un-tutoriel-sur-la-soudure/)
@@ -115,3 +132,4 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
 ## Sources et références
 
 - Simulateur de carte de développement alternatif mais qui ne propose pas de ESP32 [tinkercad.com/circuits](https://www.tinkercad.com/circuits)
+- [Getting started with MicroPython on the ESP32](https://docs.micropython.org/en/latest/esp32/tutorial/intro.html)
