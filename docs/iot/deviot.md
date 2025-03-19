@@ -113,10 +113,13 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
 - Utiliser un IDE comme [mu Editor](https://codewith.mu/) ou Thonny pour écrire et exécuter le code MicroPython. Nous allons utiliser Mu pour cet exemple.
     - Connecter la carte à l'ordinateur via un câble USB.
     - Ouvrir le panneau fichier
-- Installer des librairies sur l'ESP32 avec `mpremote`
+- Installer des librairies et copier des fichiers sur l'ESP32 avec [`mpremote`](https://docs.micropython.org/en/latest/reference/mpremote.html)
     - Installer `mpremote` : `pip install mpremote`
-    - Brancher l'ESP32 à l'ordinateur et fermet toute application l'utilisant (comme Mu)
-    - Installer une librairie : `mpremote mip install ssd1306`
+    - Brancher l'ESP32 à l'ordinateur et fermer toute application l'utilisant (comme Mu)
+    - Ouvrir un terminal classique (pas le REPL).
+    - Vérifier que le port série est bien connecté : `mpremote connect list`
+    - Installer une librairie avec [`mpremote mip`](https://docs.micropython.org/en/latest/reference/mpremote.html#mpremote-command-mip) : `mpremote mip install ssd1306`
+    - Copier un fichier : `mpremote cp fichierlocal :destination`. Exemple: `mpremote cp main.py :main.py`
 
 ### Autres compétences à avoir pour faire de l'IoT
 
