@@ -167,6 +167,14 @@ title: Exerices en POO
     - `perimeter() -> float` qui retourne le périmètre de la forme
     - Définir les classes `Rectangle`, `Circle` et `Triangle` qui héritent de `Shape` et implémentent les méthodes abstraites.
 
+??? "Solutions"
+
+    ```py label="StringUtils.py"
+    --8<--
+    StringUtils.py
+    --8<--
+    ```
+
 ## Série 4
 
 1. Nous souhaitons définir les classes d'un futur jeu MOBA qui va cartonner sévère. Le jeu sera en 2D en vue du dessus. Dans ce jeu nous aurons des héros qui affrontent des monstres.
