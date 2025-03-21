@@ -1,5 +1,5 @@
 import random
-
+from abc import abstractmethod, ABC
 
 class Point:
     def __init__(self, x, y) -> None:
@@ -33,7 +33,7 @@ class Character:
         return self.__str__()
 
 
-class Hero(Character):
+class Hero(Character, ABC):
     def __init__(self, name, position, hitbox) -> None:
         hp = random.randint(100, 200)
         mp = random.randint(50, 100)
@@ -44,6 +44,8 @@ class Hero(Character):
         monster.hp -= 2
         print(self, "inflige 2 de dégâts. Nouvel état du monstre", monster)
 
+
+    @abstractmethod
     def perform_skill(self, character):
         print(
             self,
@@ -91,8 +93,7 @@ class Healer(Hero):
 
 class Monster(Character):
     def __init__(self, name, position, hitbox) -> None:
-        hp = random.randint(30, 70)
-        super().__init__(name, hp, 0, position, hitbox)
+        super().__init__(name, random.randint(30, 70), 0, position, hitbox)
 
     def attack(self, hero):
         hero.hp -= 1
