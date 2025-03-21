@@ -175,6 +175,12 @@ title: Exerices en POO
     --8<--
     ```
 
+    ```py title="GeometricShapes.py"
+    --8<--
+    GeometricShapes.py
+    --8<--
+    ```
+
 ## Série 4
 
 1. Nous souhaitons définir les classes d'un futur jeu MOBA qui va cartonner sévère. Le jeu sera en 2D en vue du dessus. Dans ce jeu nous aurons des héros qui affrontent des monstres.
