@@ -1,79 +1,64 @@
 class Animal:
-    def __init__(self, name):
-        self.name = name
-        self.health = 100
-
-    def make_sound(self):
-        pass
+    def __init__(self, date_naissance, etat_sante):
+        """etat_stante est égal à 0 si tout va bien et 1 si l'animal est malade"""
+        self.date_naissance = date_naissance
+        self.etat_sante = etat_sante
 
     def __repr__(self):
-        return f"({self.__class__.__name__}: {self.name})"
+        return f"({self.__class__.__name__}: {self.date_naissance})"
 
 
-class Cow(Animal):
-    def make_sound(self):
-        return "Meuh!"
+class Vache(Animal):
+    pass
 
 
-class Chicken(Animal):
-    def make_sound(self):
-        return "Cot-cot!"
+class Poule(Animal):
+    pass
 
 
-class Fruit:
-    def __init__(self, name, ripeness=0):
-        self.name = name
-        self.ripeness = ripeness  # 0 to 100
-
-    def is_ripe(self):
-        return self.ripeness >= 100
-
+class ArbreFruitier:
+    def __init__(self, hauteur):
+        self.hauteur = hauteur
+        
     def __repr__(self):
-        return f"({self.__class__.__name__}: {self.name}, {self.ripeness})"
+        return f"({self.__class__.__name__}: {self.hauteur})"
 
 
-class Apple(Fruit):
+class Pommier(ArbreFruitier):
     pass
 
 
-class Pear(Fruit):
+class Poirier(ArbreFruitier):
     pass
 
-
-class Banana(Fruit):
-    pass
-
-
-class Strawberry(Fruit):
-    pass
-
-
-class Farmer:
-    def __init__(self, name):
-        self.name = name
-        self.animals = []
-        self.fruits = []
-
-    def add_animal(self, animal):
-        self.animals.append(animal)
-
-    def add_fruit(self, fruit):
-        self.fruits.append(fruit)
+class Fermier:
+    def __init__(self, nom, animaux = [], arbres_fruitiers = []):
+        self.nom = nom
+        self.animaux = animaux
+        self.arbres_fruitiers = arbres_fruitiers
+        
+    def arroser(self):
+        print("💦🌱")
 
     def __str__(self):
-        return f"{self.name}. Animals: {self.animals}. Fruits: {self.fruits}"
+        return f"{self.nom}. Animaux: {self.animaux}. Fruits: {self.arbres_fruitiers}"
 
 
-farmer = Farmer("Jean")
 
-# Add some animals
-farmer.add_animal(Cow("Marguerite"))
-farmer.add_animal(Chicken("Cocotte"))
+animaux = [
+    Vache("2024-01-10", 0),
+    Vache("2023-05-11", 1),
+    Poule("2001-06-02", 0),
+    Poule("2020-06-24", 0),
+    Poule("2023-05-11", 0),
+    Poule("2023-05-11", 0),
+]
 
-# Add some fruits
-farmer.add_fruit(Apple("Pomme Rouge"))
-farmer.add_fruit(Pear("Poire Williams"))
-farmer.add_fruit(Banana("Banane"))
-farmer.add_fruit(Strawberry("Fraise des bois"))
+arbres_fruitiers = [
+    Pommier(10),
+    Poirier(50),
+    Poirier(25)
+]
 
-print(farmer)
+fermier = Fermier("Fave", animaux, arbres_fruitiers)
+print(fermier)
