@@ -112,7 +112,7 @@ title: Exerices en POO
     - Ordinateur portable, ordinateur fixe
     - Ordinateur portable, ordinateur fixe, Switch, Xbox, Playstation
     - Voiture, Camion, Vélo, Trottinette
-1. Un *fermier* élève des *animaux* et cultive des *fruits*. Il a des vaches, des poules, des pommes, des poires, des bananes et des fraises. Définir les classes en UML et les coder en Python.
+1. Un *fermier* élève des *animaux* et cultive des *arbres fruitiers*. Il a un **nom** et peut **arroser**. Chaque animal a une date de naissance et un état de santé. Chaque **Arbre fruitier a une hauteur** Le fermier a deux vaches, 4 poules, un pommier et deux poiriers. Définir les classes en UML et les coder en Python.
 1. Un *garage* répare des *véhicules* et vend des *pièces*. Il répare des voitures, des camions, des vélos et des trottinettes. Il vend des pneus, des moteurs, des batteries et des phares. Définir les classes en UML et les coder en Python.
 1. Répondre aux questions suivantes :
     - L'héritage correspondant à une relation **être** ou **avoir** ?
@@ -144,6 +144,8 @@ title: Exerices en POO
         - `t` est une instance de la classe `Shell` ou un objet de type `Shell`.
         - `super()` permet d'appeler une méthode de la classe parente.
     
+    ![Fermier](./img/fermier.drawio.svg)
+
     ```py title="Fermier"
     --8<--
     ex_farmer.py
