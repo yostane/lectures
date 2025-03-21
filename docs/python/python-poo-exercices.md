@@ -169,7 +169,7 @@ title: Exerices en POO
 
 ??? "Solutions"
 
-    ```py label="StringUtils.py"
+    ```py title="StringUtils.py"
     --8<--
     StringUtils.py
     --8<--
