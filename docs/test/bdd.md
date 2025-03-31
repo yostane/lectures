@@ -31,6 +31,8 @@ Ceux-ci peuvent aussi être utilisés pour apprendre la méthode BDD.
 Exemples de sites de katas: [Code wars](https://www.codewars.com/), [Coding Dojo](https://codingdojo.org/kata/Bowling/).
 
 Nous allons réaliser le [kata bowling](https://codingdojo.org/kata/Bowling/).
+Principe : le professeur code ce que les élèves lui disent.
+Chaque élève prend la parole à son tour pendant 10 minutes et doit dire ce que le professeur doit coder.
 
 ## Exercices
 
