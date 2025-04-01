@@ -8,27 +8,39 @@ Nous allons faire un tour du langage Java sans forcément tout couvrir car il es
 
 ## Premiers pas
 
-```java
+```java title="Hello world"
 --8<--
 tour/helloworld.java
 --8<--
 ```
 
-```java
+```java title="Premières instructions"
 --8<--
 tour/hello.java
 --8<--
 ```
 
-```java
+```java title="Opérations de base"
 --8<--
 tour/operators.java
 --8<--
 ```
 
-```java
+```java title="Types primitifs"
 --8<--
 tour/BaseTypesDemo.java
+--8<--
+```
+
+```java title="Lire au clavier"
+--8<--
+tour/ScannerDemo.java
+--8<--
+```
+
+```java title="Nombres aléatoires"
+--8<--
+tour/RandomDemo.java
 --8<--
 ```
 
