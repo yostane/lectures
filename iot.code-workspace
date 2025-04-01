@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "docs/iot"
+		},
+		{
+			"path": "material/iot/micropython/esptool"
+		},
+		{
+			"path": "material/iot/micropython/02-wokwi-esp32-samples"
+		}
+	],
+	"settings": {}
+}
