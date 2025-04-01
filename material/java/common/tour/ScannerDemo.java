@@ -8,6 +8,11 @@ public class ScannerDemo {
     Scanner scanner = new Scanner(System.in);
     int p1 = scanner.nextInt();
     System.out.println(p1);
+    if (p1 == 10) {
+      System.out.println("Is 10");
+    } else {
+      System.out.println("Is not 10");
+    }
     float p2 = scanner.nextFloat();
     System.out.println(p2);
     String input = scanner.next();
