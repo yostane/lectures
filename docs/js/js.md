@@ -4,7 +4,7 @@
 
 ```js title="tour"
 --8<--
-js/tour/hello.js
+js/tour/01-tour.js
 --8<--
 ```
 
