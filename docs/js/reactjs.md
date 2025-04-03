@@ -21,7 +21,7 @@ npm run build
 Dans le dossier `src`, créer le dossier `components` et y ajouter un fichier `Hello.jsx`.
 
 - Ajouter un composant `Hello` (dans le fichier `Hello.jsx`)qui prend un prop `name` et affiche `Hello, {name}`.
-    - Si le linteur signale un problème de typage du compsant, installer la librairie `prop-types` (`npm install --save-dev prop-types`) et renseigner les types comme indique dans les exemples de code.
+  - Si le linteur signale un problème de typage du compsant, installer la librairie `prop-types` (`npm install --save-dev prop-types`) et renseigner les types comme indique dans les exemples de code.
 - Ajouter un composant `StateDemo` (dans le fichier `StateDemo.jsx`) qui illustre l'état local avec `useState`.
 
 ```jsx title="Hello.jsx"
@@ -96,6 +96,25 @@ export function StateDemo() {
     ```
 
 ### Listes
+
+```jsx title="List de todos"
+--8<--
+desktopdev/24-25/my-react-app/src/components/TodoList.jsx
+--8<--
+```
+
+??? "List de todos enrgistrée"
+    ```jsx
+    --8<--
+    desktopdev/24-25/my-react-app/src/components/TodoListStored.jsx
+    --8<--
+    ```
+
+```jsx title="CRUD d'une liste to todos"
+--8<--
+desktopdev/24-25/my-react-app/src/components/TodoListCrud.jsx
+--8<--
+```
 
 1. Créer un composant `ShowLengths` qui prend un prop `items` (un tableau de chaînes de caractères) et affiche chaque élément suivi de sa longueur. (💡 astuce: utiliser `string.length` pour obtenir la longueur d'une chaîne de caractères).
     - Par exemple, si `items = ['un', 'deux', 'trois']`, le composant affiche:
