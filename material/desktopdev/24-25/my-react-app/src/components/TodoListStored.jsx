@@ -22,14 +22,15 @@ export default function TodoListStored() {
   const [todoItems, setTodoItems] = useState(originalTodoItems);
 
   // Hook (commence par use) qui synchronise l'état avec une donnée externe
-  // On doit lui spécifier en callback la donnée à charger et en deuxième argument les états qui en dépendend
+  // On doit lui spécifier en callback la donnée à charger et
+  // en deuxième argument les états qui en dépendent et qui ne se font pas set
   useEffect(() => {
     const storageTodoItemsString = localStorage.getItem("todoItems");
     if (storageTodoItemsString != null) {
       const storageTodoItems = JSON.parse(storageTodoItemsString);
       setTodoItems(storageTodoItems);
     }
-  }, [todoItems]);
+  }, []);
 
   function saveAndSetTodoItems(todoItems) {
     localStorage.setItem("todoItems", JSON.stringify(todoItems));
@@ -56,7 +57,7 @@ export default function TodoListStored() {
   }
 
   const todoElements = todoItems.map((todoItem) => (
-    <li>
+    <li key={todoItem.id}>
       id: {todoItem.id} - <b>{todoItem.title}</b> -{" "}
       <i>{todoItem.done ? "Done" : "Not done"}</i>
       <input

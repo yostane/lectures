@@ -42,8 +42,9 @@ export default function TodoList() {
     );
   }
 
+  // l'attribut key permet d'optimiser le rendu côté react
   const todoElements = todoItems.map((todoItem) => (
-    <li>
+    <li key={todoItem.id}>
       id: {todoItem.id} - <b>{todoItem.title}</b> -{" "}
       <i>{todoItem.done ? "Done" : "Not done"}</i>
       <input

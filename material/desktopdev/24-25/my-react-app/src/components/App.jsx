@@ -4,6 +4,7 @@ import Calculator from "./Calculator";
 import Counter from "./Counter";
 import TodoList from "./TodoList";
 import TodoListStored from "./TodoListStored";
+import TodoListCrud from "./TodoListCrud";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Calculator op1InitialValue={5} op2InitialValue={-8} />
       <TodoList />
       <TodoListStored />
+      <TodoListCrud />
     </>
   );
 }
