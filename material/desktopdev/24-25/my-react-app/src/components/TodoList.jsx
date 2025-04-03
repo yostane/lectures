@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const originalTodoItems = [
   {
     id: 1,
@@ -17,11 +19,32 @@ const originalTodoItems = [
 ];
 
 export default function TodoList() {
-  const todoItems = originalTodoItems;
+  const [todoItems, setTodoItems] = useState(originalTodoItems);
+
+  function handleCheck(checkedTodoItem) {
+    // Création d'une nouvelle liste qui change le done de l'émément coché
+    const newTodoItems = todoItems.map((todoItem) => {
+      // On change l'état done de l'élément coché
+      if (todoItem.id === checkedTodoItem.id) {
+        todoItem.done = !todoItem.done;
+      }
+      return todoItem;
+    });
+    setTodoItems(newTodoItems);
+  }
+  // créer un bouton qui permet de passer tout en done
+  // créer un bouton qui permet de passer tout en not done
+
   const todoElements = todoItems.map((todoItem) => (
     <li>
       id: {todoItem.id} - <b>{todoItem.title}</b> -{" "}
       <i>{todoItem.done ? "Done" : "Not done"}</i>
+      <input
+        type="checkbox"
+        name="done"
+        checked={todoItem.done}
+        onChange={() => handleCheck(todoItem)}
+      />
     </li>
   ));
   return <ul>{todoElements}</ul>;
