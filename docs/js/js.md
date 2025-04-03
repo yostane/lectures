@@ -1,4 +1,18 @@
-# Langage JavaScript
+# Langage JavaScript / TypeScript
+
+## Tour d'horizon
+
+```js title="tour"
+--8<--
+tour/hello.js
+--8<--
+```
+
+```ts title="Filter et map"
+--8<--
+tour/filter-map-reduce.ts
+--8<--
+```
 
 ## Exercices
 
@@ -21,4 +35,4 @@
 
 ### Astuces
 
--   Si besoin, vous pouvez utiliser [Math.random](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/random), pour générer des nombres aléatoires.
+- Si besoin, vous pouvez utiliser [Math.random](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/random), pour générer des nombres aléatoires.
