@@ -21,6 +21,11 @@ const originalTodoItems = [
 export default function TodoListStored() {
   const [todoItems, setTodoItems] = useState(originalTodoItems);
 
+  function saveAndSetTodoItems(todoItems) {
+    localStorage.setItem("todoItems", JSON.stringify(todoItems));
+    setTodoItems(todoItems);
+  }
+
   function handleCheck(checkedTodoItem) {
     // Création d'une nouvelle liste qui change le done de l'émément coché
     const newTodoItems = todoItems.map((todoItem) => {
@@ -30,10 +35,17 @@ export default function TodoListStored() {
       }
       return todoItem;
     });
-    setTodoItems(newTodoItems);
+    saveAndSetTodoItems(newTodoItems);
   }
-  // créer un bouton qui permet de passer tout en done
-  // créer un bouton qui permet de passer tout en not done
+
+  function setAllTodosDone(done) {
+    saveAndSetTodoItems(
+      todoItems.map((todoItem) => {
+        todoItem.done = done;
+        return todoItem;
+      })
+    );
+  }
 
   const todoElements = todoItems.map((todoItem) => (
     <li>
