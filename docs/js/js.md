@@ -4,13 +4,13 @@
 
 ```js title="tour"
 --8<--
-tour/hello.js
+js/tour/hello.js
 --8<--
 ```
 
 ```ts title="Filter et map"
 --8<--
-tour/filter-map-reduce.ts
+js/tour/filter-map-reduce.ts
 --8<--
 ```
 
