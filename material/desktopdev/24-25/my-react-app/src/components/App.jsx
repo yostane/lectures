@@ -3,6 +3,7 @@ import About from "./About";
 import Calculator from "./Calculator";
 import Counter from "./Counter";
 import TodoList from "./TodoList";
+import TodoListStored from "./TodoListStored";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Counter initialValue={5} />
       <Calculator op1InitialValue={5} op2InitialValue={-8} />
       <TodoList />
+      <TodoListStored />
     </>
   );
 }

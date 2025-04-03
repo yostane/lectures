@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const originalTodoItems = [
   {
@@ -21,15 +21,23 @@ const originalTodoItems = [
 export default function TodoListStored() {
   const [todoItems, setTodoItems] = useState(originalTodoItems);
 
+  // Hook (commence par use) qui synchronise l'état avec une donnée externe
+  // On doit lui spécifier en callback la donnée à charger et en deuxième argument les états qui en dépendend
+  useEffect(() => {
+    const storageTodoItemsString = localStorage.getItem("todoItems");
+    if (storageTodoItemsString != null) {
+      const storageTodoItems = JSON.parse(storageTodoItemsString);
+      setTodoItems(storageTodoItems);
+    }
+  }, [todoItems]);
+
   function saveAndSetTodoItems(todoItems) {
     localStorage.setItem("todoItems", JSON.stringify(todoItems));
     setTodoItems(todoItems);
   }
 
   function handleCheck(checkedTodoItem) {
-    // Création d'une nouvelle liste qui change le done de l'émément coché
     const newTodoItems = todoItems.map((todoItem) => {
-      // On change l'état done de l'élément coché
       if (todoItem.id === checkedTodoItem.id) {
         todoItem.done = !todoItem.done;
       }
@@ -59,5 +67,12 @@ export default function TodoListStored() {
       />
     </li>
   ));
-  return <ul>{todoElements}</ul>;
+  return (
+    <>
+      <h2>Todo List local storage</h2>
+      <button onClick={() => setAllTodosDone(true)}>All done</button>
+      <button onClick={() => setAllTodosDone(false)}>All undone</button>
+      <ul>{todoElements}</ul>{" "}
+    </>
+  );
 }

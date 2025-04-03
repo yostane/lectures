@@ -56,6 +56,7 @@ export default function TodoList() {
   ));
   return (
     <>
+      <h2>todo list</h2>
       <button onClick={() => setAllTodosDone(true)}>All done</button>
       <button onClick={() => setAllTodosDone(false)}>All undone</button>
       <ul>{todoElements}</ul>
