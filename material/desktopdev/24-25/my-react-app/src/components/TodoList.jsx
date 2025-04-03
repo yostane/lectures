@@ -32,8 +32,15 @@ export default function TodoList() {
     });
     setTodoItems(newTodoItems);
   }
-  // créer un bouton qui permet de passer tout en done
-  // créer un bouton qui permet de passer tout en not done
+
+  function setAllTodosDone(done) {
+    setTodoItems(
+      todoItems.map((todoItem) => {
+        todoItem.done = done;
+        return todoItem;
+      })
+    );
+  }
 
   const todoElements = todoItems.map((todoItem) => (
     <li>
@@ -47,5 +54,11 @@ export default function TodoList() {
       />
     </li>
   ));
-  return <ul>{todoElements}</ul>;
+  return (
+    <>
+      <button onClick={() => setAllTodosDone(true)}>All done</button>
+      <button onClick={() => setAllTodosDone(false)}>All undone</button>
+      <ul>{todoElements}</ul>
+    </>
+  );
 }

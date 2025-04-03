@@ -20,3 +20,11 @@ console.log("result 2", resultNumbers2);
 const resultNumbers3 = numbers
   .filter((number) => number % 2 === 0)
   .map((number) => number * 2);
+console.log("result 3", resultNumbers2);
+
+const texts = ["I", "love", "JavaScript", "and", "TypeScript"];
+// map peut retourner un autre type que la source
+console.log(
+  "texts lengths",
+  texts.map((text) => text.length)
+);
