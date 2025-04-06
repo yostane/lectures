@@ -12,17 +12,16 @@ authors:
 # Modern concurrency on the JVM with Coroutines and Loom
 
 It's long finished the time where the Java ecosystem only has threads and async callback hells.
-Nowadays, we have a lot of options to write elegant concurrent code in the JVM.
+Indeed, we have a lot of elegant options for writing concurrent code on the JVM.
 That is what we'll explore in this article through Project Loom and Kotlin coroutines.
 
 ## Introduction
 
-In modern concurrent programming, we have two main concepts are that are language agnostic and may already be found in many programming languages: soft threads and structured concurrency.
-Soft threads are lightweight threads that are managed by the runtime, while structured concurrency is a way to write concurrent code that is organized and clear.
-Structured concurrency thus avoids us writing async callbacks and uses classic programming constructs (loops, if, etc.).
+Modern concurrent programming bring two important features: soft threads and structured concurrency. These are language agnostic and may already be found in other programming languages.
+Soft threads are lightweight threads that are managed by the runtime, as opposed to regular thread which are managed by the operating system. Structured concurrency is a way to write concurrent code that is organized and clear taking advantage of classic sequential programming constructs (loops, if, etc.), thus avoiding us dealing with async callbacks.
 
-With regard to the JVM ecosystem, Kotlin developers can  use coroutines to take advantage of these two concepts since Kotlin 1.1 which was release in 2011.
-Java developers had to wait until Java 21, which was release in 2021, to have a preview of structured concurrency with Project Loom.
+With regard to the JVM ecosystem, Kotlin implements these two features with coroutines since Kotlin 1.1 (which was release in 2011).
+Java developers had to wait until Java 21 (which was release in 2021) to have a preview of structured concurrency with Project Loom.
 
 With the release of Java 24, it's a good time to take a look at these two approaches.
 Let's start by exploring Project Loom.
@@ -36,12 +35,11 @@ Loom introduces new concepts: virtual threads ([JEP 444](https://openjdk.org/jep
 
 Virtual threads are soft or lightweight threads that are managed by the JVM.
 They use less memory than platform threads (the ones provided by the OS) and are more efficient for tasks that spend much of their time waiting.
-This means that virtual threads are more efficient for I/O-bound tasks such as network or file I/O.
+This means that virtual threads are more efficient for I/O-bound tasks such as network or file I/O and less efficient for compute intensive tasks, like computing the n-th prime number. In that case, platform threads must be used.
 
-It is possible to have many more virtual threads than platform threads which is capped due to OS and hardware limitations.
-On the other hand, platform threads are more efficient for CPU-bound tasks.
+It is possible to have many more virtual threads than platform threads which are capped due to OS and hardware limitations.
 
-A virtual thread needs to run over at least over platform thread, also named case a carrier thread. A carrier thread can also host one or multiple virtual threads. The JDK provides
+A virtual thread needs to run over at least one platform thread, also named a carrier thread in that case. A carrier thread can also host one or multiple virtual threads.
 
 The following code snippets creates a virtual thread, with `Thread.ofPlatform()`, a platform thread, with `Thread.ofVirtual()` and each prints its information:
 
@@ -62,7 +60,7 @@ VirtualThread[#20]/runnable@ForkJoinPool-1-worker-1
 */
 ```
 
-We can note that the platform thread is managed by the main thread, while the virtual thread is managed by the [ForkJoinPool](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html). The ForkJoinPool allows to execute tasks using lighter threads than OS threads.
+We can note that the platform thread is created from the main thread, while the virtual thread is created by the [ForkJoinPool](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html). The ForkJoinPool is a special thread pool that is used to execute small tasks in parallel.
 
 ### Java's structured concurrency
 
