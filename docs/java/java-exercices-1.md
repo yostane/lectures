@@ -23,7 +23,7 @@
 
     ```java
     --8<--
-    java/exo/ex-initial/GuessNumber.java
+    java/common/exo/ex-initial/GuessNumber.java
     --8<--
     ```
 
@@ -31,7 +31,7 @@
 
     ```java
     --8<--
-    java/exo/ex-initial/HeadsOrTails.java
+    java/common/exo/ex-initial/HeadsOrTails.java
     --8<--
     ```
 
@@ -39,7 +39,7 @@
 
     ```java
     --8<--
-    java/exo/ex-initial/ReverseManual.java
+    java/common/exo/ex-initial/ReverseManual.java
     --8<--
     ```
 
@@ -47,7 +47,7 @@
 
     ```java
     --8<--
-    java/exo/ex-initial/ReverseManualMany.java
+    java/common/exo/ex-initial/ReverseManualMany.java
     --8<--
     ```
 
@@ -55,7 +55,7 @@
 
     ```java
     --8<--
-    java/exo/ex-initial/Palindrome.java
+    java/common/exo/ex-initial/Palindrome.java
     --8<--
     ```
 
@@ -63,7 +63,7 @@
 
     ```java
     --8<--
-    java/exo/ex-initial/CountDigits.java
+    java/common/exo/ex-initial/CountDigits.java
     --8<--
     ```
 
@@ -71,7 +71,7 @@
 
     ```java
     --8<--
-    java/exo/ex-initial/IsPrime.java
+    java/common/exo/ex-initial/IsPrime.java
     --8<--
     ```
 
@@ -95,24 +95,24 @@
 
     ```java title="ContinuousRandomStats"
     --8<--
-    java/exo/ex-initial/ContinuousRandomStats.java
+    java/common/exo/ex-initial/ContinuousRandomStats.java
     --8<--
     ```
 
     ```java title="FibonacciInitial"
     --8<--
-    java/exo/ex-initial/FibonacciInitial.java
+    java/common/exo/ex-initial/FibonacciInitial.java
     --8<--
     ```
 
     ```java title="pgcd"
     --8<--
-    java/exo/ex-initial/pgcd.java
+    java/common/exo/ex-initial/pgcd.java
     --8<--
     ```
 
     ```java title="CircleCollisionDetector"
     --8<--
-    java/java/exo/ex-initial/CircleCollisionDetector.java
+    java/java/common/exo/ex-initial/CircleCollisionDetector.java
     --8<--
     ```
