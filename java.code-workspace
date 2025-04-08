@@ -1,19 +1,22 @@
 {
-	"folders": [
-		{
-			"path": "material/java/common/tour"
-		},
-		{
-			"path": "docs/java"
-		},
-		{
-			"path": "material/java/common/javafx"
-		},
-		{
-			"path": "material/java/common/quarkus-rest-maven"
-		}
-	],
-	"settings": {
-		"java.compile.nullAnalysis.mode": "automatic"
-	}
+  "folders": [
+    {
+      "path": "material/java/common/tour"
+    },
+    {
+      "path": "docs/java"
+    },
+    {
+      "path": "material/java/common/javafx"
+    },
+    {
+      "path": "material/java/common/quarkus-rest-maven"
+    },
+    {
+      "path": "material/java/common/exo/ex-initial"
+    }
+  ],
+  "settings": {
+    "java.compile.nullAnalysis.mode": "automatic"
+  }
 }
