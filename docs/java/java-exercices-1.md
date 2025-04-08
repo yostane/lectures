@@ -84,7 +84,7 @@
     - Pour chaque carte donnée, le programme affiche le nombre de tours effectués pour atteindre la sortie ou mourir, le nombre de magolons gagnés, le nombre de points de vie restants et s'il a réussi ou échoué.
     - Par exemple, pour la carte suivante : `"J..E..P..S"`, le programme affiche "Le joueur a réussi à atteindre la sortie en 11 tours avec 1 magolon et 3 points de vie restants".
     - Afficher le résultat du jeu pour les cartes suivantes : `"J...S"` (4 tour, 0 magolons, vivant), `"J..E..P..S"` (11 tours, 1 magolon, vivant), `"J..EE.E..S"` (9 tours, 0 magolons, mort), `"J..E..P..E..P..S"`, `"J..E..PP..EEE..P..E..S"`.
-    - Afficher le résultat du jeu pour les cartes suivantes: `"..J..S...EP"`, `"E.PSJ..EPPP...S.EP"`, `"SE.SPE.J..EPEE.EPEE.PEPE..S.PSP"`
+    - Afficher le résultat du jeu pour les cartes suivantes: `"..J..S...EP"`, `"E.PSJ..EPPP...S.EP"`, `"SE.SPE.J..EPEE.EPEE.PEPE..S.PSP"`.
 1. Supposons qu'on ait deux cercles : un cercle de centre **A** et de rayon **Ra**, et un cercle de centre **B** et de rayon **Rb**. Les coordonnées de **A** sont notées `(xa, ya)` et les coordonnées de **B** sont notées `(xb, yb)`. On souhaite écrire une fonction permettant de dire si les deux cercles entrent en collision. La distance entre les deux centres A et B est: `sqrt((xb-xa)² + (yb-ya)²)`
     - Donner la condition qui permet de savoir s’il y a collision (ou pas) entre les cercles.
     - Exprimer cette condition sans racine carrée.
@@ -111,8 +111,14 @@
     --8<--
     ```
 
+    ```java title="adventure1d"
+    --8<--
+    java/common/exo/ex-initial/adventure1d.java
+    --8<--
+    ```
+
     ```java title="CircleCollisionDetector"
     --8<--
-    java/java/common/exo/ex-initial/CircleCollisionDetector.java
+    java/common/exo/ex-initial/CircleCollisionDetector.java
     --8<--
     ```
