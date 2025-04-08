@@ -105,6 +105,12 @@
     --8<--
     ```
 
+    ```java title="pgcd"
+    --8<--
+    java/exo/ex-initial/pgcd.java
+    --8<--
+    ```
+
     ```java title="CircleCollisionDetector"
     --8<--
     java/java/exo/ex-initial/CircleCollisionDetector.java
