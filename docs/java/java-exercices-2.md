@@ -49,3 +49,17 @@
     ```
 
 ## Série 2
+
+1. Un **spaceshooter** est un type de jeu dans lequel un vaisseau, vu du dessus, parcourt le niveau du bas vers le haut. Un niveau du spaceshoorter est représenté par un tableau 2D de 10 lignes et 10 colonnes. Chaque case du tableau peut être vide ou contenir un ennemi. Un ennemi est représenté par un caractère `E` et une case vide par un caractère `.`. Le vaisseau est représenté par le caractère `V`. On va considérer que la ligne 0 représente la fin du niveau et la ligne 9 son début.
+    - Créer un niveau de jeu en remplissant aléatroiement le tableau 2D d'ennemis, de vides et d'un joueur avec les contraites suivantes:
+        - Le joueur doit être sur la ligne 9 (la dernière ligne) au milieu du tableau (colonne 4 ou 5 aléatoire)
+        - Il doit y avoir au maximum 7 ennemis dans le niveau.
+        - Il n'y a pas d'ennemis sur les 2 premières lignes du niveau (lignes 9 et 8).
+    - Afficher le niveau de jeu dans la console.
+    - Astuces : utiliser `char[][]` comme type de tableau.
+1. On souhaite développer un mode **démo** dans lequel le jeu joue automatiquement en suivant cet algorithme:
+    - Le vaisseau se déplace d'une case vers le haut s'il n'y a pas d'obstacle.
+    - S'il y a un obstacle, le vaisseau se déplace d'une case vers la droite tant qu'il y a un obstacle au dessus. Ensuite, il se déplace vers le haut.
+    - Si le vaisseau atteint le mur droit, il se déplace vers la gauche tant qu'il y a un obstacle au dessus. S'il atteint le mur, c'est la fin du jeu (game over).
+    - Si le joeur atteint la ligne 0, il a gagné (win).
+    - Générer une carte de jeu aléatoire et afficiher le déroulement du jeu dans la console. A la fin de la partie, afficher le nombre de tours total et si le vaisseau a atteint la fin ou s'il a perdu.
