@@ -17,7 +17,7 @@
     - Rappel : un nombre premier est un nombre qui qui est divisible par exactement deux entiers disctints (qui sont 1 et le nombre-même). 0 et 1 ne sont pas des nombres premiers par définition (1 n'est pas divisible par deux nombres distincts).
 1. Créer un fonction Java qui calcule le *schtroumph* de deux tableaux qui ne sont pas forcément de la même taille ([source](https://laure.gonnord.org/pro/teaching/AlgoProg1011_IMA/quick1_2010_corr.pdf)). Pour calculer le schtroumpf, il faut multiplier chaque élément du premier tableau par chaque élément du deuxième, et additionner le tout.
     - Par exemple si l'on a : Tableau 1 -> 4 8 7 12, Tableau 2 : 3 6. Le Schtroumpf sera : 3 ∗ 4 + 3 ∗ 8 + 3 ∗ 7 + 3 ∗ 12 + 6 ∗ 4 + 6 ∗ 8 + 6 ∗ 7 + 6 ∗ 12 = **279**
-    - Créer un programme Java qui génère deux tableaux de taille aléatoire (entre 3 et 8) et de valeurs aléatoires (entre -10 et 10 inclus)  et qui calcule leur schtroumpf.
+    - Créer un programme Java qui génère deux tableaux de tailles aléatoire (entre 3 et 8) et de valeurs aléatoires (entre -10 et 10 inclus)  et qui calcule leur schtroumpf.
 1. Créer une fonction qui prend un tableau d’entiers (`int[] numbers`) et affiche la plus grande valeur et la plus petite valeur (Il faut calculer vous-même le max et le min)
     - Générer un tableau de 10 entier aléatoires et afficher le max et le min
     - Générer un tableau de 10 entiers saisis au clavier et afficher le max et le min
@@ -61,5 +61,5 @@
     - Le vaisseau se déplace d'une case vers le haut s'il n'y a pas d'obstacle.
     - S'il y a un obstacle, le vaisseau se déplace d'une case vers la droite tant qu'il y a un obstacle au dessus. Ensuite, il se déplace vers le haut.
     - Si le vaisseau atteint le mur droit, il se déplace vers la gauche tant qu'il y a un obstacle au dessus. S'il atteint le mur, c'est la fin du jeu (game over).
-    - Si le joeur atteint la ligne 0, il a gagné (win).
-    - Générer une carte de jeu aléatoire et afficiher le déroulement du jeu dans la console. A la fin de la partie, afficher le nombre de tours total et si le vaisseau a atteint la fin ou s'il a perdu.
+    - Si le joueur atteint la ligne 0, il a gagné (win).
+    - Générer une carte de jeu aléatoire et afficher le déroulement du jeu dans la console. A la fin de la partie, afficher le nombre de tours total et si le vaisseau a atteint la fin ou s'il a perdu.
