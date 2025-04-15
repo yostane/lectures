@@ -63,7 +63,26 @@ tour/ClasseInterface.java
 --8<--
 ```
 
+## Les record
+
+- Un `record` est une classe qui ne peut pas être étendue et qui ne peut pas avoir de méthodes abstraites.
+- Il est utilisé pour représenter des données immuables.
+- Les méthodes `equals`, `hashCode` et `toString` sont automatiquement générées par le compilateur.
+
+```java
+--8<--
+material/java/tour/RecordDemo.java
+--8<--
+```
+
 ## Collections
+
+- **Tableaux** : Java propose plusieurs types pour travailler avec des tableaux (ou listes) d'objets. Voici les plus importants:
+    - Tableau : `Array` : tableau de taille fixe.
+    - List : `List` : tableau de taille dynamique (on peut ajouter ou supprimer des éléments). On utilise généralement `List` en type de variable et `ArrayList` pour instancier un tableau dynamique.
+- **Dictionnaire** : Appelé **Map** en Java, il permet de stocker des paires clé-valeur. Il est possible d'utiliser n'importe quel type d'objet comme clé ou valeur. On utilise généralement `Map` en type de variable et `HashMap` pour instancier un dictionnaire.
+- Les listes et les dictionnaires n'acceptent pas les types primitifs (ou les types de base) comme `int` et `double`, il faut passer par les types objets (comme `Integer` ou `Double`) pour les utiliser dans ces collections.
+- L'itérateur est un moyen alternatif de parcourir les éléments d'une collection sans avoir à gérer les indices.
 
 ```java
 --8<--
