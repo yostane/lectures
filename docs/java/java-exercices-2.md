@@ -21,6 +21,7 @@
 1. Créer une fonction qui prend un tableau d’entiers (`int[] numbers`) et affiche la plus grande valeur et la plus petite valeur (Il faut calculer vous-même le max et le min)
     - Générer un tableau de 10 entier aléatoires et afficher le max et le min
     - Générer un tableau de 10 entiers saisis au clavier et afficher le max et le min
+1. Créer une fonction `int countVowels(List<String> words)` qui compte le nombre total de voyelles de la liste des mots passés en argument. Utiliser une boucle for (ou for each) imbriquée pour résoudre cet exercice.
 
 ??? "Solutions"
 
