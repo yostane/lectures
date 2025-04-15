@@ -4,6 +4,8 @@ import static java.lang.System.*;
 
 interface Gamer {
   public void play();
+
+  public void takeABreak();
 }
 
 interface HungryEater {
@@ -33,7 +35,12 @@ class Human {
 class HumanGamer extends Human implements Gamer {
   @Override
   public void play() {
-    out.println("je joue");
+    System.out.println("Je joue");
+  }
+
+  @Override
+  public void takeABreak() {
+    System.out.println("Pause");
   }
 }
 
@@ -41,14 +48,18 @@ class HungryGamerHuman extends Human implements HungryEater, Gamer {
 
   @Override
   public void eat() {
+    System.out.println("Je mange en étant affamé");
   }
 
   @Override
   public void play() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'play'");
+    System.out.println("Je joue mais j'ai faim");
   }
 
+  @Override
+  public void takeABreak() {
+    System.out.println("Je fais dodo");
+  }
 }
 
 class Lion implements HungryEater {
@@ -77,14 +88,23 @@ class Student extends Human {
 public class ClasseInterface {
 
   static void giveFood(HungryEater eater) {
-
+    System.out.println("miam mia pour un HungryEater");
+    eater.eat();
   }
 
   static void runGame(Gamer gamer) {
-
+    System.out.println("Lancement d'un jeu");
+    gamer.play();
   }
 
   public static void main(String... args) {
     out.println("Hello World");
+    HungryGamerHuman hungryGamerHuman = new HungryGamerHuman();
+    Lion lion = new Lion();
+
+    giveFood(hungryGamerHuman);
+    giveFood(lion);
+
+    runGame(hungryGamerHuman);
   }
 }

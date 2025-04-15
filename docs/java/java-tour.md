@@ -46,6 +46,17 @@ tour/RandomDemo.java
 
 ## Classes, héritage et interfaces
 
+- En java, une classe ne peut hériter que d'une seule classe (héritage simple) et peut implémenter (terme utilisé quand une classe hérite d'une interface) plusieurs interfaces.
+    - Pour info, Python et C++ permettent l'héritage multiple.
+- Une classe qui implémente une interface doit implémenter toutes les méthodes de cette interface.
+- Interface: une  classe où il n'y a que les synopsis des méthodes dans leur implémentation.
+    - Synopsis (ou la signature): le nom, les arguments et le type de retour de la méthode
+- Les classes modélisent la relation **être**, tandis que les interfaces modélisent des attributs, des traits ou des caractéristiques.
+- Visibilité des propriétés et méthodes d'une classe:
+    - Privé : `private` : visible uniquement dans la classe
+    - Public : `public` : visible dans tout le projet
+    - Protégé : `protected` : visible dans la classe, les sous-classes et les classes du même package
+
 ```java
 --8<--
 tour/ClasseInterface.java
