@@ -21,7 +21,9 @@
 1. Créer une fonction qui prend un tableau d’entiers (`int[] numbers`) et affiche la plus grande valeur et la plus petite valeur (Il faut calculer vous-même le max et le min)
     - Générer un tableau de 10 entier aléatoires et afficher le max et le min
     - Générer un tableau de 10 entiers saisis au clavier et afficher le max et le min
-1. Créer une fonction `int countVowels(List<String> words)` qui compte le nombre total de voyelles de la liste des mots passés en argument. Utiliser une boucle for (ou for each) imbriquée pour résoudre cet exercice.
+1. Créer une fonction `int countVowels(String[] words)` qui compte le nombre total de voyelles du tableau de mots passé en argument. Utiliser une boucle *for* (ou *for each*) imbriquée pour résoudre cet exercice.
+    - Par exemple, pour `{"Bonjour", "le", "monde"}`, le résultat sera 6 (3 + 1 + 2).
+    - Créer un programme Java qui génère une liste de 5 mots pris aléatoirement depuis la liste données ci-après et qui affiche le nombre total de voyelles de cette liste. Les mots disponibles sont : `{"Bonjour", "le", "monde", "Java", "est", "un", "langage", "de", "programmation", "orienté", "objet"}`.
 
 ??? "Solutions"
 

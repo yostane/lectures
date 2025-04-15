@@ -23,8 +23,9 @@ nav:
       - java/java-tour.md
       - Exercices:
           - java/java-exercices-1.md
-          - java/java-exercices-2.md
-          - java/java-exercices-3.md
+          - java/java-exercices-arrays.md
+          - java/java-exercices-lists-maps.md
+          - java/java-exercices-streams.md
           - java/java-exercices-4.md
       - java/jee.md
       - java/javafx.md
