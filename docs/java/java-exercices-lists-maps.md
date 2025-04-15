@@ -28,4 +28,17 @@
 
 ## Série 2
 
-1.
+1. Développer une fonction qui génère une liste de personnages RPG. La fonction demande à l'utilisateur de saisir le nom du premier personnage et sa classe (parmi les classe `Fighter` et `Mage` qui héritent de la classe `Hero`). Ensuite, la fonction demande si l'utilisateur souhaite ajouter un personne ou non, si ou un nouveau personnage est créé comme précédemment, sinon, la fonction renvoie la liste des personnages créés.
+    - Créer un programme qui appelle cette fonction et qui affiche la liste des personnages créés.
+    - Exemple : `Fighter: Bob, Mage: Alice`.
+1. Nous souhaitons enrichir la fonction précédents en ajoutant la génération des attributs des personnages. Voici la listes des attributs initiaux pour les classes `Fighter` et `Mage` listés dans ce tableau:
+
+    | Attribut     | Fighter        | Mage          |
+    | ------------ | -------------- | ------------- |
+    | Points de vie        | entre 20 et 25 | entre 5 et 10  |
+    | Force        | entre 10 et 15 | entre 1 et 5  |
+    | Intelligence | entre 1 et 5   | entre 5 et 10 |
+    | Agilité      | entre 5 et 10  | entre 5 et 10 |
+
+    - Modifier la fonction de génération de personnages pour générer aléatoirement les attributs des personnages en respectant les contraintes ci-dessus et les affiche à l'utilisateur. La fonction demande à l'utilisateur s'il accepte les valeurs générées ou s'il souhaite tenter une nouvelle génération d'attributs.
+    - Modifier le programme pour afficher les attributs des personnages créés en respectant le format suivant : `Fighter: Bob [P: 22, F: 12, I: 2, A: 8]. Mage: Alice [P: 7, F: 11, I: 6, A: 9]`.
