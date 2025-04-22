@@ -1,58 +1,41 @@
-export class BowlingCalcultor {
-  private frames: number[][];
-  constructor(frames: number[][]) {
-    this.frames = frames;
+export class Frame {
+  constructor(public first: number, public second: number) {}
+
+  isSpare(): boolean {
+    return this.first + this.second === 10 && this.second !== 0;
   }
+
+  isStrike(): boolean {
+    return this.first === 10;
+  }
+}
+export class BowlingCalcultor {
+  constructor(private frames: Frame[]) {}
 
   getScore(): number {
-    let sum = 0;
-    let frameBonus = 0;
-    const framesLength = this.frames.length;
-
-    if (this.isStrikeAtTheEnd() || this.isSpareAtThenEnd()) {
-      sum = 10 + this.getFrameTotal(this.frames[framesLength - 1]);
-      frameBonus = 2;
-    }
-
-    for (let index = 0; index < framesLength - frameBonus; index++) {
-      const frame = this.frames[index];
-      const nextFrame = this.frames[index + 1];
-      if (this.isStrike(frame)) {
-        if (this.isStrike(nextFrame) && index <= framesLength - 2) {
-          const nextNextFrame = this.frames[index + 2];
-          sum += this.getFrameTotal(nextNextFrame);
+    let score = 0;
+    this.frames.slice(0, 10).forEach((frame, i) => {
+      if (frame.isSpare()) {
+        const nextFrame = this.frames[i + 1];
+        if (nextFrame === undefined) {
+          throw new Error("frame error");
         }
-        sum += this.getFrameTotal(nextFrame);
+        score += nextFrame.first;
+      } else if (frame.isStrike()) {
+        const nextFrame = this.frames[i + 1];
+        if (nextFrame === undefined) {
+          throw new Error("frame error");
+        }
+        score += nextFrame.first + nextFrame.second;
+        if (nextFrame.isStrike()) {
+          const nextNextFrame = this.frames[i + 2];
+          if (nextNextFrame !== undefined) {
+            score += nextNextFrame.first;
+          }
+        }
       }
-      if (this.isSpare(frame)) {
-        sum += nextFrame[0];
-      }
-      sum += this.getFrameTotal(frame);
-    }
-
-    return sum;
-  }
-
-  private getFrameTotal(frame: number[]): number {
-    return frame[0] + frame[1];
-  }
-
-  private isStrike(frameNumbers: number[]): Boolean {
-    return frameNumbers[0] === 10;
-  }
-
-  private isSpare(frameNumbers: number[]): Boolean {
-    if (this.isStrike(frameNumbers)) {
-      return false;
-    }
-    return this.getFrameTotal(frameNumbers) === 10;
-  }
-
-  private isStrikeAtTheEnd(): Boolean {
-    return this.isStrike(this.frames[this.frames.length - 2]);
-  }
-
-  private isSpareAtThenEnd(): Boolean {
-    return this.isSpare(this.frames[this.frames.length - 2]);
+      score += frame.first + frame.second;
+    });
+    return score;
   }
 }

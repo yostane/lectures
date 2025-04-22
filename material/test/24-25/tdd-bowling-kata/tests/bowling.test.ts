@@ -1,5 +1,5 @@
-import { describe, expect, it } from "bun:test";
-import { BowlingCalcultor, Frame } from "../src/bowling";
+import { describe, expect, it, test, type Test } from "bun:test";
+import { BowlingCalcultor } from "../src/bowling";
 
 interface TestCase {
   description: string;
@@ -166,13 +166,7 @@ const testCases: TestCase[] = [
 describe("Bowling score calculator", () => {
   for (const testCase of testCases) {
     it(testCase.description, () => {
-      const frames = testCase.rolls.map((roll) => {
-        if (roll[0] === undefined || roll[1] === undefined) {
-          throw new Error("Incorrect roll");
-        }
-        return new Frame(roll[0], roll[1]);
-      });
-      const bowlingCalcultor = new BowlingCalcultor(frames);
+      const bowlingCalcultor = new BowlingCalcultor(testCase.rolls);
       const actualScore = bowlingCalcultor.getScore();
       expect(actualScore).toBe(testCase.expectedScore);
     });
