@@ -9,7 +9,7 @@
 ## Projet reactjs avec vite
 
 ```sh
-npm create vite@latest my-react-app -- --template react
+npx create-vite@latest my-react-app --template react
 cd my-react-app
 npm install
 # Lancer un serveur de développement
