@@ -32,18 +32,18 @@ publishers ici](https://www.electronforge.io/config/publishers).
 Voici les étapes clés:
 
 1. Créer un projet React avec Vite
-1. Créer un projet Electron avec Electron Forge
+1. Créer un projet Electron + Vite avec Electron Forge
 1. Copier le code front de l'application React vers le projet Electron : écraser *index.html*, copier le dossier *public* et fusionner le contenu du dossier *src*.
-1. Copier les configuration spécifique du projet React vers le projet Electron. Il ne dervrait y avoir que le *eslint.json* à copier à la racine du projet Electron.
-1. Ajouter le plugin react dans *vite.renderer.config.mjs*. Vous pouvez le faire en remplaçant le contenu de ce fichier par le contenu de *vite.config.js* du projet React.
-1. Copier les dépendances (`dependencies` et `devDependencies`) du projet React vers le projet electron à part `vite`. Il ne devrait pas y avoir d'autres doublons, mais s'il y en a, il faut les supprimer.
+1. Copier les configuration spécifique du projet React vers le projet Electron. Il ne devrait y avoir que le *eslint.json* à copier à la racine du projet Electron.
+1. Ajouter le plugin `react()` dans *vite.renderer.config.mjs*. Vous pouvez le faire en remplaçant le contenu de ce fichier par le contenu de *vite.config.js* du projet React.
+1. Copier les dépendances (`dependencies` et `devDependencies`) du projet React vers le projet Electron à part `vite`. Il ne devrait pas y avoir d'autres doublons, mais s'il y en a, il faut les supprimer.
 1. Lancer l'application Electron. Si tout fonctionne, vous pouvez supprimer le projet React
 
 Voici les commandes qui permettent de faire ces étapes (fonctionne au moment où j'écris ces lignes):
 
 ```sh
-npx create-electron-app@latest electron-react-app --template vite
 npx create-vite@latest my-react-app --template react
+npx create-electron-app@latest electron-react-app --template vite
 
 cp my-react-app/index.html electron-react-app/index.html
 cp -r my-react-app/public electron-react-app/public
