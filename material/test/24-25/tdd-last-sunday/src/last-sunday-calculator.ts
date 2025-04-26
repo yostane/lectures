@@ -2,8 +2,10 @@
 export function getLastMonthsSundays(year: number): string[] {
   const result: string[] = [];
   for (let index = 0; index < 12; index++) {
-    const lastSundayOfMonth = new Date(Date.UTC(year, index + 1));
-    lastSundayOfMonth.setUTCHours(12, 0, 0, 0);
+    const lastSundayOfMonth = new Date(
+      Date.UTC(year, index + 1, 1, 0, 0, 0, 0)
+    );
+    lastSundayOfMonth.setUTCDate(lastSundayOfMonth.getUTCDate() - 1);
     while (lastSundayOfMonth.getUTCDay() !== 0) {
       lastSundayOfMonth.setUTCDate(lastSundayOfMonth.getUTCDate() - 1);
     }
