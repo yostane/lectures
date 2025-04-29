@@ -71,7 +71,9 @@ nav:
       - python/projects-type.md
   - go:
       - go/index.md
+      - go/rest-api.md
       - go/exercices.md
+      - go/projets.md
   - Test:
       - test/index.md
       - test/generalites.md

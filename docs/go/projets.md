@@ -8,13 +8,13 @@ Développer une API REST qui respecte les exigences ci-dessous. Il faudra utilis
 
 - Endpoints CRUD (Create, Read, Update, Delete) pour gérer les ressources de l'application.
     - Lister tout (0.5 pt)
-    - Lister un par ID (0.5 pt)
+    - Afficher une élément par ID (0.5 pt)
     - Lister via une recherche sur tous les champs (1 pt) (par exemple `/search?query=foo` va afficher touts les résultats qui contiennent la sous-chaîne `foo` dans n'importe quel champ).
     - Créer (0.5 pt)
-    - Mettre à jour un par ID (0.5 pt)
-    - Supprimer un par ID (0.5 pt)
-    - Supprimer plusieurs par une liste d'ID (0.5 pt)
-    - Mettre à jour plusieurs par une liste d'ID (0.5 pt)
+    - Mettre à jour un élément par ID (0.5 pt)
+    - Supprimer un élément par ID (0.5 pt)
+    - Supprimer plusieurs éléments par une liste d'ID (0.5 pt)
+    - Mettre à jour plusieurs éléments par une liste d'ID (0.5 pt)
     - Réinitialiser la BDD (0.5 pt) (suppression de toutes les données)
 - Documentation OpenAPI et Swagger UI. (1 pts) et bien documentée (1 pts) ([astuce](https://github.com/swaggo/gin-swagger)).
 - Authentification :
