@@ -1,0 +1,49 @@
+{
+  "folders": [
+    {
+      "name": "go",
+      "path": "docs/go"
+    },
+    {
+      "name": "gin-sqlite-demo",
+      "path": "material/go/gin-sqlite-demo"
+    },
+    {
+      "name": "gin-api-demo",
+      "path": "material/go/gin-api-demo"
+    },
+    {
+      "name": "errordemo",
+      "path": "material/go/errordemo"
+    },
+    {
+      "name": "fibclosure",
+      "path": "material/go/fibclosure"
+    },
+    {
+      "name": "pic",
+      "path": "material/go/pic"
+    },
+    {
+      "name": "readerdemo",
+      "path": "material/go/readerdemo"
+    },
+    {
+      "name": "rot13reader",
+      "path": "material/go/rot13reader"
+    },
+    {
+      "name": "sqrt",
+      "path": "material/go/sqrt"
+    },
+    {
+      "name": "stringerdemo",
+      "path": "material/go/stringerdemo"
+    },
+    {
+      "name": "wordcount",
+      "path": "material/go/wordcount"
+    }
+  ],
+  "settings": {}
+}
