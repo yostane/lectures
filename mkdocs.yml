@@ -63,11 +63,11 @@ nav:
       - python/django-tour.md
       - python/django-tour.en.md
       - Data science:
-        - python/datascience/index.ipynb
-        - python/datascience/exercices.md
-        - python/datascience/ex-01.ipynb
-        - python/datascience/ex-02.ipynb
-        - python/datascience/streamlit.md
+          - python/datascience/index.ipynb
+          - python/datascience/exercices.md
+          - python/datascience/ex-01.ipynb
+          - python/datascience/ex-02.ipynb
+          - python/datascience/streamlit.md
       - python/projects-type.md
   - go:
       - go/index.md
@@ -99,6 +99,7 @@ nav:
   - Dév. desktop:
       - desktopdev/index.md
       - desktopdev/features.md
+      - desktopdev/electronjs.md
       - desktopdev/project.md
   - Prog. distribuée:
       - distrib/index.md

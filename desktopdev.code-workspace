@@ -1,14 +1,26 @@
 {
-	"folders": [
-		{
-			"path": "docs/desktopdev"
-		},
-		{
-			"path": "docs/js"
-		},
-		{
-			"path": "material/js/tour"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "docs/desktopdev"
+    },
+    {
+      "path": "docs/js"
+    },
+    {
+      "path": "material/js/tour"
+    },
+    {
+      "path": "material/desktopdev/electron/electron-demo-01-forge-ts"
+    },
+    {
+      "path": "material/desktopdev/electron/electron-demo-02-react-ts"
+    },
+    {
+      "path": "material/desktopdev/electron/electron-demo-03-firebase"
+    },
+    {
+      "path": "material/desktopdev/electron/electron-demo-02-react-js"
+    }
+  ],
+  "settings": {}
 }
