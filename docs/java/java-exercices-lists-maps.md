@@ -12,11 +12,11 @@
     - Afficher le résultat de cette fonction sur le texte suivant : `Le feu ça brûle et ça fait mal et l'eau ça mouille mais ça moins mal que le feu`.
 1. Les dictionnaires sont souvent utilisés pour la mise en cache et la mémorisation de résultats précédents (ou la mémoisation).
     - Créer une fonction `int countA(List<String> words)` qui compte le nombre total de **a ou A** dans la liste de mots.
-        - Afficher le résultat de cette fonction avec cette liste de mots : `List.of("I", "love", "Java", "and", "the", "JVM", "which", "is", "the", "Java", "Virtual", "Machine")`. Le résultat doit être `4`.
+        - Afficher le résultat de cette fonction avec cette liste de mots : `List.of("I", "love", "Java", "and", "the", "JVM", "which", "is", "the", "Java", "Virtual", "Machine")`. Le résultat doit être `7`.
         - Dans cette liste, le calcul doit être fait une seule fois pour `Java` et le résultat est réutilisé pour l'occurrence suivante. Pareil pour `the`.
-    - Créer une fonction `int compteFibonacci(int n)` qui calcule le fibonacci et qui utilise la mémoisation afin d'optimiser le calcul.
+    - Créer une fonction `int compteFibonacci(int n)` qui calcule le Fibonacci et qui utilise la mémoisation afin d'optimiser le calcul.
         - En d'autres termes, si `compteFibonacci(10)` => `55` et `compteFibonacci(9)` => `34` sont déjà exécutés. Alors `compteFibonacci(11)` calcule depuis le dictionnaire et renvoie `89` sans recalculer `compteFibonacci(10)` et `compteFibonacci(9)`.
-        - Aussi, si `compteFibonacci(10)` est déjà exécuté, alors `cache` contient tous les fibonacci de `0` à `10`.
+        - Aussi, si `compteFibonacci(10)` est déjà exécuté, alors `cache` contient tous les Fibonacci de `0` à `10`.
 
 ??? "Solutions"
 
