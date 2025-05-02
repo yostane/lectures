@@ -20,8 +20,8 @@ Développer une API REST qui respecte les exigences ci-dessous. Il faudra utilis
 - Authentification :
     - Table users (0.5 pt) (nom, email, mot de passe, isAdmin). Le mot de passe ne doit pas être stocké en clair.
     - Table déjà initialisée avec un admin (0.5 pt) (Qui doit rester même après une réinitialisation de la BDD).
-    - Verbe d'inscription (0.5 pt) (POST /users) : Qui crée un utilisateur et renvoie un JSON contenant un JWT.
-    - Verbe de connexion (0.5 pt) (POST /login) : Qui vérifie les identifiants (email et mot de passe) et renvoie un JSON contenant un JWT.
+    - Verbe d'inscription (0.5 pt) (POST /user/register) : Qui crée un utilisateur et renvoie un JSON contenant un JWT.
+    - Verbe de connexion (0.5 pt) (POST /user/login) : Qui vérifie les identifiants (email et mot de passe) et renvoie un JSON contenant un JWT.
     - Tous les verbes de l'API doivent être protégés par un middleware d'authentification (0.5 pt) ([astuce](https://github.com/appleboy/gin-jwt)). Le JWT doit être passé dans un header au format `Authorization : Bearer <token>`.
     - Verbe pour qu'un utilisateur puisse mettre à jour ses propres informations (0.5 pt).
     - Protéger le verbe de reset de la BDD uniquement pour les admins (0.5 pt).
