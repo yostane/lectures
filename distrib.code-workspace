@@ -13,9 +13,6 @@
       "path": "material/distrib/exercices"
     },
     {
-      "path": "material/distrib/dask-10-min"
-    },
-    {
       "path": "docs/distrib/dask"
     }
   ],
