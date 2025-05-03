@@ -14,6 +14,9 @@
     },
     {
       "path": "docs/distrib/dask"
+    },
+    {
+      "path": "material/distrib/dask-coiled"
     }
   ],
   "settings": {}

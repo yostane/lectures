@@ -111,6 +111,7 @@ nav:
           - distrib/dask/dask-array.ipynb
           - distrib/dask/dask-bag.ipynb
           - distrib/dask/dask-misc.ipynb
+          - distrib/dask/coiled.md
   - IoT:
       - iot/index.md
       - iot/deviot.md
