@@ -106,6 +106,8 @@ nav:
   - Prog. distribuée:
       - distrib/index.md
       - distrib/exos.md
+      - Dask et Coiled:
+          - distrib/dask/dask-df.ipynb
   - IoT:
       - iot/index.md
       - iot/deviot.md
