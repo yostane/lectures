@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": "docs/distrib"
+	},
+	{
+		"path": "docs/python"
+	},
+	{
+		"path": "material/distrib/get-started-shell"
+	},
+	{
+		"path": "material/distrib/exercices"
+	}
+],
+  "settings": {}
+}
