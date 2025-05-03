@@ -108,6 +108,9 @@ nav:
       - distrib/exos.md
       - Dask et Coiled:
           - distrib/dask/dask-df.ipynb
+          - distrib/dask/dask-array.ipynb
+          - distrib/dask/dask-bag.ipynb
+          - distrib/dask/dask-misc.ipynb
   - IoT:
       - iot/index.md
       - iot/deviot.md
