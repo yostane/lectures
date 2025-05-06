@@ -45,9 +45,15 @@
     --8<--
     ```
 
-    ```java title="Random min and max"
+    ```java title="Random min and max" linenums="1"
     --8<--
     java/common/exo/ex-serie-2/RandomMinMax.java
+    --8<--
+    ```
+
+    ```java title="CountVowels" linenums="1"
+    --8<--
+    java/common/exo/ex-serie-2/CountVowels.java
     --8<--
     ```
 
