@@ -26,7 +26,7 @@ public class Spaceshooter {
     }
     RandomGenerator randomGenerator = RandomGenerator.getDefault();
     // Permet de placer le vaisseau à peu près au milieu
-    int shipColumn = randomGenerator.nextInt(levelMap.length / 2, levelMap.length / 2 + 2);
+    int shipColumn = randomGenerator.nextInt(levelMap[0].length / 2, levelMap[0].length / 2 + 2);
     int shipRow = levelMap.length - 1;
     levelMap[shipRow][shipColumn] = 'V';
     printLevelMap(levelMap);
@@ -42,6 +42,35 @@ public class Spaceshooter {
       if (shipRow == 0) {
         break;
       }
+      int columnMovement = +1;
+      // Vérifier que le vaisseau peut se déplacer
+      while (levelMap[shipRow - 1][shipColumn] == 'E') {
+        if (columnMovement > 0) {
+          if (shipColumn + columnMovement < levelMap[shipRow].length
+              && levelMap[shipRow][shipColumn + columnMovement] != 'E') {
+            shipColumn += columnMovement;
+            System.out.println("➡️ Movement");
+          } else {
+            System.out.println("Start to move left ⬅️");
+            columnMovement = -1;
+          }
+        } else {
+          if (shipColumn + columnMovement > 0
+              && levelMap[shipRow][shipColumn + columnMovement] != 'E') {
+            shipColumn += columnMovement;
+            System.out.println("⬅️ Movement");
+          } else {
+            System.out.println("Oops, impossible to move ⬅️");
+            levelMap[shipRow][shipColumn] = '*';
+            hasShipFailed = true;
+            break;
+          }
+        }
+      }
+      if (hasShipFailed) {
+        System.out.println("BOOM 💥");
+        break;
+      }
       shipRow -= 1;
       levelMap[shipRow][shipColumn] = 'V';
       printLevelMap(levelMap);
@@ -54,7 +83,7 @@ public class Spaceshooter {
   public static void putEnemiesWithExerciseConstraint(char[][] levelMap) {
     RandomGenerator randomGenerator = RandomGenerator.getDefault();
     int enemyShipCount = 0;
-    while (enemyShipCount < 7) {
+    while (enemyShipCount < 40) {
       // Les ennemis ne sont pas dans les deux dernières lignes
       int randomLine = randomGenerator.nextInt(0, levelMap.length - 2);
       int randomColumn = randomGenerator.nextInt(0, levelMap[0].length);
