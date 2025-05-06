@@ -29,25 +29,25 @@
 
     ```java title="stats" linenums="1"
     --8<--
-    exo/serie-2/Serie2Ex1.java
+    java/exo/ex-serie-2/Serie2Ex1.java
     --8<--
     ```
 
     ```java title="10 premiers nombres premiers" linenums="1"
     --8<--
-    exo/serie-2/First10Prime.java
+    java/exo/ex-serie-2/First10Prime.java
     --8<--
     ```
 
     ```java title="Schtroumphons 💻" linenums="1"
     --8<--
-    exo/serie-2/Schtroumph2Arrays.java
+    java/exo/ex-serie-2/Schtroumph2Arrays.java
     --8<--
     ```
 
     ```java title="Random min and max"
     --8<--
-    exo/RandomMinMax.java
+    java/exo/ex-serie-2/RandomMinMax.java
     --8<--
     ```
 

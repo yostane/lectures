@@ -1,7 +1,6 @@
 ///usr/bin/env jbang --enable-preview "$0" "$@" ; exit $?
 
 import java.util.random.RandomGenerator;
-import static java.lang.System.*;
 
 public class RandomMinMax {
 
