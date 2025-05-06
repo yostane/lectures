@@ -27,14 +27,28 @@ public class Spaceshooter {
     RandomGenerator randomGenerator = RandomGenerator.getDefault();
     // Permet de placer le vaisseau à peu près au milieu
     int shipColumn = randomGenerator.nextInt(levelMap.length / 2, levelMap.length / 2 + 2);
-    levelMap[levelMap.length - 1][shipColumn] = 'V';
+    int shipRow = levelMap.length - 1;
+    levelMap[shipRow][shipColumn] = 'V';
     printLevelMap(levelMap);
 
     System.out.println("Adding enemies");
     putEnemiesWithExerciseConstraint(levelMap);
-    // Commenter la lignen du dessus et décommenter celle-là pour voir le résultat
-    // avec d'autres contraintes
+    // Commenter au dessus et décommenter en dessous pour avoir une variante
     // putEnemiesNoTwoAdjacentOnRow(levelMap);
+
+    boolean hasShipFailed = false;
+    while (!hasShipFailed) {
+      levelMap[shipRow][shipColumn] = '.';
+      if (shipRow == 0) {
+        break;
+      }
+      shipRow -= 1;
+      levelMap[shipRow][shipColumn] = 'V';
+      printLevelMap(levelMap);
+    }
+    System.out.println("Final level map");
+    printLevelMap(levelMap);
+    System.out.format("Ship has failed ? %s\n", hasShipFailed ? "yes" : "no");
   }
 
   public static void putEnemiesWithExerciseConstraint(char[][] levelMap) {
