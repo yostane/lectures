@@ -72,3 +72,11 @@
     - Si le vaisseau ne peut plus se déplacer à droite, il se déplace vers la gauche d'un case tant qu'il y a un ennemi au dessus. S'il atteint le mur gauche et ne peut plus se déplacer, c'est la fin du jeu (game over).
     - Si le joueur atteint la ligne 0, il a gagné (win).
     - Générer une carte de jeu aléatoire et afficher le déroulement du jeu dans la console. A la fin de la partie, afficher le nombre de déplacements total et si le vaisseau a atteint la fin ou s'il a perdu.
+
+??? "Solution"
+
+    ```java linenums="1"
+    --8<--
+    java/common/exo/ex-serie-2/Spaceshooter.java
+    --8<--
+    ```
