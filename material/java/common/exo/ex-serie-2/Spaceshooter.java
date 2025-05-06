@@ -12,7 +12,7 @@ public class Spaceshooter {
       }
       System.out.println();
     }
-    System.err.println("End of current Level map\n");
+    System.out.println("End of current Level map\n");
   }
 
   public static void main(String... args) {
