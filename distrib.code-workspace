@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "docs/distrib"
+    },
+    {
+      "path": "docs/python"
+    },
+    {
+      "path": "material/distrib/get-started-shell"
+    },
+    {
+      "path": "material/distrib/exercices"
+    },
+    {
+      "path": "docs/distrib/dask"
+    },
+    {
+      "path": "material/distrib/dask-coiled"
+    }
+  ],
+  "settings": {}
+}

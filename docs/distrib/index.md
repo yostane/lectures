@@ -6,6 +6,9 @@
 - vs parallélisme:
     - parallélisme: une technique de programmation qui consiste à exécuter plusieurs tâches simultanément.
     - programmation distribuée: une technique de programmation qui consiste à exécuter des tâches sur plusieurs ordinateurs.
+- vs des outils non distribués comme pandas:
+    - pandas: une bibliothèque Python pour l'analyse de données qui fonctionne sur un seul ordinateur.
+    - programmation distribuée: permettent d'accomplir ce que fait pandas mais de façon distribuée (sur plusieurs ordinateurs), et donc permettent de traiter de plus gros volumes de données. Il faut noter que les traitements distribués ne concernent pas uniquement les données massives, mais aussi les traitements massifs (par exemple, le calcul de la valeur d'une fonction sur un très grand nombre de points).
 
 Plusieurs technologies permettent de mettre en place des systèmes distribués. Les plus connues sont: Hadoop, Apache Spark, Apache Flink, Apache Storm, Apache Kafka, Apache Samza, Apache Beam, Google Cloud Dataflow, Amazon Kinesis, etc.
 
@@ -46,9 +49,10 @@ spark-submit --master [url du master] SimpleApp.py
     - [jaceklaskowski spark-workshop](https://jaceklaskowski.github.io/spark-workshop/exercises/)
     - [Travaux pratiques - Introduction à Spark et Scala](https://cedric.cnam.fr/vertigo/Cours/RCP216/tpSparkScala.html)
 
-## Dask
+## Dask et Coiled
 
-[Dask](https://www.dask.org/) s'appuie sur pandaes pour traiter de façon distribuée de gros volumes de données et propose en plus la possibilité de lancer des tâches parallèles.
+- [Dask](https://www.dask.org/) s'appuie sur pandaes pour traiter de façon distribuée de gros volumes de données et propose en plus la possibilité de lancer des tâches parallèles.
+- [Coiled](https://coiled.io/) est un service cloud qui permet de déployer des clusters Dask en quelques clics. Il est particulièrement adapté pour les utilisateurs de Jupyter et de pandas.
 
 ## Sources
 
