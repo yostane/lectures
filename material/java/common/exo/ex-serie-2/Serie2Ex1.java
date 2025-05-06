@@ -10,7 +10,11 @@ public class Serie2Ex1 {
     int sum = 0;
     int oddCount = 0; // odd : impair
     int evenCount = 0; // even : pair
-    // génération et calcul de la somme
+    // Si on n'a pas encore généré d'éléments, on initialise min et max avec les
+    // extrêmes
+    int minFirstLoop = Integer.MAX_VALUE;
+    int maxFirstLoop = Integer.MIN_VALUE;
+    // génération et calcul de la somme, min et max
     for (int i = 0; i < numbers.length; i++) {
       numbers[i] = rng.nextInt(-10, 10);
       System.out.print(numbers[i] + ", ");
@@ -20,12 +24,23 @@ public class Serie2Ex1 {
       } else {
         oddCount += 1;
       }
+      if (minFirstLoop > numbers[i]) {
+        minFirstLoop = numbers[i];
+      } else if (maxFirstLoop < numbers[i]) {
+        maxFirstLoop = numbers[i];
+      }
     }
-    // min, max, écrat type
+    double average = (double) sum / (double) numbers.length;
+
+    System.out.format("First loop data. sum %d, mean %f, evenCount %d, oddCount %d, min %d, max %d\n", sum, average,
+        evenCount, oddCount,
+        minFirstLoop, maxFirstLoop);
+
+    // On connait déjà les éléments, plus besoin d'initialiser avec les extrêmes
     int min = numbers[0];
     int max = numbers[0];
+    // min, max, écrat type
     double standardDeviation = 0; // ecart type
-    double average = (double) sum / (double) numbers.length;
     for (int i = 0; i < numbers.length; i++) {
       standardDeviation += Math.pow(numbers[i] - average, 2);
       if (min > numbers[i]) {
@@ -34,10 +49,8 @@ public class Serie2Ex1 {
         max = numbers[i];
       }
     }
+    // SQRT: SQuare RooT -> racine carrée
     standardDeviation = Math.sqrt(standardDeviation / (double) numbers.length);
-    System.out.println("\nResults ->");
-    System.out.println("min: " + min + ", max:" + max);
-    System.out.println("Even count: " + evenCount + ", Odd count:" + oddCount);
-    System.out.println("sum: " + sum + ", Standard deviation:" + standardDeviation);
+    System.out.format("Results 2nd loop -> min: %d, max: %d, Standard deviation: %f\n", min, max, standardDeviation);
   }
 }
