@@ -9,6 +9,7 @@ export default function App() {
         <Link to="/cv">Protfolio</Link>
       </div>
       <Outlet />
+      <footer>Copyright 2025</footer>
     </>
   );
 }
