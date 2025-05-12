@@ -195,6 +195,20 @@ desktopdev/24-25/my-react-app/src/components/TodoListCrud.jsx
 
 ## Router
 
+Le router permet de gérer les différents écrans d'une application React. Il permet de naviguer entre les différentes écrans sans recharger la page entière. En effet, une application React ne contient en réalité qu'une seule page HTML et est ré-initialisée à chaque fois qu'on charge ou recharge cette page. Le routeur permet donc de changer le composant qui affiche le contenu principal de l'écran actuel sans recharger l'application. Cette zone est appelée un **outlet**.
+
+## Éléments principaux
+
+Le routeur est mis en place avec ces trois éléments principaux:
+
+- **Router** : permet de définir les routes. i.e. pour chaque écran, renseigner son composant principal et son chemin d'url.
+- **Link**: permet de créer un lien vers une route à l'instar de la balise `<a>`. Il ne faut pas utiliser `<a>` car cela rechargerait la page entière.
+- **Outlet**: permet de définir la zone où le contenu de la route actuelle sera affiché.
+
+![Router illustration](./img/router.excalidraw.svg)
+
+## Guide
+
 1. Créer un projet React avec vite (`npm create vite@latest react-app-with-router`).
 1. Préparation
     1. Créer un composant `Home` qui affiche "Bienvenue sur la page d'accueil".
