@@ -16,10 +16,13 @@
       "path": "material/desktopdev/electron/electron-demo-02-react-ts"
     },
     {
-      "path": "material/desktopdev/electron/electron-demo-03-firebase"
+      "path": "material/desktopdev/electron/electron-demo-02-react-js"
     },
     {
-      "path": "material/desktopdev/electron/electron-demo-02-react-js"
+      "path": "material/desktopdev/electron/electron-demo-03-react-router-js"
+    },
+    {
+      "path": "material/desktopdev/electron/electron-demo-firebase-01"
     }
   ],
   "settings": {}
