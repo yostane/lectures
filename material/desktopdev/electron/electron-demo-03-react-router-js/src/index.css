@@ -34,14 +34,19 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #4c135d;
   cursor: pointer;
+  color: white;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
+  background-color: #757cf7;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+button:active{
+  background-color: #212cf6;
 }
