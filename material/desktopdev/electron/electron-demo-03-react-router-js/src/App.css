@@ -4,12 +4,19 @@
   text-align: center;
 }
 
-.card {
-  padding: 2em;
+.portfolio-item {
+  padding: 1em;
   border: 1px solid black;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
 }
 
 .portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .read-the-docs {
