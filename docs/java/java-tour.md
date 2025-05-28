@@ -71,7 +71,7 @@ tour/ClasseInterface.java
 
 ```java
 --8<--
-java/tour/RecordDemo.java
+tour/RecordDemo.java
 --8<--
 ```
 
