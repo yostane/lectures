@@ -20,9 +20,21 @@
 
 ??? "Solutions"
 
-    ```java title="stats" linenums="1"
+    ```java title="Generate random integers and count" linenums="1"
     --8<--
     java/common/exo/ex-lists-maps/randnumcount.java
+    --8<--
+    ```
+
+    ```java title="Count repeating words of sentence" linenums="1"
+    --8<--
+    java/common/exo/ex-lists-maps/countrepeatingwords.java
+    --8<--
+    ```
+
+    ```java title="Count the numbers of a with cache" linenums="1"
+    --8<--
+    java/common/exo/ex-lists-maps/countacache.java
     --8<--
     ```
 
