@@ -14,7 +14,7 @@ public class randnumcount {
     int lastGeneratedInt = 10;
     int repeatCount = 0;
     while (repeatCount < 3) {
-      int randomInt = randomGenerator.nextInt(-2, 2);
+      int randomInt = randomGenerator.nextInt(-2, 3);
       integers.add(randomInt);
       if (lastGeneratedInt == randomInt) {
         repeatCount += 1;

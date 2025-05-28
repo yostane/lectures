@@ -4,10 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class countrepeatingwords {
-
   public static Map<String, Integer> countWords(String sentence) {
     Map<String, Integer> counts = new HashMap<>();
-    String[] words = sentence.split(" ");
+    // On supprime les points et les virgules
+    String[] words = sentence
+        .replaceAll("[\\.\\,]", "")
+        .toLowerCase()
+        .split(" ");
     for (String word : words) {
       if (counts.containsKey(word)) {
         // Add 1 to number of occurences (appearances)
