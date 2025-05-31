@@ -2,4 +2,3 @@ dask[complete]
 numpy
 pandas
 graphviz
-coiled

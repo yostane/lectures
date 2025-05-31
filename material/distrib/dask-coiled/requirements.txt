@@ -4,3 +4,8 @@ pandas
 graphviz
 coiled
 s3fs
+earthaccess
+xarray
+matplotlib
+netcdf4
+h5netcdf
