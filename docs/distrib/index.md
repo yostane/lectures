@@ -51,7 +51,7 @@ spark-submit --master [url du master] SimpleApp.py
 
 ## Dask et Coiled
 
-- [Dask](https://www.dask.org/) s'appuie sur pandaes pour traiter de façon distribuée de gros volumes de données et propose en plus la possibilité de lancer des tâches parallèles.
+- [Dask](https://www.dask.org/) s'appuie sur pandas pour traiter de façon distribuée de gros volumes de données et propose en plus la possibilité de lancer des tâches parallèles.
 - [Coiled](https://coiled.io/) est un service cloud qui permet de déployer des clusters Dask en quelques clics. Il est particulièrement adapté pour les utilisateurs de Jupyter et de pandas.
 
 ## Sources
