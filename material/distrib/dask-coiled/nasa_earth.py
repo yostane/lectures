@@ -9,7 +9,11 @@ import xarray as xr
 import matplotlib.pyplot as plt
 
 # Create a free NASA Earthdata account (https://urs.earthdata.nasa.gov/)
-earthaccess.login()
+try:
+    earthaccess.login()
+except:
+    print("login failed")
+    exit(1)
 
 # Step 2: Find the dataset files we want to analyze
 granules = earthaccess.search_data(
