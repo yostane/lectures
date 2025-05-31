@@ -20,10 +20,16 @@
 
 Plusieurs technologies permettent de mettre en place des systèmes distribués. Les plus connues sont: Hadoop, Apache Spark, Apache Flink, Apache Storm, Apache Kafka, Apache Samza, Apache Beam, Google Cloud Dataflow, Amazon Kinesis, etc.
 
+## Apache Spark et Databricks
+
+Apache spark est un framework de traitement de données massives qui permet de traiter des données en parallèle sur un cluster. Il est conçu pour être rapide et efficace, et il est souvent utilisé pour des tâches telles que l'analyse de données, le machine learning et le traitement de flux de données.
+Databricks est une plateforme de calcul sur le cloud qui offre de fortes synergies avec Apache Spark.
+
+L'équipe à l'origine du projet de recherche Spark à l'UC Berkeley a fondé Databricks en 2013.
+
 ## Dask et Coiled
 
-- [Dask](https://www.dask.org/) s'appuie sur pandas pour traiter de façon distribuée de gros volumes de données et propose en plus la possibilité de lancer des tâches parallèles.
-- [Coiled](https://coiled.io/) est un service de calcul sur le cloud pour développeurs Python.
+[Dask](https://www.dask.org/) s'appuie sur pandas pour traiter de façon distribuée de gros volumes de données et propose en plus la possibilité de lancer des tâches parallèles. [Coiled](https://coiled.io/) est un service de calcul sur le cloud pour développeurs Python.
 
 Dask a été créé par Matthew Rocklin qui est lui-même CEO de Coiled.
 
