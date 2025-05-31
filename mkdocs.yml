@@ -106,8 +106,8 @@ nav:
   - Prog. distribuée:
       - distrib/index.md
       - Apache Spark:
-          - spark/spark.md
-          - spark/exos.md
+          - distrib/spark/spark.md
+          - distrib/spark/exos.md
       - Dask et Coiled:
           - distrib/dask/dask-df.ipynb
           - distrib/dask/dask-array.ipynb
