@@ -69,7 +69,7 @@ nav:
           - python/datascience/ex-02.ipynb
           - python/datascience/streamlit.md
       - python/projects-type.md
-  - go:
+  - Go:
       - go/index.md
       - go/rest-api.md
       - go/exercices.md
