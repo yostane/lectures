@@ -8,10 +8,9 @@ import (
 
 type IPAddr [4]byte
 
-// TODO: Add a "String() string" method to IPAddr.
-
 func (ipAddr IPAddr) String() string {
-	s := make([]string, len(ipAddr))
+	// Slice of length 0 and capacity 4 (size of array)
+	s := make([]string, 0, len(ipAddr))
 	for _, v := range ipAddr {
 		s = append(s, strconv.Itoa(int(v)))
 	}

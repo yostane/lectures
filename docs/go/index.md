@@ -23,7 +23,7 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 1. Que singifie une naked return (ou return nu) en Go ?
 1. Dans quel unique endroit peut-on utiliser := ?
 1. Est-ce que Go autorise la conversion implicite de types ?
-1. Combien de types de boules de Go connaissez-vous ? Quels sont-ils ?
+1. Combien de types de boucles en Go connaissez-vous ? Quels sont-ils ?
 1. Est-ce Go autorise les switch sans condition (ou sans expression après le switch) ?
 1. Quelle est la différence entre `[n]T` et `[]T` en Go ?
 1. Est-ce qu'un slice est un nouveau tableau ?
@@ -32,10 +32,10 @@ Go est un langage de programmation développé par Google, connu pour sa simplic
 1. Qu'est-ce qu'une closure en Go ?
 1. Est-ce que Go a des classes ? Si oui, expliquez comment elles fonctionnent. Sinon, expliquer les alternatives.
 1. Quelle est la différence entre une un méthode et une fonction en Go ?
-1. QUelles la différence entre un méthode avec un receveur de type pointeur et un receveur de type valeur ?
-1. Est-ce que Go renvoir une NPE quand on appelle une méthode d'une interface nulle ?
+1. Quelles la différence entre un méthode avec un receveur de type pointeur et un receveur de type valeur ?
+1. Est-ce que Go renvoie une NPE quand on appelle une méthode d'une interface nulle ?
 1. A quoi servent les formateurs %v, %T, %s et %d ?
-1. Expliquer comment gèrer les erreurs en Go. Est-ce que Go a des exceptions ?
+1. Expliquer comment gérer les erreurs en Go. Est-ce que Go a des exceptions ?
 
 ??? "Réponses"
 
