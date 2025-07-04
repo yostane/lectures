@@ -1,0 +1,52 @@
+---
+draft: true 
+date: 2025-02-20 
+categories:
+  - Kotlin
+  - Scripting
+authors:
+  - yostane
+---
+
+# Scripting with Kotlin
+
+Kotlin is a modern programming language that supports many targets and allows to develop many applications types. From Android applications to server-side applications, Kotlin is a versatile language. It also supports scripting, which allows you to write small programs or scripts that can be executed directly without the need for a full build process.
+
+In this article, we will explore three ways of scripting with Kotlin: using the `*.main.kts` file, using *kscript* and finally using JBang.
+
+## Scripting with `*.main.kts`
+
+Kotlin supports scripting through the `*.main.kts` file, which is a special file that can be executed directly. This file can contain Kotlin code and can be run using the `kotlin` command. For example, you can create a `script.main.kts` file with the following content:
+
+```kotlin
+#!/usr/bin/env kotlin
+
+println("Hello, Kotlin scripting!")
+```
+
+You can then run this script using the following command:
+
+```sh
+kotlin script.main.kts
+```
+
+This will execute the script and print "Hello, Kotlin scripting!" to the console. You can also make the script executable by running:
+
+```sh
+chmod +x script.main.kts
+```
+
+and then run it directly:
+
+```sh
+./script.main.kts
+```
+
+## Scripting with kscript
+
+## Scripting with JBang
+
+## References
+
+- [May 2020: The state of Kotlin Scripting](https://mbonnin.medium.com/may-2020-the-state-of-kotlin-scripting-99cb6cc57db1)
+- [November 2024: The state of Kotlin Scripting](https://mbonnin.net/2024-11-21_state-of-kotlin-scripting/)
