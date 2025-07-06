@@ -10,13 +10,13 @@ authors:
 
 # Scripting with Kotlin
 
-Kotlin is a modern programming language that supports many targets and allows to develop many applications types. From Android applications to server-side applications, Kotlin is a versatile language. It also supports scripting, which allows you to write small programs or scripts that can be executed directly without the need for a full build process.
+Kotlin is a modern programming language that supports many targets and allows to develop many applications types. From Android applications to server-side applications, Kotlin is a versatile language. Even though it is a compiled language at its core, Kotlin supports scripting, which allows you to write small programs or scripts that can be executed directly with a similar developer experience (DX) as a any other scripting language.
 
 In this article, we will explore three ways of scripting with Kotlin: using the `*.main.kts` file, using *kscript* and finally using JBang.
 
 ## Scripting with `*.main.kts`
 
-Kotlin supports scripting through the `*.main.kts` file, which is a special file that can be executed directly. This file can contain Kotlin code and can be run using the `kotlin` command. For example, you can create a `script.main.kts` file with the following content:
+The official way of writing Kotlin scripts is with a `*.main.kts` file, which is a special file that can be executed directly. This file can contain Kotlin code and can be run using the `kotlin` command. For example, you can create a `script.main.kts` file with the following content:
 
 ```kotlin
 #!/usr/bin/env kotlin
@@ -41,6 +41,8 @@ and then run it directly:
 ```sh
 ./script.main.kts
 ```
+
+`*.main.kts` scripts provide some features which are IntelliJ IDE support (VScode support is still lacking), debugging, implicit `argv` (command line arguments) and dependencies `@file:DependsOn` and `@file:Repository`. One nice benefit available out of the box is caching support for fast execution.
 
 ## Scripting with kscript
 
