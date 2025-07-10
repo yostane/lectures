@@ -42,7 +42,35 @@ and then run it directly:
 ./script.main.kts
 ```
 
-`*.main.kts` scripts provide some features which are IntelliJ IDE support (VScode support is still lacking), debugging, implicit `argv` (command line arguments) and dependencies `@file:DependsOn` and `@file:Repository`. One nice benefit available out of the box is caching support for fast execution.
+`*.main.kts` scripts provide some features which are IntelliJ IDE support (VScode support is still lacking), debugging, implicit `argv` (command line arguments) and dependencies `@file:DependsOn` and `@file:Repository`. One nice benefit available out of the box is caching support for fast execution. Below is an example of a script that uses an RSS parser dependency:
+
+```kotlin
+
+```
+
+You can run this script with the following command:
+
+```sh
+kotlin rssreader.main.kts [feed URL]
+# For example:
+rssreader.main.kts "https://blog.worldline.tech/index.xml"
+```
+
+Outputs:
+
+```text
+Showing the last 10 posts from https://blog.worldline.tech/index.xml
+- The Yoga of Image Generation – Part 3
+- Insights from Onboarding young developers and Mentoring Experiences
+- The Yoga of Image Generation – Part 2
+- The Superpowers of JavaScript Proxies
+- Devops on Google Cloud Platform: Automating your build delivery on GCP in nutshell
+- Introduction to QEMU 386
+- The Yoga of Image Generation – Part 1
+- Proper key management in the cloud with a Cloud Secure Module
+- The OAuth proxification guide for frontend developers with Microsoft EntraID
+- Gemini, but the other one
+```
 
 ## Scripting with kscript
 
