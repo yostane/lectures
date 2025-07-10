@@ -87,6 +87,45 @@ In addition to the official `*.main.kts` scripting, there are two other popular 
 
 ## Scripting with kscript
 
+kscript is an open-source tool that aims to write Kotlin scripts with a more user-friendly experience. It provides a command-line interface and a set of features that make it easier to write and run Kotlin scripts.
+
+After installing kscript, you can create a script file with the `.kts` extension and add the shebang line at the top of the file. For example, you can create a `script.kts` file with the following content:
+
+```kotlin
+#!/usr/bin/env kscript
+
+println("Hello, Kotlin scripting! ${args[0]}")
+```
+
+and run it with the following command:
+
+```sh
+kscript script.kts "from kscript"
+```
+
+similar to the `*.main.kts` scripting, you can also make the script executable by running:
+
+```sh
+chmod +x script.kts
+```
+
+and then run it directly:
+
+```sh
+./script.kts "from kscript"
+```
+
+kscript share similar features with the official `*.main.kts` scripting, such as dependency management, command line arguments, and more. It also provides some more developer-friendly features such as passing code from the command line.
+
+```sh
+kscript 'println("hello world")'
+echo 'println("Hello Kotlin.")' |  kscript -
+```
+
+kscript was really useful in the past, when the official Kotlin scripting support was still in its infancy. However, it is not the case anymore because many exclusive features of kscript have been integrated into the official `*.main.kts` scripting, such as dependency management, command line arguments, and more. In addition to that, kscript has not been updated for a long time and The last release was in July 2023.
+
+For a better third-party Kotlin scripting experience, I recommend using JBang as we'll see next.
+
 ## Scripting with JBang
 
 ## References
