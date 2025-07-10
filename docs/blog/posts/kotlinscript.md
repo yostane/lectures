@@ -1,6 +1,6 @@
 ---
 draft: true 
-date: 2025-02-20 
+date: 2025-07-05 
 categories:
   - Kotlin
   - Scripting
@@ -13,6 +13,8 @@ authors:
 Kotlin is a modern programming language that supports many targets and allows to develop many applications types. From Android applications to server-side applications, Kotlin is a versatile language. Even though it is a compiled language at its core, Kotlin supports scripting, which allows you to write small programs or scripts that can be executed directly with a similar developer experience (DX) as a any other scripting language.
 
 In this article, we will explore three ways of scripting with Kotlin: using the `*.main.kts` file, using *kscript* and finally using JBang.
+
+<!-- more -->
 
 ## Scripting with `*.main.kts`
 
@@ -42,10 +44,14 @@ and then run it directly:
 ./script.main.kts
 ```
 
-`*.main.kts` scripts provide some features which are IntelliJ IDE support (VScode support is still lacking), debugging, implicit `argv` (command line arguments) and dependencies `@file:DependsOn` and `@file:Repository`. One nice benefit available out of the box is caching support for fast execution. Below is an example of a script that uses an RSS parser dependency:
+`*.main.kts` scripts provide some features such as debugging, implicit `argv` (command line arguments) and dependencies `@file:DependsOn` and `@file:Repository`. One nice benefit available out of the box is caching support for fast execution.
+
+Below is an example of a script that prints the last 10 posts from a given RSS feed URL. It showcases how to use the `@file:DependsOn` annotation to include dependencies, and how to use the `argv` variable to get command line arguments.
 
 ```kotlin
-
+--8<--
+blog/kotlin-script/rssreader.main.kts
+--8<--
 ```
 
 You can run this script with the following command:
@@ -71,6 +77,13 @@ Showing the last 10 posts from https://blog.worldline.tech/index.xml
 - The OAuth proxification guide for frontend developers with Microsoft EntraID
 - Gemini, but the other one
 ```
+
+Kotlin scripts created with `*.main.kts` is a straightforward way to write and execute Kotlin scripts. It is available out of the box with the Kotlin compiler. However, I found the DX still not ideal for three reasons.
+First, the `*.main.kts` file is currently only supported by IntelliJ IDEA (and I had to restart the IDE to get the dependency recognized).
+Second, I was not able to run the scripts with the `./script.main.kts` command because of an `env: kotlin\r: No such file or directory` error which prevents the scripts from running this way. I had to resort to using the `kotlin script.main.kts` command instead.
+Lastly, the status of this feature is still experimental, meaning that things may change in the future. To prove that, JetBrains has written a blog post about [the current state of Kotlin scripting by the end of 2024](https://blog.jetbrains.com/kotlin/2024/11/state-of-kotlin-scripting-2024/) which initially some provoked some doubts misunderstanding about the future of official Kotlin scripting support. In the end, it was just a feedback about other less successful and relevant scripting features being dropped. To read more about the current state of official Kotlin scripting, pelase read [InfoWorld](https://www.infoworld.com/article/3613358/kotlin-to-lose-scripting-features.html), and [Martin Bonin](https://mbonnin.net/2024-11-21_state-of-kotlin-scripting/) posts about the current state of Kotlin scripting.
+
+In addition to the official `*.main.kts` scripting, there are two other popular ways to write Kotlin scripts: using *kscript* and *JBang*.
 
 ## Scripting with kscript
 

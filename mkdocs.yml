@@ -126,6 +126,13 @@ plugins:
   - mkdocs-jupyter
   - search
   - blog
+  - rss:
+      match_path: blog/posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
   - glightbox
   - i18n:
       languages:

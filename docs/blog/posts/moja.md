@@ -12,6 +12,8 @@ authors:
 
 Let's become moderne Java (moja) developes.
 
+<!-- more -->
+
 ## Random number generator
 
 ## Record

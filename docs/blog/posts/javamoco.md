@@ -15,6 +15,8 @@ It's long finished the time where the Java ecosystem only has threads and async 
 Indeed, we have a lot of elegant options for writing concurrent code on the JVM.
 That is what we'll explore in this article through Project Loom and Kotlin coroutines.
 
+<!-- more -->
+
 ## Introduction
 
 Modern concurrent programming bring two important features: soft threads and structured concurrency. These are language agnostic and may already be found in other programming languages.
