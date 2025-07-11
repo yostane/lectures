@@ -79,24 +79,22 @@ Showing the last 10 posts from https://blog.worldline.tech/index.xml
 ```
 
 Kotlin scripting with `*.main.kts` files is a straightforward way to write and execute Kotlin scripts.
-It is available out of the box with the Kotlin compiler.
-However, I found the DX still not ideal for three reasons:
-First, the `*.main.kts` file is currently only supported by IntelliJ IDEA (and I had to restart the IDE to get the dependency recognized).
-Second, I was not able to run the scripts with the `./script.main.kts` command because of this error: `env: kotlin\r: No such file or directory`, which prevented scripts from running.
-I had to resort to using the `kotlin script.main.kts` command instead.
-Lastly, the status of this feature is still experimental, meaning that things may change in the future.
-To prove that, JetBrains has written a blog post about [the current state of Kotlin scripting by the end of 2024](https://blog.jetbrains.com/kotlin/2024/11/state-of-kotlin-scripting-2024/), which initially provoked some doubts and misunderstandings about the future of official Kotlin scripting support.
-In the end, it was just feedback about other less successful and relevant scripting features being dropped.
-To read more about the current state of official Kotlin scripting, please read [InfoWorld](https://www.infoworld.com/article/3613358/kotlin-to-lose-scripting-features.html) and [Martin Bonin](https://mbonnin.net/2024-11-21_state-of-kotlin-scripting/) posts about the current state of Kotlin scripting.
+This approach is available out of the box with the Kotlin compiler.
+However, several limitations have been observed:
+First, the `*.main.kts` file is currently only supported by IntelliJ IDEA, and a restart of the IDE may be required for dependencies to be recognized.
+Second, scripts may not run with the `./script.main.kts` command due to the error `env: kotlin\r: No such file or directory`, which prevents execution. In such cases, the `kotlin script.main.kts` command must be used instead.
+Lastly, the status of this feature is still experimental, so changes may occur in the future.
+For further information, JetBrains has published a blog post about [the current state of Kotlin scripting by the end of 2024](https://blog.jetbrains.com/kotlin/2024/11/state-of-kotlin-scripting-2024/), which initially led to some doubts and misunderstandings about the future of official Kotlin scripting support. Ultimately, the feedback was related to other less successful and relevant scripting features being dropped.
+Additional perspectives on the current state of official Kotlin scripting can be found in [InfoWorld](https://www.infoworld.com/article/3613358/kotlin-to-lose-scripting-features.html) and [Martin Bonin](https://mbonnin.net/2024-11-21_state-of-kotlin-scripting/) posts.
 
 In addition to the official `*.main.kts` scripting, there are two other popular ways to write Kotlin scripts: using *kscript* and *JBang*.
 
 ## Scripting with kscript
 
-kscript is an open-source tool that aims to provide a more user-friendly experience for writing Kotlin scripts.
-It provides a command-line interface and a set of features that make it easier to write and run Kotlin scripts.
+kscript is an open-source tool designed to provide a user-friendly experience for writing Kotlin scripts.
+It offers a command-line interface and features that simplify the process of writing and running Kotlin scripts.
 
-After installing [kscript](https://github.com/kscripting/kscript?tab=readme-ov-file#installation), we can create a script file with the `.kts` extension and add the shebang line at the top of the file.
+After installing [kscript](https://github.com/kscripting/kscript?tab=readme-ov-file#installation), a script file with the `.kts` extension can be created, and the shebang line added at the top of the file.
 For example, the following file, named `script.kts`, is a kscript file that prints "Hello, Kotlin scripting!" and takes a command line argument:
 
 ```kotlin
@@ -105,26 +103,26 @@ For example, the following file, named `script.kts`, is a kscript file that prin
 println("Hello, Kotlin scripting! ${args[0]}")
 ```
 
-Similarly to the `*.main.kts` scripting, we can run the script using the `kscript` command:
+As with `*.main.kts` scripting, the script can be run using the `kscript` command:
 
 ```sh
 kscript script.kts "from kscript"
 ```
 
-We can also make the script executable by running:
+The script can also be made executable by running:
 
 ```sh
 chmod +x script.kts
 ```
 
-And then run it directly:
+and then run it directly:
 
 ```sh
 ./script.kts "from kscript"
 ```
 
 kscript provides features similar to the official `*.main.kts` scripting, such as dependency management and command line arguments.
-Additional developer-friendly features are also provided, such as passing code from the command line.
+Additional developer-friendly features are also available, such as passing code from the command line.
 The following commands demonstrate two examples of passing code from the command line to kscript:
 
 ```sh
@@ -132,11 +130,11 @@ kscript 'println("hello world")'
 echo 'println("Hello Kotlin.")' |  kscript -
 ```
 
-kscript was widely used in the past, when the official Kotlin scripting support was still in its infancy.
-However, this is no longer the case, as many exclusive features of kscript have been integrated into the official `*.main.kts` scripting, such as dependency management, command line arguments, and more.
-In addition, kscript has not been updated for a long time, and the last release was in July 2023.
+kscript was widely used in the past, when the official Kotlin scripting support was still in its early stages.
+However, many exclusive features of kscript have since been integrated into the official `*.main.kts` scripting, such as dependency management, command line arguments, and more.
+Additionally, kscript has not been updated for a long time, with the last release in July 2023.
 
-A more feature-rich third-party Kotlin scripting experience can be achieved with JBang, as described next.
+A more feature-rich third-party Kotlin scripting experience can be achieved with JBang, as described in the next section.
 
 ## Scripting with JBang
 
