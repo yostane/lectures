@@ -9,15 +9,14 @@ authors:
 
 # Scripting with Kotlin
 
-Kotlin is a modern programming language that supports many targets and allows to develop many applications types. From Android applications to server-side applications, Kotlin is a versatile language. Even though it is a compiled language at its core, Kotlin supports scripting, which allows you to write small programs or scripts that can be executed directly with a similar developer experience (DX) as a any other scripting language.
-
-In this article, we will explore three ways of scripting with Kotlin: using the `*.main.kts` file, using *kscript* and finally using JBang. We'll also mention Kotlin notebooks as a bonus, so stick until the end!
+Kotlin is a modern and versatile programming language that is used for many targets and types of applications.
+Although it is a compiled language at its core, Kotlin supports scripting, which enables small programs or scripts to be written and executed directly, providing a developer experience (DX) similar to other scripting languages. In this article, three ways of scripting with Kotlin are presented: using the `*.main.kts` file, using *kscript*, and using JBang. Kotlin notebooks are also mentioned as a bonus at the end.
 
 <!-- more -->
 
 ## Scripting with `*.main.kts`
 
-The official way of writing Kotlin scripts is with a `*.main.kts` file, which is a special file that can be executed directly. This file can contain Kotlin code and can be run using the `kotlin` command. For example, you can create a `script.main.kts` file with the following content:
+The official way to write Kotlin scripts is with a `*.main.kts` file, which is a special file that can be executed directly. Such a file may contain Kotlin code and can be run using the `kotlin` command. For example, a `script.main.kts` file may be created with the following content:
 
 ```kotlin
 #!/usr/bin/env kotlin
@@ -31,7 +30,7 @@ The script can be executed using the following command:
 kotlin script.main.kts
 ```
 
-This will print "Hello, Kotlin scripting!" to the console. We can also make the script executable by running:
+This prints "Hello, Kotlin scripting!" to the console. The script can also be made executable by running:
 
 ```sh
 chmod +x script.main.kts
@@ -43,11 +42,11 @@ and then run it directly:
 ./script.main.kts
 ```
 
-`*.main.kts` scripts provide useful features such as debugging, implicit `argv` (command line arguments) and dependencies `@file:DependsOn` and `@file:Repository`.
-One nice benefit available out of the box is caching support for fast execution.
+`*.main.kts` scripts provide features such as debugging, implicit `argv` (command line arguments), and dependencies via `@file:DependsOn` and `@file:Repository`.
+Caching support for fast execution is also available by default.
 
 Below is an example of a script that prints the last 10 posts from a given RSS feed URL.
-It showcases how to use the `@file:DependsOn` annotation to include dependencies, and how to use the `argv` variable to get command line arguments.
+This example demonstrates the use of the `@file:DependsOn` annotation to include dependencies, and the use of the `argv` variable to obtain command line arguments.
 
 ```kotlin
 --8<--
@@ -63,7 +62,7 @@ kotlin rssreader.main.kts [feed URL]
 rssreader.main.kts "https://blog.worldline.tech/index.xml"
 ```
 
-The output of the script will be similar to the following:
+The output of the script is similar to the following:
 
 ```text
 Showing the last 10 posts from https://blog.worldline.tech/index.xml
@@ -79,22 +78,22 @@ Showing the last 10 posts from https://blog.worldline.tech/index.xml
 - Gemini, but the other one
 ```
 
-Kotlin scripting with `*.main.kts` file is a straightforward way to write and execute Kotlin scripts.
+Kotlin scripting with `*.main.kts` files is a straightforward way to write and execute Kotlin scripts.
 It is available out of the box with the Kotlin compiler.
-However, I found the DX still not ideal for three reasons.
+However, I found the DX still not ideal for three reasons:
 First, the `*.main.kts` file is currently only supported by IntelliJ IDEA (and I had to restart the IDE to get the dependency recognized).
-Second, I was not able to run the scripts with the `./script.main.kts` command because of this error `env: kotlin\r: No such file or directory`, which prevented scripts from running.
+Second, I was not able to run the scripts with the `./script.main.kts` command because of this error: `env: kotlin\r: No such file or directory`, which prevented scripts from running.
 I had to resort to using the `kotlin script.main.kts` command instead.
 Lastly, the status of this feature is still experimental, meaning that things may change in the future.
-To prove that, JetBrains has written a blog post about [the current state of Kotlin scripting by the end of 2024](https://blog.jetbrains.com/kotlin/2024/11/state-of-kotlin-scripting-2024/) which initially some provoked some doubts misunderstanding about the future of official Kotlin scripting support.
-In the end, it was just a feedback about other less successful and relevant scripting features being dropped.
-To read more about the current state of official Kotlin scripting, pelase read [InfoWorld](https://www.infoworld.com/article/3613358/kotlin-to-lose-scripting-features.html), and [Martin Bonin](https://mbonnin.net/2024-11-21_state-of-kotlin-scripting/) posts about the current state of Kotlin scripting.
+To prove that, JetBrains has written a blog post about [the current state of Kotlin scripting by the end of 2024](https://blog.jetbrains.com/kotlin/2024/11/state-of-kotlin-scripting-2024/), which initially provoked some doubts and misunderstandings about the future of official Kotlin scripting support.
+In the end, it was just feedback about other less successful and relevant scripting features being dropped.
+To read more about the current state of official Kotlin scripting, please read [InfoWorld](https://www.infoworld.com/article/3613358/kotlin-to-lose-scripting-features.html) and [Martin Bonin](https://mbonnin.net/2024-11-21_state-of-kotlin-scripting/) posts about the current state of Kotlin scripting.
 
 In addition to the official `*.main.kts` scripting, there are two other popular ways to write Kotlin scripts: using *kscript* and *JBang*.
 
 ## Scripting with kscript
 
-kscript is an open-source tool that aims to write Kotlin scripts with a more user-friendly experience.
+kscript is an open-source tool that aims to provide a more user-friendly experience for writing Kotlin scripts.
 It provides a command-line interface and a set of features that make it easier to write and run Kotlin scripts.
 
 After installing [kscript](https://github.com/kscripting/kscript?tab=readme-ov-file#installation), we can create a script file with the `.kts` extension and add the shebang line at the top of the file.
@@ -124,27 +123,27 @@ And then run it directly:
 ./script.kts "from kscript"
 ```
 
-kscript shares similar features with the official `*.main.kts` scripting, such as dependency management and command line arguments.
-It also provides some more developer-friendly features such as passing code from the command line.
-The following commands showcases two examples of passing code from the command line to kscript:
+kscript provides features similar to the official `*.main.kts` scripting, such as dependency management and command line arguments.
+Additional developer-friendly features are also provided, such as passing code from the command line.
+The following commands demonstrate two examples of passing code from the command line to kscript:
 
 ```sh
 kscript 'println("hello world")'
 echo 'println("Hello Kotlin.")' |  kscript -
 ```
 
-kscript was really useful in the past, when the official Kotlin scripting support was still in its infancy.
-However, it is not the case anymore because many exclusive features of kscript have been integrated into the official `*.main.kts` scripting, such as dependency management, command line arguments, and more.
-In addition to that, kscript has not been updated for a long time and the last release was in July 2023.
+kscript was widely used in the past, when the official Kotlin scripting support was still in its infancy.
+However, this is no longer the case, as many exclusive features of kscript have been integrated into the official `*.main.kts` scripting, such as dependency management, command line arguments, and more.
+In addition, kscript has not been updated for a long time, and the last release was in July 2023.
 
-For a better third-party Kotlin scripting experience, I recommend using JBang as we'll see next.
+A more feature-rich third-party Kotlin scripting experience can be achieved with JBang, as described next.
 
 ## Scripting with JBang
 
-JBang can be defined as a multipurpose tool centered around using self-contained files for JVM languages (Java, Kotlin, etc.).
-In fact, in addition to scripting, we can generate jars, run them and share our scripts in a neat way.
-For more details on JBang features aside scripting, please refer to my [blog post about JBang](https://blog.worldline.tech/2025/01/21/jbang.html), [my last talk at Devoxx UK](https://www.youtube.com/watch?v=3QnwTmHGct8), and [the official website](https://www.jbang.dev/).
-In this section, we will focus on the scripting features of JBang.
+JBang is a multipurpose tool centered around using self-contained files for JVM languages (Java, Kotlin, etc.).
+In addition to scripting, jars can be generated, executed, and scripts can be shared in a streamlined way.
+For more details on JBang features aside from scripting, see the [blog post about JBang](https://blog.worldline.tech/2025/01/21/jbang.html), [a talk at Devoxx UK](https://www.youtube.com/watch?v=3QnwTmHGct8), and [the official website](https://www.jbang.dev/).
+This section focuses on the scripting features of JBang.
 
 The following commands showcase how to use JBang to create and run a Kotlin script:
 
@@ -157,7 +156,7 @@ chmod +x hello-jbang.kt
 ./hello-jbang.kt
 ```
 
-The `hello-jbang.kt` file is a regular Kotlin file with a main method. What makes it a script is the JBang annotation at the top of the file, also called a shebang, which tells JBang to execute the file as a script.
+The `hello-jbang.kt` file is a regular Kotlin file with a main method. It is considered a script due to the JBang annotation at the top of the file, also called a shebang, which instructs JBang to execute the file as a script.
 The content of the file is as follows:
 
 ```kotlin
@@ -168,13 +167,13 @@ blog/kotlin-script/hello-jbang.kt
 
 JBang supports all scripting features of `*.main.kts` with these additions:
 
-- *File extension is .kt*: keeping the same extension as our usual Kotlin files. Thus, the file must have a main method.
+- *File extension is .kt*: the same extension as regular Kotlin files. Thus, the file must have a main method.
 - *Templates*: the ability to create scripts from predefined models.
-- *Include other sources*: very useful if you want to share code between scripts.
-- *Include resources*: if your code has resources, such as an app icon, or a translation file.
-- *Compiler and runtime options*: For customizing the behavior of the compiler and the runtime.
+- *Include other sources*: useful for sharing code between scripts.
+- *Include resources*: if the code has resources, such as an app icon or a translation file.
+- *Compiler and runtime options*: for customizing the behavior of the compiler and the runtime.
 
-The following script illustrates a Quarkus Rest server written in Kotlin using JBang.
+The following script demonstrates a Quarkus REST server written in Kotlin using JBang.
 It uses the `//DEPS` feature to include dependencies.
 
 ```kotlin
@@ -210,53 +209,53 @@ fun main(args: Array<String>) {
 }
 ```
 
-We can run it with the following command that downloads the scripts and runs it locally:
+It can be run with the following command, which downloads the script and runs it locally:
 
 ```sh
 jbang ktor-rest@yostane
 ```
 
-In my opinion, JBang is currently the best way for writing Kotlin scripts because of its versatility and extensive features.
+JBang provides a versatile and feature-rich approach to writing Kotlin scripts.
 
-The next section covers an alternative way of running Kotlin code blocks, which is not exactly scripting but is worth mentioning.
+The next section covers an alternative way of running Kotlin code blocks, which is not exactly scripting but is noteworthy.
 
 ## Bonus: Kotlin notebooks
 
-Jupyter notebook is a standard format for writing markdown, code and the result of the code, all in a single file.
-The extension of these files is `ipython` (interactive python notebooks)
-Notebooks really powerful and attractive for these reasons in my opinion:
+Jupyter Notebook is a standard format for writing markdown, code, and the result of the code, all in a single file.
+The extension of these files is `.ipynb` (interactive Python notebooks).
+Notebooks are widely used for the following reasons:
 
-- The language of code blocks can be in any language, as long as a Jupyter Kernel for that language is installed.
-- Code blocks can be executed in any order and independently and there is a global session context that remembers the values of global variables across code blocks' executions. Even though there is Python in the extension name, it does indicate nowadays that it supports only Python.
-- Code and markdown blocks can be written in any order
-- GitHub, GitLab and many other tools and apps render Jupyter Notebooks properly, including syntax highlighting and graphics and charts generated by code.
+- The language of code blocks can be any language, as long as a Jupyter Kernel for that language is installed.
+- Code blocks can be executed in any order and independently, and there is a global session context that retains the values of global variables across code block executions. Even though there is Python in the extension name, it does not indicate that only Python is supported.
+- Code and markdown blocks can be written in any order.
+- GitHub, GitLab, and many other tools and apps render Jupyter Notebooks properly, including syntax highlighting and graphics and charts generated by code.
 
-All these features make Jupyter Notebooks great for writing documentation, expeimenting, datascience and for scripting.
+These features make Jupyter Notebooks suitable for writing documentation, experimenting, data science, and scripting.
 
-Kotlin has official scritinh support thrhough the availability of a Kotlin Kernel, that allow to run Kotlin code blocks, and IntelliJ and VSCode extensions for Kotlin notebooks, that enable the editing freatures that we find in regular Kotlon files (syntex highlightinh, code suggestions, etc.).
+Kotlin has official scripting support through the availability of a Kotlin Kernel, which allows Kotlin code blocks to be run, and IntelliJ and VSCode extensions for Kotlin notebooks, which enable editing features found in regular Kotlin files (syntax highlighting, code suggestions, etc.).
 
-The following screenshot illustrates a Kotlin notebook with a markdown block, a code block and the result of the code block.
+The following screenshot shows a Kotlin notebook with a markdown block, a code block, and the result of the code block.
 
 ![Kotlin notebook sample](./img/kotlin-notebook.png)
 
-The notebook can be opened and edited with IntelliJ IDEA, VSCode or any other Jupyter Notebook compatible editor.
-It can also be rendered on GitHub or GitLab. The above notebook can be visualized on [GitHub by following this link](https://github.com/worldline/learning-kotlin/blob/main/material/conferences/2025-03-26-voxxed-bucharest/01-language.ipynb).
+The notebook can be opened and edited with IntelliJ IDEA, VSCode, or any other Jupyter Notebook-compatible editor.
+It can also be rendered on GitHub or GitLab. The above notebook can be viewed on [GitHub at this link](https://github.com/worldline/learning-kotlin/blob/main/material/conferences/2025-03-26-voxxed-bucharest/01-language.ipynb).
 
-Here are some other screenshots of Kotlin notebooks:
+Other screenshots of Kotlin notebooks are shown below:
 
 ![Kandy graph](./img/kandy-graph.png)
 
 ![source: https://github.com/gaplo917/awesome-kotlin-notebook/blob/main/postgres/postgres-vanilla.ipynb](./img/sql-notebook.png)
 ([source gaplo917/awesome-kotlin-notebook](https://github.com/gaplo917/awesome-kotlin-notebook/blob/main/postgres/postgres-vanilla.ipynb))
 
-Kotlin notebooks are a great way to write Kotlin code in a more interactive and visual way.
-They are not exactly scripting, but they can be used for scripting-like tasks, such as experimenting with code, writing documentation, and sharing code snippets.
+Kotlin notebooks provide an interactive and visual way to write Kotlin code.
+They are not exactly scripting, but can be used for scripting-like tasks, such as experimenting with code, writing documentation, and sharing code snippets.
 
 ## Conclusion
 
 Kotlin is a powerful and versatile language.
-Among its possibilities, we have explored in this post three ways to write scripts with Kotlin: using the official `*.main.kts` scripting, using kscript, and using JBang.
-Personally, I prefer to use JBang but if you want to stick to the official approach, then `*.main.kts` is the way. In any case, kscript is to be avoided for its lack of features and updates.
+This post has explored three ways to write scripts with Kotlin: using the official `*.main.kts` scripting, using kscript, and using JBang.
+JBang and the official approach each have their own advantages. kscript is less recommended due to its lack of features and updates.
 
 ## References
 
