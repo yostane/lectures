@@ -250,7 +250,7 @@ VSCode also has a Kotlin extension for notebooks, but the language support is no
 
 The following screenshot shows a Kotlin notebook with a markdown block, a code block, and the result of the code block.
 
-![Kotlin notebook sample](./img/kotlin-notebook.png)
+![Kotlin notebook sample](./img/kotlin-notebook.webp)
 
 The notebook may be opened and edited with IntelliJ IDEA, VSCode, or any other Jupyter Notebook-compatible editor.
 It can also be rendered on GitHub or GitLab.
@@ -258,9 +258,9 @@ The above notebook can be viewed on [GitHub at this link](https://github.com/wor
 
 Other screenshots of Kotlin notebooks are shown below:
 
-![Kandy graph](./img/kandy-graph.png)
+![Kandy graph](./img/kandy-graph.webp)
 
-![source: https://github.com/gaplo917/awesome-kotlin-notebook/blob/main/postgres/postgres-vanilla.ipynb](./img/sql-notebook.png)
+![source: https://github.com/gaplo917/awesome-kotlin-notebook/blob/main/postgres/postgres-vanilla.ipynb](./img/sql-notebook.webp)
 ([source gaplo917/awesome-kotlin-notebook](https://github.com/gaplo917/awesome-kotlin-notebook/blob/main/postgres/postgres-vanilla.ipynb))
 
 Kotlin notebooks provide an interactive and visual way to write Kotlin code.
