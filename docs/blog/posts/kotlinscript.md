@@ -30,13 +30,13 @@ The script can be executed using the following command:
 kotlin script.main.kts
 ```
 
-This prints "Hello, Kotlin scripting!" to the console. The script can also be made executable by running:
+"Hello, Kotlin scripting!" is printed to the console. The script may also be made executable by running:
 
 ```sh
 chmod +x script.main.kts
 ```
 
-and then run it with thie following command:
+and then run it with the following command:
 
 ```sh
 ./script.main.kts
@@ -208,7 +208,26 @@ It can be run with the following command, which downloads the script and runs it
 jbang ktor-rest@yostane
 ```
 
+Once the server is running, it can be accessed at `http://localhost:8080`, which returns a JSON response with the list of todos:
+
+```json
+[
+  {
+    "title": "Sleep",
+    "isCompleted": false
+  },
+  {
+    "title": "Eat",
+    "isCompleted": true
+  }
+]
+```
+
 JBang provides a versatile and feature-rich approach to writing Kotlin scripts.
+It supports dependency management, templates, the ability to include other sources and resources, and many other features.
+It also supports other JVM languages, such as Java and Groovy, making it a good choice for multi-language projects.
+JBang is actively maintained and has a vibrant community, making it a reliable and robust tool for Kotlin scripting.
+In my opinion, JBang is the best option for writing Kotlin scripts thanks to its comprehensive set of features and great developer experience.
 
 The next section covers an alternative way of running Kotlin code blocks, which is not exactly scripting but is noteworthy.
 
@@ -226,8 +245,8 @@ Notebooks are widely used for the following reasons:
 These features make Jupyter Notebooks suitable for writing documentation, experimentation, data science, and scripting.
 
 Official support for Kotlin is available through the Kotlin Kernel, which allows Kotlin code blocks to be run inside Jupyter Notebooks.
-IntelliJ extension for Kotlin notebooks enable editing features found in regular Kotlin files (such as syntax highlighting and code suggestions).
-VScode also has a Kotlin extension for notebooks, but the language support is not as comprehensive (maybe this will change with the [official Kotlin lsp](https://github.com/Kotlin/kotlin-lsp)).
+The IntelliJ extension for Kotlin notebooks enables editing features found in regular Kotlin files (such as syntax highlighting and code suggestions).
+VSCode also has a Kotlin extension for notebooks, but the language support is not as comprehensive (this may change with the [official Kotlin LSP](https://github.com/Kotlin/kotlin-lsp)).
 
 The following screenshot shows a Kotlin notebook with a markdown block, a code block, and the result of the code block.
 
