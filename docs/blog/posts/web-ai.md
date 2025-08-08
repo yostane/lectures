@@ -25,18 +25,75 @@ By reading this article you will have a better understanding of how to run AI mo
 Transformer.js is a JavaScript library from Hugging Face allowing to run pre-trained AI models directly in the browser or in a JS runtime (Node.js, bun, Deno, etc.).
 It supports a wide range of models and use cases, including natural language processing (NLP), computer vision, audio, and more.
 
-To have a better understanding of how it works, let's create a sentiment analysis application using the `distilbert-base-uncased-finetuned-sst-2-english` model.
+The general pattern of using transformer.js is as follows:
 
-1. Create an HTML file with the following content:
+1. Add the library using a CDN or with `npm install @huggingface/transformers.js`.
+1. Load the pipeline providing the desired task and model, as well as many other options.
+    The most important parameter is the first one which corresponds to the task you want to perform (e.g., "sentiment-analysis", "text-generation", etc.).
+    The other ones are optional.
+1. Call loaded pipeline with the input data.
+1. Process the output as needed.
 
-```html
-```
+To have a better understanding of how it works, let's create a sentiment analysis application using default model and options.
 
-When running this code, transformer.js will automatically download the model from Hugging Face's model hub and load it into the browser.
-The library uses WebAssembly (WASM) by default and it is possible to use WebGL to provide more efficient computation.
+1. Let's create a Vanilla Webapp with Vite that uses TypeScript and bun.
 
-We can find in the official documentation the full list of supported [tasks](https://huggingface.co/docs/transformers.js/index#supported-tasksmodels) and [models](https://huggingface.co/docs/transformers.js/index#models).
-Internally, Transformers.js uses the [ONNX.js](https://github.com/microsoft/onnxjs) library to run ONNX (Open Neural Network Exchange) models in the browser.
+    ```sh
+    bun create vite@latest transformerjs-demo
+    cd transformerjs-demo
+    ```
+
+1. Add the dependency for transformer.js:
+
+    ```sh
+    bun install @huggingface/transformers.js
+    ```
+
+1. In **index.html**, add some HTML code that asks the user to enter a sentence and provides a button to run the analysis:
+
+    ```html
+    <input type="text" id="input" placeholder="Enter a sentence" />
+    <button id="analyze">Analyze</button>
+    <div id="output"></div>
+    ```
+
+1. In **main.ts**, add an event handler for the button that sets up the transformer.js pipeline for the `sentiment-analysis` task and runs it:
+
+    ```ts
+    import { pipeline } from '@huggingface/transformers.js';
+
+    const input = document.getElementById('input') as HTMLInputElement;
+    const output = document.getElementById('output') as HTMLDivElement;
+
+    document.getElementById('analyze')?.addEventListener('click', async () => {
+        const model = await pipeline('sentiment-analysis');
+        const result = await model(input.value) as any;
+        output.innerHTML = result[0].label;
+    });
+    ```
+
+Please find some example results in the following screenshots:
+
+In the above code, when calling `await pipeline('sentiment-analysis')`, transformer.js will create a pipeline instance tailored for sentiment analysis.
+It also automatically populates the second parameter with a default model, downloads it from Hugging Face's model hub and loads it into the browser.
+The third parameter of this function is are the options object and many of them are available.
+To summarize, the arguments of `pipeline` are:
+
+- `task`: The name of the task to perform (e.g., `"sentiment-analysis"`).
+    The full list of supported tasks is available in the [official documentation](https://huggingface.co/docs/transformers.js/index#supported-tasksmodels) as tables grouped by task type.
+    The `ID` column contains the unique identifier of the task and contains the possible values of the `task` parameter.
+- `model`: The model to use for the task (optional).
+    The full list of supported models is available in the [official documentation](https://huggingface.co/docs/transformers.js/index#models).
+    However, it is recommended to open the `models` link in the tasks table to see the models available for each task.
+- `options`: An object containing options for the pipeline (optional).
+    Let's take a look at some of them:
+        - `device`: Specifies if the model should run on the CPU or GPU. The library uses WebAssembly (WASM) by default and it is possible to set it to `webgpu` to provide more efficient computation.
+        - `progress_callback`: provides progress updates.
+        This is useful to report the progress to the user when a model is downloaded for the first time.
+
+Let's use this new information to create another trasfomer.js web app that
+
+Transformers.js uses the [ONNX.js](https://github.com/microsoft/onnxjs) library to run ONNX (Open Neural Network Exchange) models in the browser.
 It is possible to convert models from other frameworks like TensorFlow or PyTorch to ONNX format, which allows you to use a wide range of pre-trained models.
 This is just scratching the surface of what you can do with transformer.js.
 In fact, it is [designed to be functionally equivalent](https://github.com/huggingface/transformers.js/) to the popular [Transformers Python](https://github.com/huggingface/transformers).
