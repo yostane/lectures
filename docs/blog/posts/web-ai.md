@@ -10,19 +10,38 @@ draft: true
 
 # No server needed: running AI in the browser
 
-Running AI models is often associated with heavy server-side computations but it not true anymore. With advancements in hardware capabilities and the smart usage of small AI models, it is now possible to run AI models directly in the browser. This is a game changer as it brings new possibilities for building amazing user experiences and it makes AI more accessible to developers and users alike.
+Running AI models is often associated with heavy server-side computations but it is not true anymore.
+With advancements in hardware capabilities and the smart usage of small AI models, it is now possible to run AI models directly in the browser.
+This is a game changer as it brings new possibilities for building amazing user experiences and it makes AI more accessible to developers and users alike.
 
 <!-- more -->
 
-In this post, we will explore two ways to run AI model in the browser: transformer.js and the new Build-in AI web API. We will showcase some demos and discuss the benefits and limitations of each approach. By reading this article you will have a better understanding of how to run AI models in the browser and when to use it over server-side AI.
+In this post, we will explore two ways to run AI model in the browser: transformer.js and the new Built-in AI web API.
+We will showcase some demos and discuss the benefits and limitations of each approach.
+By reading this article you will have a better understanding of how to run AI models in the browser and when to use it over server-side AI.
 
 ## transformer.js
 
-Transformer.js is a JavaScript library that allows you to run transformer-based AI models directly in the browser. It leverages WebAssembly and WebGL to provide efficient computation, making it possible to run models like BERT, GPT, and others without needing a server.
+Transformer.js is a JavaScript library from Hugging Face allowing to run pre-trained AI models directly in the browser or in a JS runtime (Node.js, bun, Deno, etc.).
+It supports a wide range of models and use cases, including natural language processing (NLP), computer vision, audio, and more.
 
-Transformer.js is designed to be lightweight and easy to use, allowing developers to integrate AI capabilities into their web applications with minimal effort. It supports a variety of models and provides a simple API for loading and running them.
+To have a better understanding of how it works, let's create a sentiment analysis application using the `distilbert-base-uncased-finetuned-sst-2-english` model.
 
-## Running AI natively in the browser
+1. Create an HTML file with the following content:
+
+```html
+```
+
+When running this code, transformer.js will automatically download the model from Hugging Face's model hub and load it into the browser.
+The library uses WebAssembly (WASM) by default and it is possible to use WebGL to provide more efficient computation.
+
+We can find in the official documentation the full list of supported [tasks](https://huggingface.co/docs/transformers.js/index#supported-tasksmodels) and [models](https://huggingface.co/docs/transformers.js/index#models).
+Internally, Transformers.js uses the [ONNX.js](https://github.com/microsoft/onnxjs) library to run ONNX (Open Neural Network Exchange) models in the browser.
+It is possible to convert models from other frameworks like TensorFlow or PyTorch to ONNX format, which allows you to use a wide range of pre-trained models.
+This is just scratching the surface of what you can do with transformer.js.
+In fact, it is [designed to be functionally equivalent](https://github.com/huggingface/transformers.js/) to the popular [Transformers Python](https://github.com/huggingface/transformers).
+
+## The built-in AI web APIs
 
 The new Built-in AI web API allows developers to run AI models natively in the browser without the need for any external libraries.
 This API provides a simple and consistent interface for working with AI models, making it easy to integrate AI capabilities into web applications.
