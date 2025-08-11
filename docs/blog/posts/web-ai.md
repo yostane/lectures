@@ -7,7 +7,7 @@ authors:
   - yostane
 ---
 
-# No server needed: running AI in the browser
+# The present and future of AI in the browser
 
 Running AI models is often associated with heavy server-side computations but it is not true anymore.
 
@@ -21,7 +21,7 @@ In this post, we will explore two ways to run AI model in the browser: transform
 We will showcase some demos and discuss the benefits and limitations of each approach.
 By reading this article, you will gain a better understanding of how to run AI models in the browser and when to choose this approach over server-side AI.
 
-## Transformer.js
+## Present: Transformer.js
 
 Transformer.js is a JavaScript library from Hugging Face allowing to run pre-trained AI models directly in the browser or in a JS runtime (Node.js, bun, Deno, etc.).
 
@@ -131,7 +131,7 @@ Fortunately, it is possible to convert models from other frameworks like TensorF
 
 This is just scratching the surface of what you can do with transformer.js.
 
-## The built-in AI web APIs
+## Future: The built-in AI web APIs
 
 The new Built-in AI web API allows developers to run AI models natively in the browser without the need for any external libraries.
 
