@@ -1,5 +1,5 @@
 ---
-date: 2025-07-29
+date: 2025-08-11
 slug: web-ai-transformers-builtin
 categories:
   - web
