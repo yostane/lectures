@@ -75,10 +75,7 @@ Let's create a vanilla web app with Vite that uses TypeScript and Bun.
     });
     ```
 
-Please find some example results in the following screenshots:
-
 In the above code, when calling `await pipeline('sentiment-analysis')`, transformer.js will create a pipeline instance tailored for sentiment analysis.
-
 It also automatically uses a default model as the second parameter, downloads it from Hugging Face's model hub, and loads it into the browser.
 The third parameter of this function is the options object, with many available options.
 To summarize, the arguments of `pipeline` are:
@@ -123,23 +120,16 @@ Let's use this new information to add a text to speech feature to our existing a
     });
     ```
 
-Transformers.js supports many more use cases and can theoretically cover all the ones covered by [Transformers Python](https://github.com/huggingface/transformers).
-
 Transformers.js supports many more use cases and can theoretically cover all those supported by [Transformers Python](https://github.com/huggingface/transformers).
 However, while Transformers.js is designed to be functionally equivalent to its Python counterpart, it is important to note that it is not a direct port.
 One difference is that the JS library uses the [ONNX runtime](https://onnxruntime.ai/) to run models in the browser and is thus compatible only with ONNX models.
 Fortunately, it is possible to convert models from other frameworks like TensorFlow or PyTorch to ONNX format using a tool called [Optimum](https://github.com/huggingface/optimum#onnx--onnx-runtime).
-
 This is just scratching the surface of what you can do with transformer.js.
 
 ## Future: The built-in AI web APIs
 
 The new Built-in AI web API allows developers to run AI models natively in the browser without the need for any external libraries.
-
 This API provides a simple and consistent interface for working with AI models, making it easy to integrate AI capabilities into web applications.
-
-There are currently 7 APIS available in the Built-in AI web API, from which the first 6 can already be experimented in Chrome:
-
 There are currently 7 APIs available in the Built-in AI web API, of which the first 6 can already be experimented with in Chrome:
 
 - [Translator API](https://developer.chrome.com/docs/ai/translator-api/)
@@ -220,17 +210,13 @@ In the future, when built-in web AI becomes stable and available across browsers
 
 Even though it is possible to run AI on the browser, there are still some limitations and trade-offs to consider when choosing between browser AI and server-side AI.
 
-The advantages of using AI on the browser in favor of server based AI:
-
-The advantages of using AI in the browser over server-based AI:
+Let's start by listing some of the advantages of using AI in the browser over server-based AI:
 
 - **Offline capabilities**: Local web AI can work without an internet connection, making it more reliable in situations where connectivity is limited or unavailable.
 - **Privacy and security**: By processing data locally, web AI can help protect user privacy and reduce the risk of data breaches associated with sending sensitive information to a server.
 - **Easier to setup**: Web AI can be easier to set up and deploy, as it does not require server infrastructure or complex backend systems.
     In fact, a static HTML page can use web AI without any server-side code.
 - **Less expensive**: Webapps that take advantage of local web AI can reduce costs associated with server maintenance, data transfer, and cloud computing resources.
-
-The disadvantages of using AI on the browser in favor of server based AI:
 
 The disadvantages of using AI in the browser compared to server-based AI:
 
@@ -241,13 +227,10 @@ The disadvantages of using AI in the browser compared to server-based AI:
 
 ## Conclusion
 
-This post explored how to run AI directly on the browser.
-
 This post explored how to run AI directly in the browser.
 We introduced two ways to achieve this: using the built-in web AI APIs and using Transformers.js.
-We discussed the advantages and disadvantages of each approach, helping you make an informed decision based on your specific use case.
 The biggest advantages of using web AI are privacy and cost-effectiveness, and I believe we should move more in this direction.
-We can even use Transformers.js for tasks that use small models and compute quickly.
-Currently, server-side AI is the most reliable option for running AI workloads, especially for complex tasks that require significant computational resources.
+We can even use Transformers.js for tasks that use small models and compute quickly, but
+currently, server-side AI is the most reliable option for running AI workloads, especially for complex tasks that require significant computational resources.
 However, if built-in web AI continues to improve, it will become a viable alternative for more complex use cases.
 So, let's keep an eye on this exciting development.
