@@ -91,9 +91,9 @@ To summarize, the arguments of `pipeline` are:
         - `progress_callback`: provides progress updates.
         This is useful to report the progress to the user when a model is downloaded for the first time.
 
-Let's use this new information to create another trasfomer.js web app that
+Let's use this new information to create another transformer.js web app that transforms text into speech.
 
-Transformers.js uses the [ONNX.js](https://github.com/microsoft/onnxjs) library to run ONNX (Open Neural Network Exchange) models in the browser.
+Transformers.js uses the [ONNX runtime](https://onnxruntime.ai/) library to run the models in the browser.
 It is possible to convert models from other frameworks like TensorFlow or PyTorch to ONNX format, which allows you to use a wide range of pre-trained models.
 This is just scratching the surface of what you can do with transformer.js.
 In fact, it is [designed to be functionally equivalent](https://github.com/huggingface/transformers.js/) to the popular [Transformers Python](https://github.com/huggingface/transformers).
