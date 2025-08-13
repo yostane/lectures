@@ -25,9 +25,7 @@ By reading this article, you will gain a better understanding of how to run AI m
 ## Present: Transformer.js
 
 Transformer.js is a JavaScript library from Hugging Face allowing to run pre-trained AI models directly in the browser or in a JS runtime (Node.js, bun, Deno, etc.).
-
 It supports a wide range of models and use cases, including natural language processing (NLP), computer vision, audio, and more.
-
 The general pattern of using transformer.js is as follows:
 
 1. Add the library using a CDN or with `npm install @huggingface/transformers.js`.
