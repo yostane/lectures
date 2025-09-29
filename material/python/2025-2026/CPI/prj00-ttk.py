@@ -8,11 +8,14 @@ label = ttk.Label(root, text='Hello CPI Python')
 
 
 def change_label():
-    label['text'] = "We are using the Ttk library"
+    if label['text'] == 'Hello CPI Python':
+        label['text'] = "We are using the Ttk library"
+    else:
+        label['text'] = 'Hello CPI Python'
 
 
 button = ttk.Button(root, text="Change label", command=change_label)
 
-button.pack()
 label.pack()
+button.pack()
 root.mainloop()
