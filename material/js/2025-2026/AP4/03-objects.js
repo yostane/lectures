@@ -40,7 +40,7 @@ function setupGame(name, options) {
 }
 
 setupGame("LoL", { fps: 60, filter: "Black and white", isAudioEnabled: false });
-setupGame("Counter Strike Zero", {
+setupGame("CSGo", {
   fps: 120,
   filter: null,
   isAudioEnabled: true,
