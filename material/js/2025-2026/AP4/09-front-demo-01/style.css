@@ -14,6 +14,10 @@ button:active {
   background-color: yellowgreen;
 }
 
+button:hover {
+  animation: 0.5s infinite alternate titlecoloranim;
+}
+
 .parent {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -50,6 +54,7 @@ button:active {
   h1 {
     font-size: larger;
     color: blueviolet;
+    animation: 2s infinite alternate titlecoloranim;
   }
 }
 
@@ -91,4 +96,16 @@ main {
 .div4 {
   grid-column: span 4 / span 4;
   grid-row-start: 5;
+  animation: 1s ease-in infinite titlecoloranim;
+}
+
+@keyframes titlecoloranim {
+  from {
+    color: blueviolet;
+    transform: rotate(-10deg) scale(1);
+  }
+  to {
+    color: rgb(14, 224, 7);
+    transform: rotate(10deg) scale(1.5);
+  }
 }
