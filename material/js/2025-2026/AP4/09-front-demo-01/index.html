@@ -4,23 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>HTML CSS demo</title>
 </head>
 
 <body>
   <div class="parent">
     <header class="div1">
-      En-tête
+      <h1>Awesome HTML CSS</h1>
       <nav>
-        La navigation
+        link1 - link2
       </nav>
     </header>
     <aside class="div2">
-      Pour les éléments à mettre dans les côtés
-      <menu>Un menu avec des options (à ne pas confondre avec la navigation)</menu>
+      <input type="text" placeholder="search">
+      <section>
+        <h2>Options</h2>
+        <menu>
+          <input type="checkbox" name="dark-mode" id="dark-mode"><label for="dark-mode">Dark mode</label>
+          <Button>Grid</Button>
+          <Button>List</Button>
+        </menu>
+      </section>
     </aside>
-    <main class="div3">
-      Contenu principal
+    <main class="div3 grid">
       <section>
         Une section
         <p>On peut toujours utiliser les balises HTML classiques</p>
@@ -28,9 +35,15 @@
       <section>
         Une section
       </section>
+      <section>
+        Une section
+      </section>
+      <section>
+        Une section
+      </section>
     </main>
     <footer class="div4">
-      copyleft lecture
+      Copyleft @ 2025
     </footer>
   </div>
 </body>
