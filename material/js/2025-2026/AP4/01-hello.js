@@ -41,3 +41,8 @@ add(10, 4);
 // null est forcément mis explicitement
 a = null;
 console.log("a", a);
+// == et != convertissent les deux opérandes implicitement vers le même type
+console.log("1" == 1, "1" != 1, "0" == false);
+/// === et !== ne fait pas conversion implicite
+console.log("1" === 1, "1" !== 1, "0" === false);
+// Ma recommendation est de toujours utiliser === ou !==
