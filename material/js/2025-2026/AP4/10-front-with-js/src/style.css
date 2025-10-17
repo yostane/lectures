@@ -1,0 +1,138 @@
+/*
+Sélecteur: expression qui permet de cibler, dans le css, un éléments de la page
+*/
+body {
+  --main-bg-color: aquamarine;
+  --button-bg-color: yellowgreen;
+  --title-start-color: blueviolet;
+  --title-end-color: rgb(14, 224, 7);
+  background-color: rgb(246, 238, 228);
+}
+
+button {
+  background-color: var(--main-bg-color);
+  border-radius: 4px;
+}
+/* :active est une pseudo classe: permet de gérer un état particulier d'un élément */
+button:active {
+  background-color: var(--button-bg-color);
+}
+
+button:hover {
+  animation: 0.5s infinite alternate titlecoloranim;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 8px;
+}
+
+/* > les enfants directs
+* tous les éléments 
+> * : tous les enfants de class parent
+*/
+.parent > * {
+  padding: 5px;
+}
+
+.div2,
+.div3 {
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px black;
+}
+
+.div1,
+.div4 {
+  align-self: center;
+  justify-self: center;
+}
+
+.div1 {
+  grid-column: span 4 / span 4;
+  nav {
+    text-align: center;
+  }
+  h1 {
+    font-size: larger;
+    animation: 2s infinite alternate titlecoloranim;
+  }
+}
+
+.div2 {
+  grid-row: 2 / 5;
+  h2 {
+    font-size: large;
+  }
+}
+
+.div3 {
+  grid-column: span 3 / span 3;
+  /* pareil que mettre grid-row: 2 / 5 */
+  grid-row-start: 2;
+  grid-row-end: 5;
+}
+
+main > section {
+  padding: 5px;
+  border: 2px rgb(229, 175, 175) solid;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgb(229, 155, 155);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.grid {
+  flex-direction: row;
+}
+
+.list {
+  flex-direction: column;
+}
+
+.div4 {
+  grid-column: span 4 / span 4;
+  grid-row-start: 5;
+  animation: 1s ease-in infinite titlecoloranim;
+}
+
+@keyframes titlecoloranim {
+  from {
+    color: var(--title-start-color);
+    transform: rotate(-10deg) scale(1);
+  }
+  to {
+    color: var(--title-end-color);
+    transform: rotate(10deg) scale(1.5);
+  }
+}
+
+@media screen and (max-device-width: 767px) and (orientation: portrait) {
+  .div2 {
+    grid-column: span 4 / span 4;
+    grid-row: 2 / 3;
+  }
+  .div3 {
+    grid-column: span 4 / span 4;
+    grid-row: 3 / 5;
+  }
+}
+
+@media print {
+  /* !important signifie qu'il obligatoire appliquer ce style */
+  .div1,
+  .div2,
+  .div4 {
+    display: none !important;
+  }
+  .div3 {
+    grid-column: span 4 / span 4;
+    grid-row: span 6 / span 6;
+  }
+}
