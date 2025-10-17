@@ -2,16 +2,20 @@
 Sélecteur: expression qui permet de cibler, dans le css, un éléments de la page
 */
 body {
+  --main-bg-color: aquamarine;
+  --button-bg-color: yellowgreen;
+  --title-start-color: blueviolet;
+  --title-end-color: rgb(14, 224, 7);
   background-color: rgb(246, 238, 228);
 }
 
 button {
-  background-color: aquamarine;
+  background-color: var(--main-bg-color);
   border-radius: 4px;
 }
 /* :active est une pseudo classe: permet de gérer un état particulier d'un élément */
 button:active {
-  background-color: yellowgreen;
+  background-color: var(--button-bg-color);
 }
 
 button:hover {
@@ -53,7 +57,6 @@ button:hover {
   }
   h1 {
     font-size: larger;
-    color: blueviolet;
     animation: 2s infinite alternate titlecoloranim;
   }
 }
@@ -101,11 +104,11 @@ main {
 
 @keyframes titlecoloranim {
   from {
-    color: blueviolet;
+    color: var(--title-start-color);
     transform: rotate(-10deg) scale(1);
   }
   to {
-    color: rgb(14, 224, 7);
+    color: var(--title-end-color);
     transform: rotate(10deg) scale(1.5);
   }
 }
