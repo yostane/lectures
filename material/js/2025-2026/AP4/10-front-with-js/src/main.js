@@ -25,10 +25,31 @@ window.addEventListener("DOMContentLoaded", () => {
     classList.add("list");
   });
   document.querySelector("#dark-mode").addEventListener("change", (event) => {
-    console.log("event object", event);
-    console.log("checked", event.target.checked);
-    console.log(
-      getComputedStyle(document.body).getPropertyValue("--main-bg-color")
-    );
+    const style = document.querySelector("body").style;
+    if (event.target.checked) {
+      style.setProperty("--bg-color", "black");
+      style.setProperty("--text-color", "white");
+    } else {
+      style.setProperty("--bg-color", "white");
+      style.setProperty("--text-color", "black");
+    }
   });
+
+  document
+    .querySelector("#dark-mode-color-scheme")
+    .addEventListener("click", (event) =>
+      document.querySelector("html").style.setProperty("color-scheme", "dark")
+    );
+  document
+    .querySelector("#light-mode-color-scheme")
+    .addEventListener("click", (event) =>
+      document.querySelector("html").style.setProperty("color-scheme", "light")
+    );
+  document
+    .querySelector("#auto-mode-color-scheme")
+    .addEventListener("click", (event) =>
+      document
+        .querySelector("html")
+        .style.setProperty("color-scheme", "light dark")
+    );
 });

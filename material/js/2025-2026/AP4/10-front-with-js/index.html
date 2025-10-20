@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/style.css">
   <script type="module" src="src/main.js"></script>
+  <!-- <meta name="color-scheme" content="light dark">  -->
   <title>HTML CSS demo</title>
 </head>
 
@@ -22,7 +23,20 @@
       <section>
         <h2>Options</h2>
         <menu>
-          <input type="checkbox" name="dark-mode" id="dark-mode"><label for="dark-mode">Dark mode</label>
+          <div><input type="checkbox" name="dark-mode" id="dark-mode"><label for="dark-mode">Dark mode</label></div>
+          <ul>
+            <li><button id="dark-mode-color-scheme">Dark
+                mode
+                (color-scheme)</button></li>
+            <li>
+              <button id="light-mode-color-scheme">Light
+                mode
+                (color-scheme)</button>
+            </li>
+            <li><button id="auto-mode-color-scheme">Auto
+                (color-scheme)</button></li>
+          </ul>
+
           <Button id="grid-button">Grid</Button>
           <Button id="list-button">List</Button>
         </menu>
