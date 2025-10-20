@@ -8,3 +8,5 @@
 
 - [Java](https://yostane.github.io/lectures/java)
 - [Go](https://yostane.github.io/lectures/go)
+- [Python](https://yostane.github.io/lectures/python)
+- [Architecture logicielle](https://yostane.github.io/lectures/archi)

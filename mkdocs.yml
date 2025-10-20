@@ -71,7 +71,7 @@ nav:
       - python/projects-type.md
   - Go:
       - go/index.md
-      - go/tour.md
+      - go/tour.ipynb
       - go/rest-api.md
       - go/exercices.md
       - go/projets.md
