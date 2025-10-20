@@ -73,7 +73,7 @@ nav:
       - go/index.md
       - go/tour.ipynb
       - go/rest-api.md
-      - go/exercices.md
+      - go/exercices.ipynb
       - go/projets.md
   - Test:
       - test/index.md
