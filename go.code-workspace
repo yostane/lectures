@@ -43,6 +43,9 @@
     {
       "name": "wordcount",
       "path": "material/go/wordcount"
+    },
+    {
+      "path": "material/go/mysqrt-exo"
     }
   ],
   "settings": {}
