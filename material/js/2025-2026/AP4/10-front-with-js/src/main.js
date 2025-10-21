@@ -29,6 +29,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (event.target.checked) {
       style.setProperty("--bg-color", "black");
       style.setProperty("--text-color", "white");
+      style.setProperty("padding", "10px");
+      style.setProperty("border", "10px solid red");
     } else {
       style.setProperty("--bg-color", "white");
       style.setProperty("--text-color", "black");
