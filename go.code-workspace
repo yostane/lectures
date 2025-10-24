@@ -46,6 +46,18 @@
     },
     {
       "path": "material/go/mysqrt-exo"
+    },
+    {
+      "path": "material/go/cobra/cobra-01-start"
+    },
+    {
+      "path": "material/go/cobra/cobra-02-12auth"
+    },
+    {
+      "path": "material/go/cobra/cobra-03-fang"
+    },
+    {
+      "path": "material/go/cobra/cobra-04-bubbletea"
     }
   ],
   "settings": {}
