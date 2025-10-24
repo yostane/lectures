@@ -7,18 +7,12 @@ Développer une application en ligne de commande (CLI) appellée `univ-cli` en G
     - `cat <file>`: Affiche le contenu du fichier spécifié.
     - `cp <file> <destination>`: Copie le fichier spécifié vers la destination fournie.
     - `mkdir <dir>`: Crée un nouveau répertoire avec le nom spécifié.
-- `http`: Permet d'effectuer des requêtes HTTP. Elle propose les sous-commandes suivantes :
-    - `get <url>`: Effectue une requête GET à l'URL spécifiée et affiche la réponse.
-    - `post <url> <data>`: Effectue une requête POST à l'URL spécifiée avec les données fournies et affiche la réponse.
-- `math`: Permet d'effectuer des opérations mathématiques de base. Elle propose les sous-commandes suivantes :
-    - `add <num1> <num2>`: Affiche la somme de deux nombres.
-    - `sub <num1> <num2>`: Affiche la différence entre deux nombres.
-    - `mul <num1> <num2>`: Affiche le produit de deux nombres.
-    - `div <num1> <num2>`: Affiche le quotient de deux nombres.
 - `tui`: Lance une interface utilisateur textuelle (TUI) simple qui affiche un menu avec les options suivantes :
     - Afficher la date et l'heure actuelles.
     - Afficher un message de bienvenue.
     - Quitter l'application.
+    - Proposer une fonctionnalité de votre choix. Plus la fonctionnalité est originale et intéressante, mieux c'est !
+- `custom`: propose une fonctionnalité (ou ensemble de fonctionnalités) de votre choix. Plus la fonctionnalité est originale et intéressante, mieux c'est !
 
 ## Contraintes
 
