@@ -45,25 +45,32 @@
       "path": "material/go/wordcount"
     },
     {
+      "name": "mysqrt-exo",
       "path": "material/go/mysqrt-exo"
     },
     {
+      "name": "cobra-01-start",
       "path": "material/go/cobra/cobra-01-start"
     },
     {
+      "name": "cobra-02-12auth",
       "path": "material/go/cobra/cobra-02-12auth"
     },
     {
+      "name": "cobra-03-fang",
       "path": "material/go/cobra/cobra-03-fang"
     },
     {
+      "name": "cobra-04-bubbletea",
       "path": "material/go/cobra/cobra-04-bubbletea"
     },
     {
-      "path": "material/go/25-26"
+      "name": "cobra-05-lipgloss",
+      "path": "material/go/cobra/cobra-05-lipgloss"
     },
     {
-      "path": "material/go/cobra/cobra-05-lipgloss"
+      "name": "25-26",
+      "path": "material/go/25-26"
     }
   ],
   "settings": {}
