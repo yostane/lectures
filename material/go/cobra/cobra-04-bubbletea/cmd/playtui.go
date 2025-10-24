@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"math/rand/v2"
 
 	tea "github.com/charmbracelet/bubbletea"
 )
@@ -10,6 +11,7 @@ type model struct {
 	choices  []string
 	cursor   int
 	selected int
+	result   int
 }
 
 func InitialModel() model {
@@ -17,6 +19,8 @@ func InitialModel() model {
 		choices: []string{"Pair", "Impair"},
 		// On pose que -1 => pas de sélection
 		selected: -1,
+		// On pose -1 => le joueur n'a pas encore faire de choix
+		result: -1,
 	}
 }
 
@@ -33,15 +37,26 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case "ctrl+c", "q":
 			return m, tea.Quit
 		case "up", "k":
+			m.result = -1
 			if m.cursor > 0 {
 				m.cursor--
 			}
 		case "down", "j":
+			m.result = -1
 			if m.cursor < len(m.choices)-1 {
 				m.cursor++
 			}
-		case "enter", " ":
+		case " ":
 			m.selected = m.cursor
+		case "enter":
+			isEven := rand.IntN(7)%2 == 0
+			if isEven && m.choices[m.selected] == "Pair" {
+				m.result = 1
+			} else if !isEven && m.choices[m.selected] == "Impair" {
+				m.result = 1
+			} else {
+				m.result = 0
+			}
 		}
 	}
 	return m, nil
@@ -60,6 +75,14 @@ func (m model) View() string {
 		}
 		s += fmt.Sprintf("%s [%s] %s\n", cursor, checked, choice)
 	}
+	resultText := ""
+	switch m.result {
+	case 1:
+		resultText = "You won!"
+	case 0:
+		resultText = "You Lost!"
+	}
+	s += fmt.Sprintf("Dice roll -> %s\n", resultText)
 	s += "\nPress q to quit.\n"
 	return s
 }
