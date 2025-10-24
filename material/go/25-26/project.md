@@ -28,3 +28,7 @@ Lors de la dernière séance, l'évaluateur passera vous évaluer sur les points
 
 - Démonstration des fonctionnalités de l'application CLI
 - Réponses aux questions techniques sur le code et les bibliothèques utilisées
+
+## Livrables
+
+- Déposer une archive du code source du projet sur myges avant la date limite.

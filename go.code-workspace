@@ -61,6 +61,9 @@
     },
     {
       "path": "material/go/25-26"
+    },
+    {
+      "path": "material/go/cobra/cobra-05-lipgloss"
     }
   ],
   "settings": {}
