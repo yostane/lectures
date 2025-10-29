@@ -1,7 +1,6 @@
 import network
 import time
 from machine import Pin
-import dht
 import ujson
 from umqtt.simple import MQTTClient
 import ssl as ssl_lib
@@ -39,8 +38,6 @@ def connect_to_mqtt():
 connect_to_wifi()
 client = connect_to_mqtt()
 
-sensor = dht.DHT22(Pin(15))
-prev_weather = ""
 while True:
     # A remplacer par les valeurs de vos capteurs
     message = ujson.dumps(
