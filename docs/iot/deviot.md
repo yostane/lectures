@@ -106,15 +106,15 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
 - Flasher le firmware MicroPython sur la carte ESP32. Ce firmware fait deux choses : il installe un interprêteur Python intégrant la librairie MicroPython et il lance les fichiers `boot.py` et `main.py`, dans cet ordre, s'ils existent.
     - Sous Windows, installer les drivers USB pour la carte ESP32. Généralement, il s'agit du [**CP210x Universal Windows Driver** disponible ici](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers) ou [via ce lien direct](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip).
     - Télécharger le firmware correspondant [à votre carte](https://micropython.org/download/?port=esp32). Pour la carte ESP32-VROOM, [la page de firmware is ici](https://micropython.org/download/ESP32_GENERIC/)
-    - Installer esptool : `pip install esptool`
-    - Tester la connexion avec la carte : `esptool.py flash_id` ou sous windows `esptool flash_id`
-    - Réinitialiser la carte : `esptool.py erase_flash` ou sous windows `esptool erase_flash`
-    - Flasher le firmware : `esptool.py write_flash 0x1000 fichier_firmware.bin` ou sous windows `esptool write_flash 0x1000 fichier_firmware.bin`
+    - Installer esptool : `pip install esptool` ou sur macOS: `brew install esptool`
+    - Tester la connexion avec la carte : `esptool flash-id`
+    - Réinitialiser la carte : `esptool erase-flash`
+    - Flasher le firmware : `esptool write-flash 0x1000 fichier_firmware.bin`
 - Utiliser un IDE comme [mu Editor](https://codewith.mu/) ou Thonny pour écrire et exécuter le code MicroPython. Nous allons utiliser Mu pour cet exemple.
     - Connecter la carte à l'ordinateur via un câble USB.
     - Ouvrir le panneau fichier
 - Installer des librairies et copier des fichiers sur l'ESP32 avec [`mpremote`](https://docs.micropython.org/en/latest/reference/mpremote.html)
-    - Installer `mpremote` : `pip install mpremote`
+    - Installer `mpremote` : `pip install mpremote` ou sur macOS: `brew install mpremote`
     - Brancher l'ESP32 à l'ordinateur et fermer toute application l'utilisant (comme Mu)
     - Ouvrir un terminal classique (pas le REPL).
     - Vérifier que le port série est bien connecté : `mpremote connect list`
