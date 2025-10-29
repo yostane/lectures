@@ -26,7 +26,6 @@ def connect_to_mqtt():
     MQTT_USER = "login d'un des comptes que j'ai créé sur HiveMQ"
     MQTT_PASSWORD = "mdp"
     # Fin de la partie à adapter
-    ssl_params = {"server_hostname": MQTT_BROKER}
     client = MQTTClient(
         MQTT_CLIENT_ID, MQTT_BROKER, user=MQTT_USER, password=MQTT_PASSWORD, ssl=ssl_lib
     )
@@ -46,5 +45,6 @@ while True:
             "Year": 2025,
         }
     )
+    client.publish("/test/hello", message)
     # A adapter selon la fréquence de données à envoyer
     time.sleep(5)
