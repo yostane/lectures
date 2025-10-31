@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "datascience"
+    },
+    {
+      "path": "../../material/python/tour"
+    },
+    {
+      "path": "../../material/python/tk_exercices"
+    },
+    {
+      "path": "../../material/python/poo"
+    },
+    {
+      "path": "../../material/python/demos"
+    },
+    {
+      "path": "../../material/python/2024-2025/B2-datascience"
+    }
+  ],
+  "settings": {}
+}
