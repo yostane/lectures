@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-  "workspaces": ["api", "application", "domain", "infrastructure"],
+  "workspaces": ["api", "application", "business-domain", "infrastructure"],
   "devDependencies": {
     "@types/bun": "latest"
   },

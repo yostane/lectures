@@ -21,6 +21,9 @@
     },
     "application": {
       "name": "application",
+      "dependencies": {
+        "business-domain": "../business-domain",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -28,7 +31,7 @@
         "typescript": "^5",
       },
     },
-    "domain": {
+    "business-domain": {
       "name": "domain",
       "devDependencies": {
         "@types/bun": "latest",
@@ -62,12 +65,14 @@
 
     "csstype": ["csstype@3.1.3", "", {}, "sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw=="],
 
-    "domain": ["domain@workspace:domain"],
+    "domain": ["domain@workspace:business-domain"],
 
     "infrastructure": ["infrastructure@workspace:infrastructure"],
 
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
     "undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
+
+    "application/business-domain": ["domain@file:business-domain", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
   }
 }
