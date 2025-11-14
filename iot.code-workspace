@@ -14,6 +14,9 @@
     },
     {
       "path": "material/iot/micropython/iot_templates"
+    },
+    {
+      "path": "material/iot/web/web-mqtt"
     }
   ],
   "settings": {}
