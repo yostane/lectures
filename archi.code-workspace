@@ -1,8 +1,11 @@
 {
-	"folders": [
-		{
-			"path": "docs/archi"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "docs/archi"
+    },
+    {
+      "path": "material/archi/clean-archi"
+    }
+  ],
+  "settings": {}
 }

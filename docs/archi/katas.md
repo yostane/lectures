@@ -38,19 +38,6 @@ Katas d'architecture -> Coding dojos pour architecte
 
 - Il est aussi possible de contextualiser et d'adapter (par exemple en donnant des retours d'expérience d'autres projets)
 
-## Modèle C4
-
-Le modèle C4 est un modèle de représentation de l'architecture logicielle. Il est composé de 4 niveaux:
-
-- Contexte système
-- Conteneurs
-- Composants
-- Classes
-
-![C4 model](https://assets.icepanel.io/blog/visualizing-software-architecture-with-the-c4-model/infographic.png)
-
-[Le site de online.visual-paradigm.com](https://online.visual-paradigm.com/diagrams/templates/c4-model/) propose des exemples de diagrammes C4 sur différents cas d'usage. Ils peuvent servir de base pour les katas.
-
 ## Informations utiles
 
 Sites qui proposent des sujets de katas:
@@ -59,11 +46,6 @@ Sites qui proposent des sujets de katas:
 - [nealford.com](https://nealford.com/katas/)
 - [fundamentalsofsoftwarearchitecture.com](https://fundamentalsofsoftwarearchitecture.com/katas/)
 - [Exemple complet et exhaustif d'un kata d'architecture dans le contexte d'une compétition](https://tekiegirl.github.io/Archangels/)
-
-Doc sur le modèle C4:
-
-- [C4 model — a better way to visualise software architecture](https://medium.com/news-uk-technology/c4-model-a-better-way-to-visualise-software-architecture-df41e5ac57b8)
-- [C4 Model. My experience + Example](https://itzareyesmx.medium.com/c4-model-my-experience-example-fbcf50def540)
 
 Exemples / astuces de réalisation de Katas:
 

@@ -85,7 +85,9 @@ nav:
   - Archi. logicielle:
       - archi/index.md
       - archi/katas.md
+      - archi/c4.md
       - archi/kata-examples.md
+      - archi/code-archi.md
       - archi/archi-doc.md
       - Sujets de veille:
           - archi/sujets-vrac.md
