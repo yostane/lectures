@@ -4,6 +4,7 @@ import mqtt from "mqtt";
 
 // On attend le chargement du DOM avant d'exécuter le code
 window.addEventListener("DOMContentLoaded", () => {
+  // Utiliser la TLS WebSocket URL et la préfixer avec wss://
   const client = mqtt.connect(MQTT_SERVER, {
     clientId: "Navigateur",
     username: MQTT_USER,
@@ -18,14 +19,15 @@ window.addEventListener("DOMContentLoaded", () => {
   // Connection au broker
   // Quand la connexion réussit, on effectue une action de souscription et une publication
   client.on("connect", async () => {
-    await client.subscribeAsync("test");
+    await client.subscribeAsync("#");
     messagesElement.innerHTML += "<li>Connecté au broker MQTT</li>";
   });
 
   // quand on reçoit un message, on log son topic et son contenu
   client.on("message", (topic, message) => {
+    console.log("Reveived message", message, "for topic", topic);
     messagesElement.innerHTML += `Got message on topic ${topic}: ${message.toString()}<br/>`;
-    if (topic.contains("temp")) {
+    if (topic.includes("temp")) {
       const parsedMessage = JSON.parse(message);
       temperatureHistoryElement.innerHTML += `${parsedMessage.value}, `;
     }
