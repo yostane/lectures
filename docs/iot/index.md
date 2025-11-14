@@ -108,3 +108,8 @@ graph LR
     Application -->|Commandes: allumer, régler l'intensité, etc.| Broker
     Broker -->|Commandes| A
 ```
+
+### Autres compétences à avoir pour faire de l'IoT
+
+- [La soudure](https://www.framboise314.fr/comment-bien-souder-un-tutoriel-sur-la-soudure/)
+- Les bases de l'électricité et l'électronique

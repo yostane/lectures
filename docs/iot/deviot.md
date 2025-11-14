@@ -121,12 +121,11 @@ Plus précisément, on va utiliser un simulateur de cette carte proposé par [wo
     - Installer une librairie avec [`mpremote mip`](https://docs.micropython.org/en/latest/reference/mpremote.html#mpremote-command-mip) : `mpremote mip install ssd1306`
     - Copier un fichier : `mpremote fs cp fichierlocal :destination`. Exemple: `mpremote fs cp main.py :main.py`
 
-### Autres compétences à avoir pour faire de l'IoT
+## Cartes de développement alternatives
 
-- [La soudure](https://www.framboise314.fr/comment-bien-souder-un-tutoriel-sur-la-soudure/)
-- Les bases de l'électricité et l'électronique
+- [FKS0001 ESP32](./assets/FKS0001%20Arduino%20Tutorial.pdf). Source officielle de la [doc + exemples](https://xiazai.keyesrobot.cn/keyestudio/FKS0001.7z)
 
-### Lexique
+## Lexique
 
 - GND: (Ground) la terre ou le 0V
 - VCC: (Voltage Common Collector) le +5V ou +3.3V. La tension d'alimentation.
