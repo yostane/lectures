@@ -16,20 +16,20 @@ Développer une application en ligne de commande (CLI) appelée `univ-cli` en Go
 
 ## Notation
 
-| Critère                                                  | Points |
-| -------------------------------------------------------- | ------ |
-| `fs ls`                                                  | 1      |
-| `fs cat`                                                 | 1      |
-| `fs cp`                                                  | 1      |
-| `fs mkdir`                                               | 1      |
-| `tui` affichage date/heure                               | 1      |
-| `tui` message de bienvenue                               | 1      |
-| `tui` fonctionnalité originale                           | 1      |
-| `custom` fonctionnalité originale                        | 2      |
-| 1ère Question sur le code                                | 4      |
-| 2ème Question sur le code                                | 4      |
-| Qualité du code                                          | 2      |
-| Qualité de la présentation de la CLI messages / couleurs | 1      |
+| Critère                                                       | Points |
+| ------------------------------------------------------------- | ------ |
+| `fs ls`                                                       | 1      |
+| `fs cat`                                                      | 1      |
+| `fs cp`                                                       | 1      |
+| `fs mkdir`                                                    | 1      |
+| `tui` affichage date/heure                                    | 1      |
+| `tui` message de bienvenue                                    | 1      |
+| `tui` fonctionnalité originale                                | 1      |
+| `custom` fonctionnalité originale                             | 2      |
+| 1ère Question sur le code                                     | 4      |
+| 2ème Question sur le code                                     | 4      |
+| Qualité du code (respect des conventions, commentaires, etc.) | 2      |
+| Qualité de la présentation de la CLI messages / couleurs      | 1      |
 
 ## Contraintes
 
