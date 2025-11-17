@@ -10,10 +10,13 @@
       "path": "material/iot/micropython/02-wokwi-esp32-samples"
     },
     {
-      "path": "material/iot/web"
+      "path": "material/iot/micropython/iot_templates"
     },
     {
-      "path": "material/iot/micropython/iot_templates"
+      "path": "material/iot/web/web-mqtt"
+    },
+    {
+      "path": "material/iot/web/chartjs-demo"
     }
   ],
   "settings": {}

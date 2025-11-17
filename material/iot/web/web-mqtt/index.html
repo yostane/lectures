@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <section>
+        <h2>Messages</h2>
+        <ul id="messages"></ul>
+      </section>
+      <section>
+        <h2>Historique des températures</h2>
+        <div id="temp-hist"></div>
+      </section>
+      <section>
+        <h2>Envoyer un message</h2>
+        <div>
+          <input type="text" id="messageInput" placeholder="Votre message" />
+          <button type="submit" id="messageSubmitButton">Envoyer</button>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
