@@ -30,7 +30,6 @@ Développer une application en ligne de commande (CLI) appelée `univ-cli` en Go
 | 2ème Question sur le code                                | 4      |
 | Qualité du code                                          | 2      |
 | Qualité de la présentation de la CLI messages / couleurs | 1      |
-| --------                                                 | ------ |
 
 ## Contraintes
 
