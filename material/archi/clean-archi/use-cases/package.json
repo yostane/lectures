@@ -1,5 +1,5 @@
 {
-  "name": "application",
+  "name": "use-cases",
   "module": "index.ts",
   "type": "module",
   "private": true,

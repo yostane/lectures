@@ -1,15 +1,8 @@
 # clean-archi
 
-To install dependencies:
+Explication des dossiers :
 
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.3.1. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+-   business-domain : entités
+-   application : le métier
+-   api : (interface adapters) permet d'exposer le métier via une API REST
+-   infrastructure : mise en place des différents frameworks
