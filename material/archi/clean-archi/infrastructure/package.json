@@ -3,6 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bun index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
@@ -10,9 +13,8 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "interfaces": "../interfaces",
     "business-domain": "../business-domain",
+    "interfaces": "../interfaces",
     "sqlite3": "^5.1.7"
   }
 }
-

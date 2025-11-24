@@ -3,10 +3,12 @@ import { SqliteMemberRepository } from "./SqliteMemberRepository";
 import { Member } from "business-domain";
 
 const sqliteMemberRepository = new SqliteMemberRepository();
-sqliteMemberRepository.setup();
+await sqliteMemberRepository.setup();
 const memberController = new MemberController(sqliteMemberRepository);
 
-memberController.add(new Member(-1, "my Name", "subscriber", "home"));
-memberController.add(new Member(-1, "your Name", "free sub", "work"));
+await memberController.add(new Member(-1, "my Name", "subscriber", "home"));
+await memberController.add(new Member(-1, "your Name", "free sub", "work"));
 
-memberController.delete(1);
+await memberController.delete(1);
+
+console.log("all", await memberController.getAll());
