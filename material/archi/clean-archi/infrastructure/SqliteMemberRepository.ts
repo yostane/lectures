@@ -46,10 +46,11 @@ export class SqliteMemberRepository implements MemberRepository {
     return new Promise<Member[]>((resolve, reject) => {
       this.db.serialize(() => {
         const stmt = this.db.prepare("Select * from Members");
-        const members: Member[] = [];
         stmt.all<Member>((err, rows) => {
           console.log("row", rows);
-          members.push(...rows);
+          const members = rows.map(
+            (r) => new Member(r.id, r.name, r.type, r.address)
+          );
           stmt.finalize();
           resolve(members);
         });
