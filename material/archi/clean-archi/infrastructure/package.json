@@ -4,16 +4,19 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun index.ts"
+    "dev": "bun --hot run express-api.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/express": "^5.0.5"
   },
   "peerDependencies": {
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "body-parser": "^2.2.0",
     "business-domain": "../business-domain",
+    "express": "^5.1.0",
     "interfaces": "../interfaces",
     "sqlite3": "^5.1.7"
   }

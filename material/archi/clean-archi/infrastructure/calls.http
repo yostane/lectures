@@ -1,0 +1,14 @@
+@base_url=http://localhost:3000
+###
+GET {{base_url}}
+###
+POST {{base_url}}
+Content-Type: application/json
+
+{
+  "name": "Naruto {{$randomInt 1 9999}}",
+  "type": "Hokage",
+  "address": "Konoha"
+}
+###
+DELETE {{base_url}}/1
