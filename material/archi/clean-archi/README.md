@@ -4,5 +4,5 @@ Explication des dossiers :
 
 -   business-domain : entités
 -   application : le métier
--   api : (interface adapters) permet d'exposer le métier via une API REST
+-   interfaces : fait le lien entre les use cases et les interfaces externes (API, base de données, etc). C'est là qu'on définit les controlleurs (api et pages web) et les repository (données)
 -   infrastructure : mise en place des différents frameworks
