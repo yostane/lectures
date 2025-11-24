@@ -24,7 +24,6 @@
       "name": "infrastructure",
       "dependencies": {
         "body-parser": "^2.2.0",
-        "business-domain": "../business-domain",
         "express": "^5.1.0",
         "interfaces": "../interfaces",
         "sqlite3": "^5.1.7",
@@ -458,8 +457,6 @@
     "cacache/minipass": ["minipass@3.3.6", "", { "dependencies": { "yallist": "^4.0.0" } }, "sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw=="],
 
     "fs-minipass/minipass": ["minipass@3.3.6", "", { "dependencies": { "yallist": "^4.0.0" } }, "sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw=="],
-
-    "infrastructure/business-domain": ["domain@file:business-domain", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 
     "interfaces/business-domain": ["domain@file:business-domain", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 

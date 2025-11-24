@@ -1,6 +1,6 @@
 import { MemberController } from "interfaces";
 import { SqliteMemberRepository } from "./SqliteMemberRepository";
-import { Member } from "business-domain";
+import { MemberEntity } from "interfaces";
 import express from "express";
 import bodyParser from "body-parser";
 
@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  const member: Member = req.body;
+  const member: MemberEntity = req.body;
   await memberController.add(member);
   res.sendStatus(201);
 });

@@ -1,4 +1,4 @@
-import { Member } from "business-domain";
+import { MemberEntity } from "interfaces";
 import type { MemberRepository } from "interfaces";
 import sqlite3 from "sqlite3";
 
@@ -18,7 +18,7 @@ export class SqliteMemberRepository implements MemberRepository {
     return p;
   }
 
-  async add(member: Member): Promise<void> {
+  async add(member: MemberEntity): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       this.db.serialize(() => {
         const stmt = this.db.prepare(
@@ -42,14 +42,14 @@ export class SqliteMemberRepository implements MemberRepository {
     });
   }
 
-  async getAll(): Promise<Member[]> {
-    return new Promise<Member[]>((resolve, reject) => {
+  async getAll(): Promise<MemberEntity[]> {
+    return new Promise<MemberEntity[]>((resolve, reject) => {
       this.db.serialize(() => {
         const stmt = this.db.prepare("Select * from Members");
-        stmt.all<Member>((err, rows) => {
+        stmt.all<MemberEntity>((err, rows) => {
           console.log("row", rows);
           const members = rows.map(
-            (r) => new Member(r.id, r.name, r.type, r.address)
+            (r) => new MemberEntity(r.id, r.name, r.type, r.address)
           );
           stmt.finalize();
           resolve(members);

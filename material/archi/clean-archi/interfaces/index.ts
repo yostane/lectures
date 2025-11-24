@@ -1,10 +1,11 @@
-import type { Member } from "business-domain";
 import { MemberUseCases } from "use-cases";
+import { MemberEntity, MemberEntityMapper } from "./MemberEntity";
+export { MemberEntity, MemberEntityMapper } from "./MemberEntity";
 
 export interface MemberRepository {
-  add(member: Member): Promise<void>;
+  add(member: MemberEntity): Promise<void>;
   delete(memberId: number): Promise<void>;
-  getAll(): Promise<Member[]>;
+  getAll(): Promise<MemberEntity[]>;
 }
 
 /**
@@ -12,19 +13,22 @@ export interface MemberRepository {
  */
 export class MemberController {
   private readonly memberUseCases: MemberUseCases;
+  private readonly memberMapper = new MemberEntityMapper();
   constructor(private memberRepository: MemberRepository) {
     this.memberUseCases = new MemberUseCases(this.memberRepository);
   }
 
-  async add(member: Member): Promise<void> {
-    await this.memberUseCases.add(member);
+  async add(member: MemberEntity): Promise<void> {
+    const m = this.memberMapper.mapEntityToMember(member);
+    await this.memberUseCases.add(m);
   }
 
   async delete(memberId: number): Promise<void> {
     await this.memberUseCases.delete(memberId);
   }
 
-  async getAll(): Promise<Member[]> {
-    return await this.memberRepository.getAll();
+  async getAll(): Promise<MemberEntity[]> {
+    const members = await this.memberUseCases.getAll();
+    return members.map(this.memberMapper.mapMemberToEntity);
   }
 }
