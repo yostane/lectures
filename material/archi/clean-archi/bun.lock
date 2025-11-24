@@ -37,6 +37,7 @@
       "name": "interfaces",
       "dependencies": {
         "business-domain": "../business-domain",
+        "use-cases": "../use-cases",
       },
       "devDependencies": {
         "@types/bun": "latest",
