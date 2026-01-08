@@ -1,0 +1,1023 @@
+{
+  "configuration" : { },
+  "description" : "World's largest genealogical graph platform",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2025-11-25T08:00:13Z",
+  "model" : {
+    "people" : [ {
+      "description" : "Millions of users searching and viewing genealogical data",
+      "id" : "1",
+      "name" : "End User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "endUser"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "6",
+        "id" : "59",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "5",
+        "id" : "60",
+        "linkedRelationshipId" : "59",
+        "sourceId" : "1"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "7",
+        "id" : "61",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Searches and browses genealogical records",
+        "destinationId" : "5",
+        "id" : "62",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person,User"
+    }, {
+      "description" : "Teams collecting and verifying historical records in the field",
+      "id" : "2",
+      "name" : "Field Collector",
+      "properties" : {
+        "structurizr.dsl.identifier" : "fieldCollector"
+      },
+      "relationships" : [ {
+        "description" : "Submits historical records to",
+        "destinationId" : "14",
+        "id" : "53",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Submits historical records to",
+        "destinationId" : "5",
+        "id" : "54",
+        "linkedRelationshipId" : "53",
+        "sourceId" : "2"
+      }, {
+        "description" : "Verifies records for",
+        "destinationId" : "18",
+        "id" : "55",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Receives notifications from",
+        "destinationId" : "26",
+        "id" : "56",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Submits and verifies records",
+        "destinationId" : "5",
+        "id" : "63",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person,User"
+    }, {
+      "description" : "Thousands of developers building applications on the platform",
+      "id" : "3",
+      "name" : "Third-Party Developer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "thirdPartyDev"
+      },
+      "relationships" : [ {
+        "description" : "Calls API endpoints",
+        "destinationId" : "8",
+        "id" : "32",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Calls API endpoints",
+        "destinationId" : "5",
+        "id" : "33",
+        "linkedRelationshipId" : "32",
+        "sourceId" : "3"
+      }, {
+        "description" : "Integrates with platform API",
+        "destinationId" : "5",
+        "id" : "64",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person,User"
+    } ],
+    "softwareSystems" : [ {
+      "description" : "Social network for user authentication and profile linking",
+      "documentation" : { },
+      "id" : "4",
+      "name" : "Facebook",
+      "properties" : {
+        "structurizr.dsl.identifier" : "facebookSystem"
+      },
+      "tags" : "Element,Software System,External"
+    }, {
+      "containers" : [ {
+        "description" : "Provides genealogy search and browsing capabilities for end users",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.webApp"
+        },
+        "relationships" : [ {
+          "description" : "Queries genealogical data via",
+          "destinationId" : "8",
+          "id" : "30",
+          "sourceId" : "6",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Reads cached data from",
+          "destinationId" : "28",
+          "id" : "40",
+          "sourceId" : "6",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Frontend",
+        "technology" : "React/TypeScript"
+      }, {
+        "description" : "Native mobile app for iOS/Android for genealogy access",
+        "documentation" : { },
+        "id" : "7",
+        "name" : "Mobile Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.mobileApp"
+        },
+        "relationships" : [ {
+          "description" : "Queries genealogical data via",
+          "destinationId" : "8",
+          "id" : "31",
+          "sourceId" : "7",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Reads cached data from",
+          "destinationId" : "28",
+          "id" : "41",
+          "sourceId" : "7",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Frontend",
+        "technology" : "React Native"
+      }, {
+        "components" : [ {
+          "description" : "Routes API requests to appropriate backend services",
+          "documentation" : { },
+          "id" : "9",
+          "name" : "Request Router",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.apiGateway.routingComponent"
+          },
+          "tags" : "Element,Component,Integration",
+          "technology" : "Express Router"
+        }, {
+          "description" : "Enforces API rate limits for third-party applications",
+          "documentation" : { },
+          "id" : "10",
+          "name" : "Rate Limiter",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.apiGateway.rateLimiter"
+          },
+          "tags" : "Element,Component,Integration",
+          "technology" : "Node.js Middleware"
+        }, {
+          "description" : "Validates JWT tokens and API keys",
+          "documentation" : { },
+          "id" : "11",
+          "name" : "Auth Middleware",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.apiGateway.authMiddleware"
+          },
+          "tags" : "Element,Component,Integration",
+          "technology" : "Passport.js"
+        } ],
+        "description" : "REST API gateway for third-party access and internal routing",
+        "documentation" : { },
+        "id" : "8",
+        "name" : "API Gateway",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.apiGateway"
+        },
+        "relationships" : [ {
+          "description" : "Routes record requests to",
+          "destinationId" : "14",
+          "id" : "34",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Routes verification requests to",
+          "destinationId" : "18",
+          "id" : "35",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Reads genealogical data from",
+          "destinationId" : "12",
+          "id" : "36",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Queries",
+          "destinationId" : "13",
+          "id" : "37",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Checks cache",
+          "destinationId" : "28",
+          "id" : "38",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Validates with",
+          "destinationId" : "22",
+          "id" : "39",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Integration",
+        "technology" : "Node.js/Express"
+      }, {
+        "description" : "Stores genealogical relationships and person records",
+        "documentation" : { },
+        "id" : "12",
+        "name" : "Graph Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.graphDB"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Neo4j"
+      }, {
+        "description" : "Full-text search and indexing for genealogical records",
+        "documentation" : { },
+        "id" : "13",
+        "name" : "Search Engine",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.searchEngine"
+        },
+        "tags" : "Element,Container,Data Processing",
+        "technology" : "Elasticsearch"
+      }, {
+        "components" : [ {
+          "description" : "Receives and processes historical records from field collectors",
+          "documentation" : { },
+          "id" : "15",
+          "name" : "Record Ingestion",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.recordsService.ingestComponent"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "Express Controller"
+        }, {
+          "description" : "Validates record format and required fields",
+          "documentation" : { },
+          "id" : "16",
+          "name" : "Record Validation",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.recordsService.validationComponent"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "Node.js"
+        }, {
+          "description" : "Manages double verification workflow for records",
+          "documentation" : { },
+          "id" : "17",
+          "name" : "Workflow Orchestrator",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.recordsService.workflowComponent"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "Node.js"
+        } ],
+        "description" : "Manages historical records ingestion, verification, and workflow",
+        "documentation" : { },
+        "id" : "14",
+        "name" : "Records Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.recordsService"
+        },
+        "relationships" : [ {
+          "description" : "Stores scanned records in",
+          "destinationId" : "29",
+          "id" : "42",
+          "sourceId" : "14",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Publishes validation events to",
+          "destinationId" : "27",
+          "id" : "43",
+          "sourceId" : "14",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Initiates verification workflow",
+          "destinationId" : "18",
+          "id" : "44",
+          "sourceId" : "14",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Backend",
+        "technology" : "Node.js"
+      }, {
+        "components" : [ {
+          "description" : "Assigns verification tasks to field collectors",
+          "documentation" : { },
+          "id" : "19",
+          "name" : "Task Assignment",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.verificationService.assignmentComponent"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "Express Controller"
+        }, {
+          "description" : "Compares two transcriptions and handles discrepancies",
+          "documentation" : { },
+          "id" : "20",
+          "name" : "Transcription Comparison",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.verificationService.comparisonComponent"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "Node.js"
+        }, {
+          "description" : "Approves verified records for graph ingestion",
+          "documentation" : { },
+          "id" : "21",
+          "name" : "Approval Engine",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.verificationService.approvalComponent"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "Node.js"
+        } ],
+        "description" : "Handles double transcription and verification of historical records",
+        "documentation" : { },
+        "id" : "18",
+        "name" : "Verification Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.verificationService"
+        },
+        "relationships" : [ {
+          "description" : "Reads scanned records from",
+          "destinationId" : "29",
+          "id" : "45",
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Writes verified records to",
+          "destinationId" : "12",
+          "id" : "46",
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Updates search index",
+          "destinationId" : "13",
+          "id" : "47",
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Invalidates cache",
+          "destinationId" : "28",
+          "id" : "48",
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Publishes task assignment to",
+          "destinationId" : "27",
+          "id" : "49",
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Backend",
+        "technology" : "Node.js"
+      }, {
+        "components" : [ {
+          "description" : "Handles Facebook login and profile linking",
+          "documentation" : { },
+          "id" : "23",
+          "name" : "Facebook OAuth Handler",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.authService.facebookAuth"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "Passport.js"
+        }, {
+          "description" : "Generates and validates JWT tokens",
+          "documentation" : { },
+          "id" : "24",
+          "name" : "JWT Token Manager",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.authService.jwtHandler"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "jsonwebtoken"
+        }, {
+          "description" : "Manages user accounts and permissions",
+          "documentation" : { },
+          "id" : "25",
+          "name" : "User Registry",
+          "properties" : {
+            "structurizr.dsl.identifier" : "genealogySystem.authService.userRegistry"
+          },
+          "tags" : "Element,Component,Backend",
+          "technology" : "Node.js"
+        } ],
+        "description" : "Handles user authentication including Facebook integration",
+        "documentation" : { },
+        "id" : "22",
+        "name" : "Authentication Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.authService"
+        },
+        "relationships" : [ {
+          "description" : "Authenticates with",
+          "destinationId" : "4",
+          "id" : "50",
+          "sourceId" : "22",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Stores user profiles in",
+          "destinationId" : "12",
+          "id" : "52",
+          "sourceId" : "22",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Backend",
+        "technology" : "Node.js/OAuth"
+      }, {
+        "description" : "Sends notifications about verification tasks and record updates",
+        "documentation" : { },
+        "id" : "26",
+        "name" : "Notification Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.notificationService"
+        },
+        "tags" : "Element,Container,Backend",
+        "technology" : "Node.js"
+      }, {
+        "description" : "Asynchronous processing for record verification workflows",
+        "documentation" : { },
+        "id" : "27",
+        "name" : "Message Queue",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.messageQueue"
+        },
+        "relationships" : [ {
+          "description" : "Publishes events to",
+          "destinationId" : "26",
+          "id" : "57",
+          "sourceId" : "27",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Publishes events to",
+          "destinationId" : "14",
+          "id" : "58",
+          "sourceId" : "27",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Data Processing",
+        "technology" : "Kafka/RabbitMQ"
+      }, {
+        "description" : "Caches frequently accessed genealogical data for performance",
+        "documentation" : { },
+        "id" : "28",
+        "name" : "Cache Layer",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.cache"
+        },
+        "tags" : "Element,Container,Cache",
+        "technology" : "Redis"
+      }, {
+        "description" : "Stores scanned historical records and images",
+        "documentation" : { },
+        "id" : "29",
+        "name" : "Records Storage",
+        "properties" : {
+          "structurizr.dsl.identifier" : "genealogySystem.recordsStorage"
+        },
+        "tags" : "Element,Container,Storage",
+        "technology" : "S3/Object Storage"
+      } ],
+      "description" : "World's largest genealogical graph enabling users to view, search, and verify historical records",
+      "documentation" : { },
+      "id" : "5",
+      "name" : "Genealogical Graph Platform",
+      "properties" : {
+        "structurizr.dsl.identifier" : "genealogySystem"
+      },
+      "relationships" : [ {
+        "description" : "Authenticates with",
+        "destinationId" : "4",
+        "id" : "51",
+        "linkedRelationshipId" : "50",
+        "sourceId" : "5"
+      }, {
+        "description" : "Uses for authentication",
+        "destinationId" : "4",
+        "id" : "65",
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Target System"
+    } ]
+  },
+  "name" : "Genealogical Graph System",
+  "properties" : {
+    "structurizr.inspection.info" : "0",
+    "structurizr.inspection.ignore" : "0",
+    "structurizr.inspection.error" : "51",
+    "structurizr.inspection.warning" : "0",
+    "structurizr.dsl" : "d29ya3NwYWNlICJHZW5lYWxvZ2ljYWwgR3JhcGggU3lzdGVtIiAiV29ybGQncyBsYXJnZXN0IGdlbmVhbG9naWNhbCBncmFwaCBwbGF0Zm9ybSIgewoKICAgICFpZGVudGlmaWVycyBoaWVyYXJjaGljYWwKCiAgICBtb2RlbCB7CiAgICAgICAgIyBFeHRlcm5hbCBhY3RvcnMKICAgICAgICBlbmRVc2VyID0gcGVyc29uICJFbmQgVXNlciIgIk1pbGxpb25zIG9mIHVzZXJzIHNlYXJjaGluZyBhbmQgdmlld2luZyBnZW5lYWxvZ2ljYWwgZGF0YSIgewogICAgICAgICAgICB0YWdzICJVc2VyIgogICAgICAgIH0KICAgICAgICAKICAgICAgICBmaWVsZENvbGxlY3RvciA9IHBlcnNvbiAiRmllbGQgQ29sbGVjdG9yIiAiVGVhbXMgY29sbGVjdGluZyBhbmQgdmVyaWZ5aW5nIGhpc3RvcmljYWwgcmVjb3JkcyBpbiB0aGUgZmllbGQiIHsKICAgICAgICAgICAgdGFncyAiVXNlciIKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgdGhpcmRQYXJ0eURldiA9IHBlcnNvbiAiVGhpcmQtUGFydHkgRGV2ZWxvcGVyIiAiVGhvdXNhbmRzIG9mIGRldmVsb3BlcnMgYnVpbGRpbmcgYXBwbGljYXRpb25zIG9uIHRoZSBwbGF0Zm9ybSIgewogICAgICAgICAgICB0YWdzICJVc2VyIgogICAgICAgIH0KICAgICAgICAKICAgICAgICBmYWNlYm9va1N5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJGYWNlYm9vayIgIlNvY2lhbCBuZXR3b3JrIGZvciB1c2VyIGF1dGhlbnRpY2F0aW9uIGFuZCBwcm9maWxlIGxpbmtpbmciIHsKICAgICAgICAgICAgdGFncyAiRXh0ZXJuYWwiCiAgICAgICAgfQoKICAgICAgICAjIE1haW4gc3lzdGVtCiAgICAgICAgZ2VuZWFsb2d5U3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIkdlbmVhbG9naWNhbCBHcmFwaCBQbGF0Zm9ybSIgIldvcmxkJ3MgbGFyZ2VzdCBnZW5lYWxvZ2ljYWwgZ3JhcGggZW5hYmxpbmcgdXNlcnMgdG8gdmlldywgc2VhcmNoLCBhbmQgdmVyaWZ5IGhpc3RvcmljYWwgcmVjb3JkcyIgewogICAgICAgICAgICB0YWdzICJUYXJnZXQgU3lzdGVtIgogICAgICAgICAgICAKICAgICAgICAgICAgIyBDNCBMZXZlbCAyOiBDb250YWluZXJzCiAgICAgICAgICAgIHdlYkFwcCA9IGNvbnRhaW5lciAiV2ViIEFwcGxpY2F0aW9uIiAiUHJvdmlkZXMgZ2VuZWFsb2d5IHNlYXJjaCBhbmQgYnJvd3NpbmcgY2FwYWJpbGl0aWVzIGZvciBlbmQgdXNlcnMiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkZyb250ZW5kIgogICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiUmVhY3QvVHlwZVNjcmlwdCIKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgbW9iaWxlQXBwID0gY29udGFpbmVyICJNb2JpbGUgQXBwbGljYXRpb24iICJOYXRpdmUgbW9iaWxlIGFwcCBmb3IgaU9TL0FuZHJvaWQgZm9yIGdlbmVhbG9neSBhY2Nlc3MiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkZyb250ZW5kIgogICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiUmVhY3QgTmF0aXZlIgogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICBhcGlHYXRld2F5ID0gY29udGFpbmVyICJBUEkgR2F0ZXdheSIgIlJFU1QgQVBJIGdhdGV3YXkgZm9yIHRoaXJkLXBhcnR5IGFjY2VzcyBhbmQgaW50ZXJuYWwgcm91dGluZyIgewogICAgICAgICAgICAgICAgdGFncyAiQ29udGFpbmVyIiAiSW50ZWdyYXRpb24iCiAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzL0V4cHJlc3MiCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIHJvdXRpbmdDb21wb25lbnQgPSBjb21wb25lbnQgIlJlcXVlc3QgUm91dGVyIiAiUm91dGVzIEFQSSByZXF1ZXN0cyB0byBhcHByb3ByaWF0ZSBiYWNrZW5kIHNlcnZpY2VzIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29tcG9uZW50IiAiSW50ZWdyYXRpb24iCiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiRXhwcmVzcyBSb3V0ZXIiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIHJhdGVMaW1pdGVyID0gY29tcG9uZW50ICJSYXRlIExpbWl0ZXIiICJFbmZvcmNlcyBBUEkgcmF0ZSBsaW1pdHMgZm9yIHRoaXJkLXBhcnR5IGFwcGxpY2F0aW9ucyIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvbXBvbmVudCIgIkludGVncmF0aW9uIgogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIk5vZGUuanMgTWlkZGxld2FyZSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgYXV0aE1pZGRsZXdhcmUgPSBjb21wb25lbnQgIkF1dGggTWlkZGxld2FyZSIgIlZhbGlkYXRlcyBKV1QgdG9rZW5zIGFuZCBBUEkga2V5cyIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvbXBvbmVudCIgIkludGVncmF0aW9uIgogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlBhc3Nwb3J0LmpzIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICBncmFwaERCID0gY29udGFpbmVyICJHcmFwaCBEYXRhYmFzZSIgIlN0b3JlcyBnZW5lYWxvZ2ljYWwgcmVsYXRpb25zaGlwcyBhbmQgcGVyc29uIHJlY29yZHMiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkRhdGFiYXNlIgogICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiTmVvNGoiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIHNlYXJjaEVuZ2luZSA9IGNvbnRhaW5lciAiU2VhcmNoIEVuZ2luZSIgIkZ1bGwtdGV4dCBzZWFyY2ggYW5kIGluZGV4aW5nIGZvciBnZW5lYWxvZ2ljYWwgcmVjb3JkcyIgewogICAgICAgICAgICAgICAgdGFncyAiQ29udGFpbmVyIiAiRGF0YSBQcm9jZXNzaW5nIgogICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiRWxhc3RpY3NlYXJjaCIKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgcmVjb3Jkc1NlcnZpY2UgPSBjb250YWluZXIgIlJlY29yZHMgU2VydmljZSIgIk1hbmFnZXMgaGlzdG9yaWNhbCByZWNvcmRzIGluZ2VzdGlvbiwgdmVyaWZpY2F0aW9uLCBhbmQgd29ya2Zsb3ciIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkJhY2tlbmQiCiAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzIgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBpbmdlc3RDb21wb25lbnQgPSBjb21wb25lbnQgIlJlY29yZCBJbmdlc3Rpb24iICJSZWNlaXZlcyBhbmQgcHJvY2Vzc2VzIGhpc3RvcmljYWwgcmVjb3JkcyBmcm9tIGZpZWxkIGNvbGxlY3RvcnMiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJDb21wb25lbnQiICJCYWNrZW5kIgogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIkV4cHJlc3MgQ29udHJvbGxlciIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFsaWRhdGlvbkNvbXBvbmVudCA9IGNvbXBvbmVudCAiUmVjb3JkIFZhbGlkYXRpb24iICJWYWxpZGF0ZXMgcmVjb3JkIGZvcm1hdCBhbmQgcmVxdWlyZWQgZmllbGRzIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29tcG9uZW50IiAiQmFja2VuZCIKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB3b3JrZmxvd0NvbXBvbmVudCA9IGNvbXBvbmVudCAiV29ya2Zsb3cgT3JjaGVzdHJhdG9yIiAiTWFuYWdlcyBkb3VibGUgdmVyaWZpY2F0aW9uIHdvcmtmbG93IGZvciByZWNvcmRzIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29tcG9uZW50IiAiQmFja2VuZCIKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICB2ZXJpZmljYXRpb25TZXJ2aWNlID0gY29udGFpbmVyICJWZXJpZmljYXRpb24gU2VydmljZSIgIkhhbmRsZXMgZG91YmxlIHRyYW5zY3JpcHRpb24gYW5kIHZlcmlmaWNhdGlvbiBvZiBoaXN0b3JpY2FsIHJlY29yZHMiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkJhY2tlbmQiCiAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzIgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBhc3NpZ25tZW50Q29tcG9uZW50ID0gY29tcG9uZW50ICJUYXNrIEFzc2lnbm1lbnQiICJBc3NpZ25zIHZlcmlmaWNhdGlvbiB0YXNrcyB0byBmaWVsZCBjb2xsZWN0b3JzIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29tcG9uZW50IiAiQmFja2VuZCIKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJFeHByZXNzIENvbnRyb2xsZXIiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGNvbXBhcmlzb25Db21wb25lbnQgPSBjb21wb25lbnQgIlRyYW5zY3JpcHRpb24gQ29tcGFyaXNvbiIgIkNvbXBhcmVzIHR3byB0cmFuc2NyaXB0aW9ucyBhbmQgaGFuZGxlcyBkaXNjcmVwYW5jaWVzIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29tcG9uZW50IiAiQmFja2VuZCIKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBhcHByb3ZhbENvbXBvbmVudCA9IGNvbXBvbmVudCAiQXBwcm92YWwgRW5naW5lIiAiQXBwcm92ZXMgdmVyaWZpZWQgcmVjb3JkcyBmb3IgZ3JhcGggaW5nZXN0aW9uIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29tcG9uZW50IiAiQmFja2VuZCIKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICBhdXRoU2VydmljZSA9IGNvbnRhaW5lciAiQXV0aGVudGljYXRpb24gU2VydmljZSIgIkhhbmRsZXMgdXNlciBhdXRoZW50aWNhdGlvbiBpbmNsdWRpbmcgRmFjZWJvb2sgaW50ZWdyYXRpb24iIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkJhY2tlbmQiCiAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzL09BdXRoIgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBmYWNlYm9va0F1dGggPSBjb21wb25lbnQgIkZhY2Vib29rIE9BdXRoIEhhbmRsZXIiICJIYW5kbGVzIEZhY2Vib29rIGxvZ2luIGFuZCBwcm9maWxlIGxpbmtpbmciIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJDb21wb25lbnQiICJCYWNrZW5kIgogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlBhc3Nwb3J0LmpzIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBqd3RIYW5kbGVyID0gY29tcG9uZW50ICJKV1QgVG9rZW4gTWFuYWdlciIgIkdlbmVyYXRlcyBhbmQgdmFsaWRhdGVzIEpXVCB0b2tlbnMiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJDb21wb25lbnQiICJCYWNrZW5kIgogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgImpzb253ZWJ0b2tlbiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdXNlclJlZ2lzdHJ5ID0gY29tcG9uZW50ICJVc2VyIFJlZ2lzdHJ5IiAiTWFuYWdlcyB1c2VyIGFjY291bnRzIGFuZCBwZXJtaXNzaW9ucyIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvbXBvbmVudCIgIkJhY2tlbmQiCiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiTm9kZS5qcyIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgbm90aWZpY2F0aW9uU2VydmljZSA9IGNvbnRhaW5lciAiTm90aWZpY2F0aW9uIFNlcnZpY2UiICJTZW5kcyBub3RpZmljYXRpb25zIGFib3V0IHZlcmlmaWNhdGlvbiB0YXNrcyBhbmQgcmVjb3JkIHVwZGF0ZXMiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkJhY2tlbmQiCiAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJOb2RlLmpzIgogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICBtZXNzYWdlUXVldWUgPSBjb250YWluZXIgIk1lc3NhZ2UgUXVldWUiICJBc3luY2hyb25vdXMgcHJvY2Vzc2luZyBmb3IgcmVjb3JkIHZlcmlmaWNhdGlvbiB3b3JrZmxvd3MiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkRhdGEgUHJvY2Vzc2luZyIKICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIkthZmthL1JhYmJpdE1RIgogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICBjYWNoZSA9IGNvbnRhaW5lciAiQ2FjaGUgTGF5ZXIiICJDYWNoZXMgZnJlcXVlbnRseSBhY2Nlc3NlZCBnZW5lYWxvZ2ljYWwgZGF0YSBmb3IgcGVyZm9ybWFuY2UiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkNvbnRhaW5lciIgIkNhY2hlIgogICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiUmVkaXMiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIHJlY29yZHNTdG9yYWdlID0gY29udGFpbmVyICJSZWNvcmRzIFN0b3JhZ2UiICJTdG9yZXMgc2Nhbm5lZCBoaXN0b3JpY2FsIHJlY29yZHMgYW5kIGltYWdlcyIgewogICAgICAgICAgICAgICAgdGFncyAiQ29udGFpbmVyIiAiU3RvcmFnZSIKICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlMzL09iamVjdCBTdG9yYWdlIgogICAgICAgICAgICB9CgogICAgICAgICAgICAjIEludGVyLWNvbnRhaW5lciByZWxhdGlvbnNoaXBzCiAgICAgICAgICAgIHdlYkFwcCAtPiBhcGlHYXRld2F5ICJRdWVyaWVzIGdlbmVhbG9naWNhbCBkYXRhIHZpYSIKICAgICAgICAgICAgbW9iaWxlQXBwIC0+IGFwaUdhdGV3YXkgIlF1ZXJpZXMgZ2VuZWFsb2dpY2FsIGRhdGEgdmlhIgogICAgICAgICAgICB0aGlyZFBhcnR5RGV2IC0+IGFwaUdhdGV3YXkgIkNhbGxzIEFQSSBlbmRwb2ludHMiCiAgICAgICAgICAgIAogICAgICAgICAgICBhcGlHYXRld2F5IC0+IHJlY29yZHNTZXJ2aWNlICJSb3V0ZXMgcmVjb3JkIHJlcXVlc3RzIHRvIgogICAgICAgICAgICBhcGlHYXRld2F5IC0+IHZlcmlmaWNhdGlvblNlcnZpY2UgIlJvdXRlcyB2ZXJpZmljYXRpb24gcmVxdWVzdHMgdG8iCiAgICAgICAgICAgIGFwaUdhdGV3YXkgLT4gZ3JhcGhEQiAiUmVhZHMgZ2VuZWFsb2dpY2FsIGRhdGEgZnJvbSIKICAgICAgICAgICAgYXBpR2F0ZXdheSAtPiBzZWFyY2hFbmdpbmUgIlF1ZXJpZXMiCiAgICAgICAgICAgIGFwaUdhdGV3YXkgLT4gY2FjaGUgIkNoZWNrcyBjYWNoZSIKICAgICAgICAgICAgYXBpR2F0ZXdheSAtPiBhdXRoU2VydmljZSAiVmFsaWRhdGVzIHdpdGgiCiAgICAgICAgICAgIAogICAgICAgICAgICB3ZWJBcHAgLT4gY2FjaGUgIlJlYWRzIGNhY2hlZCBkYXRhIGZyb20iCiAgICAgICAgICAgIG1vYmlsZUFwcCAtPiBjYWNoZSAiUmVhZHMgY2FjaGVkIGRhdGEgZnJvbSIKICAgICAgICAgICAgCiAgICAgICAgICAgIHJlY29yZHNTZXJ2aWNlIC0+IHJlY29yZHNTdG9yYWdlICJTdG9yZXMgc2Nhbm5lZCByZWNvcmRzIGluIgogICAgICAgICAgICByZWNvcmRzU2VydmljZSAtPiBtZXNzYWdlUXVldWUgIlB1Ymxpc2hlcyB2YWxpZGF0aW9uIGV2ZW50cyB0byIKICAgICAgICAgICAgcmVjb3Jkc1NlcnZpY2UgLT4gdmVyaWZpY2F0aW9uU2VydmljZSAiSW5pdGlhdGVzIHZlcmlmaWNhdGlvbiB3b3JrZmxvdyIKICAgICAgICAgICAgCiAgICAgICAgICAgIHZlcmlmaWNhdGlvblNlcnZpY2UgLT4gcmVjb3Jkc1N0b3JhZ2UgIlJlYWRzIHNjYW5uZWQgcmVjb3JkcyBmcm9tIgogICAgICAgICAgICB2ZXJpZmljYXRpb25TZXJ2aWNlIC0+IGdyYXBoREIgIldyaXRlcyB2ZXJpZmllZCByZWNvcmRzIHRvIgogICAgICAgICAgICB2ZXJpZmljYXRpb25TZXJ2aWNlIC0+IHNlYXJjaEVuZ2luZSAiVXBkYXRlcyBzZWFyY2ggaW5kZXgiCiAgICAgICAgICAgIHZlcmlmaWNhdGlvblNlcnZpY2UgLT4gY2FjaGUgIkludmFsaWRhdGVzIGNhY2hlIgogICAgICAgICAgICB2ZXJpZmljYXRpb25TZXJ2aWNlIC0+IG1lc3NhZ2VRdWV1ZSAiUHVibGlzaGVzIHRhc2sgYXNzaWdubWVudCB0byIKICAgICAgICAgICAgCiAgICAgICAgICAgIGF1dGhTZXJ2aWNlIC0+IGZhY2Vib29rU3lzdGVtICJBdXRoZW50aWNhdGVzIHdpdGgiCiAgICAgICAgICAgIGF1dGhTZXJ2aWNlIC0+IGdyYXBoREIgIlN0b3JlcyB1c2VyIHByb2ZpbGVzIGluIgogICAgICAgICAgICAKICAgICAgICAgICAgZmllbGRDb2xsZWN0b3IgLT4gcmVjb3Jkc1NlcnZpY2UgIlN1Ym1pdHMgaGlzdG9yaWNhbCByZWNvcmRzIHRvIgogICAgICAgICAgICBmaWVsZENvbGxlY3RvciAtPiB2ZXJpZmljYXRpb25TZXJ2aWNlICJWZXJpZmllcyByZWNvcmRzIGZvciIKICAgICAgICAgICAgZmllbGRDb2xsZWN0b3IgLT4gbm90aWZpY2F0aW9uU2VydmljZSAiUmVjZWl2ZXMgbm90aWZpY2F0aW9ucyBmcm9tIgogICAgICAgICAgICAKICAgICAgICAgICAgbWVzc2FnZVF1ZXVlIC0+IG5vdGlmaWNhdGlvblNlcnZpY2UgIlB1Ymxpc2hlcyBldmVudHMgdG8iCiAgICAgICAgICAgIG1lc3NhZ2VRdWV1ZSAtPiByZWNvcmRzU2VydmljZSAiUHVibGlzaGVzIGV2ZW50cyB0byIKICAgICAgICAgICAgCiAgICAgICAgICAgIGVuZFVzZXIgLT4gd2ViQXBwICJVc2VzIgogICAgICAgICAgICBlbmRVc2VyIC0+IG1vYmlsZUFwcCAiVXNlcyIKICAgICAgICB9CgogICAgICAgICMgU3lzdGVtIHJlbGF0aW9uc2hpcHMKICAgICAgICBlbmRVc2VyIC0+IGdlbmVhbG9neVN5c3RlbSAiU2VhcmNoZXMgYW5kIGJyb3dzZXMgZ2VuZWFsb2dpY2FsIHJlY29yZHMiCiAgICAgICAgZmllbGRDb2xsZWN0b3IgLT4gZ2VuZWFsb2d5U3lzdGVtICJTdWJtaXRzIGFuZCB2ZXJpZmllcyByZWNvcmRzIgogICAgICAgIHRoaXJkUGFydHlEZXYgLT4gZ2VuZWFsb2d5U3lzdGVtICJJbnRlZ3JhdGVzIHdpdGggcGxhdGZvcm0gQVBJIgogICAgICAgIGdlbmVhbG9neVN5c3RlbSAtPiBmYWNlYm9va1N5c3RlbSAiVXNlcyBmb3IgYXV0aGVudGljYXRpb24iCiAgICB9CgogICAgdmlld3MgewogICAgICAgICMgQzQgTGV2ZWwgMTogU3lzdGVtIENvbnRleHQKICAgICAgICBzeXN0ZW1Db250ZXh0IGdlbmVhbG9neVN5c3RlbSAiU3lzdGVtQ29udGV4dCIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgIyBDNCBMZXZlbCAyOiBDb250YWluZXIgRGlhZ3JhbQogICAgICAgIGNvbnRhaW5lciBnZW5lYWxvZ3lTeXN0ZW0gIkNvbnRhaW5lcnMiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgICMgQzQgTGV2ZWwgMzogQ29tcG9uZW50IERpYWdyYW1zIGZvciBrZXkgc2VydmljZXMKICAgICAgICBjb21wb25lbnQgZ2VuZWFsb2d5U3lzdGVtLmFwaUdhdGV3YXkgIkFQSUdhdGV3YXlDb21wb25lbnRzIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IHRiCiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgZ2VuZWFsb2d5U3lzdGVtLnJlY29yZHNTZXJ2aWNlICJSZWNvcmRzU2VydmljZUNvbXBvbmVudHMiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgdGIKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBnZW5lYWxvZ3lTeXN0ZW0udmVyaWZpY2F0aW9uU2VydmljZSAiVmVyaWZpY2F0aW9uU2VydmljZUNvbXBvbmVudHMiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgdGIKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBnZW5lYWxvZ3lTeXN0ZW0uYXV0aFNlcnZpY2UgIkF1dGhTZXJ2aWNlQ29tcG9uZW50cyIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dCB0YgogICAgICAgIH0KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiRWxlbWVudCIgewogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDQ0NDQ0CiAgICAgICAgICAgICAgICBmb250U2l6ZSAxMwogICAgICAgICAgICAgICAgYm9yZGVyIHNvbGlkCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwODQyN2IKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgZWxlbWVudCAiVXNlciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDg0MjdiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIlRhcmdldCBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzExNjhiZAogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIAogICAgICAgICAgICBlbGVtZW50ICJFeHRlcm5hbCIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4ZGQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIkZyb250ZW5kIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM4NWJiZjAKICAgICAgICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgZWxlbWVudCAiQmFja2VuZCIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4ZGQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4ZGQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIkNhY2hlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjODViYmYwCiAgICAgICAgICAgICAgICBjb2xvciAjMDAwMDAwCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIlN0b3JhZ2UiIHsKICAgICAgICAgICAgICAgIHNoYXBlIGZvbGRlcgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjODViYmYwCiAgICAgICAgICAgICAgICBjb2xvciAjMDAwMDAwCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIkludGVncmF0aW9uIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICNhOGM1ZGQKICAgICAgICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgZWxlbWVudCAiRGF0YSBQcm9jZXNzaW5nIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICNhOGM1ZGQKICAgICAgICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICAgICAgZWxlbWVudCAiQ29tcG9uZW50IiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM4NWJiZjAKICAgICAgICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgICAgICAgICAgIGZvbnRTaXplIDExCiAgICAgICAgICAgIH0KICAgICAgICAgICAgCiAgICAgICAgICAgIHJlbGF0aW9uc2hpcCAiUmVsYXRpb25zaGlwIiB7CiAgICAgICAgICAgICAgICB0aGlja25lc3MgMgogICAgICAgICAgICAgICAgZm9udFNpemUgMTAKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgYnJhbmRpbmcgewogICAgICAgICAgICBsb2dvIGh0dHBzOi8vZXhhbXBsZS5jb20vbG9nby5wbmcKICAgICAgICB9CiAgICB9Cgp9"
+  },
+  "views" : {
+    "componentViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "8",
+      "dimensions" : {
+        "height" : 938,
+        "width" : 2430
+      },
+      "elements" : [ {
+        "id" : "9",
+        "x" : 239,
+        "y" : 199
+      }, {
+        "id" : "10",
+        "x" : 1739,
+        "y" : 199
+      }, {
+        "id" : "11",
+        "x" : 989,
+        "y" : 199
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "APIGatewayComponents",
+      "name" : "Component View: Genealogical Graph Platform - API Gateway",
+      "order" : 3
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "14",
+      "elements" : [ {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "RecordsServiceComponents",
+      "name" : "Component View: Genealogical Graph Platform - Records Service",
+      "order" : 4
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "18",
+      "elements" : [ {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "VerificationServiceComponents",
+      "name" : "Component View: Genealogical Graph Platform - Verification Service",
+      "order" : 5
+    }, {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "22",
+      "dimensions" : {
+        "height" : 938,
+        "width" : 2430
+      },
+      "elements" : [ {
+        "id" : "23",
+        "x" : 1739,
+        "y" : 199
+      }, {
+        "id" : "24",
+        "x" : 989,
+        "y" : 199
+      }, {
+        "id" : "25",
+        "x" : 239,
+        "y" : 199
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "AuthServiceComponents",
+      "name" : "Component View: Genealogical Graph Platform - Authentication Service",
+      "order" : 6
+    } ],
+    "configuration" : {
+      "branding" : {
+        "logo" : "https://example.com/logo.png"
+      },
+      "lastSavedView" : "Containers",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#438dd5",
+          "color" : "#ffffff",
+          "tag" : "Backend"
+        }, {
+          "background" : "#85bbf0",
+          "color" : "#000000",
+          "shape" : "Cylinder",
+          "tag" : "Cache"
+        }, {
+          "background" : "#85bbf0",
+          "color" : "#000000",
+          "fontSize" : 11,
+          "tag" : "Component"
+        }, {
+          "background" : "#438dd5",
+          "color" : "#ffffff",
+          "tag" : "Container"
+        }, {
+          "background" : "#a8c5dd",
+          "color" : "#000000",
+          "tag" : "Data Processing"
+        }, {
+          "background" : "#438dd5",
+          "color" : "#ffffff",
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        }, {
+          "background" : "#444444",
+          "border" : "Solid",
+          "color" : "#ffffff",
+          "fontSize" : 13,
+          "tag" : "Element"
+        }, {
+          "background" : "#999999",
+          "color" : "#ffffff",
+          "tag" : "External"
+        }, {
+          "background" : "#85bbf0",
+          "color" : "#000000",
+          "tag" : "Frontend"
+        }, {
+          "background" : "#a8c5dd",
+          "color" : "#000000",
+          "tag" : "Integration"
+        }, {
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "background" : "#85bbf0",
+          "color" : "#000000",
+          "shape" : "Folder",
+          "tag" : "Storage"
+        }, {
+          "background" : "#1168bd",
+          "color" : "#ffffff",
+          "tag" : "Target System"
+        }, {
+          "background" : "#08427b",
+          "tag" : "User"
+        } ],
+        "relationships" : [ {
+          "fontSize" : 10,
+          "tag" : "Relationship",
+          "thickness" : 2
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 4736,
+        "width" : 5320
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 199,
+        "y" : 676
+      }, {
+        "id" : "2",
+        "x" : 1674,
+        "y" : 4059
+      }, {
+        "id" : "3",
+        "x" : 924,
+        "y" : 3413
+      }, {
+        "id" : "4",
+        "x" : 3149,
+        "y" : 3505
+      }, {
+        "id" : "6",
+        "x" : 899,
+        "y" : 426
+      }, {
+        "id" : "7",
+        "x" : 899,
+        "y" : 1026
+      }, {
+        "id" : "8",
+        "x" : 1649,
+        "y" : 1267
+      }, {
+        "id" : "12",
+        "x" : 3149,
+        "y" : 2905
+      }, {
+        "id" : "13",
+        "x" : 3149,
+        "y" : 1088
+      }, {
+        "id" : "14",
+        "x" : 3899,
+        "y" : 2151
+      }, {
+        "id" : "18",
+        "x" : 2399,
+        "y" : 1788
+      }, {
+        "id" : "22",
+        "x" : 2399,
+        "y" : 2905
+      }, {
+        "id" : "26",
+        "x" : 3899,
+        "y" : 2751
+      }, {
+        "id" : "27",
+        "x" : 3149,
+        "y" : 2305
+      }, {
+        "id" : "28",
+        "x" : 3149,
+        "y" : 180
+      }, {
+        "id" : "29",
+        "x" : 4649,
+        "y" : 1771
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers",
+      "name" : "Container View: Genealogical Graph Platform",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "30"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "32",
+        "vertices" : [ {
+          "x" : 1349,
+          "y" : 3384
+        } ]
+      }, {
+        "id" : "34",
+        "vertices" : [ {
+          "x" : 2849,
+          "y" : 1088
+        }, {
+          "x" : 3149,
+          "y" : 938
+        }, {
+          "x" : 3599,
+          "y" : 938
+        } ]
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "36",
+        "vertices" : [ {
+          "x" : 2399,
+          "y" : 2238
+        } ]
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "38",
+        "vertices" : [ {
+          "x" : 2399,
+          "y" : 1030
+        } ]
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "40",
+        "vertices" : [ {
+          "x" : 1649,
+          "y" : 413
+        } ]
+      }, {
+        "id" : "41"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "43",
+        "vertices" : [ {
+          "x" : 3718,
+          "y" : 2231
+        } ]
+      }, {
+        "id" : "44",
+        "vertices" : [ {
+          "x" : 3599,
+          "y" : 2155
+        } ]
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "46",
+        "vertices" : [ {
+          "x" : 3149,
+          "y" : 2755
+        } ]
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "49"
+      }, {
+        "id" : "50"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "53",
+        "vertices" : [ {
+          "x" : 3599,
+          "y" : 3955
+        }, {
+          "x" : 3899,
+          "y" : 2601
+        } ]
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "56",
+        "vertices" : [ {
+          "x" : 2399,
+          "y" : 4488
+        }, {
+          "x" : 3599,
+          "y" : 4488
+        } ]
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "58",
+        "vertices" : [ {
+          "x" : 3779,
+          "y" : 2524
+        } ]
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "61"
+      } ],
+      "softwareSystemId" : "5"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 2200,
+        "width" : 2300
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 200,
+        "y" : 160
+      }, {
+        "id" : "2",
+        "x" : 200,
+        "y" : 860
+      }, {
+        "id" : "3",
+        "x" : 200,
+        "y" : 1560
+      }, {
+        "id" : "4",
+        "x" : 1650,
+        "y" : 910
+      }, {
+        "id" : "5",
+        "x" : 900,
+        "y" : 910
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "SystemContext",
+      "name" : "System Context View: Genealogical Graph Platform",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "33",
+        "vertices" : [ {
+          "x" : 866,
+          "y" : 1517
+        } ]
+      }, {
+        "id" : "51",
+        "vertices" : [ {
+          "x" : 1500,
+          "y" : 1210
+        } ]
+      }, {
+        "id" : "54",
+        "vertices" : [ {
+          "x" : 762,
+          "y" : 1210
+        } ]
+      }, {
+        "id" : "60",
+        "vertices" : [ {
+          "x" : 658,
+          "y" : 817
+        } ]
+      }, {
+        "id" : "62",
+        "vertices" : [ {
+          "x" : 866,
+          "y" : 602
+        } ]
+      }, {
+        "id" : "63",
+        "vertices" : [ {
+          "x" : 762,
+          "y" : 910
+        } ]
+      }, {
+        "id" : "64",
+        "vertices" : [ {
+          "x" : 658,
+          "y" : 1302
+        } ]
+      }, {
+        "id" : "65",
+        "vertices" : [ {
+          "x" : 1500,
+          "y" : 910
+        } ]
+      } ],
+      "softwareSystemId" : "5"
+    } ]
+  }
+}

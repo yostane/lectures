@@ -5,6 +5,9 @@
     },
     {
       "path": "material/archi/clean-archi"
+    },
+    {
+      "path": "material/archi/structurizr"
     }
   ],
   "settings": {}

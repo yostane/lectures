@@ -1,5 +1,5 @@
 {
-  "name": "application",
+  "name": "interfaces",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -10,6 +10,7 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "business-domain": "../business-domain"
+    "business-domain": "../business-domain",
+    "use-cases": "../use-cases"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "use-cases",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -8,5 +8,9 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "business-domain": "../business-domain",
+    "interfaces": "../interfaces"
   }
 }
