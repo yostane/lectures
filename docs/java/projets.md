@@ -34,6 +34,8 @@ Développement d'un jeu le framework libGDX. Le jeu doit inclure les fonctionnal
 
 ??? "Changement d'écran"
 
+    - Récupérer un fichier [font.fnt](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests-android/assets/data/font.fnt) et son [font.png](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests-android/assets/data/font.png) associé depuis [cette liste](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests-android/assets/data). Puis, les placer dans le dossier `assets/ui` du projet libGDX.
+
     ```java
     --8<--
     java/common/libgdx/02-libgdx-demo/core/src/main/java/org/cours/libgdx/Main.java
