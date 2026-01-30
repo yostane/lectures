@@ -49,5 +49,10 @@
     - La solution est donc: "Jeremy Bowers"
 
 - [SQL Studio Ghibli](https://dquenton.forge.apps.education.fr/nsi-terminale-specialite/BaseDeDonnees/Ghibli_SQL/)
-
+    - Recommencer la même sélection, mais en faisant un tri croissant sur l'âge des personnages. -> `select nom, cast(age as INTEGER) as a from personnage order by a`
+    - Afficher maintenant les titres des 5 films les plus courts ainsi que leur durée. -> `select titre, duree from film order by duree limit 5`
+    - Afficher le nombre de personnages -> `select count(*) from personnage`
+    - Afficher la liste des films réalisés entre les années 1995 et 2005 exclues. -> `select * from film  where 1995 < date_sortie < 2005`
+    - Afficher les films réalisés par «Hayao Miyazaki» -> `select f.* from film as f join personne as p on p.id = f.id_realisateur where p.nom = "Hayao Miyazaki"`
+    - Compter le nombre de films réalisés par «Isao Takahata» -> `select count(*) from film as f join personne as p on p.id = f.id_realisateur where p.nom like "Isao Takahata"`
 - [Sum and count (Group by and having)](https://sqlzoo.net/wiki/SUM_and_COUNT)
