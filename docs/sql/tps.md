@@ -49,3 +49,5 @@
     - La solution est donc: "Jeremy Bowers"
 
 - [SQL Studio Ghibli](https://dquenton.forge.apps.education.fr/nsi-terminale-specialite/BaseDeDonnees/Ghibli_SQL/)
+
+- [Sum and count (Group by and having)](https://sqlzoo.net/wiki/SUM_and_COUNT)
