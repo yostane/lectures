@@ -38,3 +38,12 @@
     67318	I was hired by a woman with a lot of money. I don't know her name but I know she's around 5'5" (65") or 5'7" (67"). She has red hair and she drives a Tesla Model S. I know that she attended the SQL Symphony Concert 3 times in December 2017.
     ``` 
 
+    - On trouve la personne selon le premier témoignage, qui est intriguant
+
+    ```sql
+    select * from person as p 
+    join get_fit_now_member as gfnm on p.id = gfnm.person_id and gfnm.id like '48Z%' and membership_status = 'gold'
+    join drivers_license as dl on dl.id = p.license_id and dl.plate_number like '%H42W%'
+    ```
+
+    - La solution est donc: "Jeremy Bowers"
