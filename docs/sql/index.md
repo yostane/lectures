@@ -14,7 +14,7 @@ Les caractéristiques principales des bases de données relationnelles incluent 
 
 ## Types de bases de données relationnelles
 
-- Base de données sans serveur
+- Base de données sans serveur:
     - Fichier plat: CSV, JSON, XML, sqlite
     - Mémoire: Redis, Memcached, H2
 - Base de données avec serveur:  MySQL, PostgreSQL, Oracle DB, SQL Server
