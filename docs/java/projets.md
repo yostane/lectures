@@ -21,3 +21,21 @@ Développement d'un jeu le framework libGDX. Le jeu doit inclure les fonctionnal
 - [libGDX](https://libgdx.com/)
 - [Démarrer avec libGDX](https://libgdx.com/wiki/start/setup)
 - [Jeu simple avec libGDX](https://libgdx.com/wiki/start/a-simple-game)
+
+### Exemples de codes
+
+??? "Logo qui se déplace"
+
+    ```java
+    --8<--
+    java/common/libgdx/01-libgdx-demo/core/src/main/java/org/cours/libgdx/Main.java
+    --8<--
+    ```
+
+??? "Changement d'écran"
+
+    ```java
+    --8<--
+    java/common/libgdx/02-libgdx-demo/core/src/main/java/org/cours/libgdx/Main.java
+    --8<--
+    ```
