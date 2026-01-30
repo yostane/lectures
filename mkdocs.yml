@@ -80,6 +80,7 @@ nav:
   - SQL:
       - sql/index.md
       - sql/setup.ipynb
+      - sql/tps.md
   - Test:
       - test/index.md
       - test/generalites.md
