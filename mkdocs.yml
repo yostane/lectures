@@ -29,6 +29,7 @@ nav:
           - java/java-exercices-misc.md
       - java/jee.md
       - java/javafx.md
+      - java/projets.md
   - .Net:
       - dotnet/index.md
       - dotnet/csharp-tour.md
