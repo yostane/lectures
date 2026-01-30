@@ -15,22 +15,20 @@
     
     - Interview des personnes qui ont check-in le jour du crime (sur facebook ou la gym).
 
-    ```sql
-    select * from interview as iw 
-    where iw.person_id in (select gfnm.person_id from get_fit_now_member as gfnm 
-    join get_fit_now_check_in as gfnci on gfnm.id = gfnci.membership_id
-    where check_in_date = '20180115') 
-    OR iw.person_id in (select person_id from facebook_event_checkin where date = '20180115')
-    ```
+        ```sql
+        select * from interview as iw 
+        where iw.person_id in (select gfnm.person_id from get_fit_now_member as gfnm 
+        join get_fit_now_check_in as gfnci on gfnm.id = gfnci.membership_id
+        where check_in_date = '20180115') 
+        OR iw.person_id in (select person_id from facebook_event_checkin where date = '20180115')
 
-    ou bien avec `union`
+        -- Ou avec union
 
-    ```sql
-    select * from interview as iw 
-    where iw.person_id in (select gfnm.person_id from get_fit_now_member as gfnm 
-    join get_fit_now_check_in as gfnci on gfnm.id = gfnci.membership_id
-    where check_in_date = '20180115' union select person_id from facebook_event_checkin where date = '20180115')
-    ```
+        select * from interview as iw 
+        where iw.person_id in (select gfnm.person_id from get_fit_now_member as gfnm 
+        join get_fit_now_check_in as gfnci on gfnm.id = gfnci.membership_id
+        where check_in_date = '20180115' union select person_id from facebook_event_checkin where date = '20180115')
+        ```
 
     On y trouve les témoignages:
 
