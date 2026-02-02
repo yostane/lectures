@@ -1,11 +1,14 @@
 {
-	"folders": [
-		{
-			"path": "material/python/poo"
-		},
-		{
-			"path": "docs/python"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "material/python/poo",
+    },
+    {
+      "path": "docs/python",
+    },
+    {
+      "path": "material/python/2025-2026/2526-B2-datascience",
+    },
+  ],
+  "settings": {},
 }
