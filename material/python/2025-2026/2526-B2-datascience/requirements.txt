@@ -4,3 +4,4 @@ ipykernel
 pandas
 # Bibliothèque pour dessiner des graphiques
 matplotlib
+streamlit
