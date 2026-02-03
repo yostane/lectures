@@ -2,3 +2,4 @@ dask[complete]
 numpy
 pandas
 graphviz
+colied
