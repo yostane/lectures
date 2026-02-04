@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 
-public fun main() {
+fun main() {
     println("Hello World")
 }

@@ -1,6 +1,6 @@
 ---
 draft: true 
-date: 2025-02-20 
+date: 2025-01-20 
 categories:
   - Java
   - Concurrency
@@ -14,45 +14,134 @@ authors:
 Concurrent programming allows to run multiple tasks simultaneously, and was achievable mostly through threads.
 However, threads are hard to code with and have some limitations.
 Modern concurrent programming brings new concepts that make concurrent programming easier and more efficient.
-One of those concepts is structured concurrency, which is implemented in the JVM ecosystem through Kotlin coroutines and Project Loom.
+Two of those concepts is structured concurrency and lightweight threads, which are implemented in the JVM ecosystem through Kotlin coroutines and Project Loom.
 Let's explore these two approaches.
 
 <!-- more -->
 
 ## Introduction
 
-Traditional (thread based) concurrency has many issues, such as callback hells and optimizes system resources by reducing the overhead caused by Thread objects.
-Let's illustrate them by this example that creates 1000 threads that each download a web page:
+Traditional (thread based) concurrency has many issues, such as callback hells and high consumption of system resources by extensive creation of threads.
+Let's illustrate them by this example that creates 1000 threads that each sleep for 1 second and then print the number of unique threads.
 
 ```java
-for (int i = 0; i < 1000; i++) {
-    new Thread(() -> {
-        try {
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://openjdk.org/"))
-                .build();
-            HttpResponse<String> response =
-            client.send(request, BodyHandlers.ofString());
-            System.out.println(response.statusCode());
-            System.out.println(response.body());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }).start();
-}
+--8<--
+blog/jvm-moco/thousand-threads.java
+--8<--
 ```
 
-Structured concurrency is a programming paradigm that aims to make writing concurrent programs as straightforward and maintainable as writing sequential programs.
-It solves many problems of 
+We can note from the output that the 1000 threads are created.
 
-With regard to the JVM ecosystem, Kotlin implements these two features with coroutines since Kotlin 1.1 (which was released in 2011).
+```txt
+1
+...
+...
+999
+1000
+```
+
+By analyzing the code and the output, we can note two above mentioned problems:
+
+- The code is sensible to callback hell: since threads are created with a lambda, they require a callback style of programming if we want to perform actions after the thread completes, which can lead to deeply nested code that is hard to read and maintain.
+- The system resources are not optimized: creating 1000 threads can be very resource intensive, especially if the tasks are I/O bound and spend much of their time waiting. This can lead to high memory consumption and context switching overhead.
+
+Modern concurrency concepts solve these issues as we'll see in the next sections.
+Let's start by definng these concepts befire delving into concrete implementations.
+
+## Modern concurrency concepts
+
+There are two main concepts in modern concurrency that we will explore in this post: lightweight threads and structured concurrency.
+
+### Lightweight threads
+
+They are threads that are managed by the runtime instead of the operating system.
+They are managed by the language runtime (like the JVM or Kotlin runtime) and run on top of traditional OS threads.
+That why we refer to classical threads as platform threads, or OS threads, or carrier threads (because they carry the lightweight threads).
+Since lightweight threads generate less platform threads, we naturally have less memory consumption and context switching overhead.
+
+The JVM has two implementations of lightweight threads: virtual threads (introduced by Project Loom) and coroutines (introduced by Kotlin).
+
+### Structured concurrency
+
+Structured concurrency is a programming paradigm that aims to make concurrent code similar to sequential sequential code.
+It is achieved by providing APIs that replace the traditional thread management APIs with constructs that enforce a clear structure for concurrent tasks.
+We can already see structured concurrency in JavaScript, C# and Swift with the `async`/`await` keywords.
+
+In the JVM ecosystem, structured concurrency is implemented by Kotlin coroutines and Project Loom.
+
+Let's see how these two concepts are implemented in Kotlin coroutines and Project Loom.
+
+## Kotlin coroutines
+
+A coroutine is a lightweight thread that is managed by the Kotlin runtime.
+Kotlin implements coroutines since version 1.1 (which was released in 2011).
+
+Coroutines can be suspended and resumed, which allows to write asynchronous code in a sequential way.
+Two concepts are essential to understand coroutines: suspending functions and CoroutineScope.
+Coroutines run inside a CoroutineScope, which is a context that defines the lifecycle of the coroutines.
+A suspending function is function that is marked with the `suspend` keyword.
+Any function that calls suspending functions must be marked as `suspend` as well (similar to the `async` keyword in other languages).
+
+Let's see an example of how to create a coroutine scope that launches two coroutines.
+
+```java
+--8<--
+blog/jvm-moco/coroutine-demo-01.main.kts
+--8<--
+```
+
+The coroutine scope is created with the `coroutineScope` function.
+Since the the `coroutineScope` is a suspending function (defined with the `suspend` keyword), then, the main function that calls it must be marked as `suspend` as well.
+The coroutine scope launches two coroutines with the `launch` function (`launch` creates a coroutine and runs it).
+The first one prints a message, delays for 1 second and then prints another message.
+The second coroutine simply prints a message.
+
+Can you guess the output of this code? Here is the answer:
+
+```txt
+Start of coroutine 1
+I am another coroutine
+End of coroutine 1
+Coroutine scope completed
+```
+
+Since the first coroutine delays for 1 second, the second coroutine is executed while the first one is waiting.
+What if we want to wait for the end of the first coroutine before starting the second one?
+That can be achieved with the `join` function, which waits for the completion of a coroutine.
+
+```java
+--8<--
+blog/jvm-moco/coroutine-demo-02.main.kts
+--8<--
+```
+
+The output of this code is:
+
+```txt
+Start of coroutine 1
+End of coroutine 1
+I am another coroutine
+Coroutine scope completed
+```
+
+By getting a reference to the first coroutine with `val job1 = launch { ... }`, we can call `job1.join()` to wait for its completion before starting the second coroutine.
+That where the magic of structured concurrency happens: the code looks like sequential code, but it is actually concurrent code.
+No callback hell here, just sequential code!
+This is the essence of structured concurrency.
+
+Regarding the lightweight aspect of coroutines, we can create thousands of coroutines without worrying about system resources.
+Let's see an example that creates 1000 coroutines that each delay for 1 second and then print the number of unique coroutines.
+
+```java
+
+## Java structured concurrency
+
+
 Java developers had to wait until Java 21 (which was release in 2021) to have a preview of structured concurrency with Project Loom.
 
 With the release of Java 24, it's a good time to take a look at these two approaches.
 Let's start by exploring Project Loom.
 
-## Loom
 
 Project Loom is an OpenJDK project that aims to bring modern concurrent programming to the JVM.
 Loom introduces new concepts: virtual threads ([JEP 444](https://openjdk.org/jeps/444) previously called Fibers), which is an implementation of soft threads, and structured concurrency ([JEP 428](https://openjdk.org/jeps/425)).

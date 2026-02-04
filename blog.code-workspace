@@ -1,11 +1,11 @@
 {
-	"folders": [
-		{
-			"path": "docs/blog"
-		},
-		{
-			"path": "material/blog"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "docs/blog",
+    },
+    {
+      "path": "material/blog",
+    },
+  ],
+  "settings": {},
 }
