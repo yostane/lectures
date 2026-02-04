@@ -123,6 +123,8 @@ nav:
           - distrib/dask/dask-bag.ipynb
           - distrib/dask/dask-misc.ipynb
           - distrib/dask/coiled.md
+      - Projets:
+          - distrib/analyse-pyspark.md
   - IoT:
       - iot/index.md
       - iot/deviot.md
