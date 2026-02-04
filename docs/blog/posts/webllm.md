@@ -14,6 +14,8 @@ authors:
 It leverages WebAssembly (Wasm) and WebGPU to perform efficient inference on the client side.
 This article explores how to use WebLLM to run LLMs in the browser.
 
+<!-- more -->
+
 ## Getting started with WebLLM
 
 ## WebLLM compared to other libraries

@@ -11,18 +11,42 @@ authors:
 
 # Modern concurrency on the JVM with Coroutines and Loom
 
-It's long finished the time where the Java ecosystem only has threads and async callback hells.
-Indeed, we have a lot of elegant options for writing concurrent code on the JVM.
-That is what we'll explore in this article through Project Loom and Kotlin coroutines.
+Concurrent programming allows to run multiple tasks simultaneously, and was achievable mostly through threads.
+However, threads are hard to code with and have some limitations.
+Modern concurrent programming brings new concepts that make concurrent programming easier and more efficient.
+One of those concepts is structured concurrency, which is implemented in the JVM ecosystem through Kotlin coroutines and Project Loom.
+Let's explore these two approaches.
 
 <!-- more -->
 
 ## Introduction
 
-Modern concurrent programming bring two important features: soft threads and structured concurrency. These are language agnostic and may already be found in other programming languages.
-Soft threads are lightweight threads that are managed by the runtime, as opposed to regular thread which are managed by the operating system. Structured concurrency is a way to write concurrent code that is organized and clear taking advantage of classic sequential programming constructs (loops, if, etc.), thus avoiding us dealing with async callbacks.
+Traditional (thread based) concurrency has many issues, such as callback hells and optimizes system resources by reducing the overhead caused by Thread objects.
+Let's illustrate them by this example that creates 1000 threads that each download a web page:
 
-With regard to the JVM ecosystem, Kotlin implements these two features with coroutines since Kotlin 1.1 (which was release in 2011).
+```java
+for (int i = 0; i < 1000; i++) {
+    new Thread(() -> {
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://openjdk.org/"))
+                .build();
+            HttpResponse<String> response =
+            client.send(request, BodyHandlers.ofString());
+            System.out.println(response.statusCode());
+            System.out.println(response.body());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }).start();
+}
+```
+
+Structured concurrency is a programming paradigm that aims to make writing concurrent programs as straightforward and maintainable as writing sequential programs.
+It solves many problems of 
+
+With regard to the JVM ecosystem, Kotlin implements these two features with coroutines since Kotlin 1.1 (which was released in 2011).
 Java developers had to wait until Java 21 (which was release in 2021) to have a preview of structured concurrency with Project Loom.
 
 With the release of Java 24, it's a good time to take a look at these two approaches.
