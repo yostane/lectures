@@ -13,7 +13,7 @@
         where check_in_date = '20180115'
         ```
     
-    - Interview des personnes qui ont check-in le jour du crime (sur facebook ou la gym).
+    - Interview des personnes qui ont check-in le jour du crime (sur FaceBook ou la gym).
 
         ```sql
         select * from interview as iw 

@@ -30,6 +30,10 @@ Quelques spécificités de SQLite:
 - Les tables ont une clé primaire auto-incrémentée par défaut appelée `rowid`. Une colonne en `autoincrement` explicite n'est pas recommandée ([source](https://www.sqlite.org/autoinc.html)).
 - Les fichiers de base données utilisent une extension `.db` ou `.sqlite`.
 
+## PostgreSQL
+
+PostgreSQL est une base de données relationnelle open-source puissante et robuste qui prend en charge une large gamme de fonctionnalités avancées, telles que les transactions, les vues, les procédures stockées et les types de données personnalisés.
+
 ## Sources
 
 -   [Mastocodeur/sql-fast-learner](https://github.com/Mastocodeur/sql-fast-learner)
