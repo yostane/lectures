@@ -1,1 +1,2 @@
-pyspark==3.5.5
+pyspark==4.1.1
+streamlit==1.53.0

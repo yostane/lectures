@@ -1,5 +1,5 @@
 # Langage SQL avancé
-
+s
 ## Introduction
 
 SQL (Structured Query Language) est un langage de programmation utilisé pour gérer et manipuler des bases de données relationnelles.
@@ -15,9 +15,20 @@ Les caractéristiques principales des bases de données relationnelles incluent 
 ## Types de bases de données relationnelles
 
 - Base de données sans serveur:
-    - Fichier plat: CSV, JSON, XML, sqlite
-    - Mémoire: Redis, Memcached, H2
-- Base de données avec serveur:  MySQL, PostgreSQL, Oracle DB, SQL Server
+    - Fichier plat: CSV, JSON, XML, SQLite, H2
+    - Mémoire: H2, SQLite
+- Base de données avec serveur:  MySQL, PostgreSQL, Oracle DB, SQL Server, H2
+
+On peut observer que certaines bases de données supportent plusieurs types d'utilisation, comme H2.
+
+## SQLite
+
+SQLite est une base de données relationnelle légère et intégrée qui ne nécessite pas de serveur pour fonctionner. Elle est souvent utilisée pour les applications mobiles, les applications de bureau et les projets de développement rapide.
+
+Quelques spécificités de SQLite:
+
+- Les tables ont une clé primaire auto-incrémentée par défaut appelée `rowid`. Une colonne en `autoincrement` explicite n'est pas recommandée ([source](https://www.sqlite.org/autoinc.html)).
+- Les fichiers de base données utilisent une extension `.db` ou `.sqlite`.
 
 ## Sources
 
