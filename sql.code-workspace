@@ -1,8 +1,24 @@
 {
-	"folders": [
-		{
-			"path": "docs/sql"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "docs/sql",
+    },
+    {
+      "path": "material/sql",
+    },
+  ],
+  "settings": {
+    "sqltools.connections": [
+      {
+        "ssh": "Disabled",
+        "previewLimit": 50,
+        "server": "localhost",
+        "port": 5432,
+        "driver": "PostgreSQL",
+        "name": "postgres",
+        "database": "postgres",
+        "username": "postgres",
+      },
+    ],
+  },
 }
