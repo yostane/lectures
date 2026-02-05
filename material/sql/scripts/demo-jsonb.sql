@@ -1,31 +1,22 @@
-DROP TABLE IF EXISTS users;
-
-CREATE TABLE IF NOT EXISTS users (
-  id SERIAL PRIMARY KEY,
-  email VARCHAR(255),
-  PASSWORD VARCHAR(100),
-  details JSONB
-);
-
-INSERT INTO users (email, password, details) VALUES ('hello@email.com', 'secret', '{
-  "conferences": ["devoxx", "DevLille"],
-  "lastTalk": {
-    "title": "blazor Doom",
-    "keywords": ["wasm", "dotnet", "JavaScript"]
-  }
-}');
-INSERT INTO users (email, password, details) VALUES ('toto@email.com', 'secret', '{
-  "lastTalk": {
-    "title": "WebAI",
-    "keywords": ["Web", "AI", "JavaScript"]
-  }
-}');
-
+-- Sélection
 select * from users;
+
 select email, details->>'lastTalk' as lastTalk from users;
--- Préciser un chemin
+select details || '{"favoriteFood": "Pizza"}' from users;
+-- Préciser un chemin (doubler la flèche convertir le résultat en texte)
 select email, details->'lastTalk'->>'title' as lastTitle from users;
 select email, details#>>'{lastTalk, title}' as lastTitle from users;
 -- Accès par index
 select email, details->'conferences'->>0 as firstconf from users;
 select email, details#>>'{conferences, 0}' as firstconf from users;
+select email, details#>>'{lastTalk, keywords, 0}' as first_keyword from users;
+select email, details#>'{lastTalk, keywords}'->>0 as first_keyword from users;
+
+-- Update
+
+UPDATE users SET details = jsonb_set(details, '{lastTalk, duration}', '50') WHERE email = 'hello@email.com';
+select email, details#>'{lastTalk, duration}' from users;
+
+-- WHere
+SELECT email, details FROM users WHERE details->'lastTalk'@>'{"title": "WebAI"}';
+SELECT email, details FROM users WHERE details#>'{lastTalk, keywords}' ? 'Web';

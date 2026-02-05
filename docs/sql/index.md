@@ -29,6 +29,7 @@ Quelques spécificités de SQLite:
 
 - Les tables ont une clé primaire auto-incrémentée par défaut appelée `rowid`. Une colonne en `autoincrement` explicite n'est pas recommandée ([source](https://www.sqlite.org/autoinc.html)).
 - Les fichiers de base données utilisent une extension `.db` ou `.sqlite`.
+- Pas de support pour les procédures stockées, définition de fonctions (à part via du C), les vues ou les déclencheurs complexes.
 
 ## PostgreSQL
 
@@ -38,11 +39,29 @@ Quelques spécificités de PostgreSQL:
 
 - Support du JSON et du JSONB (JSON encodé en binaire au lieu de texte) pour le stockage de données semi-structurées (peut donc remplacer une BDD NoSQL).
 
+??? "Définition d'une table et d'une enum"
+
+    ```sql
+    --8<--
+    sql/scripts/setup.sql
+    --8<--
+    ```
+
 ??? "Exemple de JSONB"
+
+    [Documentation](https://www.postgresql.org/docs/current/functions-json.html)
 
     ```sql
     --8<--
     sql/scripts/demo-jsonb.sql
+    --8<--
+    ```
+
+??? "Exemple de fonction"
+
+    ```sql
+    --8<--
+    sql/scripts/demo-functions.sql
     --8<--
     ```
 
