@@ -48,4 +48,6 @@ Quelques spécificités de PostgreSQL:
 
 ## Sources
 
--   [Mastocodeur/sql-fast-learner](https://github.com/Mastocodeur/sql-fast-learner)
+- [Mastocodeur/sql-fast-learner](https://github.com/Mastocodeur/sql-fast-learner)
+- [stackoverflow.com](https://stackoverflow.com/a/56937212)
+- [blog.logto.io](https://blog.logto.io/fr/maitriser-postgresql-jsonb)
