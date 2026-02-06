@@ -122,6 +122,7 @@ nav:
           - distrib/dask/dask-array.ipynb
           - distrib/dask/dask-bag.ipynb
           - distrib/dask/dask-misc.ipynb
+          - distrib/dask/dask-exemples-algo.ipynb
           - distrib/dask/coiled.md
       - Projets:
           - distrib/analyse-pyspark.md
