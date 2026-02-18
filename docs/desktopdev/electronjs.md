@@ -57,7 +57,12 @@ Voici les commandes qui permettent de faire ces √©tapes (fonctionne au moment o√
 
 ```sh
 npx create-vite@latest my-react-app --template react
+# En typescript
+npx create-vite@latest my-react-app --template react-ts
+
 npx create-electron-app@latest electron-react-app --template vite
+# en typescript
+npx create-electron-app@latest electron-react-app --template vite-typescript
 
 cp my-react-app/index.html electron-react-app/index.html
 cp -r my-react-app/public electron-react-app/public
@@ -65,8 +70,9 @@ cp -r my-react-app/src/* electron-react-app/src
 
 cp my-react-app/eslint.config.js electron-react-app/eslint.config.json
 
-
 cp my-react-app/vite.config.js electron-react-app/vite.renderer.config.mjs
+# en typescript
+cp my-react-app/vite.config.ts electron-react-app/vite.renderer.config.ts
 
 cd electron-react-app
 npm install react react-dom
