@@ -41,7 +41,7 @@ Par défaut, le processus de rendu n'a pas accès à Node.js, ce qui signifie qu
 
 Electron Forge utilise des "makers" pour générer les fichiers nécessaires à la distribution de l'application. Il existe différents makers pour différentes plateformes (Windows, Mac, Linux). Par exemple, le maker `@electron-forge/maker-squirrel` est utilisé pour générer un installeur pour Windows.
 
-## Intégration d'un front React le template vite
+## Eletrong forge vite + React
 
 Voici les étapes clés:
 
@@ -68,7 +68,7 @@ cp my-react-app/index.html electron-react-app/index.html
 cp -r my-react-app/public electron-react-app/public
 cp -r my-react-app/src/* electron-react-app/src
 
-cp my-react-app/eslint.config.js electron-react-app/eslint.config.json
+cp my-react-app/eslint.config.js electron-react-app/eslint.config.js
 
 cp my-react-app/vite.config.js electron-react-app/vite.renderer.config.mjs
 # en typescript
