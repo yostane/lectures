@@ -49,7 +49,7 @@ Voici les étapes clés:
 1. Créer un projet Electron + Vite avec Electron Forge.
 1. Copier le code front de l'application React vers le projet Electron : écraser *index.html*, copier le dossier *public* et fusionner le contenu du dossier *src*.
 1. Copier les configuration spécifique du projet React vers le projet Electron. Il ne devrait y avoir que le *eslint.json* à copier à la racine du projet Electron.
-1. Ajouter le plugin `react()` dans *vite.renderer.config.(mjs ou ts)*. Vous pouvez le faire en remplaçant le contenu de ce fichier par le contenu de *vite.config.(js ou ts)* du projet React.
+1. Ajouter le plugin `react()` dans *vite.renderer.config.mjs*. Vous pouvez le faire en remplaçant le contenu de ce fichier par le contenu de *vite.config.(js ou ts)* du projet React. Dans un projet typescipt, il faudra aussi renommer le fichier en *vite.renderer.config.mts* et mettre à jour le nom du fichier référencé dans *forge.config.ts*.
 1. Copier les dépendances (`dependencies` et `devDependencies`) du projet React vers le projet Electron à part `vite`. Il ne devrait pas y avoir d'autres doublons, mais s'il y en a, il faut les supprimer.
 1. Lancer l'application Electron. Si tout fonctionne, vous pouvez supprimer le projet React.
 
@@ -71,12 +71,12 @@ cp -r my-react-app/src/* electron-react-app/src
 cp my-react-app/eslint.config.js electron-react-app/eslint.config.js
 
 cp my-react-app/vite.config.js electron-react-app/vite.renderer.config.mjs
-# en typescript
-cp my-react-app/vite.config.ts electron-react-app/vite.renderer.config.ts
 
 cd electron-react-app
 npm install react react-dom
 npm install --save-dev @eslint/js @types/react @types/react-dom eslint vite-plugin-react @vitejs/plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh
+# févirer 2026
+npm install --save-dev @eslint/js@9.39.1 @types/react @types/react-dom eslint @vitejs/plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh@0.4.24
 
 npm start
 
