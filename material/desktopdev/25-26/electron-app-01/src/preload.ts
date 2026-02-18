@@ -5,8 +5,10 @@ import { contextBridge, ipcRenderer } from "electron";
 
 contextBridge.exposeInMainWorld("processId", process.pid);
 contextBridge.exposeInMainWorld("getMemoryInfo", process.getProcessMemoryInfo);
-
 async function getHostName() {
   return ipcRenderer.invoke("getHostNameFromOS");
 }
 contextBridge.exposeInMainWorld("getHostName", getHostName);
+contextBridge.exposeInMainWorld("setTitle", (title: string) => {
+  ipcRenderer.send("setWindowTitle", title);
+});

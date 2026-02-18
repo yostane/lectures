@@ -58,3 +58,9 @@ app.on("activate", () => {
 ipcMain.handle("getHostNameFromOS", () => {
   return os.hostname();
 });
+
+ipcMain.on("setWindowTitle", (event, title: string) => {
+  const webContents = event.sender;
+  const win = BrowserWindow.fromWebContents(webContents);
+  win.setTitle(title);
+});

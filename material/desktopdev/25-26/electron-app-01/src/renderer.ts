@@ -45,4 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
       memoryInfoElement.innerHTML = `private: ${memInfo.private}, shared ${memInfo.shared}`;
       memoryInfoElement.innerHTML += `host name ${hostName}`;
     });
+
+  document.querySelector("#change-title-btn").addEventListener("click", () => {
+    const titleInput = document.querySelector(
+      "#title-input",
+    ) as HTMLInputElement;
+    const title = titleInput.value;
+    window.setTitle(title);
+  });
 });
