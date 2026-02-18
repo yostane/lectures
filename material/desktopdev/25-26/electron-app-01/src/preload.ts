@@ -4,3 +4,4 @@
 import { contextBridge } from "electron";
 
 contextBridge.exposeInMainWorld("processId", process.pid);
+contextBridge.exposeInMainWorld("getMemoryInfo", process.getProcessMemoryInfo);

@@ -34,4 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     emoji.innerHTML = emoji.innerHTML.startsWith("💖") ? "⚡️" : "💖";
     emoji.innerHTML += ` process ID: ${window.processId}`;
   });
+  document
+    .querySelector("#memory-info-btn")
+    .addEventListener("click", async () => {
+      const memoryInfoElement = document.querySelector("#memory-info");
+      const memInfo = await window.getMemoryInfo();
+      memoryInfoElement.innerHTML = `private: ${memInfo.private}, shared ${memInfo.shared}`;
+    });
 });
