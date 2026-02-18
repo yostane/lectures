@@ -26,8 +26,15 @@
  * ```
  */
 
-import './index.css';
+import "./index.css";
 
 console.log(
   '👋 This message is being logged by "renderer.ts", included via Vite',
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#change-emoji-btn").addEventListener("click", () => {
+    const emoji = document.querySelector("#emoji");
+    emoji.innerHTML = emoji.innerHTML === "💖" ? "⚡️" : "💖";
+  });
+});
