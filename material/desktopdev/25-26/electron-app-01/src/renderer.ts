@@ -26,7 +26,9 @@
  * ```
  */
 
+import { ipcRenderer } from "electron";
 import "./index.css";
+import { hostname } from "node:os";
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#change-emoji-btn").addEventListener("click", () => {
@@ -39,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", async () => {
       const memoryInfoElement = document.querySelector("#memory-info");
       const memInfo = await window.getMemoryInfo();
+      const hostName = await window.getHostName();
       memoryInfoElement.innerHTML = `private: ${memInfo.private}, shared ${memInfo.shared}`;
+      memoryInfoElement.innerHTML += `host name ${hostName}`;
     });
 });
