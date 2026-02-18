@@ -35,6 +35,8 @@ Le processus principal gère la fenêtre de l'application, tandis que le process
 
 Le processus de rendu est isolé du système d'exploitation pour des raisons de sécurité, ce qui signifie qu'il ne peut pas accéder directement aux fonctionnalités du système d'exploitation.
 
+Par défaut, le processus de rendu n'a pas accès à Node.js, ce qui signifie qu'il ne peut pas utiliser les modules Node.js pour accéder au système de fichiers, aux processus, etc. Il est possible de donner accès à Node.js au processus de rendu, mais cela peut poser des problèmes de sécurité. En revanche, il est recommandé d'utiliser un script de préchargement (preload) pour exposer uniquement les fonctionnalités nécessaires au processus de rendu.
+
 ## maker
 
 Electron Forge utilise des "makers" pour générer les fichiers nécessaires à la distribution de l'application. Il existe différents makers pour différentes plateformes (Windows, Mac, Linux). Par exemple, le maker `@electron-forge/maker-squirrel` est utilisé pour générer un installeur pour Windows.
