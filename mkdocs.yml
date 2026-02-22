@@ -135,7 +135,6 @@ nav:
       - blog/index.md
 
 plugins:
-  - exporter
   - mkdocs-jupyter
   - search
   - blog
