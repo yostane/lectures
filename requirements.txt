@@ -5,3 +5,4 @@ mkdocs-material==9.7.1
 regex==2026.1.15
 mkdocs-jupyter==0.25.1
 mkdocs-rss-plugin==1.17.9
+mkdocs-exporter==6.2.0
