@@ -1,5 +1,7 @@
 # Langage SQL avancé
+
 s
+
 ## Introduction
 
 SQL (Structured Query Language) est un langage de programmation utilisé pour gérer et manipuler des bases de données relationnelles.
@@ -8,16 +10,16 @@ SQL (Structured Query Language) est un langage de programmation utilisé pour g�
 
 Les caractéristiques principales des bases de données relationnelles incluent :
 
--   **Tables** : Les données sont organisées en tables composées de lignes et de colonnes.
--   **Relations** : Les tables peuvent être liées entre elles par des clés primaires et étrangères.
--   **Intégrité des données** : Les bases de données relationnelles utilisent des contraintes pour assurer la validité et la cohérence des données.
+- **Tables** : Les données sont organisées en tables composées de lignes et de colonnes.
+- **Relations** : Les tables peuvent être liées entre elles par des clés primaires et étrangères.
+- **Intégrité des données** : Les bases de données relationnelles utilisent des contraintes pour assurer la validité et la cohérence des données.
 
 ## Types de bases de données relationnelles
 
 - Base de données sans serveur:
     - Fichier plat: CSV, JSON, XML, SQLite, H2
     - Mémoire: H2, SQLite
-- Base de données avec serveur:  MySQL, PostgreSQL, Oracle DB, SQL Server, H2
+- Base de données avec serveur: MySQL, PostgreSQL, Oracle DB, SQL Server, H2
 
 On peut observer que certaines bases de données supportent plusieurs types d'utilisation, comme H2.
 
@@ -64,6 +66,14 @@ Quelques spécificités de PostgreSQL:
     sql/scripts/demo-functions.sql
     --8<--
     ```
+
+### PostgREST
+
+PostgREST est un serveur web qui expose une API RESTful basée sur une base de données PostgreSQL. Il permet de créer rapidement des API pour interagir avec les données stockées dans PostgreSQL, en utilisant des requêtes SQL pour définir les endpoints et les opérations disponibles.
+
+### Row Level Security (RLS)
+
+Row Level Security (RLS) est une fonctionnalité de PostgreSQL qui permet de contrôler l'accès aux données au niveau des lignes d'une table. Avec RLS, les administrateurs de la base de données peuvent définir des politiques de sécurité qui restreignent l'accès aux données en fonction des rôles et des permissions des utilisateurs.
 
 ## Sources
 
