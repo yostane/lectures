@@ -1,6 +1,6 @@
-# Exercices JSONB
+# Exercices PostgreSQL avancé
 
-## Exercice 1
+## JSONB
 
 Soit une table `Houses` qui représente des maisons.
 Elle contient les colonnes suivantes:
@@ -20,3 +20,9 @@ Elle contient les colonnes suivantes:
 1. Écrire une requête SQL pour récupérer les maisons de "Elm St" qui ont une chambre de taille supérieure à 20 m².
 1. Écrire une requête SQL pour récupérer les maisons qui ont une chambre nommée "Cuisine" avec un appareil "Cafetière".
 1. Si on voulait représenter les maisons et leurs chambres avec une approche 100% relationnelle, comment structureriez-vous les tables et les relations entre elles?
+
+
+## Fonctions
+
+1. Créer une fonction SQL qui prend en entrée une maison et retourne `True` si elle contient une chambre de type bureau.
+1. Créer une fonction SQL qui prend en entrée une maison et un entier et retourne `True` si elle contient une chambre de taille supérieure à cet entier.

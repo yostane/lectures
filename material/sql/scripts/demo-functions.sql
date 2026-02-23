@@ -10,5 +10,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql IMMUTABLE;
 
-SELECT can_login(u.*), * from users as u; 
+SELECT can_login(u.*) from users as u; 
+SELECT can_login(u.*), * from users as u;
+SELECT can_login(u.*), email from users as u;
 select email, status from users as u where can_login(u);

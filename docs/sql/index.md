@@ -91,6 +91,30 @@ Installer les extensions VSCode suivantes pour interagir avec la base de donnée
 
 PostgREST est un serveur web qui expose une API RESTful basée sur une base de données PostgreSQL. Il permet de créer rapidement des API pour interagir avec les données stockées dans PostgreSQL, en utilisant des requêtes SQL pour définir les endpoints et les opérations disponibles.
 
+- Lancer une instance de postgres.
+- Installer PostgREST [en suivant ce guide](https://docs.postgrest.org/en/v14/tutorials/tut0.html#step-2-install-postgrest)
+- Créer une base de données pour accueillir les données de l'API en suivant [ce guide](https://docs.postgrest.org/en/v14/tutorials/tut0.html#step-3-create-database-for-api).
+
+??? "BDD qui accueillera les données de l'API"
+
+    ```sql
+    --8<--
+    sql/scripts/postgrest-setup.sql
+    --8<--
+    ```
+
+- Créer un fichier de configuration pour PostgREST (qu'on peut appeler `postgrest-api.conf`) avec le contenu suivant:
+
+??? "Configuration de PostgREST"
+    ```conf
+    --8<--
+    sql/postgrest-api.conf
+    --8<--
+    ```
+
+- Lancer le serveur PostgREST en utilisant la commande suivante `postgrest postgrest-api.conf`
+- Tester l'API avec un `curl http://localhost:3000/todos`.
+
 ### Row Level Security (RLS)
 
 Row Level Security (RLS) est une fonctionnalité de PostgreSQL qui permet de contrôler l'accès aux données au niveau des lignes d'une table. Avec RLS, les administrateurs de la base de données peuvent définir des politiques de sécurité qui restreignent l'accès aux données en fonction des rôles et des permissions des utilisateurs.
