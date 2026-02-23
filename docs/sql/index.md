@@ -79,11 +79,23 @@ Installer les extensions VSCode suivantes pour interagir avec la base de donnée
     --8<--
     ```
 
+- Support des fonctions définies par l'utilisateur pour effectuer des opérations spécifiques sur les données.
+
 ??? "Exemple de fonction"
 
     ```sql
     --8<--
     sql/scripts/demo-functions.sql
+    --8<--
+    ```
+
+- Support des vues pour créer des tables virtuelles basées sur des requêtes SQL. Les vues sont recalculées à chaque fois qu'elles sont utilisées, ce qui permet de garantir que les données affichées sont toujours à jour.
+
+??? "Exemple de vue"
+
+    ```sql
+    --8<--
+    sql/scripts/demo-views.sql
     --8<--
     ```
 
