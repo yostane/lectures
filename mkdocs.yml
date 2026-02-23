@@ -81,6 +81,7 @@ nav:
       - sql/index.md
       - sql/setup.ipynb
       - sql/tps.md
+      - sql/exos-jsonb.md
   - Test:
       - test/index.md
       - test/generalites.md
