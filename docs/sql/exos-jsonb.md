@@ -21,7 +21,6 @@ Elle contient les colonnes suivantes:
 1. Écrire une requête SQL pour récupérer les maisons qui ont une chambre nommée "Cuisine" avec un appareil "Cafetière".
 1. Si on voulait représenter les maisons et leurs chambres avec une approche 100% relationnelle, comment structureriez-vous les tables et les relations entre elles?
 
-
 ## Fonctions
 
 1. Créer une fonction SQL qui prend en entrée une maison et retourne `True` si elle contient une chambre de type bureau.
