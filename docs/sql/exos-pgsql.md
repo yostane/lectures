@@ -32,3 +32,10 @@ Elle contient les colonnes suivantes:
 1. Créer une vue qui affiche les maisons avec le nombre de chambres qu'elles contiennent (`jsonb_array_length(rooms)`). Utiliser cette vue pour récupérer les maisons qui ont plus de 3 chambres.
 1. Créer une vue qui affiche les maisons avec la taille totale de leurs chambres (`jsonb_array_elements(rooms) ->> 'size'` pour extraire la taille de chaque chambre). Utiliser cette vue pour récupérer les maisons dont la taille totale des chambres est supérieure à 70 m².
 1. Créer une vue qui contient les maisons de "Bob". Utiliser cette vue pour afficher toutes les chambres des maisons de "Bob".
+
+??? "Solutions"
+
+    ```sql
+    --8<--
+    sql/exos/pgsql-avance.sql
+    --8<--
