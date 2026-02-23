@@ -37,9 +37,9 @@ Quelques spécificités de SQLite:
 
 PostgreSQL est une base de données relationnelle open-source puissante et robuste qui prend en charge une large gamme de fonctionnalités avancées, telles que les transactions, les vues, les procédures stockées et les types de données personnalisés.
 
-Ce fichier compose permet de lancer une base de données PostgreSQL et sa Web UI.
+Ce fichier compose permet de lancer une base de données PostgreSQL et une Web UI d'administration appelée *adminer*.
 
-??? "Définition d'une table et d'une enum"
+??? "compose.yml"
 
     ```yml
     --8<--
