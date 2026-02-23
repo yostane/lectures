@@ -1,3 +1,4 @@
+DROP VIEW IF EXISTS last_talk_titles;
 DROP FUNCTION IF EXISTS can_login;
 DROP TABLE IF EXISTS users;
 DROP TYPE IF EXISTS user_status;
