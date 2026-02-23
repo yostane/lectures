@@ -2,12 +2,14 @@
 
 ## Exercice 1
 
-Soit une table `Houses` qui représente des maisons. Elle contient les colonnes suivantes:
-    - `id` : identifiant unique de la maison.
-    - `address` : adresse de la maison.
-    - `rooms`: la liste des chambres de la maison. Chaque chambre est représentée par un objet JSON contenant les propriétés suivantes:
-        - `name`: le nom de la chambre.
-        - `size`: la taille de la chambre en mètres carrés.
+Soit une table `Houses` qui représente des maisons.
+Elle contient les colonnes suivantes:
+
+- `id` : identifiant unique de la maison.
+- `address` : adresse de la maison.
+- `rooms`: la liste des chambres de la maison. Chaque chambre est représentée par un objet JSON contenant les propriétés suivantes:
+    - `name`: le nom de la chambre.
+    - `size`: la taille de la chambre en mètres carrés.
 
 1. Créer la table
 1. Insérer les maisons suivantes: 

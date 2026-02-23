@@ -15,8 +15,10 @@ select email, details#>'{lastTalk, keywords}'->>0 as first_keyword from users;
 -- Update
 
 UPDATE users SET details = jsonb_set(details, '{lastTalk, duration}', '50') WHERE email = 'hello@email.com';
-select email, details#>'{lastTalk, duration}' from users;
+select email, details#>>'{lastTalk, duration}' from users;
 
 -- WHere
 SELECT email, details FROM users WHERE details->'lastTalk'@>'{"title": "WebAI"}';
-SELECT email, details FROM users WHERE details#>'{lastTalk, keywords}' ? 'Web';
+SELECT email, details FROM users WHERE details->'lastTalk'->'title' ? 'WebAI';
+-- Item in array
+SELECT email, details FROM users WHERE details#>'{lastTalk, keywords}' ? 'wasm';
