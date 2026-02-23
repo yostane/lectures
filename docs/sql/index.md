@@ -1,7 +1,5 @@
 # Langage SQL avancé
 
-s
-
 ## Introduction
 
 SQL (Structured Query Language) est un langage de programmation utilisé pour gérer et manipuler des bases de données relationnelles.
@@ -37,6 +35,8 @@ Quelques spécificités de SQLite:
 
 PostgreSQL est une base de données relationnelle open-source puissante et robuste qui prend en charge une large gamme de fonctionnalités avancées, telles que les transactions, les vues, les procédures stockées et les types de données personnalisés.
 
+### Préparation
+
 Ce fichier compose permet de lancer une base de données PostgreSQL et une Web UI d'administration appelée *adminer*.
 Pour le lancer, il suffit de se placer à la racine du projet et d'exécuter la commande suivante:
 
@@ -54,7 +54,9 @@ podman-compose up
     --8<--
     ```
 
-Quelques spécificités de PostgreSQL:
+Installer les extensions VSCode suivantes pour interagir avec la base de données: *SQLTools* et son driver *SQLTools PostgreSQL*.
+
+### spécificités de PostgreSQL
 
 - Support des enums (types de données énumérés) pour restreindre les valeurs possibles d'une colonne à un ensemble défini de valeurs.
 - Support du JSON et du JSONB (JSON encodé en binaire au lieu de texte) pour le stockage de données semi-structurées (peut donc remplacer une BDD NoSQL).
