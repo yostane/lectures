@@ -41,7 +41,7 @@ Ce fichier compose permet de lancer une base de données PostgreSQL et une Web U
 
 ??? "compose.yml"
 
-    ```yml
+    ```yaml
     --8<--
     sql/compose.yml
     --8<--
@@ -49,9 +49,10 @@ Ce fichier compose permet de lancer une base de données PostgreSQL et une Web U
 
 Quelques spécificités de PostgreSQL:
 
+- Support des enums (types de données énumérés) pour restreindre les valeurs possibles d'une colonne à un ensemble défini de valeurs.
 - Support du JSON et du JSONB (JSON encodé en binaire au lieu de texte) pour le stockage de données semi-structurées (peut donc remplacer une BDD NoSQL).
 
-??? "Définition d'une table et d'une enum"
+??? "Définition d'une table utilisant du JSONB et d'une enum"
 
     ```sql
     --8<--
