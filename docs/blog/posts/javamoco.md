@@ -12,7 +12,7 @@ authors:
 # Modern concurrency on the JVM with Coroutines and Loom
 
 Concurrent programming allows to run multiple tasks simultaneously, and was achievable mostly through threads.
-However, threads are hard to code with and have some limitations.
+However, they are hard to code with and have some limitations.
 Modern concurrent programming brings new concepts that make concurrent programming easier and more efficient.
 Two of those concepts is structured concurrency and lightweight threads, which are implemented in the JVM ecosystem through Kotlin coroutines and Project Loom.
 Let's explore these two approaches.
@@ -21,8 +21,8 @@ Let's explore these two approaches.
 
 ## Introduction
 
-Traditional (thread based) concurrency has many issues, such as callback hells and high consumption of system resources by extensive creation of threads.
-Let's illustrate them by this example that creates 1000 threads that each sleep for 1 second and then print the number of unique threads.
+Traditional (thread based) concurrency has many issues, such as [callback hell](https://callbackhell.com/) and high consumption of system resources by extensive creation of threads.
+Let's illustrate them in this example that creates 1000 threads that each sleep for 1 second and then print the number of unique ones.
 
 ```java
 --8<--
@@ -42,11 +42,11 @@ We can note from the output that the 1000 threads are created.
 
 By analyzing the code and the output, we can note two above mentioned problems:
 
-- The code is sensible to callback hell: since threads are created with a lambda, they require a callback style of programming if we want to perform actions after the thread completes, which can lead to deeply nested code that is hard to read and maintain.
-- The system resources are not optimized: creating 1000 threads can be very resource intensive, especially if the tasks are I/O bound and spend much of their time waiting. This can lead to high memory consumption and context switching overhead.
+- The code is sensible to callback hell: since threads are created with a lambda, they require a callback style of programming if we want to perform actions after the thread completes, which can lead to deeply nested code that is hard to read, predict and maintain.
+- The system resources are not optimized: creating 1000 threads can be resource intensive, especially if the tasks are I/O bound and spend much of their time waiting. This can lead to high memory consumption and context switching overhead. In addition to that, there is a limit to the number of threads that can be created by the OS.
 
 Modern concurrency concepts solve these issues as we'll see in the next sections.
-Let's start by definng these concepts befire delving into concrete implementations.
+Let's start by defining these concepts before delving into concrete implementations.
 
 ## Modern concurrency concepts
 
@@ -54,32 +54,30 @@ There are two main concepts in modern concurrency that we will explore in this p
 
 ### Lightweight threads
 
-They are threads that are managed by the runtime instead of the operating system.
-They are managed by the language runtime (like the JVM or Kotlin runtime) and run on top of traditional OS threads.
-That why we refer to classical threads as platform threads, or OS threads, or carrier threads (because they carry the lightweight threads).
-Since lightweight threads generate less platform threads, we naturally have less memory consumption and context switching overhead.
+They are threads that are managed by the runtime (like the JVM or Kotlin runtime) instead of the operating system.
+They still run on top of OS threads, also called platform threads or carrier threads (because they carry the lightweight threads).
+However, lightweight threads can reuse platform threads, which allows to bypass the limit of OS threads.
+In addition to that, the usage of system resources is optimized, since platform threads are more expensive to create and maintain that lightweight threads.
 
-The JVM has two implementations of lightweight threads: virtual threads (introduced by Project Loom) and coroutines (introduced by Kotlin).
+The JVM has two implementations of lightweight threads: coroutines (introduced by Kotlin) and virtual threads (introduced by Project Loom).
 
 ### Structured concurrency
 
-Structured concurrency is a programming paradigm that aims to make concurrent code similar to sequential sequential code.
-It is achieved by providing APIs that replace the traditional thread management APIs with constructs that enforce a clear structure for concurrent tasks.
-We can already see structured concurrency in JavaScript, C# and Swift with the `async`/`await` keywords.
+Structured concurrency is a programming paradigm that aims to make concurrent code similar to a sequential one.
+It is achieved by providing APIs that replace the traditional, callback-based, ones with constructs that enforce a sequential structure for concurrent tasks.
+We can also see structured concurrency in JavaScript, C# and Swift with the `async`/`await` keywords.
 
 In the JVM ecosystem, structured concurrency is implemented by Kotlin coroutines and Project Loom.
-
-Let's see how these two concepts are implemented in Kotlin coroutines and Project Loom.
 
 ## Kotlin coroutines
 
 A coroutine is a lightweight thread that is managed by the Kotlin runtime.
-Kotlin implements coroutines since version 1.1 (which was released in 2011).
-
+Kotlin implements coroutines since version 1.1, released in 2011.
 Coroutines can be suspended and resumed, which allows to write asynchronous code in a sequential way.
-Two concepts are essential to understand coroutines: suspending functions and CoroutineScope.
-Coroutines run inside a CoroutineScope, which is a context that defines the lifecycle of the coroutines.
-A suspending function is function that is marked with the `suspend` keyword.
+
+Two concepts are essential to understand coroutines: **suspending functions** and **CoroutineScope**.
+Coroutines run inside a **CoroutineScope**, which is a context that defines the lifecycle of the coroutines.
+A **suspending function** is function that is marked with the `suspend` keyword.
 Any function that calls suspending functions must be marked as `suspend` as well (similar to the `async` keyword in other languages).
 
 Let's see an example of how to create a coroutine scope that launches two coroutines.
@@ -91,10 +89,10 @@ blog/jvm-moco/coroutine-demo-01.main.kts
 ```
 
 The coroutine scope is created with the `coroutineScope` function.
-Since the the `coroutineScope` is a suspending function (defined with the `suspend` keyword), then, the main function that calls it must be marked as `suspend` as well.
+Since the the `coroutineScope` is a suspending function (defined with the `suspend` qualifier), then the `main` function that calls it must be marked as `suspend` as well.
 The coroutine scope launches two coroutines with the `launch` function (`launch` creates a coroutine and runs it).
-The first one prints a message, delays for 1 second and then prints another message.
-The second coroutine simply prints a message.
+The first one prints a message, sleeps for 1 second and then prints another message.
+The second one simply prints a message.
 
 Can you guess the output of this code? Here is the answer:
 
@@ -105,8 +103,8 @@ End of coroutine 1
 Coroutine scope completed
 ```
 
-Since the first coroutine delays for 1 second, the second coroutine is executed while the first one is waiting.
-What if we want to wait for the end of the first coroutine before starting the second one?
+Since the first coroutine sleeps for 1 second, the second coroutine is executed while the first one is suspended.
+What if we want to start the second one only after the first one completes?
 That can be achieved with the `join` function, which waits for the completion of a coroutine.
 
 ```java
@@ -125,14 +123,14 @@ Coroutine scope completed
 ```
 
 By getting a reference to the first coroutine with `val job1 = launch { ... }`, we can call `job1.join()` to wait for its completion before starting the second coroutine.
-That where the magic of structured concurrency happens: the code looks like sequential code, but it is actually concurrent code.
-No callback hell here, just sequential code!
-This is the essence of structured concurrency.
+That's where we can see the essence of structured concurrency: the code looks like sequential code, but it is actually concurrent code.
+No more callback hell, just sequential code!
 
-Regarding the lightweight aspect of coroutines, we can create thousands of coroutines without worrying about system resources.
-Let's see an example that creates 1000 coroutines that each delay for 1 second and then print the number of unique coroutines.
+Regarding the lightweight aspect of coroutines, we can illustrate this by creating thousands of coroutines without worrying about system resources.
+Let's see an example that creates 100000 coroutines that each delay for 1 second and then print the number of unique coroutines.
 
 ```java
+```
 
 ## Java structured concurrency
 
