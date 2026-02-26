@@ -131,6 +131,10 @@ PostgREST est un serveur web qui expose une API RESTful basée sur une base de d
 
 Row Level Security (RLS) est une fonctionnalité de PostgreSQL qui permet de contrôler l'accès aux données au niveau des lignes d'une table. Avec RLS, les administrateurs de la base de données peuvent définir des politiques de sécurité qui restreignent l'accès aux données en fonction des rôles et des permissions des utilisateurs.
 
+### Supabase
+
+Supabase est une plateforme de développement d'applications qui fournit une suite d'outils pour créer des applications web et mobiles. Elle utilise PostgreSQL comme base de données principale et offre des fonctionnalités telles que l'authentification, le stockage de fichiers, les fonctions serverless et les API en temps réel.
+
 ## Sources
 
 - [Mastocodeur/sql-fast-learner](https://github.com/Mastocodeur/sql-fast-learner)
