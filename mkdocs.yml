@@ -82,6 +82,8 @@ nav:
       - sql/setup.ipynb
       - sql/tps.md
       - sql/exos-pgsql.md
+      - TPs:
+        - sql/tp-note.md
   - Test:
       - test/index.md
       - test/generalites.md

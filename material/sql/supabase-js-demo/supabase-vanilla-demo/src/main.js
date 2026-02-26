@@ -3,6 +3,19 @@ import { SUPABASE_KEY, SUPABASE_URL } from "./local";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
+const channelA = supabase
+  .channel("schema-db-changes")
+  .on(
+    "postgres_changes",
+    {
+      event: "INSERT",
+      schema: "public",
+      table: "speakers",
+    },
+    async (payload) => selectAll(),
+  )
+  .subscribe();
+
 async function signIn(email) {
   const { data, error } = await supabase.auth.signInWithPassword({
     email: email,
