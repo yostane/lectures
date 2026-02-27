@@ -131,6 +131,34 @@ PostgREST est un serveur web qui expose une API RESTful basée sur une base de d
 
 Row Level Security (RLS) est une fonctionnalité de PostgreSQL qui permet de contrôler l'accès aux données au niveau des lignes d'une table. Avec RLS, les administrateurs de la base de données peuvent définir des politiques de sécurité qui restreignent l'accès aux données en fonction des rôles et des permissions des utilisateurs.
 
+### Recherche full-text
+
+Postgres supporte la recherche full-text, qui permet de rechercher des mots ou des phrases dans des colonnes de texte. Cette fonctionnalité est similaire à ce que proposer des moteurs de recherche comme Elasticsearch, mais elle est intégrée directement dans la base de données, ce qui peut simplifier l'architecture de l'application.
+
+Il est possible d'utiliser deux approches pour la recherche full-text dans Postgres:
+
+- Utiliser les opérateurs de recherche full-text intégrés, tels que `to_tsvector`, `@@` et `to_tsquery`, pour effectuer des recherches sur des colonnes de texte.
+- utiliser une extension de recherche full-text tierce, telle que [pg_trgm](https://www.postgresql.org/docs/current/pgtrgm.html) ou [pg_search](https://github.com/paradedb/paradedb/tree/main/pg_search).
+
+La fonctionnalité `GENERATED ALWAYS AS` permet de créer des colonnes générées automatiquement à partir d'autres colonnes de la table. Cela peut être utilisé pour créer une colonne de recherche full-text qui est automatiquement mise à jour chaque fois que les données de la table sont modifiées.
+
+Alternativement, on peut aussi créer un index `GIN` de type `tsvector` sur une colonne textuelle pour améliorer les performances des recherches full-text avec `tsvector`.
+
+??? "Exemple de recherche full-text avec les opérateurs intégrés"
+
+    ```sql
+    --8<--
+    sql/scripts/demo-tsvector.sql
+    --8<--
+    ```
+
+Sources:
+
+- [neon.com: postgresql-full-text-search](https://neon.com/postgresql/postgresql-indexes/postgresql-full-text-search)
+- [PostgreSQL Documentation: Text Search Controls](https://www.postgresql.org/docs/current/textsearch-controls.html)
+- [neon.com: Postgres Full-Text Search vs Elasticsearch](https://neon.com/blog/postgres-full-text-search-vs-elasticsearch)
+- [Instaclustr: PostgreSQL Full-Text Search](https://www.instaclustr.com/blog/postgresql-full-text-search/)
+
 ### Supabase
 
 Supabase est une plateforme de développement d'applications qui fournit une suite d'outils pour créer des applications web et mobiles. Elle utilise PostgreSQL comme base de données principale et offre des fonctionnalités telles que l'authentification, le stockage de fichiers, les fonctions serverless et les API en temps réel.
