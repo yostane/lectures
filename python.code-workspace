@@ -9,6 +9,9 @@
     {
       "path": "material/python/2025-2026/2526-B2-datascience",
     },
+    {
+      "path": "docs/python/datascience",
+    },
   ],
   "settings": {},
 }

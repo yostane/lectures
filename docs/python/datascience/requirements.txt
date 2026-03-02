@@ -1,6 +1,5 @@
-pandas==2.2.3
-matplotlib==3.10
-ipykernel # Installe le kernel python (pour éviter d'avoir le bouton "install dans vscode la première fois)
+pandas==3.0.1
+matplotlib==3.10.8
 openpyxl # Support d'Excel dans pandas
-Jinja2
 seaborn
+scikit-learn
