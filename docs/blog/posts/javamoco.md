@@ -26,11 +26,11 @@ Let's illustrate them in this example that creates 1000 threads that each sleep 
 
 ```java
 --8<--
-blog/jvm-moco/thousand-threads.java
+blog/jvm-moco/scripts/ThousandThreads.java
 --8<--
 ```
 
-We can note from the output that the 1000 threads are created.
+The output should be as follows, and shows that 1000 threads were created:
 
 ```txt
 1
@@ -40,7 +40,7 @@ We can note from the output that the 1000 threads are created.
 1000
 ```
 
-By analyzing the code and the output, we can note two above mentioned problems:
+By analyzing both the code and the output, we can note two above mentioned problems:
 
 - The code is sensible to callback hell: since threads are created with a lambda, they require a callback style of programming if we want to perform actions after the thread completes, which can lead to deeply nested code that is hard to read, predict and maintain.
 - The system resources are not optimized: creating 1000 threads can be resource intensive, especially if the tasks are I/O bound and spend much of their time waiting. This can lead to high memory consumption and context switching overhead. In addition to that, there is a limit to the number of threads that can be created by the OS.
@@ -82,14 +82,15 @@ Any function that calls suspending functions must be marked as `suspend` as well
 
 Let's see an example of how to create a coroutine scope that launches two coroutines.
 
-```java
+```kotlin
 --8<--
-blog/jvm-moco/coroutine-demo-01.main.kts
+blog/jvm-moco/coroutines/app/src/main/kotlin/org/example/CoroutineDemo01.kt
 --8<--
 ```
 
-The coroutine scope is created with the `coroutineScope` function.
-Since the the `coroutineScope` is a suspending function (defined with the `suspend` qualifier), then the `main` function that calls it must be marked as `suspend` as well.
+The coroutine scope is created with the `coroutineScope` suspending function (defined with the `suspend` qualifier).
+Since it is a suspending function, then the `main` function that calls it must be marked as `suspend` as well.
+That's why the `main` function is defined with `suspend fun main()`.
 The coroutine scope launches two coroutines with the `launch` function (`launch` creates a coroutine and runs it).
 The first one prints a message, sleeps for 1 second and then prints another message.
 The second one simply prints a message.
@@ -107,9 +108,9 @@ Since the first coroutine sleeps for 1 second, the second coroutine is executed 
 What if we want to start the second one only after the first one completes?
 That can be achieved with the `join` function, which waits for the completion of a coroutine.
 
-```java
+```kotlin
 --8<--
-blog/jvm-moco/coroutine-demo-02.main.kts
+blog/jvm-moco/coroutines/app/src/main/kotlin/org/example/CoroutineDemo02.kt
 --8<--
 ```
 
@@ -122,22 +123,37 @@ I am another coroutine
 Coroutine scope completed
 ```
 
-By getting a reference to the first coroutine with `val job1 = launch { ... }`, we can call `job1.join()` to wait for its completion before starting the second coroutine.
-That's where we can see the essence of structured concurrency: the code looks like sequential code, but it is actually concurrent code.
+By getting a reference to the first coroutine with `val job1 = launch { ... }`, we call `job1.join()` to wait for its completion before starting the second one.
+
+The above two examples show the essence of structured concurrency: the code looks like sequential code, but it is actually concurrent code.
 No more callback hell, just sequential code!
 
 Regarding the lightweight aspect of coroutines, we can illustrate this by creating thousands of coroutines without worrying about system resources.
-Let's see an example that creates 100000 coroutines that each delay for 1 second and then print the number of unique coroutines.
+Let's illustrate this with a program that creates 1 million coroutines that each sleep for 1 second and then prints the number of unique coroutines.
 
-```java
+```kotlin
+--8<--
+blog/jvm-moco/coroutines/app/src/main/kotlin/org/example/CoroutineDemo03.kt
+--8<--
 ```
 
-## Java structured concurrency
+The output depends on the number of cores on the CPU.
+It should be something like this on macPro m1 with 8 cores:
 
+```txt
+Unique threads used: 8
+```
 
-Java developers had to wait until Java 21 (which was release in 2021) to have a preview of structured concurrency with Project Loom.
+This means that the coroutines are efficiently scheduled on the available hardware cores, without the overhead of creating a large number of OS threads.
+In fact, we can even increase the number of coroutines to more than 1 million without any issue, which is not possible with traditional threads.
 
-With the release of Java 24, it's a good time to take a look at these two approaches.
+Let's see next how the JDK implements modern concurrency.
+
+## Java modern concurrency
+
+Java developers had to wait until Java 21 (which was release in 2021) to have a preview of modern concurrency with Project Loom.
+
+With the release of Java 25, it's a good time to take a look at these two approaches.
 Let's start by exploring Project Loom.
 
 
@@ -167,13 +183,14 @@ Thread.ofVirtual().start(() -> {
     System.out.println(Thread.currentThread());
 });
 
-/* Output:
+/** Output:
 Thread[#19,Thread-0,5,main]
 VirtualThread[#20]/runnable@ForkJoinPool-1-worker-1
 */
 ```
 
-We can note that the platform thread is created from the main thread, while the virtual thread is created by the [ForkJoinPool](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html). The ForkJoinPool is a special thread pool that is used to execute small tasks in parallel.
+We can note that the platform thread is created from the main thread, while the virtual thread is created by the [ForkJoinPool](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html).
+The ForkJoinPool is a special thread pool that is used to execute small tasks in parallel.
 
 ### Java's structured concurrency
 
