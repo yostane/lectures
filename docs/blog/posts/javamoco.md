@@ -57,7 +57,11 @@ There are two main concepts in modern concurrency that we will explore in this p
 They are threads that are managed by the runtime (like the JVM or Kotlin runtime) instead of the operating system.
 They still run on top of OS threads, also called platform threads or carrier threads (because they carry the lightweight threads).
 However, lightweight threads can reuse platform threads, which allows to bypass the limit of OS threads.
-In addition to that, the usage of system resources is optimized, since platform threads are more expensive to create and maintain that lightweight threads.
+In addition to that, the usage of system resources is optimized, since platform threads are more expensive to create and maintain than lightweight ones.
+
+Lightweight threads are very efficient for tasks that spend most of their time waiting, such as I/O-bound (network, file I/O, etc.).
+This means that we can spawn a large number of lightweight threads that download files or communicate with printers without worrying about system resources, which is not the case with traditional threads.
+It is important to note that compute-intensive tasks are still bound to the raw CPU and GPU cores and power. Thus, running a large number of compute-intensive tasks efficiently in parallel is not possible on low-end hardware, even with lightweight threads.
 
 The JVM has two implementations of lightweight threads: coroutines (introduced by Kotlin) and virtual threads (introduced by Project Loom).
 
@@ -149,48 +153,28 @@ In fact, we can even increase the number of coroutines to more than 1 million wi
 
 Let's see next how the JDK implements modern concurrency.
 
-## Java modern concurrency
+## Modern concurrency in the JDK
 
-Java developers had to wait until Java 21 (which was release in 2021) to have a preview of modern concurrency with Project Loom.
+The JDK achieved modern concurrency through two APIs: virtual threads and structured concurrency.
 
-With the release of Java 25, it's a good time to take a look at these two approaches.
-Let's start by exploring Project Loom.
+Virtual threads are the JDK implementation of lightweight threads, and are introduced by Project Loom.
+There are many ways to create virtual threads, but the most common one is with the `Thread` class, which has two static factory methods: `ofPlatform()` and `ofVirtual()`.
 
-
-Project Loom is an OpenJDK project that aims to bring modern concurrent programming to the JVM.
-Loom introduces new concepts: virtual threads ([JEP 444](https://openjdk.org/jeps/444) previously called Fibers), which is an implementation of soft threads, and structured concurrency ([JEP 428](https://openjdk.org/jeps/425)).
-
-### Virtual threads
-
-Virtual threads are soft or lightweight threads that are managed by the JVM.
-They use less memory than platform threads (the ones provided by the OS) and are more efficient for tasks that spend much of their time waiting.
-This means that virtual threads are more efficient for I/O-bound tasks such as network or file I/O and less efficient for compute intensive tasks, like computing the n-th prime number. In that case, platform threads must be used.
-
-It is possible to have many more virtual threads than platform threads which are capped due to OS and hardware limitations.
-
-A virtual thread needs to run over at least one platform thread, also named a carrier thread in that case. A carrier thread can also host one or multiple virtual threads.
-
-The following code snippets creates a virtual thread, with `Thread.ofPlatform()`, a platform thread, with `Thread.ofVirtual()` and each prints its information:
+The following code snippets illustrates the creation of a platform thread and a virtual thread.
 
 ```java
-// Platform (or OS) thread
-Thread.ofPlatform().start(() -> {
-    System.out.println(Thread.currentThread());
-});
+blog/jvm-moco/scripts/virtual_thread.java
+```
 
-// Virtual thread
-Thread.ofVirtual().start(() -> {
-    System.out.println(Thread.currentThread());
-});
+The output of this code is similar to the following:
 
-/** Output:
-Thread[#19,Thread-0,5,main]
-VirtualThread[#20]/runnable@ForkJoinPool-1-worker-1
-*/
+```txt
+Thread[#25,Thread-0,5,main]
+VirtualThread[#27]/runnable@ForkJoinPool-1-worker-1
 ```
 
 We can note that the platform thread is created from the main thread, while the virtual thread is created by the [ForkJoinPool](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html).
-The ForkJoinPool is a special thread pool that is used to execute small tasks in parallel.
+The ForkJoinPool is a special thread pool that can execute subtasks recursively
 
 ### Java's structured concurrency
 
