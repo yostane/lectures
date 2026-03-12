@@ -1,14 +1,20 @@
 void main(String... args) {
     Set<Long> uniqueThreadNames = ConcurrentHashMap.newKeySet();
-    for (int i = 0; i < 1_000; i++) {
-        new Thread(() -> {
+    for (int i = 0; i < 1_000_000; i++) {
+        Thread.ofVirtual().start(() -> {
             try {
-                // Simulate IO request (database, HTTP call, ...)
                 Thread.sleep(1000);
                 uniqueThreadNames.add(Thread.currentThread().threadId());
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }).start();
+        });
     }
+    try {
+        // Wait for all the virtual threads to finish
+        Thread.sleep(10000);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    IO.println(uniqueThreadNames.size());
 }

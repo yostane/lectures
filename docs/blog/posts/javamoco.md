@@ -43,10 +43,27 @@ The output should be as follows, and shows that 1000 threads were created:
 By analyzing both the code and the output, we can note two above mentioned problems:
 
 - The code is sensible to callback hell: since threads are created with a lambda, they require a callback style of programming if we want to perform actions after the thread completes, which can lead to deeply nested code that is hard to read, predict and maintain.
-- The system resources are not optimized: creating 1000 threads can be resource intensive, especially if the tasks are I/O bound and spend much of their time waiting. This can lead to high memory consumption and context switching overhead. In addition to that, there is a limit to the number of threads that can be created by the OS.
+- The system resources are not optimized: creating 1000 threads can be resource intensive, especially if the tasks are I/O bound and spend much of their time waiting. This can lead to high memory consumption and context switching overhead. In addition to that, there is a limit to the number of threads that can be created by the OS. We can verify this by increasing the number of threads to 1 million, which will throw an `OutOfMemoryError` or `Too many threads` error depending on the OS.
+
+```java
+--8<--
+blog/jvm-moco/scripts/MillionThreads.java
+--8<--
+```
+
+Runnning the above code will throw an error similar to the following:
+
+```txt
+[0.536s][warning][os,thread] Failed to start thread "Unknown thread" - pthread_create failed (EAGAIN) for attributes: stacksize: 2048k, guardsize: 16k, detached.
+[0.536s][warning][os,thread] Failed to start the native thread for java.lang.Thread "Thread-4068"
+Exception in thread "main" java.lang.OutOfMemoryError: unable to create native thread: possibly out of memory or process/resource limits reached
+        at java.base/java.lang.Thread.start0(Native Method)
+        at java.base/java.lang.Thread.start(Thread.java:1417)
+        at MillionThreads.main(MillionThreads.java:9)
+```
 
 Modern concurrency concepts solve these issues as we'll see in the next sections.
-Let's start by defining these concepts before delving into concrete implementations.
+Let's start by defining some concepts before delving into concrete implementations.
 
 ## Modern concurrency concepts
 
@@ -153,14 +170,15 @@ In fact, we can even increase the number of coroutines to more than 1 million wi
 
 Let's see next how the JDK implements modern concurrency.
 
-## Modern concurrency in the JDK
+## Java's virtual threads and structured concurrency
 
-The JDK achieved modern concurrency through two APIs: virtual threads and structured concurrency.
+In addition to Kotlin Courourines, the JDK natively achieves modern concurrency through two APIs: virtual threads and structured concurrency.
 
 Virtual threads are the JDK implementation of lightweight threads, and are introduced by Project Loom.
-There are many ways to create virtual threads, but the most common one is with the `Thread` class, which has two static factory methods: `ofPlatform()` and `ofVirtual()`.
+They share a similar API with platform threads since they both implement the Thread interface.
+They can be spawned using the static method `Thread.ofVirtual()`.
 
-The following code snippets illustrates the creation of a platform thread and a virtual thread.
+The following code snippet illustrates the creation of a platform thread and a virtual thread.
 
 ```java
 blog/jvm-moco/scripts/virtual_thread.java
@@ -174,7 +192,15 @@ VirtualThread[#27]/runnable@ForkJoinPool-1-worker-1
 ```
 
 We can note that the platform thread is created from the main thread, while the virtual thread is created by the [ForkJoinPool](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html).
-The ForkJoinPool is a special thread pool that can execute subtasks recursively
+The ForkJoinPool is a thread pool that is specialized in running tasks that can be broken down into smaller tasks.
+As of the writing of this post, virtual threads are scheduled only on this kind of pool.
+
+Similarly to Kotlin coroutines, we can create a large number of virtual threads without worrying about system resources.
+The following code snippet creates 1 million virtual threads that each sleep for 1 second and then prints the number of unique threads used.
+
+```java
+blog/jvm-moco/scripts/VirtualThreadDemo.java
+```
 
 ### Java's structured concurrency
 
