@@ -7,10 +7,9 @@
     "@types/bun": "latest"
   },
   "dependencies": {
-    "01-entities": "../01-entities"
+    "entities": "../01-entities"
   },
   "peerDependencies": {
     "typescript": "^5"
   }
 }
-

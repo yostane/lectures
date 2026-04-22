@@ -8,11 +8,11 @@
         "@types/bun": "latest",
       },
       "peerDependencies": {
-        "typescript": "^5",
+        "typescript": "^5.9.3",
       },
     },
     "01-entities": {
-      "name": "business-domain",
+      "name": "entities",
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -23,7 +23,7 @@
     "02-use-cases": {
       "name": "use-cases",
       "dependencies": {
-        "01-entities": "../01-entities",
+        "entities": "../01-entities",
       },
       "devDependencies": {
         "@types/bun": "latest",
@@ -34,6 +34,10 @@
     },
     "03-adapters": {
       "name": "infrastructure",
+      "dependencies": {
+        "entities": "../01-entities",
+        "use-cases": "../02-use-cases",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -58,7 +62,7 @@
 
     "bun-types": ["bun-types@1.3.12", "", { "dependencies": { "@types/node": "*" } }, "sha512-HqOLj5PoFajAQciOMRiIZGNoKxDJSr6qigAttOX40vJuSp6DN/CxWp9s3C1Xwm4oH7ybueITwiaOcWXoYVoRkA=="],
 
-    "business-domain": ["business-domain@workspace:01-entities"],
+    "entities": ["entities@workspace:01-entities"],
 
     "infrastructure": ["infrastructure@workspace:03-adapters"],
 
@@ -70,6 +74,8 @@
 
     "use-cases": ["use-cases@workspace:02-use-cases"],
 
-    "use-cases/01-entities": ["business-domain@file:01-entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+    "infrastructure/entities": ["entities@file:01-entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
+    "use-cases/entities": ["entities@file:01-entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
   }
 }

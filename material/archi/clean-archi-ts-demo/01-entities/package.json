@@ -1,5 +1,5 @@
 {
-  "name": "business-domain",
+  "name": "entities",
   "module": "index.ts",
   "type": "module",
   "private": true,

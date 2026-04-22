@@ -36,7 +36,7 @@ Nous allons créer un workspace monorepo pour organiser notre projet selon les d
     --8<-- archi/clean-archi-ts-demo/package.json
     ```
 
-- Faire un `bun install` pour vérifier que le workspace monorepo est bien initialisé :
+- Faire un `bun install` pour vérifier que le workspace monorepo est bien initialisé. Cette commande installe les dépendances de tous les modules et crée les liens symboliques nécessaires entre eux. **Donc, un seul `bun install` à la racine suffit.**
 
     ```bash
     bun install
@@ -75,64 +75,59 @@ racine/
 
 ### Use Cases
 
-- Créez `02-use-cases/src/MemberDTO.ts` :
+Contient : 
+
+- La logique métier de l'application, orchestrant les interactions entre les entités et les interfaces.
+- Les interfaces des `repositories` (abstractions pour la persistance des données). Ces derniers seront implémentés dans la couche d'infrastructure.
+
+Suivre les étapes suivantes pour implémenter la couche des Use Cases :
+
+- Importer les entités dans `02-use-cases/package.json` :
 
     ```typescript
-    --8<-- archi/clean-archi-ts-demo/02-use-cases/src/MemberDTO.ts
+    --8<-- archi/clean-archi-ts-demo/02-use-cases/package.json
     ```
 
-- Créez `02-use-cases/src/MemberRepository.ts` :
+- Lancer `bun install` à la racine du projet pour que les dépendances soient résolues.
+- Définir l'interface repository `02-use-cases/src/MemberRepository.ts` :
 
     ```typescript
-    import { MemberDTO } from "./MemberDTO";
-
-    export interface MemberRepository {
-        save(member: Member): Promise<void>;
-        findById(id: string): Promise<MemberDTO | null>;
-    }
+    --8<-- archi/clean-archi-ts-demo/02-use-cases/src/MemberRepository.ts
     ```
 
-- 
+- Définir le use case `02-use-cases/src/MemberUseCase.ts` :
 
-### Use Case
+    ```typescript
+    --8<-- archi/clean-archi-ts-demo/02-use-cases/src/MemberUseCase.ts
+    ```
 
-Créez `src/use-cases/implementations/RegisterMemberUseCase.ts` :
+### Infrastructure (adapters)
+ 
+Cette couche définit :
 
-```typescript
-import { Member } from "01-entities";
-import { MemberRepository } from "../interfaces/MemberRepository";
+- L'implémentation concrète des interfaces de la couche des Use Cases, comme les repositories.
+- L'implémentation des contrôleurs pour exposer les use cases via une API (REST, GraphQL, etc.).
 
-export class RegisterMemberUseCase {
-    constructor(private readonly memberRepository: MemberRepository) {}
+Suivre les étapes suivantes pour implémenter la couche d'infrastructure :
 
-    async execute(name: string, email: string): Promise<string> {
-        const member = new Member(crypto.randomUUID(), name, email);
-        await this.memberRepository.save(member);
-        return member.id;
-    }
-}
-```
+- Ajouter les dépendances nécessaires dans `03-adapters/package.json` :
 
-### Repository (Infrastructure)
+    ```json
+    --8<-- archi/clean-archi-ts-demo/03-adapters/package.json
+    ```
 
-Créez `src/infrastructure/repositories/InMemoryMemberRepository.ts` :
+- Lancer `bun install` à la racine du projet pour que les dépendances soient résolues.
+- Créez `src/src/InMemoryMemberRepository.ts` :
 
-```typescript
-import { Member } from "@/domain/entities/Member";
-import { MemberRepository } from "@/use-cases/interfaces/MemberRepository";
+    ```typescript
+    --8<-- archi/clean-archi-ts-demo/03-adapters/src/InMemoryMemberRepository.ts
+    ```
 
-export class InMemoryMemberRepository implements MemberRepository {
-    private members = new Map<string, Member>();
+- Exportez le repository dans `src/index.ts` :
 
-    async save(member: Member): Promise<void> {
-        this.members.set(member.id, member);
-    }
-
-    async findById(id: string): Promise<Member | null> {
-        return this.members.get(id) || null;
-    }
-}
-```
+    ```typescript
+    --8<-- archi/clean-archi-ts-demo/03-adapters/src/index.ts
+    ```
 
 ### Contrôleur (Interface Adapters)
 
@@ -206,6 +201,11 @@ bun run start
 ```
 
 Vous devriez voir dans la console : "Membre inscrit avec ID: [un UUID]".
+
+## Problèmes Potentiels
+
+- `bun pm cache clean` : Nettoie le cache de Bun, utile si vous rencontrez des problèmes de dépendances ou de build.
+- `bun pm cache rm -g` : Supprime le cache global de Bun, ce qui peut résoudre des problèmes liés à des paquets globaux corrompus ou obsolètes.
 
 ## Extensions Possibles
 
