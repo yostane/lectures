@@ -113,6 +113,14 @@ Suivre les étapes suivantes pour implémenter la couche des Use Cases :
     --8<--
     ```
 
+- Exporter le use case dans `02-use-cases/index.ts` :
+
+    ```typescript
+    --8<--
+    archi/clean-archi-ts-demo/02-use-cases/index.ts
+    --8<--
+    ```
+
 ### Adapters (Infrastructure)
  
 Cette couche définit :
@@ -143,7 +151,7 @@ Suivre les étapes suivantes pour implémenter la couche d'infrastructure :
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/03-adapters/src/index.ts
+    archi/clean-archi-ts-demo/03-adapters/index.ts
     --8<--
     ```
 
