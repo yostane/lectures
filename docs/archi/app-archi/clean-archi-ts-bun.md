@@ -33,7 +33,9 @@ Nous allons créer un workspace monorepo pour organiser notre projet selon les d
 
 
     ```json
-    --8<-- archi/clean-archi-ts-demo/package.json
+    --8<--
+    archi/clean-archi-ts-demo/package.json
+    --8<--
     ```
 
 - Faire un `bun install` pour vérifier que le workspace monorepo est bien initialisé. Cette commande installe les dépendances de tous les modules et crée les liens symboliques nécessaires entre eux. **Donc, un seul `bun install` à la racine suffit.**
@@ -64,13 +66,17 @@ racine/
 - Créez `01-entities/src/Member.ts` :
 
     ```typescript
-    --8<-- archi/clean-archi-ts-demo/01-entities/src/Member.ts
+    --8<--
+    archi/clean-archi-ts-demo/01-entities/src/Member.ts
+    --8<--
     ```
 
 - Dans `01-entities/index.ts`, exportez l'entité :
 
     ```typescript
-    --8<-- archi/clean-archi-ts-demo/01-entities/index.ts
+    --8<--
+    archi/clean-archi-ts-demo/01-entities/index.ts
+    --8<--
     ```
 
 ### Use Cases
@@ -85,23 +91,29 @@ Suivre les étapes suivantes pour implémenter la couche des Use Cases :
 - Importer les entités dans `02-use-cases/package.json` :
 
     ```typescript
-    --8<-- archi/clean-archi-ts-demo/02-use-cases/package.json
+    --8<--
+    archi/clean-archi-ts-demo/02-use-cases/package.json
+    --8<--
     ```
 
 - Lancer `bun install` à la racine du projet pour que les dépendances soient résolues.
 - Définir l'interface repository `02-use-cases/src/MemberRepository.ts` :
 
     ```typescript
-    --8<-- archi/clean-archi-ts-demo/02-use-cases/src/MemberRepository.ts
+    --8<--
+    archi/clean-archi-ts-demo/02-use-cases/src/MemberRepository.ts
+    --8<--
     ```
 
 - Définir le use case `02-use-cases/src/MemberUseCase.ts` :
 
     ```typescript
-    --8<-- archi/clean-archi-ts-demo/02-use-cases/src/MemberUseCase.ts
+    --8<--
+    archi/clean-archi-ts-demo/02-use-cases/src/MemberUseCase.ts
+    --8<--
     ```
 
-### Infrastructure (adapters)
+### Adapters (Infrastructure)
  
 Cette couche définit :
 
@@ -113,96 +125,73 @@ Suivre les étapes suivantes pour implémenter la couche d'infrastructure :
 - Ajouter les dépendances nécessaires dans `03-adapters/package.json` :
 
     ```json
-    --8<-- archi/clean-archi-ts-demo/03-adapters/package.json
+    --8<--
+    archi/clean-archi-ts-demo/03-adapters/package.json
+    --8<--
     ```
 
 - Lancer `bun install` à la racine du projet pour que les dépendances soient résolues.
 - Créez `src/src/InMemoryMemberRepository.ts` :
 
     ```typescript
-    --8<-- archi/clean-archi-ts-demo/03-adapters/src/InMemoryMemberRepository.ts
+    --8<--
+    archi/clean-archi-ts-demo/03-adapters/src/InMemoryMemberRepository.ts
+    --8<--
     ```
 
 - Exportez le repository dans `src/index.ts` :
 
     ```typescript
-    --8<-- archi/clean-archi-ts-demo/03-adapters/src/index.ts
+    --8<--
+    archi/clean-archi-ts-demo/03-adapters/src/index.ts
+    --8<--
     ```
 
-### Contrôleur (Interface Adapters)
+### Interfaces (Applications)
 
-Créez `src/interfaces/controllers/MemberController.ts` :
+Cette couche contient les applications concrètes, comme le serveur express pour une API, ou la gestion des arguments en ligne de commande pour une application CLI.
 
-```typescript
-import { RegisterMemberUseCase } from "@/use-cases/implementations/RegisterMemberUseCase";
+- Dans `04-interfaces/package.json`, ajoutez les dépendances nécessaires et définir le script de démarrage :
 
-export class MemberController {
-    constructor(
-        private readonly registerMemberUseCase: RegisterMemberUseCase,
-    ) {}
+    ```json
+    --8<--
+    archi/clean-archi-ts-demo/04-interfaces/package.json
+    --8<--
+    ```
 
-    async register(name: string, email: string): Promise<{ memberId: string }> {
-        try {
-            const memberId = await this.registerMemberUseCase.execute(
-                name,
-                email,
-            );
-            return { memberId };
-        } catch (error) {
-            throw new Error(`Erreur lors de l'inscription: ${error.message}`);
-        }
-    }
-}
-```
+- Lancer `bun install` à la racine du projet pour que les dépendances soient résolues.
+- Dans  `04-interfaces/index.ts`, définir le contenu de l'application:
 
-## Point d'Entrée
+    ```typescript
+    --8<--
+    archi/clean-archi-ts-demo/04-interfaces/index.ts
+    --8<--
+    ```
 
-Créez `src/main.ts` :
+- On peut exécuter l'application directement avec Bun depuis le dossier `04-interfaces` :
 
-```typescript
-import { MemberController } from "./interfaces/controllers/MemberController";
-import { RegisterMemberUseCase } from "./use-cases/implementations/RegisterMemberUseCase";
-import { InMemoryMemberRepository } from "./infrastructure/repositories/InMemoryMemberRepository";
+    ```bash
+    cd 04-interfaces
+    bun start
+    ```
 
-// Injection des dépendances
-const memberRepository = new InMemoryMemberRepository();
-const registerMemberUseCase = new RegisterMemberUseCase(memberRepository);
-const memberController = new MemberController(registerMemberUseCase);
+- On peut aussi définir un script de lancement dans le `package.json` de la racine du projet pour exécuter l'application depuis la racine :
 
-// Simulation d'utilisation
-async function main() {
-    try {
-        const result = await memberController.register(
-            "John Doe",
-            "john@example.com",
-        );
-        console.log("Membre inscrit avec ID:", result.memberId);
-    } catch (error) {
-        console.error(error.message);
-    }
-}
+    ```json
+    --8<--
+    archi/clean-archi-ts-demo/package.json
+    --8<--
+    ```
 
-main();
-```
+- On peut ainsi exécuter l'application depuis la racine du projet :
 
-## Exécution de l'Application
+    ```bash
+    bun run cli
+    ```
 
-Lancez l'application en mode développement :
+- Le projet est disponible sur GitHub : [clean-archi-ts-demo](https://github.com/yostane/lectures/tree/main/material/archi/clean-archi-ts-demo)
 
-```bash
-bun run dev
-```
-
-Ou construisez et exécutez :
-
-```bash
-bun run build
-bun run start
-```
-
-Vous devriez voir dans la console : "Membre inscrit avec ID: [un UUID]".
-
-## Problèmes Potentiels
+### Problèmes Potentiels
 
 - `bun pm cache clean` : Nettoie le cache de Bun, utile si vous rencontrez des problèmes de dépendances ou de build.
 - `bun pm cache rm -g` : Supprime le cache global de Bun, ce qui peut résoudre des problèmes liés à des paquets globaux corrompus ou obsolètes.
