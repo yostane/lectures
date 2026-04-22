@@ -1,14 +1,17 @@
 {
   "folders": [
     {
-      "path": "docs/archi"
+      "path": "docs/archi",
     },
     {
-      "path": "material/archi/clean-archi"
+      "path": "material/archi/structurizr",
     },
     {
-      "path": "material/archi/structurizr"
-    }
+      "path": "material/archi/clean-archi-ts-intro",
+    },
+    {
+      "path": "material/archi/clean-archi-ts-demo",
+    },
   ],
-  "settings": {}
+  "settings": {},
 }

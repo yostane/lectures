@@ -1,13 +1,13 @@
 {
-  "name": "clean-archi",
+  "name": "clean-archi-ts-demo",
   "module": "index.ts",
   "type": "module",
   "private": true,
   "workspaces": [
-    "interfaces",
-    "use-cases",
-    "business-domain",
-    "infrastructure"
+    "01-entities",
+    "02-use-cases",
+    "03-adapters",
+    "04-interfaces"
   ],
   "devDependencies": {
     "@types/bun": "latest"

@@ -1,0 +1,16 @@
+{
+  "name": "use-cases",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "01-entities": "../01-entities"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
+

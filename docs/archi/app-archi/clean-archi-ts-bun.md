@@ -1,6 +1,7 @@
 # Clean Architecture avec TypeScript + Bun
 
-Ce tutoriel vous guide pas à pas pour créer une application simple en Clean Architecture avec TypeScript et Bun. Bun est un runtime JavaScript/TypeScript rapide et moderne, compatible avec Node.js, qui offre une gestion des paquets intégrée et des performances supérieures.
+Ce tutoriel vous guide pas à pas pour créer une application simple en Clean Architecture avec TypeScript et Bun.
+Ce dernier est un runtime JavaScript/TypeScript rapide et moderne, compatible avec Node.js, qui offre une gestion des paquets intégrée et des performances supérieures.
 
 ## Prérequis
 
@@ -9,112 +10,96 @@ Ce tutoriel vous guide pas à pas pour créer une application simple en Clean Ar
 
 ## Initialisation du Projet
 
-Créez un nouveau dossier pour votre projet et initialisez-le avec Bun :
+Nous allons créer un workspace monorepo pour organiser notre projet selon les différentes couches de la Clean Architecture.
 
-```bash
-mkdir clean-archi-app
-cd clean-archi-app
-bun init
-```
+- Créez un nouveau dossier pour votre projet avec la structure de dossiers souhaitée et initialisez-le avec Bun :
 
-Cela crée un `package.json` de base. Modifiez-le pour ajouter les dépendances nécessaires :
+    ```bash
+    mkdir clean-archi-app
+    cd clean-archi-app
+    bun init # puis, Choisir -> blank
+    ```
 
-```json
-{
-    "name": "clean-archi",
-    "module": "index.ts",
-    "type": "module",
-    "private": true,
-    "workspaces": [
-        "interfaces",
-        "use-cases",
-        "business-domain",
-        "infrastructure"
-    ],
-    "devDependencies": {
-        "@types/bun": "latest"
-    },
-    "peerDependencies": {
-        "typescript": "^5"
-    }
-}
-```
+- Ensuite, créer un sous-projet (qu'on appelle module) par couche de la Clean Architecture :
 
-Installez les dépendances :
+    ```bash
+    bun init --yes "01-entities"
+    bun init --yes "02-use-cases"
+    bun init --yes "03-adapters"   
+    bun init --yes "04-interfaces"
+    ```
 
-```bash
-bun install
-```
+- Ensuite, renseigner les sous-projets (ou modules) dans le `package.json` à la racine du projet, dans la section `workspaces` :
 
-## Structure des Dossiers
 
-Organisez votre projet selon les couches de la Clean Architecture :
+    ```json
+    --8<-- archi/clean-archi-ts-demo/package.json
+    ```
+
+- Faire un `bun install` pour vérifier que le workspace monorepo est bien initialisé :
+
+    ```bash
+    bun install
+    ```
+
+- Vous devriez avoir la structure suivante:
 
 ```
-src/
-├── domain/
-│   ├── entities/
-│   │   └── Member.ts
-│   └── value-objects/
-├── use-cases/
-│   ├── interfaces/
-│   │   └── MemberRepository.ts
-│   └── implementations/
-│       └── RegisterMemberUseCase.ts
-├── interfaces/
-│   ├── controllers/
-│   │   └── MemberController.ts
-│   ├── presenters/
-│   └── dtos/
-├── infrastructure/
-│   ├── repositories/
-│   │   └── InMemoryMemberRepository.ts
-│   └── frameworks/
-└── index.ts
+racine/
+├── 01-entities/
+    ├── package.json
+├── 02-use-cases/
+    ├── package.json
+├── 03-adapters/
+    ├── package.json
+├── 04-interfaces/
+    ├── package.json
+├── package.json
 ```
 
 ## Implémentation des Couches
 
 ### Entité (Domain)
 
-Créez `src/domain/entities/Member.ts` :
+- Créez `01-entities/src/Member.ts` :
 
-```typescript
-export class Member {
-    constructor(
-        public readonly id: string,
-        public name: string,
-        public email: string,
-    ) {}
+    ```typescript
+    --8<-- archi/clean-archi-ts-demo/01-entities/src/Member.ts
+    ```
 
-    updateName(newName: string): void {
-        if (newName?.trim().length === 0) {
-            throw new Error("Le nom ne peut pas être vide");
-        }
-        this.name = newName.trim();
+- Dans `01-entities/index.ts`, exportez l'entité :
+
+    ```typescript
+    --8<-- archi/clean-archi-ts-demo/01-entities/index.ts
+    ```
+
+### Use Cases
+
+- Créez `02-use-cases/src/MemberDTO.ts` :
+
+    ```typescript
+    --8<-- archi/clean-archi-ts-demo/02-use-cases/src/MemberDTO.ts
+    ```
+
+- Créez `02-use-cases/src/MemberRepository.ts` :
+
+    ```typescript
+    import { MemberDTO } from "./MemberDTO";
+
+    export interface MemberRepository {
+        save(member: Member): Promise<void>;
+        findById(id: string): Promise<MemberDTO | null>;
     }
-}
-```
+    ```
 
-### Interface du Repository (Use Cases)
-
-Créez `src/use-cases/interfaces/MemberRepository.ts` :
-
-```typescript
-import { Member } from "@/domain/entities/Member";
-
-export interface MemberRepository {
-    save(member: Member): Promise<void>;
-    findById(id: string): Promise<Member | null>;
-}
-```
+- 
 
 ### Use Case
 
 Créez `src/use-cases/implementations/RegisterMemberUseCase.ts` :
 
 ```typescript
-import { Member } from "@/domain/entities/Member";
+import { Member } from "01-entities";
 import { MemberRepository } from "../interfaces/MemberRepository";
 
 export class RegisterMemberUseCase {
