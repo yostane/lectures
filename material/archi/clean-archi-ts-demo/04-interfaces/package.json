@@ -6,6 +6,14 @@
   "devDependencies": {
     "@types/bun": "latest"
   },
+  "scripts": {
+    "start": "bun ./index.ts"
+  },
+  "dependencies": {
+    "entities": "../01-entities",
+    "use-cases": "../02-use-cases",
+    "adapters": "../03-adapters"
+  },
   "peerDependencies": {
     "typescript": "^5"
   }

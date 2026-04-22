@@ -8,11 +8,7 @@ export class InMemoryMemberRepository implements MemberRepository {
     this.members.set(member.uuid, member);
   }
 
-  async findById(id: string): Promise<Member> {
-    const member = this.members.get(id);
-    if (!member) {
-      throw new Error(`Member with id ${id} not found`);
-    }
-    return member;
+  async findAll(): Promise<Member[]> {
+    return Array.from(this.members.values());
   }
 }

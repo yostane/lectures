@@ -3,6 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "cli": "cd 04-interfaces && bun start"
+  },
   "workspaces": [
     "01-entities",
     "02-use-cases",
@@ -16,3 +19,4 @@
     "typescript": "^5.9.3"
   }
 }
+
