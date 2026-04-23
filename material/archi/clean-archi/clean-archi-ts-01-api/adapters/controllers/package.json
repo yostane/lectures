@@ -1,14 +1,10 @@
 {
-  "name": "infrastructure",
+  "name": "controllers",
   "module": "index.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
     "@types/bun": "latest"
-  },
-  "dependencies": {
-    "entities": "../01-entities",
-    "use-cases": "../02-use-cases"
   },
   "peerDependencies": {
     "typescript": "^5"

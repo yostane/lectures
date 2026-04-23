@@ -1,18 +1,14 @@
 {
-  "name": "interfaces",
+  "name": "infrastructure",
   "module": "index.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
     "@types/bun": "latest"
   },
-  "scripts": {
-    "start": "bun ./index.ts"
-  },
   "dependencies": {
-    "entities": "../01-entities",
-    "use-cases": "../02-use-cases",
-    "adapters": "../03-adapters"
+    "entities": "../core/entities",
+    "use-cases": "../core/use-cases"
   },
   "peerDependencies": {
     "typescript": "^5"

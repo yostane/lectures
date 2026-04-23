@@ -102,7 +102,7 @@ nav:
       - Architecture d'application:
           - archi/app-archi/index.md
           - archi/app-archi/clean-archi-ts-bun.md
-          - archi/app-archi/clean-archi-kt-gradle.md
+          - archi/app-archi/clean-archi-ts-bun-api.md
       - Sujets de veille:
           - archi/sujets-vrac.md
           - archi/sujets-2324.md

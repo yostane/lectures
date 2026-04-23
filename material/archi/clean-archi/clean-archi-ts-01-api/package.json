@@ -4,13 +4,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "cli": "cd 04-interfaces && bun start"
+    "start": "cd interface-express && bun start"
   },
   "workspaces": [
-    "01-entities",
-    "02-use-cases",
-    "03-adapters",
-    "04-interfaces"
+    "core/*",
+    "adapters/*",
+    "interface-express"
   ],
   "devDependencies": {
     "@types/bun": "latest"
@@ -19,4 +18,3 @@
     "typescript": "^5.9.3"
   }
 }
-

@@ -15,15 +15,17 @@ Nous regroupons les entités et use cases dans un module `core`, et les adapters
 racine/
 ├── core/
 │   ├── entities/
+│       ├── package.json
 │   ├── use-cases/
-    ├── package.json
-├── adapter-in-memory-repository/
-    ├── package.json
-├── adapter-controllers/
-    ├── package.json
+│       ├── package.json
+├── adapters/
+│   ├── in-memory-repository/
+│       ├── package.json
+│   ├── controllers/
+│       ├── package.json
 ├── interface-express/
-    ├── package.json
+│   ├── package.json
 ├── package.json
 ```
 
-Dans ce qui suit, nous allons nous focaliser sur l'implémentation de l'API REST dans le module `interface-express` et des controleurs dans `adapter-controllers`.
+Dans ce qui suit, nous allons nous focaliser sur l'implémentation de l'API REST dans le module `interface-express` et des contrôleurs dans `adapters/controllers`.

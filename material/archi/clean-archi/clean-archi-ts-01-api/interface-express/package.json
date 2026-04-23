@@ -1,0 +1,21 @@
+{
+  "name": "interfaces",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "start": "bun ./index.ts"
+  },
+  "dependencies": {
+    "entities": "../core/entities",
+    "use-cases": "../core/use-cases",
+    "controllers": "../adapters/controllers",
+    "repository": "../adapters/in-memory-repository"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

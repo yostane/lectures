@@ -34,7 +34,7 @@ Nous allons créer un workspace monorepo pour organiser notre projet selon les d
 
     ```json
     --8<--
-    archi/clean-archi-ts-demo/package.json
+    archi/clean-archi-ts/clean-archi-ts-01/package.json
     --8<--
     ```
 
@@ -67,7 +67,7 @@ racine/
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/01-entities/src/Member.ts
+    archi/clean-archi-ts/clean-archi-ts-01/01-entities/src/Member.ts
     --8<--
     ```
 
@@ -75,7 +75,7 @@ racine/
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/01-entities/index.ts
+    archi/clean-archi-ts/clean-archi-ts-01/01-entities/index.ts
     --8<--
     ```
 
@@ -92,7 +92,7 @@ Suivre les étapes suivantes pour implémenter la couche des Use Cases :
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/02-use-cases/package.json
+    archi/clean-archi-ts/clean-archi-ts-01/02-use-cases/package.json
     --8<--
     ```
 
@@ -101,7 +101,7 @@ Suivre les étapes suivantes pour implémenter la couche des Use Cases :
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/02-use-cases/src/MemberRepository.ts
+    archi/clean-archi-ts/clean-archi-ts-01/02-use-cases/src/MemberRepository.ts
     --8<--
     ```
 
@@ -109,7 +109,7 @@ Suivre les étapes suivantes pour implémenter la couche des Use Cases :
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/02-use-cases/src/MemberUseCase.ts
+    archi/clean-archi-ts/clean-archi-ts-01/02-use-cases/src/MemberUseCase.ts
     --8<--
     ```
 
@@ -117,7 +117,7 @@ Suivre les étapes suivantes pour implémenter la couche des Use Cases :
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/02-use-cases/index.ts
+    archi/clean-archi-ts/clean-archi-ts-01/02-use-cases/index.ts
     --8<--
     ```
 
@@ -134,7 +134,7 @@ Suivre les étapes suivantes pour implémenter la couche d'infrastructure :
 
     ```json
     --8<--
-    archi/clean-archi-ts-demo/03-adapters/package.json
+    archi/clean-archi-ts/clean-archi-ts-01/03-adapters/package.json
     --8<--
     ```
 
@@ -143,7 +143,7 @@ Suivre les étapes suivantes pour implémenter la couche d'infrastructure :
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/03-adapters/src/InMemoryMemberRepository.ts
+    archi/clean-archi-ts/clean-archi-ts-01/03-adapters/src/InMemoryMemberRepository.ts
     --8<--
     ```
 
@@ -151,7 +151,7 @@ Suivre les étapes suivantes pour implémenter la couche d'infrastructure :
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/03-adapters/index.ts
+    archi/clean-archi-ts/clean-archi-ts-01/03-adapters/index.ts
     --8<--
     ```
 
@@ -163,7 +163,7 @@ Cette couche contient les applications concrètes, comme le serveur express pour
 
     ```json
     --8<--
-    archi/clean-archi-ts-demo/04-interfaces/package.json
+    archi/clean-archi-ts/clean-archi-ts-01/04-interfaces/package.json
     --8<--
     ```
 
@@ -172,7 +172,7 @@ Cette couche contient les applications concrètes, comme le serveur express pour
 
     ```typescript
     --8<--
-    archi/clean-archi-ts-demo/04-interfaces/index.ts
+    archi/clean-archi-ts/clean-archi-ts-01/04-interfaces/index.ts
     --8<--
     ```
 
@@ -187,7 +187,7 @@ Cette couche contient les applications concrètes, comme le serveur express pour
 
     ```json
     --8<--
-    archi/clean-archi-ts-demo/package.json
+    archi/clean-archi-ts/clean-archi-ts-01/package.json
     --8<--
     ```
 

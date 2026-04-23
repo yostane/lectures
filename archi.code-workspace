@@ -7,10 +7,13 @@
       "path": "material/archi/structurizr",
     },
     {
-      "path": "material/archi/clean-archi-ts-intro",
+      "path": "material/archi/clean-archi/clean-archi-ts-01",
     },
     {
-      "path": "material/archi/clean-archi-ts-demo",
+      "path": "material/archi/clean-archi/clean-archi-ts-01-api",
+    },
+    {
+      "path": "material/archi/clean-archi/clean-archi-ts-decouverte",
     },
   ],
   "settings": {},
