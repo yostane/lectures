@@ -10,4 +10,8 @@ export class MemberUseCase {
     const member = new Member(uuid, name, email);
     await this.memberReposiroty.save(member);
   }
+
+  async getAll(): Promise<Member[]> {
+    return await this.memberReposiroty.getAll();
+  }
 }
