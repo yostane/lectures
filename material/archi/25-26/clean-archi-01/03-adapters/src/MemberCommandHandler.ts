@@ -1,6 +1,6 @@
 import type { MemberUseCase } from "use-cases";
 
-class MemberCommandHandler {
+export class MemberCommandHandler {
   constructor(private memberUseCase: MemberUseCase) {}
 
   async save(name: string, email: string): Promise<void> {
