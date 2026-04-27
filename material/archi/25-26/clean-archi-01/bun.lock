@@ -34,6 +34,10 @@
     },
     "03-adapters": {
       "name": "03-adapters",
+      "dependencies": {
+        "entities": "../01-entities",
+        "use-cases": "../02-use-cases",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -71,5 +75,11 @@
     "undici-types": ["undici-types@7.19.2", "", {}, "sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg=="],
 
     "02-use-cases/entities": ["01-entities@file:01-entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
+    "03-adapters/entities": ["01-entities@file:01-entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
+    "03-adapters/use-cases": ["02-use-cases@file:02-use-cases", { "dependencies": { "entities": "../01-entities" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
+    "03-adapters/use-cases/entities": ["entities@file:01-entities", {}],
   }
 }
