@@ -47,6 +47,11 @@
     },
     "04-interfaces": {
       "name": "04-interfaces",
+      "dependencies": {
+        "adapters": "../03-adapters",
+        "entities": "../01-entities",
+        "use-cases": "../02-use-cases",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -80,6 +85,18 @@
 
     "03-adapters/use-cases": ["02-use-cases@file:02-use-cases", { "dependencies": { "entities": "../01-entities" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 
+    "04-interfaces/adapters": ["03-adapters@file:03-adapters", { "dependencies": { "entities": "../01-entities", "use-cases": "../02-use-cases" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
+    "04-interfaces/entities": ["01-entities@file:01-entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
+    "04-interfaces/use-cases": ["02-use-cases@file:02-use-cases", { "dependencies": { "entities": "../01-entities" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
     "03-adapters/use-cases/entities": ["entities@file:01-entities", {}],
+
+    "04-interfaces/adapters/entities": ["entities@file:01-entities", {}],
+
+    "04-interfaces/adapters/use-cases": ["use-cases@file:02-use-cases", {}],
+
+    "04-interfaces/use-cases/entities": ["entities@file:01-entities", {}],
   }
 }

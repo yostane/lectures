@@ -1,7 +1,7 @@
 import type { MemberUseCase } from "use-cases";
 
 export class MemberCommandHandler {
-  constructor(private memberUseCase: MemberUseCase) {}
+  constructor(private readonly memberUseCase: MemberUseCase) {}
 
   async save(name: string, email: string): Promise<void> {
     console.log("Adding user");
@@ -16,7 +16,8 @@ export class MemberCommandHandler {
   async showAll(): Promise<void> {
     console.log("Showing members");
     try {
-      const members = this.memberUseCase.getAll();
+      const members = await this.memberUseCase.getAll();
+
       console.log("Current members", members);
     } catch (e) {
       console.error("Failed to list members", e);
