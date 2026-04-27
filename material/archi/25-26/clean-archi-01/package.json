@@ -1,0 +1,19 @@
+{
+  "name": "clean-archi-01",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "01-entities",
+    "02-use-cases",
+    "03-adapters",
+    "04-interfaces"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
+
