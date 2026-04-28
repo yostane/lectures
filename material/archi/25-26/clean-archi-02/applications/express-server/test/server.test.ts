@@ -1,6 +1,6 @@
 import supertest from "supertest";
 import { app } from "../src/server";
-import { test } from "bun:test";
+import { expect, test } from "bun:test";
 
 test("should add members", () => {
   const member = {
@@ -15,8 +15,8 @@ test("should add members", () => {
     .expect("Content-Type", "Application/json")
     .expect(200)
     .expect((res) => {
-      res.body[0].name = member.name;
-      res.body[1].email = member.email;
+      expect(res.body[0].name).toBe(member.name);
+      expect(res.body[0].email).toBe(member.email);
     });
 });
 
