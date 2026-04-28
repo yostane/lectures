@@ -8,11 +8,9 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/express": "latest",
-    "@types/body-parser": "latest"
+    "@types/express": "latest"
   },
   "dependencies": {
-    "body-parser": "2.2.2",
     "express": "5.2.1",
     "entities": "../../core/entities",
     "use-cases": "../../core/use-cases",

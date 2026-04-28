@@ -1,5 +1,4 @@
 import express from "express";
-import bodyParser from "body-parser";
 import { InMemoryMemberRepository } from "in-memory-repository";
 import { MemberController } from "controllers";
 import { MemberUseCase } from "use-cases";
@@ -9,7 +8,7 @@ const memberUseCase = new MemberUseCase(inMemoryRepository);
 const memberController = new MemberController(memberUseCase);
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 const port = process.env.PORT ?? 3000;
 
