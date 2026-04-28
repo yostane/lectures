@@ -1,0 +1,21 @@
+{
+  "name": "04-interfaces",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "add": "bun index.ts --add garen garen@lol.com",
+    "list": "bun index.ts --list"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "entities": "../core/entities",
+    "use-cases": "../core/use-cases",
+    "in-memory-repository": "../adapters/in-memory-repository"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

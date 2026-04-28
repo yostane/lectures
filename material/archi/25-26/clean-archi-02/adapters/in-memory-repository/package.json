@@ -1,0 +1,16 @@
+{
+  "name": "03-adapters",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "entities": "../../core/entities",
+    "use-cases": "../../core/use-cases"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
