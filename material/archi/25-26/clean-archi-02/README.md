@@ -47,3 +47,9 @@
     },
     ```
 - Appeler le contrôleur dans les routes de l'application express
+
+## Tester le serveur
+
+- Mettre le code d'initialisation du serveur express dans `applications/express-server/src/server.ts` (déplacer tout le code dans `applications/express-server/index.ts`) sauf la récupération du port le `listen`.
+- exporter la constante `app` dans `server.ts` et importer cette constante dans `index.ts` pour démarrer le serveur
+- Créer un fichier de test `applications/express-server/test/server.test.ts` pour tester le serveur avec `supertest`.
