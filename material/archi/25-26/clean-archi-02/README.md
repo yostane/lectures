@@ -20,3 +20,17 @@
         ]
     ```
 - Mettre à jour les `dependencies` dans les `package.json` des différents dossiers
+- Ajouter un script `start` dans le `package.json` de `express-server` pour démarrer le serveur
+    ```json
+    "scripts": {
+        "start": "bun run index.ts"
+    }
+    ```
+- Ajouter des scripts raccourcis dans le package.json à la racine du projet pour démarrer les différentes applications
+    ```json
+    "scripts": {
+        "cli:add": "cd applications/cli && bun run add",
+        "cli:list": "cd applications/cli && bun run list",
+        "server:start": "cd applications/express-server && bun run start"
+    },
+    ```
