@@ -16,7 +16,7 @@
     "workspaces": [
         "core/*",
         "adapters/*",
-        "interface-express"
+        "applications/*"
         ]
     ```
 - Mettre à jour les `dependencies` dans les `package.json` des différents dossiers
