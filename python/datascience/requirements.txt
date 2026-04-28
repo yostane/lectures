@@ -1,0 +1,5 @@
+pandas==3.0.1
+matplotlib==3.10.8
+openpyxl # Support d'Excel dans pandas
+seaborn
+scikit-learn
