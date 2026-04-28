@@ -17,7 +17,8 @@
     "entities": "../../core/entities",
     "use-cases": "../../core/use-cases",
     "controllers": "../../adapters/controllers",
-    "in-memory-repository": "../../adapters/in-memory-repository"
+    "in-memory-repository": "../../adapters/in-memory-repository",
+    "sqlite-repository": "../../adapters/sqlite-repository"
   },
   "peerDependencies": {
     "typescript": "^5"

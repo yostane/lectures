@@ -22,7 +22,7 @@ test("should add members", (done) => {
         .expect(200)
         .then((res) => {
           const data = res.body[0];
-          expect(data.name).toEqual("dfsdf");
+          expect(data.name).toEqual(member.name);
           expect(data.email).toEqual(member.email);
           done();
         });
