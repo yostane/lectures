@@ -1,0 +1,11 @@
+@base_url=http://localhost:3000
+###
+{{base_url}}/members
+###
+POST {{base_url}}/members
+Content-Type: application/json
+
+{
+  "name":"toto",
+  "email": "toto@mail.com"
+}

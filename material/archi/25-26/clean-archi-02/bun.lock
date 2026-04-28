@@ -55,6 +55,7 @@
     "applications/express-server": {
       "name": "express-server",
       "dependencies": {
+        "body-parser": "2.2.2",
         "controllers": "../../adapters/controllers",
         "entities": "../../core/entities",
         "express": "5.2.1",
@@ -62,6 +63,7 @@
         "use-cases": "../../core/use-cases",
       },
       "devDependencies": {
+        "@types/body-parser": "latest",
         "@types/bun": "latest",
         "@types/express": "latest",
       },
