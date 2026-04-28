@@ -13,6 +13,10 @@
     },
     "adapters/controllers": {
       "name": "controllers",
+      "dependencies": {
+        "entities": "../../core/entities",
+        "use-cases": "../../core/use-cases",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -36,6 +40,7 @@
     "applications/cli": {
       "name": "04-interfaces",
       "dependencies": {
+        "controllers": "../../adapters/controllers",
         "entities": "../../core/entities",
         "in-memory-repository": "../../adapters/in-memory-repository",
         "use-cases": "../../core/use-cases",
@@ -263,13 +268,19 @@
 
     "03-adapters/use-cases": ["02-use-cases@file:core/use-cases", { "dependencies": { "entities": "../entities" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 
+    "04-interfaces/controllers": ["controllers@file:adapters/controllers", { "dependencies": { "entities": "../../core/entities", "use-cases": "../../core/use-cases" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
     "04-interfaces/entities": ["01-entities@file:core/entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 
     "04-interfaces/in-memory-repository": ["03-adapters@file:adapters/in-memory-repository", { "dependencies": { "entities": "../../core/entities", "use-cases": "../../core/use-cases" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 
     "04-interfaces/use-cases": ["02-use-cases@file:core/use-cases", { "dependencies": { "entities": "../entities" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 
-    "express-server/controllers": ["controllers@file:adapters/controllers", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+    "controllers/entities": ["01-entities@file:core/entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
+    "controllers/use-cases": ["02-use-cases@file:core/use-cases", { "dependencies": { "entities": "../entities" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
+
+    "express-server/controllers": ["controllers@file:adapters/controllers", { "dependencies": { "entities": "../../core/entities", "use-cases": "../../core/use-cases" }, "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 
     "express-server/entities": ["01-entities@file:core/entities", { "devDependencies": { "@types/bun": "latest" }, "peerDependencies": { "typescript": "^5" } }],
 
@@ -279,11 +290,21 @@
 
     "03-adapters/use-cases/entities": ["entities@file:core/entities", {}],
 
+    "04-interfaces/controllers/entities": ["entities@file:core/entities", {}],
+
+    "04-interfaces/controllers/use-cases": ["use-cases@file:core/use-cases", {}],
+
     "04-interfaces/in-memory-repository/entities": ["entities@file:core/entities", {}],
 
     "04-interfaces/in-memory-repository/use-cases": ["use-cases@file:core/use-cases", {}],
 
     "04-interfaces/use-cases/entities": ["entities@file:core/entities", {}],
+
+    "controllers/use-cases/entities": ["entities@file:core/entities", {}],
+
+    "express-server/controllers/entities": ["entities@file:core/entities", {}],
+
+    "express-server/controllers/use-cases": ["use-cases@file:core/use-cases", {}],
 
     "express-server/in-memory-repository/entities": ["entities@file:core/entities", {}],
 

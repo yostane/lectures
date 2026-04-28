@@ -1,13 +1,10 @@
-import {
-  InMemoryMemberRepository,
-  MemberCommandHandler,
-} from "in-memory-repository";
+import { InMemoryMemberRepository } from "in-memory-repository";
+import { MemberController } from "controllers";
 import { MemberUseCase } from "use-cases";
-import { parseArgs } from "util";
 
 const inMemoryRepository = new InMemoryMemberRepository();
 const memberUseCase = new MemberUseCase(inMemoryRepository);
-const memberCommandHandler = new MemberCommandHandler(memberUseCase);
+const memberCommandHandler = new MemberController(memberUseCase);
 
 // bun run index.ts --add name email
 // bun run index.ts --list

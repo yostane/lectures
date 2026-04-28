@@ -36,5 +36,14 @@
     ```
 - Déplacer le fichier `adapters/in-memory-repository/src/MemberCommandHandler.ts` dans `adapters/controllers/src/MemberController.ts`
 - Renommer `MemberCommandHandler` en `MemberController`
+- Dans `adapters/controllers/index.ts`, exporter le `MemberController` et enlever son export dans `adapters/in-memory-repository/index.ts`
 - Mettre à jour les imports dans `applications/cli/index.ts` et dans son `package.json` pour utiliser le nouveau chemin du contrôleur
+    ```json
+    "dependencies": {
+        "entities": "../../core/entities",
+        "use-cases": "../../core/use-cases",
+        "in-memory-repository": "../../adapters/in-memory-repository",
+        "controllers": "../../adapters/controllers"
+    },
+    ```
 - Appeler le contrôleur dans les routes de l'application express

@@ -13,7 +13,8 @@
   "dependencies": {
     "entities": "../../core/entities",
     "use-cases": "../../core/use-cases",
-    "in-memory-repository": "../../adapters/in-memory-repository"
+    "in-memory-repository": "../../adapters/in-memory-repository",
+    "controllers": "../../adapters/controllers"
   },
   "peerDependencies": {
     "typescript": "^5"

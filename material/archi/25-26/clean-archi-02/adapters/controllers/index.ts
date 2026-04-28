@@ -1,1 +1,3 @@
-console.log("Hello via Bun!");
+import { MemberController } from "./src/MemberController";
+
+export { MemberController };
