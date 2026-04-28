@@ -2,7 +2,9 @@ import express from "express";
 import { MemberController } from "controllers";
 import { MemberUseCase, type MemberRepository } from "use-cases";
 
-function generateServer(memberRepository: MemberRepository): express.Express {
+export function generateServer(
+  memberRepository: MemberRepository,
+): express.Express {
   const memberUseCase = new MemberUseCase(memberRepository);
   const memberController = new MemberController(memberUseCase);
   const app = express();
