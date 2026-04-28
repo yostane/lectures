@@ -3,8 +3,9 @@ import { MemberRepository } from "use-cases";
 import { SQL } from "bun";
 
 export class SqliteMemberRepository implements MemberRepository {
-  readonly sql = new SQL("sqlite://data.sqlite");
-  constructor() {
+  readonly sql: SQL;
+  constructor(dbname: string = "data.sqlite") {
+    this.sql = new SQL(`sqlite://${dbname}`);
     this.setup();
   }
 
