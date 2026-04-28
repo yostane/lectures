@@ -34,3 +34,7 @@
         "server:start": "cd applications/express-server && bun run start"
     },
     ```
+- Déplacer le fichier `adapters/in-memory-repository/src/MemberCommandHandler.ts` dans `adapters/controllers/src/MemberController.ts`
+- Renommer `MemberCommandHandler` en `MemberController`
+- Mettre à jour les imports dans `applications/cli/index.ts` et dans son `package.json` pour utiliser le nouveau chemin du contrôleur
+- Appeler le contrôleur dans les routes de l'application express
