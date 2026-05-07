@@ -1,5 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //JAVA 25+
+//PREVIEW
 
 void main(String... args) {
     // Platform (or OS) thread
@@ -14,7 +15,7 @@ void main(String... args) {
 
     try {
         Thread.sleep(1000);
-    } catch (InterruptedException e){
+    } catch (InterruptedException e) {
 
     }
 }

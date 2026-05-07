@@ -101,6 +101,26 @@ Coroutines run inside a **CoroutineScope**, which is a context that defines the 
 A **suspending function** is function that is marked with the `suspend` keyword.
 Any function that calls suspending functions must be marked as `suspend` as well (similar to the `async` keyword in other languages).
 
+Regarding the lightweight aspect of coroutines, we can illustrate this by creating thousands of coroutines without worrying about system resources.
+Let's illustrate this with a program that creates 1 million coroutines that each sleep for 1 second and then prints the number of unique coroutines.
+
+```kotlin
+--8<--
+blog/jvm-moco/coroutines/app/src/main/kotlin/org/example/CoroutineDemo03.kt
+--8<--
+```
+
+The output depends on the number of cores on the CPU.
+It should be something like this on macPro m1 with 8 cores:
+
+```txt
+Unique threads used: 8
+```
+
+This means that the coroutines are efficiently scheduled on the available hardware cores, without the overhead of creating a large number of OS threads.
+In fact, we can even increase the number of coroutines to more than 1 million without any issue, which is not possible with traditional (OS) threads.
+
+The second aspect of coroutines is structured concurrency, which allows to write concurrent code that looks like sequential code.
 Let's see an example of how to create a coroutine scope that launches two coroutines.
 
 ```kotlin
@@ -149,25 +169,6 @@ By getting a reference to the first coroutine with `val job1 = launch { ... }`, 
 The above two examples show the essence of structured concurrency: the code looks like sequential code, but it is actually concurrent code.
 No more callback hell, just sequential code!
 
-Regarding the lightweight aspect of coroutines, we can illustrate this by creating thousands of coroutines without worrying about system resources.
-Let's illustrate this with a program that creates 1 million coroutines that each sleep for 1 second and then prints the number of unique coroutines.
-
-```kotlin
---8<--
-blog/jvm-moco/coroutines/app/src/main/kotlin/org/example/CoroutineDemo03.kt
---8<--
-```
-
-The output depends on the number of cores on the CPU.
-It should be something like this on macPro m1 with 8 cores:
-
-```txt
-Unique threads used: 8
-```
-
-This means that the coroutines are efficiently scheduled on the available hardware cores, without the overhead of creating a large number of OS threads.
-In fact, we can even increase the number of coroutines to more than 1 million without any issue, which is not possible with traditional threads.
-
 Let's see next how the JDK implements modern concurrency.
 
 ## Java's virtual threads and structured concurrency
@@ -181,7 +182,9 @@ They can be spawned using the static method `Thread.ofVirtual()`.
 The following code snippet illustrates the creation of a platform thread and a virtual thread.
 
 ```java
+--8<--
 blog/jvm-moco/scripts/virtual_thread.java
+--8<--
 ```
 
 The output of this code is similar to the following:
@@ -199,29 +202,36 @@ Similarly to Kotlin coroutines, we can create a large number of virtual threads 
 The following code snippet creates 1 million virtual threads that each sleep for 1 second and then prints the number of unique threads used.
 
 ```java
+--8<--
 blog/jvm-moco/scripts/VirtualThreadDemo.java
+--8<--
 ```
 
-### Java's structured concurrency
+Structured concurrency is the second aspect of Java's modern concurrency.
+The class that provides this feature is [StructuredTaskScope](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/StructuredTaskScope.html).
+It is available in Java 21 as a preview feature (it is still a preview in Java 25).
+It returns an object, that we'll call a scope, that can be used to launch tasks with the `fork` method, and to wait for their completion with the `join` method.
+Chaining the `join` method with the `fork` method allows to create a sequential structure for concurrent tasks, which is the essence of structured concurrency.
+The following code snippet illustrates the use of structured concurrency to launch two tasks sequentially, and then launch a third one after their completion.
 
-The main class for achieve structured concurrency in Java is the [StructuredTaskScope](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/StructuredTaskScope.html).
-It is available in Java 21 as a preview feature.
+```java
+--8<--
+blog/jvm-moco/scripts/structured_concurrency.java
+--8<--
+```
 
-## Kotlin coroutines
+## Coroutines vs Java modern concurrency
 
-Kotlin coroutines is high level cross-platform API for writing efficient concurrent code.
-It enables to write asynchronous code in a sequential way as well as structured concurrency.
-The former means that you can write asynchronous code that looks like synchronous code, eliminating the callback hall problem.
-The latter means that you can write concurrent code that is easy to reason about and where the start and end of concurrent paths are clear and explicit ([ref](https://www.thedevtavern.com/blog/posts/structured-concurrency-explained/)).
+Coroutines and Java's modern concurrency are two implementations of the same concepts: lightweight threads and structured concurrency.
+Let's highlight some differences and synergies between them.
 
-## Writing concurrent code with Kotlin coroutines
+Coroutines are available in Kotlin since 2011, while Java's modern concurrency is available in Java 21, and thus also Kotlin, as a preview feature. This means that coroutines are more mature.
 
-## Coroutines vs loom
+Even though coroutines and Java's modern concurrency have different APIs, coroutines can take advantage of Java's virtual threads thanks to `Dispatchers.LOOM`, which is a dispatcher that schedules coroutines on virtual threads.
 
-For Java developers, project Loom is the way to go.
-
-For Kotlin developers, both technologies are complementary and can be used together to write efficient concurrent code on the JVM.
-Corourines were available since Kotlin 1.1, while Project Loom is still in development, even though some APIs are stable.
+Choosing one over the other depends on the language you are using.
+If you are using Java, then you can use Java's modern concurrency.
+If you are using Kotlin, then you can use Kotlin coroutines.
 
 ## Conclusion
 
