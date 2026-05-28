@@ -34,6 +34,7 @@ Par exemple, Google Cloud CLI, AWS CLI, ou même des outils comme `htop` ou `ncd
 - Vous pouvez utilise l'IA. En revanche, vous serez évalué sur votre capacité à expliquer et justifier vos choix techniques. Vous aurez donc des questions sur votre code lors de la soutenance.
 - Le plagiat est interdit.
 - Gérer les erreurs de manière appropriée (par exemple, gestion des fichiers inexistants, erreurs de requêtes HTTP, division par zéro, etc.)
+- Travailler en binôme
 
 ## Soutenance
 
