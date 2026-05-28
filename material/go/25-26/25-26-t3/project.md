@@ -21,8 +21,8 @@ Par exemple, Google Cloud CLI, AWS CLI, ou même des outils comme `htop` ou `ncd
 - Serveur d'API REST (1 point pour chaque critère)
     - Endpoints d'authentification
     - Endpoints pour récupérer et mettre à jour les données de l'application
-    - Stockage de données (par exemple, tâches, messages, scores, etc.) dans une base de données PostgreSQL
     - Endpoints pour importer et exporter la configuration et l'état de l'application depuis et vers le client CLI
+    - Stockage des backups par utilisateur (choix de la technique de stockage : fichiers, base de données, etc.)
 - Nécessite de cross-compiler le serveur pour tourner sous Linux ([guide de cross-compilation](https://dev.to/godofgeeks/cross-compiling-go-applications-4ced)) (1)
 - Héberger le serveur gratuitement. Exemples d'hébergement gratuits : [alwaysdata](https://www.alwaysdata.com/fr/offers/), [Render](https://render.com/). (1)
 - Cross-compiler la CLI pour Windows, Linux et MacOS (astuce, utiliser GoReleaser ou le guide donné plus haut) (1)
