@@ -47,7 +47,7 @@ Il ne sera pas demandé de présenter un diaporama.
 
 ## Livrables
 
-- Déposer une archive du code source du projet dans votre outil scolaire avant la date butoir.
+Déposer dans votre outil scolaire avant la date butoir, une archive contenant le code source du projet ainsi qu'une auto-évaluation de votre travail. i.e. un fichier markdown qui liste votre note pour chaque critère de la grille de notation, ainsi que la note totale.
 
 ## Librairies et liens utiles
 
