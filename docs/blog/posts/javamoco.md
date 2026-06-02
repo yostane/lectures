@@ -90,7 +90,7 @@ The JVM has two implementations of lightweight threads: coroutines (introduced b
 ### Structured concurrency
 
 Structured concurrency is a programming paradigm that aims to make concurrent code similar to a sequential one.
-It is achieved by providing APIs that replace the traditional, callback-based, ones with constructs that enforce a sequential structure for concurrent tasks.
+It is achieved by providing APIs that replace traditional callback-based code with constructs that enforce a sequential structure for concurrent tasks.
 We can also see related structured-concurrency patterns in JavaScript, C# and Swift with the `async`/`await` model.
 
 In the JVM ecosystem, structured concurrency is implemented by Kotlin coroutines and Project Loom.
@@ -286,9 +286,8 @@ This means that developers might not be aware of them or need to change their co
 A synergy between the two APIs is possible when Kotlin runs on JVM 21+.
 In fact, coroutines can be dispatched on Java virtual threads by backing a coroutine dispatcher with `Executors.newVirtualThreadPerTaskExecutor().asCoroutineDispatcher()`.
 This can be useful for blocking I/O operations, but it is best to benchmark your workload before replacing `Dispatchers.IO`.
-Also, since Kotlin naturally understands Java, we can use Java's structured concurrency API in Kotlin, which can be useful when dealing with existing Java code or libraries.
+Because Kotlin runs on the JVM, it can call Java's structured concurrency API directly, which is useful when working with existing Java code or libraries.
 
-To conclude, you may wonder which one to choose.
 In conclusion, which one should you choose?
 The short answer is to use the one that is available in your language and framework.
 So, if you are using Java, then you can use Java's modern concurrency.
