@@ -6,6 +6,7 @@ void main(String... args) {
                 // Simulate IO request (database, HTTP call, ...)
                 Thread.sleep(1000);
                 uniqueThreadNames.add(Thread.currentThread().threadId());
+                IO.println(uniqueThreadNames.size());
             } catch (Exception e) {
                 e.printStackTrace();
             }
