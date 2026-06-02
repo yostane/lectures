@@ -33,6 +33,35 @@ describe("Can compute score after 2 rolls", () => {
   });
 });
 
+describe("Shouold compute score after 3 rolls", () => {
+  test("Should compute score with 3 rolls without strike nor spare", () => {
+    const game = new Game();
+    game.roll(3);
+    game.roll(4);
+    game.roll(8);
+    const score = game.score();
+    expect(score).toBe(15);
+  });
+
+  test("Should compute score with 3 rolls with a first strike and no spares", () => {
+    const game = new Game();
+    game.roll(10); // 22
+    game.roll(4); // 4
+    game.roll(8); // 8
+    const score = game.score();
+    expect(score).toBe(34);
+  });
+
+  test("Should compute score with 3 rolls with two first strikes", () => {
+    const game = new Game();
+    game.roll(10); // 28
+    game.roll(10); // 18
+    game.roll(8); // 8
+    const score = game.score();
+    expect(score).toBe(54);
+  });
+});
+
 test("I can run 2 separate games (encapsulation)", () => {
   const game1 = new Game();
   game1.roll(5);

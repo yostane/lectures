@@ -1,16 +1,20 @@
 export class Game {
-  #isPreviousRollStrike = false;
+  #isSecondToLastRollStrike = false;
+  #isLastRollStrike = false;
   #score = 0;
   roll(pinCount: number): void {
-    if (this.#isPreviousRollStrike) {
-      this.#isPreviousRollStrike = false;
-      this.#score += pinCount * 2;
-    } else {
+    this.#score += pinCount;
+    if (this.#isSecondToLastRollStrike) {
       this.#score += pinCount;
+      this.#isSecondToLastRollStrike = false;
     }
-
+    if (this.#isLastRollStrike) {
+      this.#score += pinCount;
+      this.#isSecondToLastRollStrike = true;
+      this.#isLastRollStrike = false;
+    }
     if (pinCount === 10) {
-      this.#isPreviousRollStrike = true;
+      this.#isLastRollStrike = true;
     }
   }
 
