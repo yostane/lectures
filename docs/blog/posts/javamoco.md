@@ -1,5 +1,5 @@
 ---
-date: 2025-06-02 
+date: 2026-06-02 
 categories:
   - Java
   - Kotlin
