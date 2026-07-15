@@ -77,7 +77,6 @@ nav:
       - go/methods-interfaces.ipynb
       - go/rest-api.md
       - go/exercices.ipynb
-      - go/projets.md
   - SQL:
       - sql/index.md
       - sql/setup.ipynb

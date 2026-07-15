@@ -9,15 +9,15 @@ Par exemple, Google Cloud CLI, AWS CLI, ou même des outils comme `htop` ou `ncd
 
 ## Grille de notation
 
-- CLI en mode TUI (1 point pour chaque critère)
-    - Ecran d'accueil avec les options possibles
-    - Ecran d'authentification pour se connecter à son compte
-    - Ecran de paramètres pour configurer l'application (par exemple, le thème de couleurs)
-    - Ecrans qui proposent la fonctionnalité principale de l'application (par exemple, gestion des tâches, visualisation de données, écrans du jeu, etc.)
-    - Stockage des paramètres dans le dossier personnel de l'utilisateur au format JSON (par exemple, `~/.config/monapp/config.json`)
-    - Stockage de l'état de l'application dans le dossier personnel de l'utilisateur au format JSON (par exemple, `~/.config/monapp/state.json`)
-    - Paramètres pour importer et exporter la configuration et l'état de l'application depuis et vers le serveur (Vous pouvez utiliser le type JSONB de postgreSQL pour stocker des données JSON dans la base de données)
-    - Interface utilisateur agréable, colorée, dynamique et facile à utiliser
+- CLI en mode TUI
+    - Ecran d'accueil avec les options possibles (0.5)
+    - Ecran d'authentification pour se connecter à son compte (0.5)
+    - Ecran de paramètres pour configurer l'application (par exemple, le thème de couleurs) (0.5)
+    - Ecrans qui proposent la fonctionnalité principale de l'application (par exemple, gestion des tâches, visualisation de données, écrans du jeu, etc.) (1)
+    - Stockage des paramètres dans le dossier personnel de l'utilisateur au format JSON (par exemple, `~/.config/monapp/config.json`) (0.5)
+    - Stockage de l'état de l'application dans le dossier personnel de l'utilisateur au format JSON (par exemple, `~/.config/monapp/state.json`) (0.5)
+    - Paramètres pour importer et exporter la configuration et l'état de l'application depuis et vers le serveur (Vous pouvez utiliser le type JSONB de postgreSQL pour stocker des données JSON dans la base de données) (0.5)
+    - Interface utilisateur agréable, colorée, dynamique et facile à utiliser (1)
 - Serveur d'API REST (1 point pour chaque critère)
     - Endpoints d'authentification
     - Endpoints pour récupérer et mettre à jour les données de l'application
@@ -26,8 +26,11 @@ Par exemple, Google Cloud CLI, AWS CLI, ou même des outils comme `htop` ou `ncd
 - Nécessite de cross-compiler le serveur pour tourner sous Linux ([guide de cross-compilation](https://dev.to/godofgeeks/cross-compiling-go-applications-4ced)) (1)
 - Héberger le serveur gratuitement. Exemples d'hébergement gratuits : [alwaysdata](https://www.alwaysdata.com/fr/offers/), [Render](https://render.com/). (1)
 - Cross-compiler la CLI pour Windows, Linux et MacOS (astuce, utiliser GoReleaser ou le guide donné plus haut) (1)
-- Publier la CLI sur GitHub dans la partie "Releases" de votre dépôt GitHub (1)
-- Répondre aux questions techniques lors de la soutenance (4)
+- Publier la CLI:
+    - Dans les release GitHub (1)
+    - Sur un gestionnaire de paquets (Homebrew, Scoop, apt, etc.) (1)
+- Répondre aux questions techniques lors de la soutenance (5)
+- Qualité de la démonstration (1)
 
 ## Contraintes
 
