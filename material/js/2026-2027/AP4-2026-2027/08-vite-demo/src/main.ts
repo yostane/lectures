@@ -3,22 +3,21 @@ import "./style.css";
 const state = {
   dates: [],
 };
+type State = typeof state;
 
-const handler = {
+const handler: ProxyHandler<State> = {
   set(obj, prop, value) {
     const app = document.querySelector<HTMLDivElement>("#app");
     if (!app) {
       return true;
     }
-    const dates = value as Date[];
     app.innerHTML = "";
-    for (const date of dates) {
+    for (const date of value) {
       const p = document.createElement("p") as HTMLParagraphElement;
       p.innerText = `- Il est ${date.toISOString()}`;
       app?.appendChild(p);
     }
-    console.log(value);
-    obj[prop] = value;
+    obj.dates = value;
     return true;
   },
 };
