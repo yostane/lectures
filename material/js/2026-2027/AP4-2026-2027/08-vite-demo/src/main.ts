@@ -29,7 +29,6 @@ const proxy = new Proxy(state, handler);
 // DOMContentLoaded permet de s'assurer que tout le DOM est bien chargé côté JS
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.querySelector<HTMLButtonElement>("#add-item");
-  const app = document.querySelector<HTMLDivElement>("#app");
   button?.addEventListener("click", (e) => {
     const newDates = [...state.dates, new Date()];
     proxy.dates = newDates;
