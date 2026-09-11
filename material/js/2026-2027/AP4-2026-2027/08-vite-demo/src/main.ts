@@ -1,9 +1,12 @@
 import "./style.css";
 
-const state = {
+type State = {
+  dates: Date[];
+};
+
+const state: State = {
   dates: [],
 };
-type State = typeof state;
 
 const handler: ProxyHandler<State> = {
   set(obj, prop, value) {
